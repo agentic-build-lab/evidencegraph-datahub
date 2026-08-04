@@ -69,10 +69,11 @@ action.
 
 The official DataHub MCP Server is the runtime boundary for search, entity
 context, schemas, dataset lineage, column lineage, and governed mutations. The
-demo pins `mcp-server-datahub@0.6.0`. A narrow DataHub Python SDK reader enriches
-relationships that MCP 0.6.0 does not expose as lineage nodes, including the
-modeled ML deployment link. DataHub Core v1.6.0 stores the heterogeneous graph
-and the bounded write-back.
+demo pins `mcp-server-datahub@0.6.0`. The official DataHub Agent Context Kit
+dependency (`datahub-agent-context==1.6.0.17`, via its DataHub Python SDK)
+provides the narrow aspect reader that enriches relationships MCP 0.6.0 does not
+expose as lineage nodes, including the modeled ML deployment link. DataHub Core
+v1.6.0 stores the heterogeneous graph and the bounded write-back.
 
 ## How we built it
 
