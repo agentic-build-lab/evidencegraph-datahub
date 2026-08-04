@@ -9,8 +9,8 @@
     "release_tag": "v0.1.0"
   },
   "submission": {
-    "status": "draft",
-    "devpost_url": "<DEVPOST_PROJECT_URL>",
+    "status": "submitted",
+    "devpost_url": "https://devpost.com/software/evidencegraph",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
     "demo_url": "https://evidencegraph-datahub.liu891855.chatgpt.site",
     "video_url": "https://youtu.be/MFDSc8Nx1Qs",
@@ -36,6 +36,7 @@
   "datahub": {
     "core_version": "v1.6.0",
     "mcp_package": "mcp-server-datahub@0.6.0",
+    "agent_context_kit_package": "datahub-agent-context==1.6.0.17",
     "primary_agent_interface": "DataHub MCP Server",
     "sdk_scope": "demo bootstrap and narrow relationship enrichment not exposed as MCP lineage nodes"
   },
@@ -72,15 +73,18 @@
     "EvidenceGraph does not apply production data or code changes"
   ],
   "release_gates": {
-    "all_placeholders_replaced": false,
+    "all_placeholders_replaced": true,
     "public_repository_signed_out_check": true,
     "public_demo_signed_out_check": true,
+    "public_devpost_signed_out_check": true,
     "public_video_under_three_minutes": true,
-    "sample_output_link_check": false,
-    "clean_clone_reproduction": false,
-    "secret_and_personal_data_scan": false,
+    "public_release_signed_out_check": true,
+    "release_asset_checksum_check": true,
+    "sample_output_link_check": true,
+    "clean_clone_reproduction": true,
+    "secret_and_personal_data_scan": true,
     "dependency_audit": true,
-    "devpost_final_preview_reviewed": false,
-    "devpost_submitted": false
+    "devpost_final_preview_reviewed": true,
+    "devpost_submitted": true
   }
 }

@@ -92,9 +92,9 @@ For the final public package, compare every submission number against
 `docs/CLAIMS.md` and `submission/manifest.json`. The repository, public demo,
 video, and Devpost description must all identify the same release commit.
 
-The following release checks are intentionally pending until publication:
-
-- signed-out checks for every public URL;
-- clean-clone verification against the final release commit;
-- public release artifact checksums; and
-- replacement of all `<PUBLIC_...>` placeholders.
+For `v0.1.0`, the completed publication gates are recorded in
+`submission/manifest.json`: signed-out checks for the repository, demo, video,
+sample outputs, release, and Devpost page; clean-clone verification; release
+asset checksums; secret and personal-data scanning; and replacement of every
+submission placeholder. Recalculate the attachment hashes after downloading
+them from the public release rather than trusting filenames alone.
