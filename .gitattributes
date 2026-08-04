@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.jpg binary
+*.png binary
+*.woff2 binary
+*.wav binary
+
+# Frozen evidence hashes are byte-level release claims.
+examples/** text eol=lf
+site/public/evidence/** text eol=lf
+*.patch text eol=lf

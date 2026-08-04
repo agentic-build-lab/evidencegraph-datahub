@@ -70,8 +70,10 @@ MCP server package.
 ## Upstream dependency constraint
 
 The locked official DataHub agent stack currently resolves `setuptools 81.0.0`.
-That version is reported by `pip-audit` for `PYSEC-2026-3447`; the fixed release
-is 83.0.0, while `acryl-datahub==1.6.0.6` requires `setuptools<82`. The package is
-not used by EvidenceGraph's runtime logic, and the public replay does not install
-or build untrusted distributions. The exception remains a release risk until
-the official DataHub constraint permits an upgraded setuptools.
+That version is reported by `pip-audit` and Dependabot for `PYSEC-2026-3447` /
+`CVE-2026-59890` (`GHSA-h35f-9h28-mq5c`); the fixed release is 83.0.0, while
+`acryl-datahub==1.6.0.6` requires `setuptools<82`. EvidenceGraph does not use
+setuptools in its runtime logic or build source distributions in its supported
+flow, and the public replay does not install or build untrusted distributions.
+The exception remains a release risk until the official DataHub constraint
+permits an upgraded setuptools.
