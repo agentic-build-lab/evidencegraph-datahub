@@ -73,14 +73,18 @@ suite, dependency audit, secret scan over Git history, release-archive scan, and
 signed-out public-link verification.
 
 The release dependency audit reports one accepted upstream exception:
-`setuptools 81.0.0` is affected by `PYSEC-2026-3447`, fixed in 83.0.0. The
+`setuptools 81.0.0` is affected by `PYSEC-2026-3447` / `CVE-2026-59890`
+(`GHSA-h35f-9h28-mq5c`), fixed in 83.0.0. The
 official `datahub-agent-context==1.6.0.17` package pins
 `acryl-datahub==1.6.0.6`, whose declared requirement is `setuptools<82`, so a
 non-vulnerable resolver solution does not currently exist without breaking the
 official DataHub dependency contract. EvidenceGraph does not invoke setuptools
-at runtime, accept package archives, or expose a packaging endpoint. This is a
-documented release exception, not a claim of a clean vulnerability scan, and it
-should be removed when the upstream constraint is relaxed.
+at runtime, build or publish source distributions, accept package archives, or
+expose a packaging endpoint. The advisory requires a local macOS APFS/HFS+
+source-distribution build with a Unicode-normalization collision in an exclusion
+rule; that path is outside EvidenceGraph's supported runtime. This is a documented
+upstream exception, not a claim of a clean vulnerability scan, and it should be
+removed when the official DataHub constraint is relaxed.
 
 ## Current non-claims
 

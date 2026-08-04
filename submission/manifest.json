@@ -39,6 +39,13 @@
     "primary_agent_interface": "DataHub MCP Server",
     "sdk_scope": "demo bootstrap and narrow relationship enrichment not exposed as MCP lineage nodes"
   },
+  "dependency_audit_exception": {
+    "package": "setuptools 81.0.0",
+    "advisory": "PYSEC-2026-3447 / CVE-2026-59890 / GHSA-h35f-9h28-mq5c",
+    "fixed_version": "83.0.0",
+    "upstream_constraint": "acryl-datahub==1.6.0.6 requires setuptools<82",
+    "runtime_boundary": "EvidenceGraph does not invoke setuptools or build source distributions in supported runtime flows"
+  },
   "public_documents": [
     "README.md",
     "HACKATHON_PROVENANCE.md",
