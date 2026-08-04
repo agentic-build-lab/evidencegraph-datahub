@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    "migration/sql/customer_tier_compatibility.sql",
+    "migration/dbt/models/staging/stg_orders.sql",
+    "migration/patches/demo-platform.patch",
+    "migration/dbt/models/staging/stg_orders.yml",
+    "migration/validation/validate_customer_tier.sql",
+    "migration/MIGRATION_PLAN.md",
+    "migration/orchestration/evidencegraph_change_gate.py",
+    "migration/ml/customer_tier_feature_v2.yml"
+  ],
+  "change_id": "EG-042",
+  "evidence_claim_ids": [
+    "CLM-001",
+    "CLM-002",
+    "CLM-003",
+    "CLM-004",
+    "CLM-005",
+    "CLM-006",
+    "CLM-007"
+  ],
+  "source_document": "urn:li:document:customer-segmentation-migration-rfc-42",
+  "target_urns": [
+    "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+    "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+    "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+    "urn:li:dashboard:(looker,executive_revenue_watch)",
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+    "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+  ]
+}

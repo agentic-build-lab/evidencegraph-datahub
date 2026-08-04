@@ -1,0 +1,1063 @@
+{
+  "artifacts": [
+    {
+      "content": "-- EvidenceGraph change EG-042. Source: DataHub document RFC-42.\n        CREATE OR REPLACE VIEW stg_orders_compat AS\n        SELECT\n            order_id,\n            customer_id,\n            amount_usd,\n            CASE segment_code\n    WHEN 'B' THEN 'bronze'\n    WHEN 'G' THEN 'gold'\n    WHEN 'S' THEN 'silver'\n    ELSE NULL\nEND AS customer_tier,\n            ordered_at\n        FROM raw_orders_next;\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "sql",
+      "purpose": "Preserve the contracted field from the documented replacement mapping.",
+      "relative_path": "migration/sql/customer_tier_compatibility.sql",
+      "sha256": "7d84b53fc5ec50ee0ba111c52d5fd6aea5c4587c2d8e19ce567c9b69e80f0602",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "{{ config(materialized='view', contract={'enforced': true}) }}\n        -- Evidence claims are enumerated in migration/evidencegraph-manifest.json.\n        SELECT\n            order_id,\n            customer_id,\n            amount_usd,\n            CASE segment_code\n    WHEN 'B' THEN 'bronze'\n    WHEN 'G' THEN 'gold'\n    WHEN 'S' THEN 'silver'\n    ELSE NULL\nEND AS customer_tier,\n            ordered_at\n        FROM {{ source('commerce', 'raw_orders_next') }}\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "dbt-sql",
+      "purpose": "Update the staging model while keeping the downstream contract stable.",
+      "relative_path": "migration/dbt/models/staging/stg_orders.sql",
+      "sha256": "7c7de19e0b06713a0c6feb21a83c1722c7dfb03a68348d34ea94ec40f2e8444c",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "--- a/demo_platform/dbt/models/staging/stg_orders.sql\n+++ b/demo_platform/dbt/models/staging/stg_orders.sql\n@@ -1,8 +1,14 @@\n {{ config(materialized='view', contract={'enforced': true}) }}\n-SELECT\n-    order_id,\n-    customer_id,\n-    amount_usd,\n-    customer_tier,\n-    ordered_at\n-FROM {{ source('commerce', 'raw_orders_current') }}\n+        -- Evidence claims are enumerated in migration/evidencegraph-manifest.json.\n+        SELECT\n+            order_id,\n+            customer_id,\n+            amount_usd,\n+            CASE segment_code\n+    WHEN 'B' THEN 'bronze'\n+    WHEN 'G' THEN 'gold'\n+    WHEN 'S' THEN 'silver'\n+    ELSE NULL\n+END AS customer_tier,\n+            ordered_at\n+        FROM {{ source('commerce', 'raw_orders_next') }}\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "unified-diff",
+      "purpose": "Apply the evidenced dbt compatibility change to the miniature platform.",
+      "relative_path": "migration/patches/demo-platform.patch",
+      "sha256": "cc6f7862f37c81300ba5cc087f793b4c7cb75da8d8169ddc20f8b6f575790a73",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "version: 2\nmodels:\n- name: stg_orders\n  description: Compatibility model generated from DataHub RFC-42.\n  config:\n    contract:\n      enforced: true\n  columns:\n  - name: order_id\n    data_type: bigint\n    data_tests:\n    - not_null\n    - unique\n  - name: customer_id\n    data_type: bigint\n    data_tests:\n    - not_null\n  - name: amount_usd\n    data_type: decimal(12,2)\n    data_tests:\n    - not_null\n  - name: customer_tier\n    data_type: varchar\n    data_tests:\n    - not_null\n    - accepted_values:\n        arguments:\n          values:\n          - bronze\n          - silver\n          - gold\n  - name: ordered_at\n    data_type: timestamp\n    data_tests:\n    - not_null\n  meta:\n    evidencegraph_change: EG-042\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "dbt-yaml",
+      "purpose": "Encode the compatibility field contract and accepted values.",
+      "relative_path": "migration/dbt/models/staging/stg_orders.yml",
+      "sha256": "4e740cd42fe6575c5e87ba545eeb7e49dcb7187b0fdeaeba416e6a9b26831c4b",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "-- Native DuckDB validation. Zero rows is the only passing result.\nSELECT\n    n.order_id,\n    n.segment_code,\n    c.customer_tier AS expected,\n    s.customer_tier AS actual\nFROM raw_orders_next AS n\nLEFT JOIN raw_orders_current AS c USING (order_id)\nLEFT JOIN stg_orders_compat AS s USING (order_id)\nWHERE s.customer_tier IS NULL\n   OR s.customer_tier NOT IN ('bronze', 'silver', 'gold')\n   OR s.customer_tier <> c.customer_tier;\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "validation-sql",
+      "purpose": "Reject unmapped segment codes and prove parity with the current field.",
+      "relative_path": "migration/validation/validate_customer_tier.sql",
+      "sha256": "f568eb4dfce1783862a81460e55724fc82621371e6e603bcfd6f88071c2a9431",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "# Migration plan for EG-042\n\nProposed change: `drop_column` on `urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)` / `customer_tier`.\n\n## Risk-ranked consumers\n\n| Risk | Score | Asset | Owner | Evidence path count |\n|---|---:|---|---|---:|\n| blocker | 100 | `urn:li:mlFeature:(customer_profile,customer_tier_signal)` | urn:li:corpGroup:risk-ml | 1 |\n| blocker | 90 | `urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)` | urn:li:corpGroup:growth-analytics | 1 |\n| blocker | 90 | `urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)` | urn:li:corpGroup:ml-platform | 1 |\n| critical | 85 | `urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)` | urn:li:corpGroup:risk-ml | 1 |\n| critical | 80 | `urn:li:dashboard:(looker,executive_revenue_watch)` | urn:li:corpGroup:finance-analytics | 1 |\n| critical | 75 | `urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)` | urn:li:corpGroup:analytics-engineering | 1 |\n| high | 60 | `urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)` | urn:li:corpGroup:data-platform | 1 |\n\n## Ordered steps\n\n1. **Preserve the producer contract** (BLOCKING) \u2014 Introduce a compatibility projection and update transformations before the source change.\n2. **Protect analytics consumers** (BLOCKING) \u2014 Migrate metrics and dashboard fields, then run semantic validation queries.\n3. **Protect ML consumers** (BLOCKING) \u2014 Version the feature contract, verify parity, and gate model deployment on validation.\n4. **Re-query the fresh context graph** (BLOCKING) \u2014 After applying the migration in an approved environment, re-run DataHub lineage and schema collection; close only when no unremediated consumer remains.\n\n## Merge policy\n\nDo not merge until every generated validation is `passed`, the DataHub context frontier is complete, and the fresh-graph closure check finds no unremediated consumer.\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "markdown",
+      "purpose": "Give reviewers an evidence-linked, ordered migration plan.",
+      "relative_path": "migration/MIGRATION_PLAN.md",
+      "sha256": "fdfa9e5f0bfa8706420c946f34370e32580c50efee9661936d7c5c54da054896",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "\"\"\"Airflow snippet generated for EvidenceGraph change EG-042.\"\"\"\n\nimport json\nimport os\nimport re\nfrom datetime import UTC, datetime\nfrom pathlib import Path\n\nfrom airflow import DAG\nfrom airflow.providers.standard.operators.bash import BashOperator\nfrom airflow.providers.standard.operators.python import PythonOperator\n\n\ndef require_validated_evidence() -> str:\n    expected_validation_ids = {\n        \"VAL-INTEGRITY\",\n        \"VAL-PARSE-01\",\n        \"VAL-PARSE-02\",\n        \"VAL-PARSE-03\",\n        \"VAL-PARSE-04\",\n        \"VAL-PARSE-05\",\n        \"VAL-PARSE-06\",\n        \"VAL-PARSE-07\",\n        \"VAL-PARSE-08\",\n        \"VAL-PATCH-APPLY\",\n        \"VAL-DUCKDB-PARITY\",\n        \"VAL-DBT-BUILD\",\n        \"VAL-AIRFLOW-DAG\",\n        \"VAL-ML-PARITY\",\n    }\n    ledger_path = Path(\n        os.environ.get(\n            \"EVIDENCEGRAPH_LEDGER_PATH\",\n            \"/opt/evidencegraph/evidence-ledger.json\",\n        )\n    )\n    ledger = json.loads(ledger_path.read_text(encoding=\"utf-8\"))\n    validations = ledger.get(\"validations\", [])\n    validation_ids = [item.get(\"validation_id\") for item in validations]\n    failed = [\n        item.get(\"validation_id\", \"unknown\")\n        for item in validations\n        if item.get(\"status\") != \"passed\"\n    ]\n    malformed_receipts = [\n        item.get(\"validation_id\", \"unknown\")\n        for item in validations\n        if re.fullmatch(r\"[0-9a-f]{64}\", item.get(\"output_sha256\", \"\")) is None\n    ]\n    input_sha256 = ledger.get(\"input_sha256\", \"\")\n    expected_run_id = f\"EG-{input_sha256[:12].upper()}\"\n    identity_valid = (\n        ledger.get(\"change\", {}).get(\"change_id\") == \"EG-042\"\n        and re.fullmatch(r\"[0-9a-f]{64}\", input_sha256) is not None\n        and ledger.get(\"run_id\") == expected_run_id\n    )\n    receipt_set_valid = (\n        len(validation_ids) == len(expected_validation_ids)\n        and set(validation_ids) == expected_validation_ids\n    )\n    if failed or malformed_receipts or not identity_valid or not receipt_set_valid:\n        raise RuntimeError(\n            \"EvidenceGraph validation gate rejected the bundle: \"\n            f\"failed={failed}, malformed={malformed_receipts}, \"\n            f\"identity_valid={identity_valid}, receipt_set_valid={receipt_set_valid}\"\n        )\n    return expected_run_id\n\n\nwith DAG(\n    dag_id=\"daily_customer_value_migration\",\n    start_date=datetime(2026, 8, 1, tzinfo=UTC),\n    schedule=\"0 4 * * *\",\n    catchup=False,\n    tags=[\"evidencegraph\", \"EG-042\"],\n) as dag:\n    validate_change = PythonOperator(\n        task_id=\"validate_customer_tier_compatibility\",\n        python_callable=require_validated_evidence,\n    )\n\n    publish_customer_value = BashOperator(\n        task_id=\"publish_customer_value\",\n        bash_command=\"dbt build --select +fct_customer_value\",\n    )\n\n    validate_change >> publish_customer_value\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "airflow-python",
+      "purpose": "Add an Airflow pre-publish gate that fails closed on validation errors.",
+      "relative_path": "migration/orchestration/evidencegraph_change_gate.py",
+      "sha256": "eb9616570709125422e36c273a74c2456e9725bc11bcbe6c6d85c3069445d31d",
+      "target_urns": [
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    },
+    {
+      "content": "apiVersion: evidencegraph.io/v1\nkind: MLFeatureMigration\nmetadata:\n  name: customer-tier-signal-v2\n  changeId: EG-042\nspec:\n  sourceField: segment_code\n  outputFeature: customer_tier_signal_v2\n  mapping:\n    B: bronze\n    S: silver\n    G: gold\n  unknownValuePolicy: reject\n  parity:\n    required: true\n    minimumRows: 4\n    maximumMismatchRate: 0.0\n  deploymentGate:\n    modelUrn: urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)\n    deploymentUrn: urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "ml-feature-contract",
+      "purpose": "Version the ML feature and require parity before deployment.",
+      "relative_path": "migration/ml/customer_tier_feature_v2.yml",
+      "sha256": "99b978276a82698a58a57433bb3d46a8c74b9ca51176276d871e7085f0f5caae",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)"
+      ]
+    },
+    {
+      "content": "{\n  \"artifacts\": [\n    \"migration/sql/customer_tier_compatibility.sql\",\n    \"migration/dbt/models/staging/stg_orders.sql\",\n    \"migration/patches/demo-platform.patch\",\n    \"migration/dbt/models/staging/stg_orders.yml\",\n    \"migration/validation/validate_customer_tier.sql\",\n    \"migration/MIGRATION_PLAN.md\",\n    \"migration/orchestration/evidencegraph_change_gate.py\",\n    \"migration/ml/customer_tier_feature_v2.yml\"\n  ],\n  \"change_id\": \"EG-042\",\n  \"evidence_claim_ids\": [\n    \"CLM-001\",\n    \"CLM-002\",\n    \"CLM-003\",\n    \"CLM-004\",\n    \"CLM-005\",\n    \"CLM-006\",\n    \"CLM-007\"\n  ],\n  \"source_document\": \"urn:li:document:customer-segmentation-migration-rfc-42\",\n  \"target_urns\": [\n    \"urn:li:mlFeature:(customer_profile,customer_tier_signal)\",\n    \"urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)\",\n    \"urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)\",\n    \"urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)\",\n    \"urn:li:dashboard:(looker,executive_revenue_watch)\",\n    \"urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)\",\n    \"urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)\"\n  ]\n}\n",
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "kind": "manifest",
+      "purpose": "Bind every generated file to its DataHub evidence and affected assets.",
+      "relative_path": "migration/evidencegraph-manifest.json",
+      "sha256": "159356a80acdf274b6eb01abe9dd1c803ba978b326fe40a159553cbb8fe036f6",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+        "urn:li:dashboard:(looker,executive_revenue_watch)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ]
+    }
+  ],
+  "change": {
+    "after_contract": {
+      "required_fields": [
+        "order_id",
+        "customer_id",
+        "amount_usd",
+        "segment_code",
+        "ordered_at"
+      ]
+    },
+    "asset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+    "before_contract": {
+      "required_fields": [
+        "order_id",
+        "customer_id",
+        "amount_usd",
+        "customer_tier",
+        "ordered_at"
+      ]
+    },
+    "change_id": "EG-042",
+    "field": "customer_tier",
+    "kind": "drop_column",
+    "proposal_revision": "rev-842-customer-segmentation",
+    "proposed_field": null,
+    "proposed_type": null,
+    "reason": "Consolidate legacy customer segmentation on the new producer-owned segment_code field.",
+    "repository_ref": "commerce-data-platform/pull/842",
+    "requested_by": "urn:li:corpuser:producer-platform-bot"
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-001",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-005"
+      ],
+      "statement": "customer_tier_signal is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier_signal.",
+      "status": "derived",
+      "subject_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier_signal"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-002",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002"
+      ],
+      "statement": "analytics.fct_customer_value is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier.",
+      "status": "derived",
+      "subject_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-003",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-005",
+        "OBS-LIN-006",
+        "OBS-LIN-007"
+      ],
+      "statement": "churn-api-prod is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier_signal.",
+      "status": "derived",
+      "subject_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier_signal"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-004",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-005",
+        "OBS-LIN-006"
+      ],
+      "statement": "churn_propensity_v4 is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier_signal.",
+      "status": "derived",
+      "subject_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier_signal"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-005",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002",
+        "OBS-LIN-004"
+      ],
+      "statement": "Executive Revenue Watch is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through revenue_by_customer_tier.",
+      "status": "derived",
+      "subject_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "revenue_by_customer_tier"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-006",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-001"
+      ],
+      "statement": "analytics.stg_orders is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier.",
+      "status": "derived",
+      "subject_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-007",
+      "confidence": 0.65,
+      "derivation": "Deterministic field-aware breadth-first traversal over DataHub lineage.",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "predicate": "is_downstream_and_affected",
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002",
+        "OBS-LIN-003"
+      ],
+      "statement": "daily_customer_value.build_customer_value is downstream of urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD) and is affected through customer_tier.",
+      "status": "derived",
+      "subject_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "test_status": null,
+      "unresolved_risks": [],
+      "value": {
+        "affected_fields": [
+          "customer_tier"
+        ],
+        "path_count": 1,
+        "producer_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      }
+    },
+    {
+      "claim_id": "CLM-INCOMPLETE",
+      "confidence": 1.0,
+      "derivation": "One or more completeness invariants failed.",
+      "observed_at": null,
+      "predicate": "lineage_frontier_complete",
+      "source_observation_ids": [],
+      "statement": "The available context cannot prove that the downstream blast radius is complete.",
+      "status": "incomplete",
+      "subject_urn": null,
+      "test_status": null,
+      "unresolved_risks": [
+        "Downstream blast-radius completeness is unestablished."
+      ],
+      "value": false
+    }
+  ],
+  "created_at": "2026-08-04T03:53:11.333858Z",
+  "impacts": [
+    {
+      "affected_fields": [
+        "customer_tier_signal"
+      ],
+      "asset_name": "customer_tier_signal",
+      "asset_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "kind": "ml_feature",
+      "owners": [
+        "urn:li:corpGroup:risk-ml"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:mlFeature:(customer_profile,customer_tier_signal)"
+        ]
+      ],
+      "rationale": [
+        "Critical-criticality ml feature.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The affected field is required by an active data contract."
+      ],
+      "risk_level": "blocker",
+      "risk_score": 100,
+      "source_observation_ids": [
+        "OBS-LIN-005"
+      ]
+    },
+    {
+      "affected_fields": [
+        "customer_tier"
+      ],
+      "asset_name": "analytics.fct_customer_value",
+      "asset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "kind": "dataset",
+      "owners": [
+        "urn:li:corpGroup:growth-analytics"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)"
+        ]
+      ],
+      "rationale": [
+        "Critical-criticality dataset.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The affected field is required by an active data contract."
+      ],
+      "risk_level": "blocker",
+      "risk_score": 90,
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002"
+      ]
+    },
+    {
+      "affected_fields": [
+        "customer_tier_signal"
+      ],
+      "asset_name": "churn-api-prod",
+      "asset_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "kind": "ml_model_deployment",
+      "owners": [
+        "urn:li:corpGroup:ml-platform"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+          "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+          "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)"
+        ]
+      ],
+      "rationale": [
+        "Critical-criticality ml model deployment.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The change can alter a production ML prediction dependency."
+      ],
+      "risk_level": "blocker",
+      "risk_score": 90,
+      "source_observation_ids": [
+        "OBS-LIN-005",
+        "OBS-LIN-006",
+        "OBS-LIN-007"
+      ]
+    },
+    {
+      "affected_fields": [
+        "customer_tier_signal"
+      ],
+      "asset_name": "churn_propensity_v4",
+      "asset_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "kind": "ml_model",
+      "owners": [
+        "urn:li:corpGroup:risk-ml"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+          "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)"
+        ]
+      ],
+      "rationale": [
+        "Critical-criticality ml model.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The change can alter a production ML prediction dependency."
+      ],
+      "risk_level": "critical",
+      "risk_score": 85,
+      "source_observation_ids": [
+        "OBS-LIN-005",
+        "OBS-LIN-006"
+      ]
+    },
+    {
+      "affected_fields": [
+        "revenue_by_customer_tier"
+      ],
+      "asset_name": "Executive Revenue Watch",
+      "asset_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "kind": "dashboard",
+      "owners": [
+        "urn:li:corpGroup:finance-analytics"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+          "urn:li:dashboard:(looker,executive_revenue_watch)"
+        ]
+      ],
+      "rationale": [
+        "Critical-criticality dashboard.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The change can alter a human-facing decision surface."
+      ],
+      "risk_level": "critical",
+      "risk_score": 80,
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002",
+        "OBS-LIN-004"
+      ]
+    },
+    {
+      "affected_fields": [
+        "customer_tier"
+      ],
+      "asset_name": "analytics.stg_orders",
+      "asset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "kind": "dataset",
+      "owners": [
+        "urn:li:corpGroup:analytics-engineering"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)"
+        ]
+      ],
+      "rationale": [
+        "High-criticality dataset.",
+        "Reachable through 1 evidenced downstream lineage path(s).",
+        "The affected field is required by an active data contract."
+      ],
+      "risk_level": "critical",
+      "risk_score": 75,
+      "source_observation_ids": [
+        "OBS-LIN-001"
+      ]
+    },
+    {
+      "affected_fields": [
+        "customer_tier"
+      ],
+      "asset_name": "daily_customer_value.build_customer_value",
+      "asset_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "kind": "data_job",
+      "owners": [
+        "urn:li:corpGroup:data-platform"
+      ],
+      "paths": [
+        [
+          "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+          "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+        ]
+      ],
+      "rationale": [
+        "High-criticality data job.",
+        "Reachable through 1 evidenced downstream lineage path(s)."
+      ],
+      "risk_level": "high",
+      "risk_score": 60,
+      "source_observation_ids": [
+        "OBS-LIN-001",
+        "OBS-LIN-002",
+        "OBS-LIN-003"
+      ]
+    }
+  ],
+  "input_sha256": "16e47b04ba7e3d706e1cc731e433cf7d11652b8f6085d66b686e40e96a12439f",
+  "migration_plan": [
+    {
+      "action": "Introduce a compatibility projection and update transformations before the source change.",
+      "blocking": true,
+      "evidence_claim_ids": [
+        "CLM-002",
+        "CLM-006",
+        "CLM-007"
+      ],
+      "order": 1,
+      "owner_urns": [
+        "urn:li:corpGroup:analytics-engineering",
+        "urn:li:corpGroup:data-platform",
+        "urn:li:corpGroup:growth-analytics"
+      ],
+      "step_id": "STEP-01",
+      "target_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)"
+      ],
+      "title": "Preserve the producer contract"
+    },
+    {
+      "action": "Migrate metrics and dashboard fields, then run semantic validation queries.",
+      "blocking": true,
+      "evidence_claim_ids": [
+        "CLM-005"
+      ],
+      "order": 2,
+      "owner_urns": [
+        "urn:li:corpGroup:finance-analytics"
+      ],
+      "step_id": "STEP-02",
+      "target_urns": [
+        "urn:li:dashboard:(looker,executive_revenue_watch)"
+      ],
+      "title": "Protect analytics consumers"
+    },
+    {
+      "action": "Version the feature contract, verify parity, and gate model deployment on validation.",
+      "blocking": true,
+      "evidence_claim_ids": [
+        "CLM-001",
+        "CLM-003",
+        "CLM-004"
+      ],
+      "order": 3,
+      "owner_urns": [
+        "urn:li:corpGroup:ml-platform",
+        "urn:li:corpGroup:risk-ml"
+      ],
+      "step_id": "STEP-03",
+      "target_urns": [
+        "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+        "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+        "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)"
+      ],
+      "title": "Protect ML consumers"
+    },
+    {
+      "action": "After applying the migration in an approved environment, re-run DataHub lineage and schema collection; close only when no unremediated consumer remains.",
+      "blocking": true,
+      "evidence_claim_ids": [],
+      "order": 4,
+      "owner_urns": [],
+      "step_id": "STEP-04",
+      "target_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      ],
+      "title": "Re-query the fresh context graph"
+    }
+  ],
+  "mutation_receipts": [],
+  "observations": [
+    {
+      "details": {
+        "mode": "deterministic-fixture"
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_entities:raw_orders",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "observation_id": "OBS-ENTITY-001",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_entities",
+      "payload_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "details": {
+        "page": 1,
+        "pages_exhausted": true
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:list_schema_fields:raw_orders",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "observation_id": "OBS-SCHEMA-001",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "list_schema_fields",
+      "payload_sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    {
+      "details": {
+        "hop": 1
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-1",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "observation_id": "OBS-LIN-001",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3100000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "details": {
+        "hop": 2
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-2",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "observation_id": "OBS-LIN-002",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3200000000000000000000000000000000000000000000000000000000000002"
+    },
+    {
+      "details": {
+        "hop": 3
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-3",
+      "object_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "observation_id": "OBS-LIN-003",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3300000000000000000000000000000000000000000000000000000000000003"
+    },
+    {
+      "details": {
+        "hop": 3
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-4",
+      "object_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "observation_id": "OBS-LIN-004",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3400000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "details": {
+        "hop": 1
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-5",
+      "object_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "observation_id": "OBS-LIN-005",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3500000000000000000000000000000000000000000000000000000000000005"
+    },
+    {
+      "details": {
+        "hop": 2
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-6",
+      "object_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "observation_id": "OBS-LIN-006",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3600000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "details": {
+        "hop": 3
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:get_lineage:edge-7",
+      "object_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "observation_id": "OBS-LIN-007",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "get_lineage",
+      "payload_sha256": "3700000000000000000000000000000000000000000000000000000000000007"
+    },
+    {
+      "details": {
+        "approved": true
+      },
+      "interface": "DataHub MCP Server",
+      "locator": "fixture:search_documents:rfc-42",
+      "object_urn": "urn:li:document:customer-segmentation-migration-rfc-42",
+      "observation_id": "OBS-DOC-001",
+      "observed_at": "2026-08-03T12:00:00Z",
+      "operation": "search_documents",
+      "payload_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+    }
+  ],
+  "run_id": "EG-16E47B04BA7E",
+  "safety_decision": {
+    "may_execute_writeback": false,
+    "may_generate": true,
+    "may_propose_writeback": false,
+    "reasons": [
+      "DataHub lineage completeness invariants are not satisfied.",
+      "1 evidence claim(s) remain unresolved.",
+      "Live write-back was not requested; this run is read-only.",
+      "EVIDENCEGRAPH_ENABLE_WRITES is not true.",
+      "Required DataHub MCP mutation tools were not discovered."
+    ],
+    "required_human_actions": []
+  },
+  "schema_version": "1.0",
+  "snapshot_id": "commerce-platform-incomplete-lineage-replay",
+  "unresolved_risks": [
+    "A later lineage page was deliberately withheld.",
+    "The available context cannot prove that the downstream blast radius is complete."
+  ],
+  "validations": [
+    {
+      "artifact_paths": [
+        "migration/sql/customer_tier_compatibility.sql",
+        "migration/dbt/models/staging/stg_orders.sql",
+        "migration/patches/demo-platform.patch",
+        "migration/dbt/models/staging/stg_orders.yml",
+        "migration/validation/validate_customer_tier.sql",
+        "migration/MIGRATION_PLAN.md",
+        "migration/orchestration/evidencegraph_change_gate.py",
+        "migration/ml/customer_tier_feature_v2.yml",
+        "migration/evidencegraph-manifest.json"
+      ],
+      "command": "sha256 + evidence-binding policy",
+      "details": "All artifact digests and evidence bindings are valid.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Artifact integrity and evidence binding",
+      "output_sha256": "5ce352f37226575d5feb48c3d6bb892310c8cc99f08024408d6fa4d893401689",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-INTEGRITY"
+    },
+    {
+      "artifact_paths": [
+        "migration/sql/customer_tier_compatibility.sql"
+      ],
+      "command": "native parser",
+      "details": "migration/sql/customer_tier_compatibility.sql parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse sql",
+      "output_sha256": "dd9b7e5ccc2fa6a9098b3956f42dd034d3fb4451237cfea7b9a0daa1a01a33d6",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-01"
+    },
+    {
+      "artifact_paths": [
+        "migration/dbt/models/staging/stg_orders.sql"
+      ],
+      "command": "native parser",
+      "details": "migration/dbt/models/staging/stg_orders.sql parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse dbt-sql",
+      "output_sha256": "4adf5140b792e395319deb75fe143905308e3ce084db507bedb5b1b487f489ae",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-02"
+    },
+    {
+      "artifact_paths": [
+        "migration/dbt/models/staging/stg_orders.yml"
+      ],
+      "command": "native parser",
+      "details": "migration/dbt/models/staging/stg_orders.yml parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse dbt-yaml",
+      "output_sha256": "c02662e9d2a41b2f56d44dab678df1096dae2f3f30eeda2407135fe14aff2b47",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-03"
+    },
+    {
+      "artifact_paths": [
+        "migration/validation/validate_customer_tier.sql"
+      ],
+      "command": "native parser",
+      "details": "migration/validation/validate_customer_tier.sql parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse validation-sql",
+      "output_sha256": "691dfca2ee2b27dcf21d99dfab18d3102932fcadb8de56536fc6fdbb191775eb",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-04"
+    },
+    {
+      "artifact_paths": [
+        "migration/MIGRATION_PLAN.md"
+      ],
+      "command": "native parser",
+      "details": "migration/MIGRATION_PLAN.md parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse markdown",
+      "output_sha256": "4386f8b1f97819af7bee13bb301d7753d2c161dfb64a19ab12dcb383769494f1",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-05"
+    },
+    {
+      "artifact_paths": [
+        "migration/orchestration/evidencegraph_change_gate.py"
+      ],
+      "command": "native parser",
+      "details": "migration/orchestration/evidencegraph_change_gate.py parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse airflow-python",
+      "output_sha256": "a8e3ed33e1dc5f915f42634b3b31256752cb08857d05598d96476aceed24119d",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-06"
+    },
+    {
+      "artifact_paths": [
+        "migration/ml/customer_tier_feature_v2.yml"
+      ],
+      "command": "native parser",
+      "details": "migration/ml/customer_tier_feature_v2.yml parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse ml-feature-contract",
+      "output_sha256": "a2babccfaa943b586eace97a5065defe656286bf18d2804a92357f98b7c58eb1",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-07"
+    },
+    {
+      "artifact_paths": [
+        "migration/evidencegraph-manifest.json"
+      ],
+      "command": "native parser",
+      "details": "migration/evidencegraph-manifest.json parsed successfully.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Parse manifest",
+      "output_sha256": "36c71220c11227ed448a4613fb065a7f749d7ef948abbc716ededc5cd2c3ea49",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-PARSE-08"
+    },
+    {
+      "artifact_paths": [
+        "migration/patches/demo-platform.patch"
+      ],
+      "command": "git apply --check -",
+      "details": "The unified diff applies cleanly to the committed miniature platform.",
+      "duration_ms": 63,
+      "exit_code": 0,
+      "name": "Apply unified diff to demo repository",
+      "output_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "status": "passed",
+      "tool_version": "git version 2.52.0.windows.1",
+      "validation_id": "VAL-PATCH-APPLY"
+    },
+    {
+      "artifact_paths": [
+        "migration/sql/customer_tier_compatibility.sql",
+        "migration/validation/validate_customer_tier.sql"
+      ],
+      "command": "DuckDB in-memory transaction",
+      "details": "DuckDB executed the compatibility view; 4/4 rows preserve the current contract.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Execute SQL migration and parity query",
+      "output_sha256": "184f09d9e06a4c4062b4b908c9031ce4bae0b899492cecf9c35364f1c5a78944",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-DUCKDB-PARITY"
+    },
+    {
+      "artifact_paths": [
+        "migration/dbt/models/staging/stg_orders.sql",
+        "migration/dbt/models/staging/stg_orders.yml"
+      ],
+      "command": "dbt build --select stg_orders --no-partial-parse",
+      "details": "dbt built the generated model and passed 7/7 schema and data tests.",
+      "duration_ms": 4077,
+      "exit_code": 0,
+      "name": "Run dbt build",
+      "output_sha256": "70461509797d22affa8111e4d2ce99de0adc63936dcfc50379bc37fca99d231b",
+      "status": "passed",
+      "tool_version": "1.12.0",
+      "validation_id": "VAL-DBT-BUILD"
+    },
+    {
+      "artifact_paths": [
+        "migration/orchestration/evidencegraph_change_gate.py"
+      ],
+      "command": "docker run --rm --network none apache/airflow:3.3.0-python3.12 DagBag validation",
+      "details": "Airflow DagBag imported the DAG; the validation task gates publication.",
+      "duration_ms": 4422,
+      "exit_code": 0,
+      "name": "Import Airflow DAG and validate dependency gate",
+      "output_sha256": "99b19abee34a62cb78d27c3471680b516808a8fe669f75048c234394141c2bd1",
+      "status": "passed",
+      "tool_version": "3.3.0 (official Linux container)",
+      "validation_id": "VAL-AIRFLOW-DAG"
+    },
+    {
+      "artifact_paths": [
+        "migration/ml/customer_tier_feature_v2.yml"
+      ],
+      "command": "DuckDB parity check + YAML contract",
+      "details": "ML mapping parity passed for 4 rows at 0.0 mismatch rate.",
+      "duration_ms": null,
+      "exit_code": null,
+      "name": "Validate ML feature contract",
+      "output_sha256": "32c1957a8276ce73792ab3d0213f08cb9f11de0899ecb76d1629377621f3e9e9",
+      "status": "passed",
+      "tool_version": null,
+      "validation_id": "VAL-ML-PARITY"
+    }
+  ],
+  "writeback_proposals": []
+}

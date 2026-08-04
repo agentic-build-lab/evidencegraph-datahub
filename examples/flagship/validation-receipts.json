@@ -1,0 +1,208 @@
+[
+  {
+    "artifact_paths": [
+      "migration/sql/customer_tier_compatibility.sql",
+      "migration/dbt/models/staging/stg_orders.sql",
+      "migration/patches/demo-platform.patch",
+      "migration/dbt/models/staging/stg_orders.yml",
+      "migration/validation/validate_customer_tier.sql",
+      "migration/MIGRATION_PLAN.md",
+      "migration/orchestration/evidencegraph_change_gate.py",
+      "migration/ml/customer_tier_feature_v2.yml",
+      "migration/evidencegraph-manifest.json"
+    ],
+    "command": "sha256 + evidence-binding policy",
+    "details": "All artifact digests and evidence bindings are valid.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Artifact integrity and evidence binding",
+    "output_sha256": "5ce352f37226575d5feb48c3d6bb892310c8cc99f08024408d6fa4d893401689",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-INTEGRITY"
+  },
+  {
+    "artifact_paths": [
+      "migration/sql/customer_tier_compatibility.sql"
+    ],
+    "command": "native parser",
+    "details": "migration/sql/customer_tier_compatibility.sql parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse sql",
+    "output_sha256": "dd9b7e5ccc2fa6a9098b3956f42dd034d3fb4451237cfea7b9a0daa1a01a33d6",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-01"
+  },
+  {
+    "artifact_paths": [
+      "migration/dbt/models/staging/stg_orders.sql"
+    ],
+    "command": "native parser",
+    "details": "migration/dbt/models/staging/stg_orders.sql parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse dbt-sql",
+    "output_sha256": "4adf5140b792e395319deb75fe143905308e3ce084db507bedb5b1b487f489ae",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-02"
+  },
+  {
+    "artifact_paths": [
+      "migration/dbt/models/staging/stg_orders.yml"
+    ],
+    "command": "native parser",
+    "details": "migration/dbt/models/staging/stg_orders.yml parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse dbt-yaml",
+    "output_sha256": "c02662e9d2a41b2f56d44dab678df1096dae2f3f30eeda2407135fe14aff2b47",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-03"
+  },
+  {
+    "artifact_paths": [
+      "migration/validation/validate_customer_tier.sql"
+    ],
+    "command": "native parser",
+    "details": "migration/validation/validate_customer_tier.sql parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse validation-sql",
+    "output_sha256": "691dfca2ee2b27dcf21d99dfab18d3102932fcadb8de56536fc6fdbb191775eb",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-04"
+  },
+  {
+    "artifact_paths": [
+      "migration/MIGRATION_PLAN.md"
+    ],
+    "command": "native parser",
+    "details": "migration/MIGRATION_PLAN.md parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse markdown",
+    "output_sha256": "4386f8b1f97819af7bee13bb301d7753d2c161dfb64a19ab12dcb383769494f1",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-05"
+  },
+  {
+    "artifact_paths": [
+      "migration/orchestration/evidencegraph_change_gate.py"
+    ],
+    "command": "native parser",
+    "details": "migration/orchestration/evidencegraph_change_gate.py parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse airflow-python",
+    "output_sha256": "a8e3ed33e1dc5f915f42634b3b31256752cb08857d05598d96476aceed24119d",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-06"
+  },
+  {
+    "artifact_paths": [
+      "migration/ml/customer_tier_feature_v2.yml"
+    ],
+    "command": "native parser",
+    "details": "migration/ml/customer_tier_feature_v2.yml parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse ml-feature-contract",
+    "output_sha256": "a2babccfaa943b586eace97a5065defe656286bf18d2804a92357f98b7c58eb1",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-07"
+  },
+  {
+    "artifact_paths": [
+      "migration/evidencegraph-manifest.json"
+    ],
+    "command": "native parser",
+    "details": "migration/evidencegraph-manifest.json parsed successfully.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Parse manifest",
+    "output_sha256": "36c71220c11227ed448a4613fb065a7f749d7ef948abbc716ededc5cd2c3ea49",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-PARSE-08"
+  },
+  {
+    "artifact_paths": [
+      "migration/patches/demo-platform.patch"
+    ],
+    "command": "git apply --check -",
+    "details": "The unified diff applies cleanly to the committed miniature platform.",
+    "duration_ms": 77,
+    "exit_code": 0,
+    "name": "Apply unified diff to demo repository",
+    "output_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "status": "passed",
+    "tool_version": "git version 2.52.0.windows.1",
+    "validation_id": "VAL-PATCH-APPLY"
+  },
+  {
+    "artifact_paths": [
+      "migration/sql/customer_tier_compatibility.sql",
+      "migration/validation/validate_customer_tier.sql"
+    ],
+    "command": "DuckDB in-memory transaction",
+    "details": "DuckDB executed the compatibility view; 4/4 rows preserve the current contract.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Execute SQL migration and parity query",
+    "output_sha256": "184f09d9e06a4c4062b4b908c9031ce4bae0b899492cecf9c35364f1c5a78944",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-DUCKDB-PARITY"
+  },
+  {
+    "artifact_paths": [
+      "migration/dbt/models/staging/stg_orders.sql",
+      "migration/dbt/models/staging/stg_orders.yml"
+    ],
+    "command": "dbt build --select stg_orders --no-partial-parse",
+    "details": "dbt built the generated model and passed 7/7 schema and data tests.",
+    "duration_ms": 4671,
+    "exit_code": 0,
+    "name": "Run dbt build",
+    "output_sha256": "6b92786cb02e0e2e74efc8d063fa7c8ad2977e59a842c8640af7dee81cdc54fc",
+    "status": "passed",
+    "tool_version": "1.12.0",
+    "validation_id": "VAL-DBT-BUILD"
+  },
+  {
+    "artifact_paths": [
+      "migration/orchestration/evidencegraph_change_gate.py"
+    ],
+    "command": "docker run --rm --network none apache/airflow:3.3.0-python3.12 DagBag validation",
+    "details": "Airflow DagBag imported the DAG; the validation task gates publication.",
+    "duration_ms": 5140,
+    "exit_code": 0,
+    "name": "Import Airflow DAG and validate dependency gate",
+    "output_sha256": "1c416449b64331656862932aee35e75eff205301755943c77d7bf053e1b8ca5a",
+    "status": "passed",
+    "tool_version": "3.3.0 (official Linux container)",
+    "validation_id": "VAL-AIRFLOW-DAG"
+  },
+  {
+    "artifact_paths": [
+      "migration/ml/customer_tier_feature_v2.yml"
+    ],
+    "command": "DuckDB parity check + YAML contract",
+    "details": "ML mapping parity passed for 4 rows at 0.0 mismatch rate.",
+    "duration_ms": null,
+    "exit_code": null,
+    "name": "Validate ML feature contract",
+    "output_sha256": "32c1957a8276ce73792ab3d0213f08cb9f11de0899ecb76d1629377621f3e9e9",
+    "status": "passed",
+    "tool_version": null,
+    "validation_id": "VAL-ML-PARITY"
+  }
+]

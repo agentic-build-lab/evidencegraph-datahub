@@ -1,0 +1,15 @@
+DataHub
+DataHub MCP Server
+DataHub Python SDK
+Model Context Protocol
+Python
+Pydantic
+Typer
+DuckDB
+dbt
+Apache Airflow
+Docker
+SQLGlot
+PyYAML
+Rich
+pytest

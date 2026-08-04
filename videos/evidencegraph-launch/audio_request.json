@@ -1,0 +1,42 @@
+{
+  "provider": "kokoro",
+  "speed": 1.02,
+  "lines": [
+    {
+      "id": "01",
+      "text": "A schema change should not become an incident. Before anyone merges it, EvidenceGraph asks a harder question: what will this change actually break?"
+    },
+    {
+      "id": "02",
+      "text": "Repository search finds three of seven downstream consumers. It misses the dashboard, the machine-learning feature, the model, and the production deployment. That is a forty-two point nine percent view — and a false-safe decision waiting to happen."
+    },
+    {
+      "id": "03",
+      "text": "EvidenceGraph reads DataHub through the official M C P server and the Python S D K. Schemas, ownership, lineage, contracts, tags, documentation, dashboards, and machine-learning metadata become one executable context graph."
+    },
+    {
+      "id": "04",
+      "text": "Now the blast radius is complete: two dbt models, an Airflow job, an executive dashboard, an M L feature, a model, and its production deployment. Each path is routed to its owner, prioritized, and linked to the exact DataHub object that supports it."
+    },
+    {
+      "id": "05",
+      "text": "EvidenceGraph does not stop at an explanation. It compiles nine concrete artifacts: S Q L, dbt model and tests, validation queries, an Airflow evidence gate, an M L contract, a migration plan, and a real unified diff that Git can apply cleanly."
+    },
+    {
+      "id": "06",
+      "text": "Fourteen deterministic gates run in their native environments: Duck D B, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All fourteen pass. Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation."
+    },
+    {
+      "id": "07",
+      "text": "With explicit approval, three scoped results write back into DataHub and verify by readback. A new client retries the same plan: three verified no-ops, no duplicates. In the deterministic closure replay, EvidenceGraph requires a newer complete graph and closes only when the retired field has zero remaining consumers."
+    },
+    {
+      "id": "08",
+      "text": "EvidenceGraph makes DataHub's context graph operational. Inspect the public replay, audit every claim in the evidence ledger, and run the complete open-source system yourself."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "af_heart"
+}

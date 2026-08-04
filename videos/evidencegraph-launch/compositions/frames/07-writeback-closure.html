@@ -1,0 +1,791 @@
+<template>
+  <div id="root" data-composition-id="07-writeback-closure" data-width="1920" data-height="1080" data-duration="22.6">
+    <div class="clip f07-writeback-closure-ground" data-start="0" data-duration="22.6" data-track-index="0">
+      <img class="f07-writeback-closure-ground-image" src="assets/scroll-100.png" alt="" />
+      <div class="f07-writeback-closure-ground-wash"></div>
+      <div class="f07-writeback-closure-grid"></div>
+    </div>
+
+    <div class="clip f07-writeback-closure-scene" data-start="0" data-duration="22.6" data-track-index="1" data-layout-allow-overlap>
+      <div class="f07-writeback-closure-topbar">
+        <div>
+          <div class="f07-writeback-closure-eyebrow">OPERATIONAL CLOSURE</div>
+          <div class="f07-writeback-closure-title">Write back. Retry. Close.</div>
+        </div>
+        <div class="f07-writeback-closure-chip" id="f07-writeback-closure-top-chip">
+          <span class="f07-writeback-closure-pulse"></span>
+          <span id="f07-writeback-closure-top-chip-copy">APPROVAL REQUIRED</span>
+        </div>
+      </div>
+
+      <div class="f07-writeback-closure-world" id="f07-writeback-closure-world" data-layout-allow-overflow>
+        <div class="f07-writeback-closure-route">
+          <div class="f07-writeback-closure-route-line"></div>
+          <div class="f07-writeback-closure-route-fill" id="f07-writeback-closure-route-fill"></div>
+
+          <div class="f07-writeback-closure-stage f07-writeback-closure-stage-collect">
+            <div class="f07-writeback-closure-node">01</div>
+            <div class="f07-writeback-closure-stage-name">Collect</div>
+            <div class="f07-writeback-closure-stage-meta">MCP + SDK</div>
+          </div>
+          <div class="f07-writeback-closure-stage f07-writeback-closure-stage-compile">
+            <div class="f07-writeback-closure-node">02</div>
+            <div class="f07-writeback-closure-stage-name">Compile</div>
+            <div class="f07-writeback-closure-stage-meta">9 artifacts</div>
+          </div>
+          <div class="f07-writeback-closure-stage f07-writeback-closure-stage-validate">
+            <div class="f07-writeback-closure-node">03</div>
+            <div class="f07-writeback-closure-stage-name">Validate</div>
+            <div class="f07-writeback-closure-stage-meta">14 / 14</div>
+          </div>
+          <div class="f07-writeback-closure-stage f07-writeback-closure-stage-write">
+            <div class="f07-writeback-closure-node">04</div>
+            <div class="f07-writeback-closure-stage-name">Write back</div>
+            <div class="f07-writeback-closure-stage-meta">3 receipts</div>
+          </div>
+          <div class="f07-writeback-closure-stage f07-writeback-closure-stage-close">
+            <div class="f07-writeback-closure-node">05</div>
+            <div class="f07-writeback-closure-stage-name">Close</div>
+            <div class="f07-writeback-closure-stage-meta">closure replay</div>
+          </div>
+        </div>
+
+        <div class="f07-writeback-closure-panel f07-writeback-closure-write-panel f07-writeback-closure-surrounding" id="f07-writeback-closure-write-panel">
+          <div class="f07-writeback-closure-panel-head">
+            <span>SCOPED MUTATIONS</span>
+            <span class="f07-writeback-closure-panel-count" id="f07-writeback-closure-write-count">0 / 3</span>
+          </div>
+          <div class="f07-writeback-closure-panel-kicker">READBACK RECEIPTS</div>
+          <div class="f07-writeback-closure-receipt-row" id="f07-writeback-closure-write-row-0">
+            <span class="f07-writeback-closure-receipt-icon">01</span>
+            <span class="f07-writeback-closure-receipt-tool">add_tags</span>
+            <span class="f07-writeback-closure-receipt-status">pending</span>
+          </div>
+          <div class="f07-writeback-closure-receipt-row" id="f07-writeback-closure-write-row-1">
+            <span class="f07-writeback-closure-receipt-icon">02</span>
+            <span class="f07-writeback-closure-receipt-tool">update_description</span>
+            <span class="f07-writeback-closure-receipt-status">pending</span>
+          </div>
+          <div class="f07-writeback-closure-receipt-row" id="f07-writeback-closure-write-row-2">
+            <span class="f07-writeback-closure-receipt-icon">03</span>
+            <span class="f07-writeback-closure-receipt-tool">save_document</span>
+            <span class="f07-writeback-closure-receipt-status">pending</span>
+          </div>
+          <div class="f07-writeback-closure-sequence-reserve" id="f07-writeback-closure-write-sequence">awaiting approved scope</div>
+          <div class="f07-writeback-closure-progress"><div id="f07-writeback-closure-write-progress"></div></div>
+        </div>
+
+        <div class="f07-writeback-closure-panel f07-writeback-closure-retry-panel f07-writeback-closure-surrounding" id="f07-writeback-closure-retry-panel">
+          <div class="f07-writeback-closure-panel-head">
+            <span>STATELESS RETRY</span>
+            <span class="f07-writeback-closure-new-client">NEW CLIENT</span>
+          </div>
+          <div class="f07-writeback-closure-retry-hero">
+            <span id="f07-writeback-closure-retry-count">0</span>
+            <small>DUPLICATES</small>
+          </div>
+          <div class="f07-writeback-closure-retry-rows">
+            <div class="f07-writeback-closure-retry-row" id="f07-writeback-closure-retry-row-0"><span>add_tags</span><b>queued</b></div>
+            <div class="f07-writeback-closure-retry-row" id="f07-writeback-closure-retry-row-1"><span>update_description</span><b>queued</b></div>
+            <div class="f07-writeback-closure-retry-row" id="f07-writeback-closure-retry-row-2"><span>save_document</span><b>queued</b></div>
+          </div>
+          <div class="f07-writeback-closure-progress"><div id="f07-writeback-closure-retry-progress"></div></div>
+        </div>
+
+        <div class="f07-writeback-closure-supporting f07-writeback-closure-surrounding" id="f07-writeback-closure-supporting">
+          <img src="assets/scroll-085.png" alt="EvidenceGraph safety decision" />
+          <div class="f07-writeback-closure-supporting-label">SAFETY DECISION</div>
+        </div>
+
+        <div class="f07-writeback-closure-panel f07-writeback-closure-close-panel" id="f07-writeback-closure-close-panel">
+          <div class="f07-writeback-closure-panel-head">
+            <span>DETERMINISTIC CLOSURE REPLAY</span>
+            <span class="f07-writeback-closure-closed-badge" id="f07-writeback-closure-closed-badge">VERIFYING</span>
+          </div>
+          <div class="f07-writeback-closure-time-grid">
+            <div>
+              <span>APPLIED</span>
+              <strong>12:30:00Z</strong>
+            </div>
+            <div class="f07-writeback-closure-time-arrow">→</div>
+            <div id="f07-writeback-closure-fresh-time">
+              <span>NEWER COMPLETE GRAPH</span>
+              <strong>13:00:00Z</strong>
+            </div>
+          </div>
+          <div class="f07-writeback-closure-consumer-field" id="f07-writeback-closure-consumer-field">
+            <span class="f07-writeback-closure-consumer-dot">1</span>
+            <span class="f07-writeback-closure-consumer-dot">2</span>
+            <span class="f07-writeback-closure-consumer-dot">3</span>
+            <span class="f07-writeback-closure-consumer-dot">4</span>
+            <span class="f07-writeback-closure-consumer-dot">5</span>
+            <span class="f07-writeback-closure-consumer-dot">6</span>
+            <span class="f07-writeback-closure-consumer-dot">7</span>
+          </div>
+          <div class="f07-writeback-closure-zero" id="f07-writeback-closure-zero">
+            <span class="f07-writeback-closure-zero-number">0</span>
+            <span class="f07-writeback-closure-zero-copy">remaining consumers</span>
+          </div>
+          <div class="f07-writeback-closure-final-rule"></div>
+          <div class="f07-writeback-closure-final-meta">
+            <span>deterministic replay</span>
+            <span>revision bound</span>
+            <span>closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        container-type: size;
+        color: #e7eeeb;
+        font-family: Arial, sans-serif;
+      }
+
+      #root *,
+      #root *::before,
+      #root *::after {
+        box-sizing: border-box;
+      }
+
+      #root [class~="f07-writeback-closure-ground"],
+      #root [class~="f07-writeback-closure-scene"] {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      #root [class~="f07-writeback-closure-ground-image"] {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 100%;
+        opacity: 0.3;
+        filter: grayscale(0.45) brightness(0.28) contrast(1.1);
+      }
+
+      #root [class~="f07-writeback-closure-ground-wash"] {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 78% 42%, rgba(64, 224, 192, 0.12), transparent 34%),
+          linear-gradient(180deg, rgba(12, 27, 34, 0.84) 0%, rgba(12, 27, 34, 0.96) 84%, #0c1b22 100%);
+      }
+
+      #root [class~="f07-writeback-closure-grid"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0.14;
+        background-image:
+          linear-gradient(rgba(64, 224, 192, 0.16) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(64, 224, 192, 0.16) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: linear-gradient(to bottom, black, transparent 82%);
+      }
+
+      #root [class~="f07-writeback-closure-scene"] {
+        height: 900px;
+      }
+
+      #root [class~="f07-writeback-closure-topbar"] {
+        position: absolute;
+        z-index: 20;
+        top: 58px;
+        left: 96px;
+        right: 96px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        pointer-events: none;
+      }
+
+      #root [class~="f07-writeback-closure-eyebrow"] {
+        color: #40e0c0;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+      }
+
+      #root [class~="f07-writeback-closure-title"] {
+        margin-top: 9px;
+        color: #e7eeeb;
+        font-size: 48px;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+      }
+
+      #root [class~="f07-writeback-closure-chip"] {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        min-width: 226px;
+        justify-content: center;
+        padding: 14px 20px;
+        border: 1.5px solid rgba(64, 224, 192, 0.2);
+        border-radius: 100px;
+        background: rgba(64, 224, 192, 0.08);
+        color: #40e0c0;
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.1em;
+      }
+
+      #root [class~="f07-writeback-closure-pulse"] {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #40e0c0;
+      }
+
+      #root [class~="f07-writeback-closure-world"] {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+        will-change: transform, filter;
+      }
+
+      #root [class~="f07-writeback-closure-route"] {
+        position: absolute;
+        z-index: 3;
+        top: 205px;
+        left: 114px;
+        width: 1692px;
+        height: 108px;
+      }
+
+      #root [class~="f07-writeback-closure-route-line"],
+      #root [class~="f07-writeback-closure-route-fill"] {
+        position: absolute;
+        top: 27px;
+        left: 38px;
+        width: 1608px;
+        height: 3px;
+        border-radius: 6px;
+      }
+
+      #root [class~="f07-writeback-closure-route-line"] {
+        background: rgba(64, 224, 192, 0.15);
+      }
+
+      #root [class~="f07-writeback-closure-route-fill"] {
+        width: 0;
+        background: #40e0c0;
+      }
+
+      #root [class~="f07-writeback-closure-stage"] {
+        position: absolute;
+        top: 0;
+        width: 178px;
+        text-align: center;
+      }
+
+      #root [class~="f07-writeback-closure-stage-collect"] { left: 0; }
+      #root [class~="f07-writeback-closure-stage-compile"] { left: 378px; }
+      #root [class~="f07-writeback-closure-stage-validate"] { left: 756px; }
+      #root [class~="f07-writeback-closure-stage-write"] { left: 1134px; }
+      #root [class~="f07-writeback-closure-stage-close"] { left: 1512px; }
+
+      #root [class~="f07-writeback-closure-node"] {
+        width: 54px;
+        height: 54px;
+        margin: 0 auto 12px;
+        display: grid;
+        place-items: center;
+        border: 1.5px solid rgba(64, 224, 192, 0.28);
+        border-radius: 50%;
+        background: #0c1b22;
+        color: #40e0c0;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      #root [class~="f07-writeback-closure-stage-name"] {
+        color: #e7eeeb;
+        font-size: 19px;
+        font-weight: 650;
+        letter-spacing: -0.015em;
+      }
+
+      #root [class~="f07-writeback-closure-stage-meta"] {
+        margin-top: 4px;
+        color: #ff7048;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      #root [class~="f07-writeback-closure-panel"] {
+        position: absolute;
+        border: 1.5px solid rgba(64, 224, 192, 0.2);
+        border-radius: 14px;
+        background: rgba(12, 27, 34, 0.94);
+        overflow: hidden;
+      }
+
+      #root [class~="f07-writeback-closure-write-panel"] {
+        z-index: 7;
+        top: 347px;
+        left: 420px;
+        width: 560px;
+        height: 420px;
+        padding: 26px 28px;
+      }
+
+      #root [class~="f07-writeback-closure-retry-panel"] {
+        z-index: 8;
+        top: 347px;
+        left: 1070px;
+        width: 544px;
+        height: 420px;
+        padding: 26px 28px;
+      }
+
+      #root [class~="f07-writeback-closure-close-panel"] {
+        z-index: 9;
+        top: 330px;
+        left: 1280px;
+        width: 540px;
+        height: 455px;
+        padding: 28px 30px;
+        border-color: rgba(64, 224, 192, 0.36);
+        background: rgba(12, 27, 34, 0.98);
+      }
+
+      #root [class~="f07-writeback-closure-panel-head"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #40e0c0;
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.12em;
+      }
+
+      #root [class~="f07-writeback-closure-panel-count"],
+      #root [class~="f07-writeback-closure-new-client"],
+      #root [class~="f07-writeback-closure-closed-badge"] {
+        padding: 7px 11px;
+        border-radius: 100px;
+        background: rgba(64, 224, 192, 0.08);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+      }
+
+      #root [class~="f07-writeback-closure-panel-kicker"] {
+        margin: 26px 0 10px;
+        color: #ff7048;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-row"],
+      #root [class~="f07-writeback-closure-retry-row"] {
+        display: grid;
+        align-items: center;
+        min-height: 54px;
+        border-top: 1px solid rgba(64, 224, 192, 0.12);
+      }
+
+      #root [class~="f07-writeback-closure-receipt-row"] {
+        grid-template-columns: 42px 1fr 194px;
+        gap: 12px;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-icon"] {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(64, 224, 192, 0.2);
+        border-radius: 50%;
+        color: #656565;
+        font-size: 10px;
+        font-weight: 650;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-tool"],
+      #root [class~="f07-writeback-closure-retry-row"] span {
+        color: #e7eeeb;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-status"],
+      #root [class~="f07-writeback-closure-retry-row"] b {
+        color: #656565;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-row"][class~="f07-writeback-closure-resolved"] [class~="f07-writeback-closure-receipt-icon"] {
+        border-color: #40e0c0;
+        background: #40e0c0;
+        color: #0c1b22;
+      }
+
+      #root [class~="f07-writeback-closure-receipt-row"][class~="f07-writeback-closure-resolved"] [class~="f07-writeback-closure-receipt-status"],
+      #root [class~="f07-writeback-closure-retry-row"][class~="f07-writeback-closure-resolved"] b {
+        color: #40e0c0;
+      }
+
+      #root [class~="f07-writeback-closure-sequence-reserve"] {
+        min-height: 30px;
+        margin-top: 12px;
+        color: #ff7048;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      #root [class~="f07-writeback-closure-progress"] {
+        height: 4px;
+        margin-top: 10px;
+        border-radius: 6px;
+        background: rgba(64, 224, 192, 0.08);
+        overflow: hidden;
+      }
+
+      #root [class~="f07-writeback-closure-progress"] > div {
+        width: 0;
+        height: 100%;
+        border-radius: 6px;
+        background: #40e0c0;
+      }
+
+      #root [class~="f07-writeback-closure-retry-hero"] {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin: 24px 0 8px;
+      }
+
+      #root [class~="f07-writeback-closure-retry-hero"] span {
+        color: #40e0c0;
+        font-size: 76px;
+        font-weight: 720;
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      #root [class~="f07-writeback-closure-retry-hero"] small {
+        color: #ff7048;
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.12em;
+      }
+
+      #root [class~="f07-writeback-closure-retry-rows"] {
+        min-height: 176px;
+      }
+
+      #root [class~="f07-writeback-closure-retry-row"] {
+        grid-template-columns: 1fr 260px;
+      }
+
+      #root [class~="f07-writeback-closure-supporting"] {
+        position: absolute;
+        z-index: 2;
+        top: 420px;
+        left: 88px;
+        width: 280px;
+        height: 280px;
+        overflow: hidden;
+        border: 1.5px solid rgba(64, 224, 192, 0.2);
+        border-radius: 14px;
+        background: rgba(64, 224, 192, 0.04);
+      }
+
+      #root [class~="f07-writeback-closure-supporting"] img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 69% 61%;
+        opacity: 0.36;
+        filter: grayscale(0.3) contrast(1.08);
+      }
+
+      #root [class~="f07-writeback-closure-supporting-label"] {
+        position: absolute;
+        left: 16px;
+        bottom: 15px;
+        padding: 7px 10px;
+        border-radius: 100px;
+        background: rgba(12, 27, 34, 0.9);
+        color: #40e0c0;
+        font-size: 10px;
+        font-weight: 650;
+        letter-spacing: 0.1em;
+      }
+
+      #root [class~="f07-writeback-closure-time-grid"] {
+        display: grid;
+        grid-template-columns: 1fr 42px 1fr;
+        align-items: center;
+        gap: 8px;
+        margin-top: 32px;
+      }
+
+      #root [class~="f07-writeback-closure-time-grid"] div:not([class~="f07-writeback-closure-time-arrow"]) {
+        padding: 15px 16px;
+        border: 1px solid rgba(64, 224, 192, 0.15);
+        border-radius: 12px;
+        background: rgba(64, 224, 192, 0.04);
+      }
+
+      #root [class~="f07-writeback-closure-time-grid"] span {
+        display: block;
+        color: #ff7048;
+        font-size: 10px;
+        font-weight: 650;
+        letter-spacing: 0.1em;
+      }
+
+      #root [class~="f07-writeback-closure-time-grid"] strong {
+        display: block;
+        margin-top: 8px;
+        color: #e7eeeb;
+        font-size: 17px;
+        font-weight: 650;
+      }
+
+      #root [class~="f07-writeback-closure-time-arrow"] {
+        color: #40e0c0;
+        font-size: 22px;
+        text-align: center;
+      }
+
+      #root [class~="f07-writeback-closure-consumer-field"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        margin-top: 20px;
+        padding: 0 8px;
+      }
+
+      #root [class~="f07-writeback-closure-consumer-dot"] {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border: 1.5px solid rgba(255, 112, 72, 0.62);
+        border-radius: 50%;
+        background: rgba(255, 112, 72, 0.08);
+        color: #ff7048;
+        font-size: 11px;
+        font-weight: 650;
+      }
+
+      #root [class~="f07-writeback-closure-zero"] {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 16px;
+        min-height: 100px;
+        margin-top: -84px;
+      }
+
+      #root [class~="f07-writeback-closure-zero-number"] {
+        color: #40e0c0;
+        font-size: 98px;
+        font-weight: 720;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
+      #root [class~="f07-writeback-closure-zero-copy"] {
+        width: 150px;
+        color: #e7eeeb;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.15;
+      }
+
+      #root [class~="f07-writeback-closure-final-rule"] {
+        height: 1px;
+        margin-top: 18px;
+        background: rgba(64, 224, 192, 0.2);
+      }
+
+      #root [class~="f07-writeback-closure-final-meta"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 18px;
+        color: #40e0c0;
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+      }
+    </style>
+
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script>
+      (() => {
+        const scope = document.querySelector('[data-composition-id="07-writeback-closure"]');
+        const world = scope.querySelector('[id="f07-writeback-closure-world"]');
+        const routeFill = scope.querySelector('[id="f07-writeback-closure-route-fill"]');
+        const topChipCopy = scope.querySelector('[id="f07-writeback-closure-top-chip-copy"]');
+        const writeCount = scope.querySelector('[id="f07-writeback-closure-write-count"]');
+        const writeSequence = scope.querySelector('[id="f07-writeback-closure-write-sequence"]');
+        const writeProgress = scope.querySelector('[id="f07-writeback-closure-write-progress"]');
+        const retryProgress = scope.querySelector('[id="f07-writeback-closure-retry-progress"]');
+        const retryCount = scope.querySelector('[id="f07-writeback-closure-retry-count"]');
+        const freshTime = scope.querySelector('[id="f07-writeback-closure-fresh-time"]');
+        const closedBadge = scope.querySelector('[id="f07-writeback-closure-closed-badge"]');
+        const consumerDots = Array.from(scope.querySelectorAll('[class~="f07-writeback-closure-consumer-dot"]'));
+        const zeroState = scope.querySelector('[id="f07-writeback-closure-zero"]');
+
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines = window.__timelines || {};
+        window.__timelines['07-writeback-closure'] = tl;
+
+        const cam = { scale: 1, x: 0, y: 0 };
+        const applyCamera = () => {
+          world.style.transform = `translate(${cam.x}px, ${cam.y}px) scale(${cam.scale})`;
+        };
+        applyCamera();
+
+        const WRITE_CONTENT = [
+          { key: 'tag', row: 0, tool: 'add_tags', status: 'applied_verified', body: 'tag receipt verified', hold: 0.62 },
+          { key: 'description', row: 1, tool: 'update_description', status: 'applied_verified', body: 'description receipt verified', hold: 0.64 },
+          { key: 'document', row: 2, tool: 'save_document', status: 'applied_verified', body: 'document receipt verified', hold: 0.82 }
+        ];
+        const RETRY_CONTENT = [
+          { key: 'tag', row: 0, status: 'skipped_idempotent_verified', body: 'tag already verified', hold: 0.36 },
+          { key: 'description', row: 1, status: 'skipped_idempotent_verified', body: 'description already verified', hold: 0.38 },
+          { key: 'document', row: 2, status: 'skipped_idempotent_verified', body: 'document already verified', hold: 0.5 }
+        ];
+
+        const buildSequence = (entries, baseDuration, secondsPerCharacter) => {
+          let cumulative = 0;
+          return entries.map((entry) => {
+            const duration = baseDuration + entry.body.length * secondsPerCharacter + entry.hold;
+            const start = cumulative;
+            cumulative += duration;
+            return { ...entry, start, end: cumulative };
+          });
+        };
+
+        const WRITE_TIMELINE = buildSequence(WRITE_CONTENT, 0.34, 0.011);
+        const RETRY_TIMELINE = buildSequence(RETRY_CONTENT, 0.28, 0.008);
+        const writeTotal = WRITE_TIMELINE[WRITE_TIMELINE.length - 1].end;
+        const retryTotal = RETRY_TIMELINE[RETRY_TIMELINE.length - 1].end;
+
+        const entryAt = (sequence, time) => {
+          for (let index = sequence.length - 1; index >= 0; index -= 1) {
+            if (time >= sequence[index].start) return sequence[index];
+          }
+          return sequence[0];
+        };
+
+        let lastWriteKey = '';
+        const writeDriver = { t: 0 };
+        const updateWriteSequence = () => {
+          const entry = entryAt(WRITE_TIMELINE, writeDriver.t);
+          if (entry.key !== lastWriteKey) {
+            WRITE_TIMELINE.forEach((item, index) => {
+      const row = scope.ownerDocument.getElementById(`f07-writeback-closure-write-row-${index}`);
+              const status = row.querySelector('[class~="f07-writeback-closure-receipt-status"]');
+              const resolved = item.start <= entry.start;
+              row.classList.toggle('f07-writeback-closure-resolved', resolved);
+              status.textContent = resolved ? item.status : 'pending';
+              row.querySelector('[class~="f07-writeback-closure-receipt-icon"]').textContent = resolved ? '✓' : `0${index + 1}`;
+            });
+            writeCount.textContent = `${entry.row + 1} / 3`;
+            writeSequence.textContent = `${entry.tool} · readback verified`;
+            lastWriteKey = entry.key;
+          }
+          writeProgress.style.width = `${Math.min(100, (writeDriver.t / writeTotal) * 100)}%`;
+        };
+
+        let lastRetryKey = '';
+        const retryDriver = { t: 0 };
+        const updateRetrySequence = () => {
+          const entry = entryAt(RETRY_TIMELINE, retryDriver.t);
+          if (entry.key !== lastRetryKey) {
+            RETRY_TIMELINE.forEach((item, index) => {
+      const row = scope.ownerDocument.getElementById(`f07-writeback-closure-retry-row-${index}`);
+              const status = row.querySelector('b');
+              const resolved = item.start <= entry.start;
+              row.classList.toggle('f07-writeback-closure-resolved', resolved);
+              status.textContent = resolved ? item.status : 'queued';
+            });
+            lastRetryKey = entry.key;
+          }
+          retryProgress.style.width = `${Math.min(100, (retryDriver.t / retryTotal) * 100)}%`;
+        };
+
+        const CHIP_STATES = [
+          { key: 'approval', start: 0, label: 'APPROVAL REQUIRED', badge: 'VERIFYING' },
+          { key: 'write', start: 4.42, label: '3 SCOPES APPROVED', badge: 'VERIFYING' },
+          { key: 'retry', start: 9.26, label: 'NEW CLIENT · SAME PLAN', badge: 'VERIFYING' },
+          { key: 'fresh', start: 13.84, label: 'REPLAYING FIXTURE GRAPH', badge: 'VERIFYING' },
+          { key: 'closed', start: 19.1, label: 'CLOSED · FRESH EVIDENCE', badge: 'CLOSED' }
+        ];
+        const chipDriver = { t: 0 };
+        let lastChipKey = '';
+        const updateChipState = () => {
+          const state = entryAt(CHIP_STATES, chipDriver.t);
+          if (state.key !== lastChipKey) {
+            topChipCopy.textContent = state.label;
+            closedBadge.textContent = state.badge;
+            lastChipKey = state.key;
+          }
+        };
+
+        gsap.set('[id="f07-writeback-closure-retry-panel"]', { opacity: 0.18 });
+        gsap.set('[id="f07-writeback-closure-close-panel"]', { opacity: 0.08 });
+        gsap.set(zeroState, { opacity: 0, scale: 0.88 });
+        gsap.set(freshTime, { opacity: 0.28 });
+        gsap.set('[class~="f07-writeback-closure-consumer-dot"]', { opacity: 0, scale: 0.6 });
+        gsap.set('[id="f07-writeback-closure-supporting"]', { opacity: 0.48 });
+        gsap.set(routeFill, { width: 120 });
+        tl.to(chipDriver, { t: 22, duration: 22, ease: 'none', onUpdate: updateChipState }, 0);
+
+        tl.fromTo('[class~="f07-writeback-closure-topbar"]', { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0);
+        tl.fromTo('[class~="f07-writeback-closure-route"]', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.16);
+        tl.fromTo('[id="f07-writeback-closure-write-panel"]', { opacity: 0.34, y: 22 }, { opacity: 0.72, y: 0, duration: 0.8, ease: 'power3.out' }, 0.42);
+        tl.fromTo('[id="f07-writeback-closure-supporting"]', { y: 20 }, { y: 0, duration: 0.8, ease: 'power3.out' }, 0.5);
+
+        tl.to(cam, { scale: 1.24, x: 324, y: -108, duration: 1.35, ease: 'power4.inOut', onUpdate: applyCamera }, 4.0);
+        tl.to('[id="f07-writeback-closure-write-panel"]', { opacity: 1, duration: 0.55, ease: 'power2.out' }, 4.15);
+        tl.to(routeFill, { width: 1218, duration: 1.25, ease: 'power3.inOut' }, 4.1);
+        tl.to(writeDriver, { t: writeTotal, duration: 3.25, ease: 'none', onUpdate: updateWriteSequence }, 5.18);
+        tl.fromTo('[id="f07-writeback-closure-write-count"]', { scale: 0.82 }, { scale: 1, duration: 0.4, ease: 'back.out(1.5)' }, 8.25);
+
+        tl.to(cam, { scale: 1.2, x: -430, y: -96, duration: 1.15, ease: 'power4.inOut', onUpdate: applyCamera }, 9.0);
+        tl.to('[id="f07-writeback-closure-retry-panel"]', { opacity: 1, duration: 0.48, ease: 'power2.out' }, 9.2);
+        tl.to('[id="f07-writeback-closure-write-panel"]', { opacity: 0.28, duration: 0.42, ease: 'power2.out' }, 9.2);
+        tl.to(retryDriver, { t: retryTotal, duration: 3.0, ease: 'none', onUpdate: updateRetrySequence }, 9.75);
+        tl.fromTo(retryCount, { opacity: 0.2, scale: 0.72 }, { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.4)' }, 10.0);
+        tl.to(routeFill, { width: 1432, duration: 0.9, ease: 'power3.out' }, 12.55);
+
+        tl.to(cam, { scale: 0.98, x: -150, y: -18, duration: 1.35, ease: 'power2.inOut', onUpdate: applyCamera }, 13.5);
+        tl.to('[id="f07-writeback-closure-close-panel"]', { opacity: 1, duration: 0.8, ease: 'power3.out' }, 13.75);
+        tl.to('[id="f07-writeback-closure-retry-panel"]', { opacity: 0.24, duration: 0.65, ease: 'power2.out' }, 13.75);
+        tl.to(routeFill, { width: 1608, duration: 1.05, ease: 'power3.out' }, 13.72);
+        tl.fromTo(freshTime, { opacity: 0.28, y: 12 }, { opacity: 1, y: 0, duration: 0.76, ease: 'power3.out' }, 14.55);
+        tl.fromTo(consumerDots, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.34, stagger: 0.11, ease: 'back.out(1.6)' }, 15.15);
+        tl.to(consumerDots, { opacity: 0, scale: 0, duration: 0.3, stagger: 0.14, ease: 'power3.in' }, 16.35);
+        tl.fromTo(zeroState, { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.72, ease: 'back.out(1.5)' }, 17.34);
+
+        tl.to(cam, { scale: 1.24, x: -714, y: 8, duration: 1.25, ease: 'power4.out', onUpdate: applyCamera }, 18.5);
+        tl.to('[class~="f07-writeback-closure-surrounding"]', { opacity: 0.1, filter: 'blur(8px)', duration: 0.82, ease: 'power3.out' }, 18.5);
+        tl.to('[id="f07-writeback-closure-close-panel"]', { borderColor: 'rgba(64, 224, 192, 0.7)', duration: 0.7, ease: 'power2.out' }, 18.62);
+        tl.fromTo('[id="f07-writeback-closure-closed-badge"]', { scale: 0.72 }, { scale: 1, duration: 0.72, ease: 'back.out(1.7)' }, 19.12);
+        tl.fromTo('[class~="f07-writeback-closure-final-rule"]', { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, duration: 0.92, ease: 'power3.out' }, 19.48);
+        tl.fromTo('[class~="f07-writeback-closure-final-meta"] span', { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.22, ease: 'power3.out' }, 20.0);
+        tl.to(cam, { scale: 1.27, x: -742, y: 12, duration: 1.25, ease: 'power2.out', onUpdate: applyCamera }, 20.55);
+      })();
+    </script>
+  </div>
+</template>

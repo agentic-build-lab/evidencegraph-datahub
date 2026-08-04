@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evidencegraph-datahub"
+version = "0.1.0"
+description = "A DataHub-native autonomous data-change assurance agent."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Agentic Build Lab" }]
+keywords = ["datahub", "mcp", "data-lineage", "ai-agent", "schema-migration"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Database",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+  "duckdb>=1.3.2,<2",
+  "httpx>=0.28.1,<1",
+  "jinja2>=3.1.6,<4",
+  "mcp>=1.12.4,<2",
+  "pydantic>=2.11.7,<3",
+  "python-dotenv>=1.1.1,<2",
+  "pyyaml>=6.0.2,<7",
+  "rich>=14.1.0,<15",
+  "sqlglot>=27.6.0,<28",
+  "typer>=0.16.0,<1",
+]
+
+[project.optional-dependencies]
+datahub = [
+  "acryl-datahub>=1.6.0,<1.7",
+  "datahub-agent-context>=1.6.0,<1.7",
+]
+native = [
+  "apache-airflow==3.3.0",
+  "dbt-duckdb==1.10.1",
+]
+dev = [
+  "mypy>=1.17.0,<2",
+  "pip-audit>=2.9.0,<3",
+  "pytest>=9.0.3,<10",
+  "pytest-asyncio>=1.1.0,<2",
+  "pytest-cov>=6.2.1,<7",
+  "ruff>=0.12.7,<1",
+  "types-PyYAML>=6.0.12,<7",
+]
+
+[project.scripts]
+evidencegraph = "evidencegraph.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/evidencegraph"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers --disable-warnings"
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["examples", "site/public/evidence"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["evidencegraph"]

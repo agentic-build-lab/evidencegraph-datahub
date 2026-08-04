@@ -1,0 +1,749 @@
+{
+  "snapshot_id": "datahub-live-def293d136d21155",
+  "assets": [
+    {
+      "urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "name": "Executive Revenue Watch",
+      "kind": "dashboard",
+      "platform": "looker",
+      "description": "Executive revenue and customer mix dashboard refreshed daily.",
+      "owners": [
+        "urn:li:corpGroup:finance-analytics"
+      ],
+      "tags": [
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:Executive",
+        "urn:li:tag:SOX"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {}
+    },
+    {
+      "urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "name": "daily_customer_value.build_customer_value",
+      "kind": "data_job",
+      "platform": "airflow",
+      "description": "Daily production build and validation gate for customer-value data.",
+      "owners": [
+        "urn:li:corpGroup:data-platform"
+      ],
+      "tags": [
+        "urn:li:tag:CriticalityHigh",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:Production"
+      ],
+      "domain": null,
+      "criticality": "high",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {
+        "schedule": "0 4 * * *",
+        "dag_id": "daily_customer_value"
+      }
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "name": "analytics.fct_customer_value",
+      "kind": "dataset",
+      "platform": "dbt",
+      "description": "Customer revenue aggregates split by commercial tier.",
+      "owners": [
+        "urn:li:corpGroup:growth-analytics"
+      ],
+      "tags": [
+        "urn:li:tag:Certified",
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:ExecutiveReporting"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [
+        {
+          "name": "customer_id",
+          "native_type": "BIGINT",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        },
+        {
+          "name": "customer_tier",
+          "native_type": "VARCHAR",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        },
+        {
+          "name": "lifetime_value_usd",
+          "native_type": "DECIMAL(14,2)",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        }
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:customer-value-v1",
+        "required_fields": [
+          "customer_id",
+          "customer_tier",
+          "lifetime_value_usd"
+        ],
+        "owner_urns": [
+          "urn:li:corpGroup:growth-analytics"
+        ],
+        "status": "active",
+        "rules": {}
+      },
+      "properties": {
+        "dbt_model": "models/marts/fct_customer_value.sql",
+        "data_contract_urn": "urn:li:dataContract:customer-value-v1"
+      }
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "name": "analytics.stg_orders",
+      "kind": "dataset",
+      "platform": "dbt",
+      "description": "Normalized orders model used by BI and customer-value transformations.",
+      "owners": [
+        "urn:li:corpGroup:analytics-engineering"
+      ],
+      "tags": [
+        "urn:li:tag:Certified",
+        "urn:li:tag:CriticalityHigh",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired"
+      ],
+      "domain": null,
+      "criticality": "high",
+      "schema_fields": [
+        {
+          "name": "amount_usd",
+          "native_type": "DECIMAL(12,2)",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        },
+        {
+          "name": "customer_id",
+          "native_type": "BIGINT",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        },
+        {
+          "name": "customer_tier",
+          "native_type": "VARCHAR",
+          "nullable": false,
+          "description": "Compatibility field consumed downstream",
+          "tags": []
+        },
+        {
+          "name": "order_id",
+          "native_type": "BIGINT",
+          "nullable": false,
+          "description": null,
+          "tags": []
+        }
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:stg-orders-v2",
+        "required_fields": [
+          "order_id",
+          "customer_id",
+          "amount_usd",
+          "customer_tier"
+        ],
+        "owner_urns": [
+          "urn:li:corpGroup:analytics-engineering"
+        ],
+        "status": "active",
+        "rules": {}
+      },
+      "properties": {
+        "dbt_model": "models/staging/stg_orders.sql",
+        "data_contract_urn": "urn:li:dataContract:stg-orders-v2"
+      }
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "name": "commerce.raw_orders",
+      "kind": "dataset",
+      "platform": "postgres",
+      "description": "Contracted order source for analytics and ML feature production.",
+      "owners": [
+        "urn:li:corpGroup:commerce-platform"
+      ],
+      "tags": [
+        "urn:li:tag:Contracted",
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:Tier1"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [
+        {
+          "name": "amount_usd",
+          "native_type": "DECIMAL(12,2)",
+          "nullable": false,
+          "description": "Booked order value",
+          "tags": []
+        },
+        {
+          "name": "customer_id",
+          "native_type": "BIGINT",
+          "nullable": false,
+          "description": "Stable customer key",
+          "tags": []
+        },
+        {
+          "name": "customer_tier",
+          "native_type": "VARCHAR",
+          "nullable": false,
+          "description": "bronze, silver, or gold",
+          "tags": []
+        },
+        {
+          "name": "order_id",
+          "native_type": "BIGINT",
+          "nullable": false,
+          "description": "Stable order key",
+          "tags": []
+        },
+        {
+          "name": "ordered_at",
+          "native_type": "TIMESTAMP",
+          "nullable": false,
+          "description": "UTC order time",
+          "tags": []
+        },
+        {
+          "name": "segment_code",
+          "native_type": "VARCHAR",
+          "nullable": false,
+          "description": "Replacement producer code: B, S, or G",
+          "tags": []
+        }
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:raw-orders-v3",
+        "required_fields": [
+          "order_id",
+          "customer_id",
+          "amount_usd",
+          "customer_tier",
+          "ordered_at"
+        ],
+        "owner_urns": [
+          "urn:li:corpGroup:commerce-platform"
+        ],
+        "status": "active",
+        "rules": {
+          "customer_tier": {
+            "allowed_values": [
+              "bronze",
+              "silver",
+              "gold"
+            ],
+            "nullable": false
+          }
+        }
+      },
+      "properties": {
+        "repository": "commerce-data-platform",
+        "data_contract_urn": "urn:li:dataContract:raw-orders-v3",
+        "freshness_slo_minutes": "30"
+      }
+    },
+    {
+      "urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "name": "customer_tier_signal",
+      "kind": "ml_feature",
+      "platform": "mlFeature",
+      "description": "Normalized tier feature used by the churn model.",
+      "owners": [
+        "urn:li:corpGroup:risk-ml"
+      ],
+      "tags": [
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:OnlineFeature"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:customer-tier-feature-v1",
+        "required_fields": [
+          "customer_tier_signal"
+        ],
+        "owner_urns": [
+          "urn:li:corpGroup:risk-ml"
+        ],
+        "status": "active",
+        "rules": {
+          "offline_online_parity": true
+        }
+      },
+      "properties": {
+        "feature_contract": "{\"contract_urn\": \"urn:li:dataContract:customer-tier-feature-v1\", \"owner_urns\": [\"urn:li:corpGroup:risk-ml\"], \"required_fields\": [\"customer_tier_signal\"], \"rules\": {\"offline_online_parity\": true}, \"status\": \"active\"}",
+        "online": "True",
+        "feature_contract_storage": "structured custom property; DataHub Core v1.6 native data contracts do not target MLFeature entities",
+        "source_field": "customer_tier",
+        "feature_view": "customer_profile_v1",
+        "output_field": "customer_tier_signal"
+      }
+    },
+    {
+      "urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "name": "churn_propensity_v4",
+      "kind": "ml_model",
+      "platform": "mlflow",
+      "description": "Production churn propensity classifier.",
+      "owners": [
+        "urn:li:corpGroup:risk-ml"
+      ],
+      "tags": [
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:EvidenceGraphDemo",
+        "urn:li:tag:EvidenceGraphReviewRequired",
+        "urn:li:tag:ProductionModel"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {
+        "feature_count": "38",
+        "model_version": "4",
+        "auc": "0.843"
+      }
+    },
+    {
+      "urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "name": "churn-api-prod",
+      "kind": "ml_model_deployment",
+      "platform": "kubernetes",
+      "description": "Customer retention scoring API used by campaign orchestration.",
+      "owners": [
+        "urn:li:corpGroup:ml-platform"
+      ],
+      "tags": [
+        "urn:li:tag:CriticalityCritical",
+        "urn:li:tag:CustomerFacing",
+        "urn:li:tag:EvidenceGraphDemo"
+      ],
+      "domain": null,
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {
+        "requests_per_day": "810000",
+        "slo_availability": "0.999"
+      }
+    }
+  ],
+  "lineage": [
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "downstream_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "field_mappings": [],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-84709C28038C"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "downstream_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "field_mappings": [],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-D7DA9E75BEA8"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "downstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "field_mappings": [
+        {
+          "upstream_field": "customer_tier",
+          "downstream_field": "customer_tier"
+        }
+      ],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-996C335BF307"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "downstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "field_mappings": [
+        {
+          "upstream_field": "customer_tier",
+          "downstream_field": "customer_tier"
+        }
+      ],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-90C45E92821C"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "downstream_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "field_mappings": [
+        {
+          "upstream_field": "customer_tier",
+          "downstream_field": "customer_tier_signal"
+        }
+      ],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-B6E748F25B01"
+    },
+    {
+      "upstream_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "downstream_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "field_mappings": [
+        {
+          "upstream_field": "customer_tier_signal",
+          "downstream_field": "customer_tier_signal"
+        }
+      ],
+      "transformation": "DataHub direct upstream relationship",
+      "source_observation_id": "OBS-A23C84F26E1D"
+    },
+    {
+      "upstream_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "downstream_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "field_mappings": [
+        {
+          "upstream_field": "customer_tier_signal",
+          "downstream_field": "customer_tier_signal"
+        }
+      ],
+      "transformation": "mlModelProperties.deployments relationship",
+      "source_observation_id": "OBS-7188C2DCD710"
+    }
+  ],
+  "documents": [
+    {
+      "urn": "urn:li:document:customer-segmentation-migration-rfc-42",
+      "title": "RFC-42: Customer segmentation code migration",
+      "body": "During the transition, derive customer_tier from segment_code using B=bronze, S=silver, and G=gold. Unknown codes must fail validation; do not silently coerce them.",
+      "related_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"
+      ],
+      "facts": {
+        "approved_by": "urn:li:corpGroup:commerce-platform",
+        "field": "customer_tier",
+        "mapping": {
+          "B": "bronze",
+          "G": "gold",
+          "S": "silver"
+        },
+        "replacement_field": "segment_code",
+        "unknown_policy": "reject"
+      },
+      "source_observation_id": "OBS-07150205F299"
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "OBS-05313B5B1415",
+      "interface": "DataHub MCP Server",
+      "operation": "get_entities",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "locator": "DataHub MCP Server:get_entities:urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "payload_sha256": "9ad5c8627d8653ba1c953c867593175ba269eee21a34f7de2d7c36c7203d8931",
+      "observed_at": "2026-08-03T16:10:26.557188Z",
+      "details": {
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "c2094ec3d8ac20da377a7e3561c935f83208928879ce5ba1cad138ab2ed20c3d"
+      }
+    },
+    {
+      "observation_id": "OBS-4659A081383F",
+      "interface": "DataHub MCP Server",
+      "operation": "list_schema_fields",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "locator": "DataHub MCP Server:list_schema_fields:urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "payload_sha256": "30e05786fe405c062c5dc225090b7294e9dd99a9c58bf8fa6ff9b0a150aa2f09",
+      "observed_at": "2026-08-03T16:10:27.021721Z",
+      "details": {
+        "limit": 100,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "6565434b28e4a29e4bb6dc6308656c74ea75564bb9453f805452b1389cafafd7"
+      }
+    },
+    {
+      "observation_id": "OBS-1DDCEC9C1BC0",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "payload_sha256": "b56b9755362a2a291584c8fc6aebb626c06d3bc877c17e056fca9493d60552f3",
+      "observed_at": "2026-08-03T16:10:27.482940Z",
+      "details": {
+        "direction": "downstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "cb4609c89edc3c6f3fa841e787dc02d31cc166d61626e0bcd60b4c4cbcc6a061"
+      }
+    },
+    {
+      "observation_id": "OBS-CE5EDFFC0B10",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "payload_sha256": "8eff3ba862c15fda0de69239725b6419d979ecf1265eab4f1a01a0fbdd050728",
+      "observed_at": "2026-08-03T16:10:27.876374Z",
+      "details": {
+        "direction": "downstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": "customer_tier",
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "0c1cbc54ade27b8042b116379e94a5d9f7cc5ce40dbde344e0ac2a70354adc1f"
+      }
+    },
+    {
+      "observation_id": "OBS-77C3BC2C1370",
+      "interface": "DataHub MCP Server",
+      "operation": "get_entities",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "locator": "DataHub MCP Server:get_entities:urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "payload_sha256": "6f7e284c916fc3ae7befbe3a0d7b5c0151e086af3d0e24b5bbed7f0f34da692f",
+      "observed_at": "2026-08-03T16:10:28.547120Z",
+      "details": {
+        "entity_count": 7,
+        "purpose": "blast-radius enrichment",
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "89772c398db38e8218205e38ad74dcadef9e95f994e6b007811afa9fd5ac69e0"
+      }
+    },
+    {
+      "observation_id": "OBS-84709C28038C",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dashboard:(looker,executive_revenue_watch)",
+      "payload_sha256": "60cd3c96325c5e5eb6c9db2d4d1a3232749d0c697ae2d271d0509dca43520e02",
+      "observed_at": "2026-08-03T16:10:28.923398Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "a38764490a90fac5593093786703fc11ad2567271ae5cc837ba1198faf147142"
+      }
+    },
+    {
+      "observation_id": "OBS-D7DA9E75BEA8",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "payload_sha256": "60cd3c96325c5e5eb6c9db2d4d1a3232749d0c697ae2d271d0509dca43520e02",
+      "observed_at": "2026-08-03T16:10:29.297263Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "f2060bc4cc3e16ccf7a2f07ff42b66ac0ba6be9551c50e8808cbe9d7bc892164"
+      }
+    },
+    {
+      "observation_id": "OBS-996C335BF307",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "payload_sha256": "cb3893e1f4a0095c13c44afd3fd577845f0f0adb195b3657af497a3fb314ebd3",
+      "observed_at": "2026-08-03T16:10:29.729065Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "76be49f298c05d12af2026f221b8fa4557eb1b1316c68af03431d7e2ce5a1059"
+      }
+    },
+    {
+      "observation_id": "OBS-90C45E92821C",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "payload_sha256": "b23f591af8227cbcc7d496132e78cc94c47305a1c59a026adc8c2c0b630c182a",
+      "observed_at": "2026-08-03T16:10:30.130206Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "78e514598429aaf5ce53f57cc1f1e99a9931ae8fee14af00ff901a54387e82fd"
+      }
+    },
+    {
+      "observation_id": "OBS-B6E748F25B01",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "payload_sha256": "b23f591af8227cbcc7d496132e78cc94c47305a1c59a026adc8c2c0b630c182a",
+      "observed_at": "2026-08-03T16:10:30.550660Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "b30cdefaf77844ac34292e6ecf45323bb2b516bc16a0770ec1cddd963a4b0b17"
+      }
+    },
+    {
+      "observation_id": "OBS-A23C84F26E1D",
+      "interface": "DataHub MCP Server",
+      "operation": "get_lineage",
+      "object_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "locator": "DataHub MCP Server:get_lineage:urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "payload_sha256": "3d398201b0288d1992e205e1e92afad5aed909fbbd59239be41df0450d59a5ee",
+      "observed_at": "2026-08-03T16:10:30.964831Z",
+      "details": {
+        "direction": "upstream",
+        "page": 1,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "column": null,
+        "interface_version": "mcp-server-datahub@0.6.0",
+        "arguments_sha256": "6eceefc1ae371c8cb9a9d3df7a242ce770a4236d02c2d093bd8ae2ba6a43e318"
+      }
+    },
+    {
+      "observation_id": "OBS-358821C0E0F2",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:mlFeatureProperties",
+      "object_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "locator": "DataHub Python SDK:get_aspect:mlFeatureProperties:urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "payload_sha256": "ef988e096db8dc314828fdd7da4ed55d404c68358088b3ef7bc96f2eacd17727",
+      "observed_at": "2026-08-03T16:10:30.997296Z",
+      "details": {
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "92a5a92ed9e9622cb468eb7b07acc2bbb8a5fb3b19b66207aafca57f4e9203f6"
+      }
+    },
+    {
+      "observation_id": "OBS-7188C2DCD710",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:mlModelProperties",
+      "object_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "locator": "DataHub Python SDK:get_aspect:mlModelProperties:urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "payload_sha256": "ba23b89c3f12705aaff8b4f19b804acbd1c1fcf4e4a4fbdab128cde9bf29c1e6",
+      "observed_at": "2026-08-03T16:10:31.001550Z",
+      "details": {
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "a0387f2cb84108a526601253203112ea8d8121a1a9406fe095f03493fa7e6436"
+      }
+    },
+    {
+      "observation_id": "OBS-F14A848CC98F",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:dataContractProperties",
+      "object_urn": "urn:li:dataContract:customer-value-v1",
+      "locator": "DataHub Python SDK:get_aspect:dataContractProperties:urn:li:dataContract:customer-value-v1",
+      "payload_sha256": "b01ad6199f32bc6bc5cd373f5435bd4c99e21cf2f013dfc966019fd0b4e185d4",
+      "observed_at": "2026-08-03T16:10:31.009559Z",
+      "details": {
+        "contracted_entity": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "817b0fffd600986e70153fc2d6de5bcbe9be871263723a30719e0cdd2d191ab0"
+      }
+    },
+    {
+      "observation_id": "OBS-C1165978A45A",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:dataContractProperties",
+      "object_urn": "urn:li:dataContract:stg-orders-v2",
+      "locator": "DataHub Python SDK:get_aspect:dataContractProperties:urn:li:dataContract:stg-orders-v2",
+      "payload_sha256": "04fe85cbf516bd823b395e0d7c2bee5accb1bb182984e845ad9b20a18d180e0b",
+      "observed_at": "2026-08-03T16:10:31.017542Z",
+      "details": {
+        "contracted_entity": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "b6babf9617ba5055cc5fe80f5062d1ff91a6e8f4851a54cfee0aea2552959863"
+      }
+    },
+    {
+      "observation_id": "OBS-74ED20845259",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:dataContractProperties",
+      "object_urn": "urn:li:dataContract:raw-orders-v3",
+      "locator": "DataHub Python SDK:get_aspect:dataContractProperties:urn:li:dataContract:raw-orders-v3",
+      "payload_sha256": "e8ce8dc80c6d84da5f3890aaf86f59136430ee1e7563fad86404ee0e0dbeb641",
+      "observed_at": "2026-08-03T16:10:31.025532Z",
+      "details": {
+        "contracted_entity": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "d11aba87d2a23b92c7ab18c2d9fbaacb4eca7f0f1ecb7b4ca411998a283ee8fe"
+      }
+    },
+    {
+      "observation_id": "OBS-1F96BFF7EAA5",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:mlModelDeploymentProperties",
+      "object_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "locator": "DataHub Python SDK:get_aspect:mlModelDeploymentProperties:urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "payload_sha256": "a0f0113dae744ff97e3afb82e71adfcb3dfa8aab71328f283d71b3cf4b6f022f",
+      "observed_at": "2026-08-03T16:10:31.039062Z",
+      "details": {
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "a90ceb9e8e886c127054b3b75e02f536576870d71f5d9e87e0f0d7b2bd157930"
+      }
+    },
+    {
+      "observation_id": "OBS-07150205F299",
+      "interface": "DataHub Python SDK",
+      "operation": "get_aspect:documentInfo",
+      "object_urn": "urn:li:document:customer-segmentation-migration-rfc-42",
+      "locator": "DataHub Python SDK:get_aspect:documentInfo:urn:li:document:customer-segmentation-migration-rfc-42",
+      "payload_sha256": "ce953e1835b285c0e08f5250d55908aa18ac9bc57e0271b1c5d2bd5990b5fb94",
+      "observed_at": "2026-08-03T16:10:31.043868Z",
+      "details": {
+        "interface_version": "acryl-datahub@1.6.0",
+        "arguments_sha256": "c397012bd03fb8e7cf868e76d78ef54a9eb3b85c26eb4b41f14afbe581983c91"
+      }
+    }
+  ],
+  "completeness": {
+    "requested_direction": "downstream",
+    "requested_depth": 3,
+    "pages_exhausted": true,
+    "frontier_exhausted": true,
+    "truncated": false,
+    "permission_denials": [],
+    "unsupported_entities": [],
+    "notes": [
+      "MCP pagination and one-hop frontiers were exhausted.",
+      "ML model deployment relationships were read from mlModelProperties via the official DataHub Python SDK because MCP Server 0.6.0 does not expose deployments as lineage nodes."
+    ]
+  }
+}

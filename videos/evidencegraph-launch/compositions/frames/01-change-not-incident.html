@@ -1,0 +1,550 @@
+<template>
+  <div id="root" data-composition-id="01-change-not-incident" data-width="1920" data-height="1080" data-duration="14.4">
+    <div
+      class="clip f01-change-not-incident-ground"
+      data-start="0"
+      data-duration="14.4"
+      data-track-index="0"
+    >
+      <div class="f01-change-not-incident-grid"></div>
+      <div class="f01-change-not-incident-glow"></div>
+      <div class="f01-change-not-incident-progress-track">
+        <div class="f01-change-not-incident-progress-fill"></div>
+      </div>
+    </div>
+
+    <div
+      class="clip f01-change-not-incident-content"
+      data-layout-allow-overlap
+      data-start="0"
+      data-duration="14.4"
+      data-track-index="1"
+    >
+      <div class="f01-change-not-incident-kicker">CHANGE ASSURANCE / 01</div>
+
+      <div class="f01-change-not-incident-phrase" aria-label="A schema change">
+        <span class="f01-change-not-incident-word">A</span>
+        <span class="f01-change-not-incident-word">schema</span>
+        <span class="f01-change-not-incident-word">change</span>
+      </div>
+
+      <div class="f01-change-not-incident-field-card">
+        <div class="f01-change-not-incident-field-label">CONTRACT DIFF</div>
+        <div class="f01-change-not-incident-field-row">
+          <span class="f01-change-not-incident-field-before">customer_tier</span>
+          <span class="f01-change-not-incident-arrow">→</span>
+          <span class="f01-change-not-incident-field-state" aria-live="off"></span>
+        </div>
+      </div>
+
+      <div class="f01-change-not-incident-incident-wrap">
+        <div class="f01-change-not-incident-incident">INCIDENT</div>
+        <svg
+          class="f01-change-not-incident-strike"
+          viewBox="0 0 760 60"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            class="f01-change-not-incident-strike-path"
+            d="M8 39 C126 22, 232 46, 356 29 S594 22, 752 34"
+            fill="none"
+            stroke="#FF7048"
+            stroke-width="12"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="f01-change-not-incident-question-shell">
+        <div class="f01-change-not-incident-brand">
+          <span class="f01-change-not-incident-brand-mark"></span>
+          EvidenceGraph
+        </div>
+        <div class="f01-change-not-incident-question" aria-label="What will this break?">
+          <span class="f01-change-not-incident-question-word">What</span>
+          <span class="f01-change-not-incident-question-word">will</span>
+          <span class="f01-change-not-incident-question-word">this</span>
+          <span class="f01-change-not-incident-question-word">break?</span>
+        </div>
+      </div>
+
+      <div class="f01-change-not-incident-proposal-frame">
+        <div class="f01-change-not-incident-proposal-chrome">
+          <span class="f01-change-not-incident-live-dot"></span>
+          CHANGE PROPOSAL
+        </div>
+        <div class="f01-change-not-incident-image-wrap">
+          <img
+            class="f01-change-not-incident-proposal-image"
+            src="assets/scroll-000.png"
+            alt="EvidenceGraph change proposal"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      container-type: size;
+      color: #e7eeeb;
+    }
+
+    #root *,
+    #root *::before,
+    #root *::after {
+      box-sizing: border-box;
+    }
+
+    #root [class~="f01-change-not-incident-ground"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 73% 32%, rgba(64, 224, 192, 0.11), transparent 34%),
+        linear-gradient(138deg, #0c1b22 0%, #0c1b22 66%, #10272e 100%);
+    }
+
+    #root [class~="f01-change-not-incident-grid"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(64, 224, 192, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(64, 224, 192, 0.08) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+    }
+
+    #root [class~="f01-change-not-incident-glow"] {
+      position: absolute;
+      top: 8cqh;
+      right: 1cqw;
+      width: 46cqw;
+      height: 68cqh;
+      border: 1px solid rgba(64, 224, 192, 0.12);
+      border-radius: 50%;
+      opacity: 0.46;
+    }
+
+    #root [class~="f01-change-not-incident-content"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #root [class~="f01-change-not-incident-kicker"] {
+      position: absolute;
+      top: 7.2cqh;
+      left: 5cqw;
+      color: #40e0c0;
+      font-size: 0.8cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f01-change-not-incident-phrase"] {
+      position: absolute;
+      top: 16.6cqh;
+      left: 5cqw;
+      width: 53cqw;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.34em;
+      align-items: baseline;
+      color: #e7eeeb;
+      font-size: 4.2cqw;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    #root [class~="f01-change-not-incident-word"] {
+      display: inline-block;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f01-change-not-incident-field-card"] {
+      position: absolute;
+      top: 38cqh;
+      left: 5cqw;
+      width: 49.5cqw;
+      min-height: 16cqh;
+      padding: 2.1cqh 1.6cqw;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(64, 224, 192, 0.04);
+      overflow: hidden;
+    }
+
+    #root [class~="f01-change-not-incident-field-card"]::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #40e0c0;
+    }
+
+    #root [class~="f01-change-not-incident-field-label"] {
+      color: #40e0c0;
+      font-size: 0.8cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f01-change-not-incident-field-row"] {
+      min-height: 7cqh;
+      margin-top: 1.25cqh;
+      display: flex;
+      align-items: center;
+      gap: 1.25cqw;
+      white-space: nowrap;
+      font-size: 1.8cqw;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    #root [class~="f01-change-not-incident-field-before"] {
+      color: #ff7048;
+    }
+
+    #root [class~="f01-change-not-incident-arrow"] {
+      color: #656565;
+    }
+
+    #root [class~="f01-change-not-incident-field-state"] {
+      display: inline-block;
+      min-width: 14ch;
+      color: #40e0c0;
+    }
+
+    #root [class~="f01-change-not-incident-incident-wrap"] {
+      position: absolute;
+      top: 56.5cqh;
+      left: 5cqw;
+      width: 43cqw;
+      height: 15cqh;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f01-change-not-incident-incident"] {
+      position: absolute;
+      inset: 0;
+      color: #e7eeeb;
+      font-size: 6.4cqw;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    #root [class~="f01-change-not-incident-strike"] {
+      position: absolute;
+      top: 4.1cqh;
+      left: -0.4cqw;
+      width: 40.5cqw;
+      height: 5.5cqh;
+      overflow: visible;
+      z-index: 2;
+    }
+
+    #root [class~="f01-change-not-incident-question-shell"] {
+      position: absolute;
+      top: 56.3cqh;
+      left: 5cqw;
+      width: 49.5cqw;
+      min-height: 22.8cqh;
+      padding: 2.15cqh 1.65cqw 2.2cqh;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(12, 27, 34, 0.97);
+      overflow: hidden;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f01-change-not-incident-question-shell"]::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #40e0c0;
+    }
+
+    #root [class~="f01-change-not-incident-brand"] {
+      display: flex;
+      align-items: center;
+      gap: 0.7cqw;
+      color: #40e0c0;
+      font-size: 0.9cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #root [class~="f01-change-not-incident-brand-mark"] {
+      display: inline-block;
+      width: 1.1cqw;
+      height: 1.1cqw;
+      border: 3px solid #40e0c0;
+      border-radius: 50%;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    #root [class~="f01-change-not-incident-question"] {
+      margin-top: 1.5cqh;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3em;
+      color: #e7eeeb;
+      font-size: 2.85cqw;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    #root [class~="f01-change-not-incident-question-word"] {
+      display: inline-block;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f01-change-not-incident-proposal-frame"] {
+      position: absolute;
+      top: 12cqh;
+      right: 3.8cqw;
+      width: 38cqw;
+      height: 63cqh;
+      padding: 1.2cqh 0.7cqw 0.9cqh;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(64, 224, 192, 0.04);
+      overflow: hidden;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f01-change-not-incident-proposal-chrome"] {
+      height: 4.2cqh;
+      display: flex;
+      align-items: center;
+      gap: 0.55cqw;
+      padding: 0 0.45cqw;
+      color: #40e0c0;
+      font-size: 0.72cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f01-change-not-incident-live-dot"] {
+      display: inline-block;
+      width: 0.48cqw;
+      height: 0.48cqw;
+      border-radius: 50%;
+      background: #40e0c0;
+    }
+
+    #root [class~="f01-change-not-incident-image-wrap"] {
+      width: 100%;
+      height: calc(100% - 4.2cqh);
+      overflow: hidden;
+      border: 1px solid rgba(64, 224, 192, 0.15);
+      border-radius: 10px;
+      background: #0c1b22;
+    }
+
+    #root [class~="f01-change-not-incident-proposal-image"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    #root [class~="f01-change-not-incident-progress-track"] {
+      position: absolute;
+      left: 5cqw;
+      right: 5cqw;
+      top: 82.25cqh;
+      height: 3px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    #root [class~="f01-change-not-incident-progress-fill"] {
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: 6px;
+      background: #40e0c0;
+    }
+  </style>
+
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="01-change-not-incident"]');
+    const pick = (name) =>
+      root.getElementsByClassName(`f01-change-not-incident-${name}`)[0] ?? null;
+    const pickAll = (name) =>
+      Array.from(root.getElementsByClassName(`f01-change-not-incident-${name}`));
+
+      const grid = pick("grid");
+      const kicker = pick("kicker");
+      const words = pickAll("word");
+      const fieldCard = pick("field-card");
+      const fieldState = pick("field-state");
+      const proposal = pick("proposal-frame");
+      const incident = pick("incident-wrap");
+      const strikePath = pick("strike-path");
+      const questionShell = pick("question-shell");
+      const questionWords = pickAll("question-word");
+      const progress = pick("progress-fill");
+
+      const phraseContent = ["A", "schema", "change"];
+      let phraseCursor = 0.12;
+      const phraseTiming = phraseContent.map((text, index) => {
+        const duration = 0.34 + text.length * 0.035;
+        const start = phraseCursor;
+        phraseCursor += duration + (index === phraseContent.length - 1 ? 0.24 : 0.08);
+        return { text, start, duration };
+      });
+
+      const fieldSequence = [
+        { t: 0.0, text: "" },
+        { t: 0.35, text: "segment_" },
+        { t: 0.72, text: "segment_cd" },
+        { t: 1.05, text: "segment_c" },
+        { t: 1.38, text: "segment_code" },
+        { t: 1.78, text: "segment_code  ✓" },
+      ];
+
+      const fieldTextAt = (time) => {
+        for (let i = fieldSequence.length - 1; i >= 0; i -= 1) {
+          if (time >= fieldSequence[i].t) return fieldSequence[i].text;
+        }
+        return "";
+      };
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        grid,
+        { backgroundPosition: "0px 0px" },
+        { backgroundPosition: "42px 20px", duration: 11, ease: "none" },
+        0,
+      );
+      tl.fromTo(kicker, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 0.05);
+
+      phraseTiming.forEach((entry, index) => {
+        tl.fromTo(
+          words[index],
+          { opacity: 0, x: -48, y: 18, filter: "blur(9px)" },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            filter: "blur(0px)",
+            duration: entry.duration,
+            ease: "power3.out",
+          },
+          entry.start,
+        );
+      });
+
+      tl.fromTo(
+        proposal,
+        { opacity: 0.1, x: 176, y: 18, scale: 0.92, filter: "blur(8px)" },
+        { opacity: 0.18, x: 116, y: 10, scale: 0.94, filter: "blur(5px)", duration: 3, ease: "none" },
+        0,
+      );
+      tl.to(
+        proposal,
+        { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)", duration: 1.1, ease: "power3.out" },
+        3,
+      );
+
+      tl.fromTo(
+        fieldCard,
+        { opacity: 0, x: -54, filter: "blur(8px)" },
+        { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.65, ease: "power3.out" },
+        3.15,
+      );
+
+      const fieldDriver = { t: 0 };
+      let lastFieldText = "";
+      tl.to(
+        fieldDriver,
+        {
+          t: 2.15,
+          duration: 2.15,
+          ease: "none",
+          onUpdate: () => {
+            const nextText = fieldTextAt(fieldDriver.t);
+            if (nextText !== lastFieldText) {
+              fieldState.textContent = nextText;
+              lastFieldText = nextText;
+            }
+          },
+        },
+        3.35,
+      );
+
+      const strikeLength = strikePath.getTotalLength();
+      gsap.set(strikePath, {
+        strokeDasharray: strikeLength,
+        strokeDashoffset: strikeLength,
+      });
+      tl.fromTo(
+        incident,
+        { opacity: 0, scale: 1.16, x: -34, filter: "blur(11px)" },
+        { opacity: 1, scale: 1, x: 0, filter: "blur(0px)", duration: 0.72, ease: "power3.out" },
+        7,
+      );
+      tl.to(
+        strikePath,
+        { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" },
+        7.68,
+      );
+
+      tl.fromTo(
+        questionShell,
+        { opacity: 0, scale: 0.91, x: 36, filter: "blur(12px)" },
+        { opacity: 1, scale: 1, x: 0, filter: "blur(0px)", duration: 0.72, ease: "power3.out" },
+        9.05,
+      );
+      tl.to(proposal, { scale: 0.985, x: 10, duration: 0.72, ease: "power3.out" }, 9.05);
+
+      questionWords.forEach((word, index) => {
+        tl.fromTo(
+          word,
+          { opacity: 0, x: -28, y: 10, filter: "blur(7px)" },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.38,
+            ease: "power2.out",
+          },
+          9.52 + index * 0.31,
+        );
+      });
+
+      tl.fromTo(progress, { width: "0%" }, { width: "100%", duration: 11, ease: "none" }, 0);
+
+      const hold = { t: 0 };
+      tl.to(hold, { t: 1, duration: 3, ease: "none" }, 11);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["01-change-not-incident"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,256 @@
+{
+  "snapshot_id": "commerce-platform-2026-08-03T13:00:00Z-after-reingestion",
+  "assets": [
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "name": "commerce.raw_orders",
+      "kind": "dataset",
+      "platform": "postgres",
+      "description": "Contracted order source for analytics and ML feature production.",
+      "owners": ["urn:li:corpGroup:commerce-platform"],
+      "tags": ["urn:li:tag:Tier1", "urn:li:tag:Contracted"],
+      "domain": "urn:li:domain:commerce",
+      "criticality": "critical",
+      "schema_fields": [
+        {"name": "order_id", "native_type": "BIGINT", "nullable": false, "description": "Stable order key", "tags": []},
+        {"name": "customer_id", "native_type": "BIGINT", "nullable": false, "description": "Stable customer key", "tags": []},
+        {"name": "amount_usd", "native_type": "DECIMAL(12,2)", "nullable": false, "description": "Booked order value", "tags": []},
+        {"name": "segment_code", "native_type": "VARCHAR", "nullable": false, "description": "Replacement producer code: B, S, or G", "tags": []},
+        {"name": "ordered_at", "native_type": "TIMESTAMP", "nullable": false, "description": "UTC order time", "tags": []}
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:raw-orders-v3",
+        "required_fields": ["order_id", "customer_id", "amount_usd", "segment_code", "ordered_at"],
+        "owner_urns": ["urn:li:corpGroup:commerce-platform"],
+        "status": "active",
+        "rules": {"segment_code": {"allowed_values": ["B", "S", "G"], "nullable": false}}
+      },
+      "properties": {"repository": "commerce-data-platform", "freshness_slo_minutes": 30}
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "name": "analytics.stg_orders",
+      "kind": "dataset",
+      "platform": "dbt",
+      "description": "Normalized orders model used by BI and customer-value transformations.",
+      "owners": ["urn:li:corpGroup:analytics-engineering"],
+      "tags": ["urn:li:tag:Certified"],
+      "domain": "urn:li:domain:analytics",
+      "criticality": "high",
+      "schema_fields": [
+        {"name": "order_id", "native_type": "BIGINT", "nullable": false, "description": null, "tags": []},
+        {"name": "customer_id", "native_type": "BIGINT", "nullable": false, "description": null, "tags": []},
+        {"name": "amount_usd", "native_type": "DECIMAL(12,2)", "nullable": false, "description": null, "tags": []},
+        {"name": "customer_tier", "native_type": "VARCHAR", "nullable": false, "description": "Compatibility field consumed downstream", "tags": []}
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:stg-orders-v2",
+        "required_fields": ["order_id", "customer_id", "amount_usd", "customer_tier"],
+        "owner_urns": ["urn:li:corpGroup:analytics-engineering"],
+        "status": "active",
+        "rules": {}
+      },
+      "properties": {"dbt_model": "models/staging/stg_orders.sql"}
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "name": "analytics.fct_customer_value",
+      "kind": "dataset",
+      "platform": "dbt",
+      "description": "Customer revenue aggregates split by commercial tier.",
+      "owners": ["urn:li:corpGroup:growth-analytics"],
+      "tags": ["urn:li:tag:Certified", "urn:li:tag:ExecutiveReporting"],
+      "domain": "urn:li:domain:growth",
+      "criticality": "critical",
+      "schema_fields": [
+        {"name": "customer_id", "native_type": "BIGINT", "nullable": false, "description": null, "tags": []},
+        {"name": "customer_tier", "native_type": "VARCHAR", "nullable": false, "description": null, "tags": []},
+        {"name": "lifetime_value_usd", "native_type": "DECIMAL(14,2)", "nullable": false, "description": null, "tags": []}
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:customer-value-v1",
+        "required_fields": ["customer_id", "customer_tier", "lifetime_value_usd"],
+        "owner_urns": ["urn:li:corpGroup:growth-analytics"],
+        "status": "active",
+        "rules": {}
+      },
+      "properties": {"dbt_model": "models/marts/fct_customer_value.sql"}
+    },
+    {
+      "urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "name": "daily_customer_value.build_customer_value",
+      "kind": "data_job",
+      "platform": "airflow",
+      "description": "Daily production build and validation gate for customer-value data.",
+      "owners": ["urn:li:corpGroup:data-platform"],
+      "tags": ["urn:li:tag:Production"],
+      "domain": "urn:li:domain:data-platform",
+      "criticality": "high",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {"dag_id": "daily_customer_value", "schedule": "0 4 * * *"}
+    },
+    {
+      "urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "name": "Executive Revenue Watch",
+      "kind": "dashboard",
+      "platform": "looker",
+      "description": "Executive revenue and customer mix dashboard refreshed daily.",
+      "owners": ["urn:li:corpGroup:finance-analytics"],
+      "tags": ["urn:li:tag:Executive", "urn:li:tag:SOX"],
+      "domain": "urn:li:domain:finance",
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {"business_metric": "revenue_by_customer_tier", "weekly_viewers": 74}
+    },
+    {
+      "urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "name": "customer_tier_signal",
+      "kind": "ml_feature",
+      "platform": "feast",
+      "description": "Normalized tier feature used by the churn model.",
+      "owners": ["urn:li:corpGroup:risk-ml"],
+      "tags": ["urn:li:tag:OnlineFeature"],
+      "domain": "urn:li:domain:risk-ml",
+      "criticality": "critical",
+      "schema_fields": [
+        {"name": "customer_tier_signal", "native_type": "STRING", "nullable": false, "description": "Version 1 tier feature", "tags": []}
+      ],
+      "contract": {
+        "contract_urn": "urn:li:dataContract:customer-tier-feature-v1",
+        "required_fields": ["customer_tier_signal"],
+        "owner_urns": ["urn:li:corpGroup:risk-ml"],
+        "status": "active",
+        "rules": {"offline_online_parity": true}
+      },
+      "properties": {"feature_view": "customer_profile_v1", "online": true, "source_field": "customer_tier", "output_field": "customer_tier_signal"}
+    },
+    {
+      "urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "name": "churn_propensity_v4",
+      "kind": "ml_model",
+      "platform": "mlflow",
+      "description": "Production churn propensity classifier.",
+      "owners": ["urn:li:corpGroup:risk-ml"],
+      "tags": ["urn:li:tag:ProductionModel"],
+      "domain": "urn:li:domain:risk-ml",
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {"model_version": "4", "feature_count": 38, "auc": 0.843}
+    },
+    {
+      "urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "name": "churn-api-prod",
+      "kind": "ml_model_deployment",
+      "platform": "kubernetes",
+      "description": "Customer retention scoring API used by campaign orchestration.",
+      "owners": ["urn:li:corpGroup:ml-platform"],
+      "tags": ["urn:li:tag:CustomerFacing"],
+      "domain": "urn:li:domain:risk-ml",
+      "criticality": "critical",
+      "schema_fields": [],
+      "contract": null,
+      "properties": {"slo_availability": 0.999, "requests_per_day": 810000}
+    }
+  ],
+  "lineage": [
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "downstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "field_mappings": [
+        {"upstream_field": "order_id", "downstream_field": "order_id"},
+        {"upstream_field": "customer_id", "downstream_field": "customer_id"},
+        {"upstream_field": "amount_usd", "downstream_field": "amount_usd"},
+        {"upstream_field": "segment_code", "downstream_field": "customer_tier"}
+      ],
+      "transformation": "dbt model analytics.stg_orders",
+      "source_observation_id": "OBS-AFTER-LIN-001"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "downstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "field_mappings": [
+        {"upstream_field": "customer_id", "downstream_field": "customer_id"},
+        {"upstream_field": "customer_tier", "downstream_field": "customer_tier"},
+        {"upstream_field": "amount_usd", "downstream_field": "lifetime_value_usd"}
+      ],
+      "transformation": "dbt model analytics.fct_customer_value",
+      "source_observation_id": "OBS-AFTER-LIN-002"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "downstream_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "field_mappings": [{"upstream_field": "customer_tier", "downstream_field": "customer_tier"}],
+      "transformation": "Airflow data-quality and publish task",
+      "source_observation_id": "OBS-AFTER-LIN-003"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "downstream_urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "field_mappings": [{"upstream_field": "customer_tier", "downstream_field": "revenue_by_customer_tier"}],
+      "transformation": "LookML dimension and executive tile",
+      "source_observation_id": "OBS-AFTER-LIN-004"
+    },
+    {
+      "upstream_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+      "downstream_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "field_mappings": [{"upstream_field": "segment_code", "downstream_field": "customer_tier_signal"}],
+      "transformation": "Feast on-demand feature transformation",
+      "source_observation_id": "OBS-AFTER-LIN-005"
+    },
+    {
+      "upstream_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "downstream_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "field_mappings": [{"upstream_field": "customer_tier_signal", "downstream_field": "customer_tier_signal"}],
+      "transformation": "MLflow model signature dependency",
+      "source_observation_id": "OBS-AFTER-LIN-006"
+    },
+    {
+      "upstream_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "downstream_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "field_mappings": [{"upstream_field": "customer_tier_signal", "downstream_field": "customer_tier_signal"}],
+      "transformation": "Production model deployment",
+      "source_observation_id": "OBS-AFTER-LIN-007"
+    }
+  ],
+  "documents": [
+    {
+      "urn": "urn:li:document:customer-segmentation-migration-rfc-42",
+      "title": "RFC-42: Customer segmentation code migration",
+      "body": "During the transition, derive customer_tier from segment_code using B=bronze, S=silver, and G=gold. Unknown codes must fail validation; do not silently coerce them.",
+      "related_urns": ["urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)"],
+      "facts": {
+        "field": "customer_tier",
+        "replacement_field": "segment_code",
+        "mapping": {"B": "bronze", "S": "silver", "G": "gold"},
+        "unknown_policy": "reject",
+        "approved_by": "urn:li:corpGroup:commerce-platform"
+      },
+      "source_observation_id": "OBS-AFTER-DOC-001"
+    }
+  ],
+  "observations": [
+    {"observation_id": "OBS-AFTER-ENTITY-001", "interface": "DataHub MCP Server", "operation": "get_entities", "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)", "locator": "fixture-after:get_entities:raw_orders", "payload_sha256": "1111111111111111111111111111111111111111111111111111111111111111", "observed_at": "2026-08-03T13:00:00Z", "details": {"mode": "deterministic-fixture"}},
+    {"observation_id": "OBS-AFTER-SCHEMA-001", "interface": "DataHub MCP Server", "operation": "list_schema_fields", "object_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)", "locator": "fixture-after:list_schema_fields:raw_orders", "payload_sha256": "2222222222222222222222222222222222222222222222222222222222222222", "observed_at": "2026-08-03T13:00:00Z", "details": {"page": 1, "pages_exhausted": true}},
+    {"observation_id": "OBS-AFTER-LIN-001", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)", "locator": "fixture-after:get_lineage:edge-1", "payload_sha256": "3100000000000000000000000000000000000000000000000000000000000001", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 1}},
+    {"observation_id": "OBS-AFTER-LIN-002", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)", "locator": "fixture-after:get_lineage:edge-2", "payload_sha256": "3200000000000000000000000000000000000000000000000000000000000002", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 2}},
+    {"observation_id": "OBS-AFTER-LIN-003", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)", "locator": "fixture-after:get_lineage:edge-3", "payload_sha256": "3300000000000000000000000000000000000000000000000000000000000003", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 3}},
+    {"observation_id": "OBS-AFTER-LIN-004", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:dashboard:(looker,executive_revenue_watch)", "locator": "fixture-after:get_lineage:edge-4", "payload_sha256": "3400000000000000000000000000000000000000000000000000000000000004", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 3}},
+    {"observation_id": "OBS-AFTER-LIN-005", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)", "locator": "fixture-after:get_lineage:edge-5", "payload_sha256": "3500000000000000000000000000000000000000000000000000000000000005", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 1}},
+    {"observation_id": "OBS-AFTER-LIN-006", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)", "locator": "fixture-after:get_lineage:edge-6", "payload_sha256": "3600000000000000000000000000000000000000000000000000000000000006", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 2}},
+    {"observation_id": "OBS-AFTER-LIN-007", "interface": "DataHub MCP Server", "operation": "get_lineage", "object_urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)", "locator": "fixture-after:get_lineage:edge-7", "payload_sha256": "3700000000000000000000000000000000000000000000000000000000000007", "observed_at": "2026-08-03T13:00:00Z", "details": {"hop": 3}},
+    {"observation_id": "OBS-AFTER-DOC-001", "interface": "DataHub MCP Server", "operation": "search_documents", "object_urn": "urn:li:document:customer-segmentation-migration-rfc-42", "locator": "fixture-after:search_documents:rfc-42", "payload_sha256": "4444444444444444444444444444444444444444444444444444444444444444", "observed_at": "2026-08-03T13:00:00Z", "details": {"approved": true}}
+  ],
+  "completeness": {
+    "requested_direction": "downstream",
+    "requested_depth": 10,
+    "pages_exhausted": true,
+    "frontier_exhausted": true,
+    "truncated": false,
+    "permission_denials": [],
+    "unsupported_entities": [],
+    "notes": ["Fixture mirrors the tool contract of DataHub MCP Server 0.6.0."]
+  }
+}

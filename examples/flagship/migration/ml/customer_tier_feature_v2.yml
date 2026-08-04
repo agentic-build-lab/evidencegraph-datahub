@@ -1,0 +1,20 @@
+apiVersion: evidencegraph.io/v1
+kind: MLFeatureMigration
+metadata:
+  name: customer-tier-signal-v2
+  changeId: EG-042
+spec:
+  sourceField: segment_code
+  outputFeature: customer_tier_signal_v2
+  mapping:
+    B: bronze
+    S: silver
+    G: gold
+  unknownValuePolicy: reject
+  parity:
+    required: true
+    minimumRows: 4
+    maximumMismatchRate: 0.0
+  deploymentGate:
+    modelUrn: urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)
+    deploymentUrn: urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)

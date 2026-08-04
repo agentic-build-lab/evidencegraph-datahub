@@ -1,0 +1,654 @@
+<template>
+  <div id="root" data-composition-id="06-evidence-gates" data-width="1920" data-height="1080" data-duration="22.4">
+    <div class="clip frame-f06-evidence-gates-background" data-start="0" data-duration="22.4" data-track-index="0">
+      <img class="frame-f06-evidence-gates-background-image" src="assets/scroll-085.png" alt="" />
+      <div class="frame-f06-evidence-gates-background-veil"></div>
+      <div class="frame-f06-evidence-gates-background-grid"></div>
+    </div>
+
+    <div class="clip frame-f06-evidence-gates-scene" data-start="0" data-duration="22.4" data-track-index="1" data-layout-allow-overlap>
+      <header class="frame-f06-evidence-gates-header">
+        <div class="frame-f06-evidence-gates-eyebrow">
+          <span class="frame-f06-evidence-gates-eyebrow-dot"></span>
+          Evidence gate
+        </div>
+        <div class="frame-f06-evidence-gates-title-line">
+          <div class="frame-f06-evidence-gates-title-wrap">
+            <span id="f06-evidence-gates-title"></span><span id="f06-evidence-gates-title-cursor" class="frame-f06-evidence-gates-title-cursor">_</span>
+          </div>
+          <div class="frame-f06-evidence-gates-scan-lockup">
+            <svg class="frame-f06-evidence-gates-scan" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="frame-f06-evidence-gates-scan-track" cx="32" cy="32" r="24"></circle>
+              <path id="f06-evidence-gates-spinner" class="frame-f06-evidence-gates-scan-arc" d="M32 8 A24 24 0 0 1 56 32"></path>
+            </svg>
+            <div>
+              <div id="f06-evidence-gates-scan-state" class="frame-f06-evidence-gates-scan-state">SCANNING</div>
+              <div class="frame-f06-evidence-gates-scan-meta">finite · native · deterministic</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="frame-f06-evidence-gates-runtime-plate">
+        <div class="frame-f06-evidence-gates-runtime-header">
+          <span>OFFICIAL RUNTIMES</span>
+          <span id="f06-evidence-gates-progress">0 / 5 groups</span>
+        </div>
+        <div class="frame-f06-evidence-gates-runtime-body">
+          <div class="frame-f06-evidence-gates-validator-list">
+            <div class="frame-f06-evidence-gates-validator" data-validator="0">
+              <div class="frame-f06-evidence-gates-validator-index">01</div>
+              <div class="frame-f06-evidence-gates-validator-swap">
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-running">
+                  <span class="frame-f06-evidence-gates-row-spinner"></span>
+                  <strong>DuckDB</strong>
+                  <small>SQL parity</small>
+                  <em>running</em>
+                </div>
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-passed">
+                  <span class="frame-f06-evidence-gates-check">✓</span>
+                  <strong>DuckDB</strong>
+                  <small>4 / 4 rows</small>
+                  <em>passed</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame-f06-evidence-gates-validator" data-validator="1">
+              <div class="frame-f06-evidence-gates-validator-index">02</div>
+              <div class="frame-f06-evidence-gates-validator-swap">
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-running">
+                  <span class="frame-f06-evidence-gates-row-spinner"></span>
+                  <strong>dbt Core</strong>
+                  <small>build</small>
+                  <em>running</em>
+                </div>
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-passed">
+                  <span class="frame-f06-evidence-gates-check">✓</span>
+                  <strong>dbt Core</strong>
+                  <small>7 / 7 tests</small>
+                  <em>passed</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame-f06-evidence-gates-validator" data-validator="2">
+              <div class="frame-f06-evidence-gates-validator-index">03</div>
+              <div class="frame-f06-evidence-gates-validator-swap">
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-running">
+                  <span class="frame-f06-evidence-gates-row-spinner"></span>
+                  <strong>Airflow 3.3.0</strong>
+                  <small>official container</small>
+                  <em>running</em>
+                </div>
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-passed">
+                  <span class="frame-f06-evidence-gates-check">✓</span>
+                  <strong>Airflow 3.3.0</strong>
+                  <small>DAG gate</small>
+                  <em>passed</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame-f06-evidence-gates-validator" data-validator="3">
+              <div class="frame-f06-evidence-gates-validator-index">04</div>
+              <div class="frame-f06-evidence-gates-validator-swap">
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-running">
+                  <span class="frame-f06-evidence-gates-row-spinner"></span>
+                  <strong>ML parity</strong>
+                  <small>feature contract</small>
+                  <em>running</em>
+                </div>
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-passed">
+                  <span class="frame-f06-evidence-gates-check">✓</span>
+                  <strong>ML parity</strong>
+                  <small>0.0% mismatch</small>
+                  <em>passed</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="frame-f06-evidence-gates-validator" data-validator="4">
+              <div class="frame-f06-evidence-gates-validator-index">05</div>
+              <div class="frame-f06-evidence-gates-validator-swap">
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-running">
+                  <span class="frame-f06-evidence-gates-row-spinner"></span>
+                  <strong>Git patch</strong>
+                  <small>apply check</small>
+                  <em>running</em>
+                </div>
+                <div class="frame-f06-evidence-gates-validator-state frame-f06-evidence-gates-passed">
+                  <span class="frame-f06-evidence-gates-check">✓</span>
+                  <strong>Git patch</strong>
+                  <small>clean apply</small>
+                  <em>passed</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="frame-f06-evidence-gates-proof-window">
+            <img class="frame-f06-evidence-gates-proof-image" src="assets/scroll-057.png" alt="" />
+            <div class="frame-f06-evidence-gates-proof-tint"></div>
+            <div class="frame-f06-evidence-gates-proof-label">
+              <span>LIVE RECEIPTS</span>
+              <span class="frame-f06-evidence-gates-proof-signal"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="f06-evidence-gates-receipt" class="frame-f06-evidence-gates-receipt">
+        <div class="frame-f06-evidence-gates-receipt-kicker">VERIFIED RECEIPT</div>
+        <div class="frame-f06-evidence-gates-count-wrap">
+          <div class="frame-f06-evidence-gates-count-glow"></div>
+          <div class="frame-f06-evidence-gates-count">14/14</div>
+          <div class="frame-f06-evidence-gates-count-label">PASSED</div>
+        </div>
+        <svg class="frame-f06-evidence-gates-check-paths" viewBox="0 0 620 112" aria-hidden="true">
+          <path d="M24 72 C88 14 142 100 210 48 S340 10 396 58 S516 103 596 31"></path>
+          <path d="M24 28 C98 94 152 15 236 64 S374 103 452 42 S540 11 596 76"></path>
+        </svg>
+        <div class="frame-f06-evidence-gates-receipt-chips">
+          <span>SQL</span><span>dbt</span><span>DAG</span><span>ML</span><span>Git</span>
+        </div>
+        <div class="frame-f06-evidence-gates-verdict-swap">
+          <div id="f06-evidence-gates-merge" class="frame-f06-evidence-gates-verdict frame-f06-evidence-gates-merge">
+            <strong>SAFE TO MERGE</strong>
+            <small>proposal unlocked</small>
+          </div>
+          <div id="f06-evidence-gates-refuse" class="frame-f06-evidence-gates-verdict frame-f06-evidence-gates-refuse">
+            <strong>REFUSE</strong>
+            <small id="f06-evidence-gates-zero">0 mutations</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="f06-evidence-gates-safety-phase" class="frame-f06-evidence-gates-safety-phase">
+        <div class="frame-f06-evidence-gates-safety-kicker">EVIDENCE COMPLETENESS</div>
+        <div class="frame-f06-evidence-gates-safety-grid">
+          <div class="frame-f06-evidence-gates-stack-card">
+            <div class="frame-f06-evidence-gates-stack-label">CONTEXT PAGES</div>
+            <div class="frame-f06-evidence-gates-page frame-f06-evidence-gates-page-one"><span>schema</span><b>✓</b></div>
+            <div class="frame-f06-evidence-gates-page frame-f06-evidence-gates-page-two"><span>owners</span><b>✓</b></div>
+            <div class="frame-f06-evidence-gates-page frame-f06-evidence-gates-page-three"><span>contracts</span><b>✓</b></div>
+            <div id="f06-evidence-gates-lineage-page" class="frame-f06-evidence-gates-page frame-f06-evidence-gates-page-four"><span>lineage</span><b>✓</b></div>
+          </div>
+
+          <div class="frame-f06-evidence-gates-completeness-card">
+            <div class="frame-f06-evidence-gates-completeness-label">GRAPH STATE</div>
+            <div class="frame-f06-evidence-gates-terminal">
+              <span class="frame-f06-evidence-gates-terminal-prompt">›</span>
+              <span class="frame-f06-evidence-gates-terminal-wrap"><span id="f06-evidence-gates-completeness-text"></span><span id="f06-evidence-gates-completeness-cursor" class="frame-f06-evidence-gates-completeness-cursor">_</span></span>
+            </div>
+            <div id="f06-evidence-gates-risk" class="frame-f06-evidence-gates-risk">SOURCE MISSING · CLAIM BLOCKED</div>
+          </div>
+
+          <div class="frame-f06-evidence-gates-mutation-card">
+            <div class="frame-f06-evidence-gates-mutation-label">MUTATION LANE</div>
+            <div class="frame-f06-evidence-gates-mutation-nodes">
+              <span>PROPOSE</span><i></i><span>VERIFY</span><i></i><span>WRITE</span>
+            </div>
+            <div class="frame-f06-evidence-gates-lane">
+              <div id="f06-evidence-gates-lane-fill" class="frame-f06-evidence-gates-lane-fill"></div>
+              <div id="f06-evidence-gates-lane-lock" class="frame-f06-evidence-gates-lane-lock">×</div>
+            </div>
+            <div id="f06-evidence-gates-lane-state" class="frame-f06-evidence-gates-lane-state">OPEN</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <style>
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        container-type: size;
+        color: #e7eeeb;
+        font-family: Arial, sans-serif;
+      }
+
+      .frame-f06-evidence-gates-background,
+      .frame-f06-evidence-gates-scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .frame-f06-evidence-gates-background { background: #0c1b22; }
+      .frame-f06-evidence-gates-background-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+        filter: saturate(0.55) contrast(1.12);
+      }
+      .frame-f06-evidence-gates-background-veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(118deg, rgba(12, 27, 34, 0.92) 0%, rgba(12, 27, 34, 0.84) 51%, rgba(12, 27, 34, 0.66) 100%);
+      }
+      .frame-f06-evidence-gates-background-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.12;
+        background-image: radial-gradient(circle, rgba(64, 224, 192, 0.7) 1px, transparent 1.5px);
+        background-size: 3.15cqw 3.15cqw;
+      }
+
+      .frame-f06-evidence-gates-header {
+        position: absolute;
+        left: 5cqw;
+        top: 4.5cqh;
+        width: 90cqw;
+        z-index: 4;
+      }
+      .frame-f06-evidence-gates-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.65cqw;
+        color: #40e0c0;
+        font-size: 0.8cqw;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .frame-f06-evidence-gates-eyebrow-dot {
+        width: 0.48cqw;
+        height: 0.48cqw;
+        border-radius: 50%;
+        background: #40e0c0;
+      }
+      .frame-f06-evidence-gates-title-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.2cqh;
+      }
+      .frame-f06-evidence-gates-title-wrap {
+        display: inline-flex;
+        align-items: baseline;
+        min-width: 37cqw;
+        white-space: nowrap;
+        color: #e7eeeb;
+        font-size: 3cqw;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .frame-f06-evidence-gates-title-cursor {
+        display: inline-block;
+        width: 0.9cqw;
+        margin-left: 0.25cqw;
+        color: #40e0c0;
+      }
+      .frame-f06-evidence-gates-scan-lockup {
+        display: flex;
+        align-items: center;
+        gap: 0.9cqw;
+        padding: 0.8cqw 1.15cqw 0.8cqw 0.85cqw;
+        border: 1.5px solid rgba(64, 224, 192, 0.2);
+        border-radius: 100px;
+        background: rgba(64, 224, 192, 0.04);
+      }
+      .frame-f06-evidence-gates-scan { width: 2.6cqw; height: 2.6cqw; overflow: visible; }
+      .frame-f06-evidence-gates-scan-track { fill: none; stroke: rgba(64, 224, 192, 0.15); stroke-width: 4; }
+      .frame-f06-evidence-gates-scan-arc { fill: none; stroke: #40e0c0; stroke-width: 5; stroke-linecap: round; }
+      .frame-f06-evidence-gates-scan-state { color: #40e0c0; font-size: 0.84cqw; font-weight: 700; letter-spacing: 0.08em; }
+      .frame-f06-evidence-gates-scan-meta { margin-top: 0.25cqh; color: #ff7048; font-size: 0.72cqw; letter-spacing: 0.03em; }
+
+      .frame-f06-evidence-gates-runtime-plate {
+        position: absolute;
+        left: 5cqw;
+        top: 18.5cqh;
+        width: 90cqw;
+        height: 57cqh;
+        z-index: 2;
+        overflow: hidden;
+        border: 1.5px solid rgba(64, 224, 192, 0.2);
+        border-radius: 14px;
+        background: rgba(12, 27, 34, 0.86);
+      }
+      .frame-f06-evidence-gates-runtime-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5.5cqh;
+        padding: 0 1.45cqw;
+        border-bottom: 1px solid rgba(64, 224, 192, 0.16);
+        color: #40e0c0;
+        font-size: 0.76cqw;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+      .frame-f06-evidence-gates-runtime-body {
+        display: grid;
+        grid-template-columns: 1.58fr 0.9fr;
+        gap: 1.25cqw;
+        height: calc(100% - 5.5cqh);
+        padding: 1.2cqw;
+      }
+      .frame-f06-evidence-gates-validator-list { display: grid; grid-template-rows: repeat(5, 1fr); gap: 0.72cqh; }
+      .frame-f06-evidence-gates-validator {
+        display: grid;
+        grid-template-columns: 3.1cqw 1fr;
+        gap: 0.7cqw;
+        min-height: 0;
+      }
+      .frame-f06-evidence-gates-validator-index {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #656565;
+        font-size: 0.74cqw;
+        font-weight: 600;
+        border: 1px solid rgba(64, 224, 192, 0.16);
+        border-radius: 10px;
+        background: rgba(64, 224, 192, 0.03);
+      }
+      .frame-f06-evidence-gates-validator-swap { position: relative; min-height: 0; }
+      .frame-f06-evidence-gates-validator-state {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 2cqw 1.25fr 1fr 0.8fr;
+        align-items: center;
+        padding: 0 1cqw;
+        border: 1px solid rgba(64, 224, 192, 0.16);
+        border-radius: 12px;
+        background: rgba(64, 224, 192, 0.04);
+        transform-origin: 50% 50%;
+      }
+      .frame-f06-evidence-gates-validator-state strong { color: #e7eeeb; font-size: 1.02cqw; font-weight: 600; }
+      .frame-f06-evidence-gates-validator-state small { color: #ff7048; font-size: 0.75cqw; }
+      .frame-f06-evidence-gates-validator-state em { justify-self: end; color: #ff7048; font-size: 0.72cqw; font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; }
+      .frame-f06-evidence-gates-row-spinner {
+        width: 0.82cqw;
+        height: 0.82cqw;
+        border: 2px solid rgba(64, 224, 192, 0.18);
+        border-top-color: #40e0c0;
+        border-radius: 50%;
+      }
+      .frame-f06-evidence-gates-passed { z-index: 2; }
+      .frame-f06-evidence-gates-passed em,
+      .frame-f06-evidence-gates-passed small { color: #40e0c0; }
+      .frame-f06-evidence-gates-check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.15cqw;
+        height: 1.15cqw;
+        border-radius: 50%;
+        color: #0c1b22;
+        background: #40e0c0;
+        font-size: 0.75cqw;
+        font-weight: 700;
+      }
+      .frame-f06-evidence-gates-proof-window {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(64, 224, 192, 0.18);
+        border-radius: 12px;
+        background: rgba(64, 224, 192, 0.04);
+      }
+      .frame-f06-evidence-gates-proof-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 72% 68%;
+        opacity: 0.56;
+        filter: saturate(0.65) contrast(1.12);
+      }
+      .frame-f06-evidence-gates-proof-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 27, 34, 0.28), rgba(12, 27, 34, 0.76)); }
+      .frame-f06-evidence-gates-proof-label {
+        position: absolute;
+        left: 1.1cqw;
+        right: 1.1cqw;
+        top: 1cqw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #40e0c0;
+        font-size: 0.75cqw;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+      .frame-f06-evidence-gates-proof-signal { width: 0.62cqw; height: 0.62cqw; border-radius: 50%; background: #40e0c0; }
+
+      .frame-f06-evidence-gates-receipt {
+        position: absolute;
+        left: 50%;
+        top: 22cqh;
+        z-index: 8;
+        width: 36cqw;
+        height: 49cqh;
+        margin-left: -18cqw;
+        overflow: hidden;
+        border: 1.5px solid rgba(64, 224, 192, 0.38);
+        border-radius: 14px;
+        background: rgba(12, 27, 34, 0.97);
+        transform-origin: 50% 50%;
+      }
+      .frame-f06-evidence-gates-receipt-kicker { margin: 2.1cqh 1.7cqw 0; color: #40e0c0; font-size: 0.74cqw; font-weight: 600; letter-spacing: 0.08em; }
+      .frame-f06-evidence-gates-count-wrap { position: relative; display: flex; align-items: baseline; justify-content: center; gap: 0.9cqw; margin-top: 1.2cqh; }
+      .frame-f06-evidence-gates-count-glow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 21cqw;
+        height: 12cqh;
+        margin-left: -10.5cqw;
+        margin-top: -6cqh;
+        background: radial-gradient(ellipse, rgba(64, 224, 192, 0.22) 0%, rgba(64, 224, 192, 0.07) 48%, transparent 72%);
+      }
+      .frame-f06-evidence-gates-count { position: relative; color: #40e0c0; font-size: 5.35cqw; font-weight: 700; line-height: 1; letter-spacing: -0.04em; }
+      .frame-f06-evidence-gates-count-label { position: relative; color: #e7eeeb; font-size: 1.2cqw; font-weight: 600; letter-spacing: 0.08em; }
+      .frame-f06-evidence-gates-check-paths { display: block; width: 31cqw; height: 8cqh; margin: 0.3cqh auto 0; overflow: visible; }
+      .frame-f06-evidence-gates-check-paths path { fill: none; stroke: rgba(64, 224, 192, 0.62); stroke-width: 2.4; stroke-linecap: round; }
+      .frame-f06-evidence-gates-receipt-chips { display: flex; justify-content: center; gap: 0.58cqw; }
+      .frame-f06-evidence-gates-receipt-chips span { padding: 0.44cqh 0.62cqw; border-radius: 100px; color: #40e0c0; background: rgba(64, 224, 192, 0.08); font-size: 0.72cqw; font-weight: 600; }
+      .frame-f06-evidence-gates-verdict-swap { position: absolute; left: 1.7cqw; right: 1.7cqw; bottom: 1.8cqh; height: 9cqh; }
+      .frame-f06-evidence-gates-verdict {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.3cqw;
+        border: 1px solid rgba(64, 224, 192, 0.24);
+        border-radius: 12px;
+        background: rgba(64, 224, 192, 0.08);
+        transform-origin: 50% 50%;
+      }
+      .frame-f06-evidence-gates-verdict strong { color: #40e0c0; font-size: 1.55cqw; font-weight: 700; letter-spacing: -0.02em; }
+      .frame-f06-evidence-gates-verdict small { color: #ff7048; font-size: 0.78cqw; letter-spacing: 0.04em; text-transform: uppercase; }
+      .frame-f06-evidence-gates-refuse { z-index: 3; border-color: rgba(255, 112, 72, 0.56); background: rgba(255, 112, 72, 0.1); }
+      .frame-f06-evidence-gates-refuse strong { color: #ff7048; font-size: 2.45cqw; letter-spacing: 0.06em; }
+      .frame-f06-evidence-gates-refuse small { color: #e7eeeb; font-size: 1.02cqw; font-weight: 600; }
+
+      .frame-f06-evidence-gates-safety-phase {
+        position: absolute;
+        left: 5cqw;
+        top: 20.5cqh;
+        z-index: 6;
+        width: 90cqw;
+        height: 55cqh;
+        padding: 1.35cqw;
+        border: 1.5px solid rgba(255, 112, 72, 0.28);
+        border-radius: 14px;
+        background: rgba(12, 27, 34, 0.94);
+      }
+      .frame-f06-evidence-gates-safety-kicker { color: #ff7048; font-size: 0.78cqw; font-weight: 600; letter-spacing: 0.08em; }
+      .frame-f06-evidence-gates-safety-grid { display: grid; grid-template-columns: 1fr 1.1fr 1.35fr; gap: 1cqw; height: calc(100% - 2.4cqh); margin-top: 1.2cqh; }
+      .frame-f06-evidence-gates-stack-card,
+      .frame-f06-evidence-gates-completeness-card,
+      .frame-f06-evidence-gates-mutation-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(64, 224, 192, 0.18);
+        border-radius: 12px;
+        background: rgba(64, 224, 192, 0.04);
+      }
+      .frame-f06-evidence-gates-stack-label,
+      .frame-f06-evidence-gates-completeness-label,
+      .frame-f06-evidence-gates-mutation-label { padding: 1.1cqw; color: #656565; font-size: 0.72cqw; font-weight: 600; letter-spacing: 0.08em; }
+      .frame-f06-evidence-gates-page {
+        position: absolute;
+        left: 3.2cqw;
+        width: 15.5cqw;
+        height: 9.4cqh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.1cqw;
+        border: 1px solid rgba(64, 224, 192, 0.2);
+        border-radius: 10px;
+        color: #e7eeeb;
+        background: #10272f;
+        font-size: 0.95cqw;
+        font-weight: 600;
+        transform-origin: 50% 50%;
+      }
+      .frame-f06-evidence-gates-page b { display: flex; align-items: center; justify-content: center; width: 1.2cqw; height: 1.2cqw; border-radius: 50%; color: #0c1b22; background: #40e0c0; font-size: 0.72cqw; }
+      .frame-f06-evidence-gates-page-one { top: 26.5cqh; opacity: 0.46; }
+      .frame-f06-evidence-gates-page-two { top: 22cqh; opacity: 0.62; }
+      .frame-f06-evidence-gates-page-three { top: 17.5cqh; opacity: 0.8; }
+      .frame-f06-evidence-gates-page-four { top: 13cqh; border-color: rgba(64, 224, 192, 0.44); }
+      .frame-f06-evidence-gates-terminal { display: flex; align-items: baseline; gap: 0.65cqw; margin: 7.2cqh 1.5cqw 0; color: #e7eeeb; font-size: 1.65cqw; font-weight: 600; }
+      .frame-f06-evidence-gates-terminal-prompt { color: #40e0c0; }
+      .frame-f06-evidence-gates-terminal-wrap { display: inline-flex; align-items: baseline; min-width: 20cqw; white-space: nowrap; }
+      .frame-f06-evidence-gates-completeness-cursor { display: inline-block; width: 0.8cqw; color: #ff7048; }
+      .frame-f06-evidence-gates-risk { margin: 4.3cqh 1.5cqw 0; padding: 1.2cqh 0.9cqw; border-left: 4px solid #ff7048; border-radius: 12px; color: #ff7048; background: rgba(255, 112, 72, 0.08); font-size: 0.76cqw; font-weight: 600; letter-spacing: 0.05em; }
+      .frame-f06-evidence-gates-mutation-nodes { display: flex; align-items: center; justify-content: space-between; margin: 6.4cqh 1.35cqw 0; color: #e7eeeb; font-size: 0.74cqw; font-weight: 600; letter-spacing: 0.06em; }
+      .frame-f06-evidence-gates-mutation-nodes i { display: block; width: 3.5cqw; height: 1px; background: rgba(64, 224, 192, 0.24); }
+      .frame-f06-evidence-gates-lane { position: relative; height: 2.6cqh; margin: 3.6cqh 1.35cqw 0; overflow: visible; border-radius: 6px; background: rgba(64, 224, 192, 0.08); }
+      .frame-f06-evidence-gates-lane-fill { width: 100%; height: 100%; border-radius: 6px; background: #ff7048; transform-origin: 0% 50%; }
+      .frame-f06-evidence-gates-lane-lock { position: absolute; right: -0.65cqw; top: -1.1cqh; display: flex; align-items: center; justify-content: center; width: 2.4cqw; height: 2.4cqw; border-radius: 50%; color: #0c1b22; background: #ff7048; font-size: 1.4cqw; font-weight: 700; }
+      .frame-f06-evidence-gates-lane-state { margin: 3.4cqh 1.35cqw 0; color: #ff7048; font-size: 1.45cqw; font-weight: 700; letter-spacing: 0.06em; text-align: right; }
+    </style>
+
+    <script>
+      (() => {
+        const root = document.querySelector('[data-composition-id="06-evidence-gates"]');
+        if (!root) return;
+
+        const tl = gsap.timeline({ paused: true });
+        const title = root.querySelector('[id="f06-evidence-gates-title"]');
+        const titleCursor = root.querySelector('[id="f06-evidence-gates-title-cursor"]');
+        const scanState = root.querySelector('[id="f06-evidence-gates-scan-state"]');
+        const spinner = root.querySelector('[id="f06-evidence-gates-spinner"]');
+        const progress = root.querySelector('[id="f06-evidence-gates-progress"]');
+        const runtimePlate = root.querySelector('.frame-f06-evidence-gates-runtime-plate');
+        const proofWindow = root.querySelector('.frame-f06-evidence-gates-proof-window');
+        const validators = Array.from(root.querySelectorAll('.frame-f06-evidence-gates-validator'));
+        const rowSpinners = Array.from(root.querySelectorAll('.frame-f06-evidence-gates-row-spinner'));
+        const receipt = root.querySelector('[id="f06-evidence-gates-receipt"]');
+        const receiptPaths = Array.from(root.querySelectorAll('.frame-f06-evidence-gates-check-paths path'));
+        const receiptChips = Array.from(root.querySelectorAll('.frame-f06-evidence-gates-receipt-chips span'));
+        const safetyPhase = root.querySelector('[id="f06-evidence-gates-safety-phase"]');
+        const lineagePage = root.querySelector('[id="f06-evidence-gates-lineage-page"]');
+        const completenessText = root.querySelector('[id="f06-evidence-gates-completeness-text"]');
+        const completenessCursor = root.querySelector('[id="f06-evidence-gates-completeness-cursor"]');
+        const risk = root.querySelector('[id="f06-evidence-gates-risk"]');
+        const laneFill = root.querySelector('[id="f06-evidence-gates-lane-fill"]');
+        const laneLock = root.querySelector('[id="f06-evidence-gates-lane-lock"]');
+        const laneState = root.querySelector('[id="f06-evidence-gates-lane-state"]');
+        const mergeVerdict = root.querySelector('[id="f06-evidence-gates-merge"]');
+        const refuseVerdict = root.querySelector('[id="f06-evidence-gates-refuse"]');
+        const zeroMutations = root.querySelector('[id="f06-evidence-gates-zero"]');
+
+        const titleText = '14 deterministic gates';
+        const titleDriver = { value: 0 };
+        const titleBlink = { phase: 0 };
+
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-eyebrow'), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.42, ease: 'power3.out' }, 0);
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-scan-lockup'), { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 0.05);
+        tl.to(titleDriver, { value: titleText.length, duration: 2.2, ease: 'power1.inOut', onUpdate: () => { title.textContent = titleText.substring(0, Math.floor(titleDriver.value)); } }, 0.18);
+        tl.to(titleBlink, { phase: Math.PI * 20, duration: 4, ease: 'none', onUpdate: () => { titleCursor.style.opacity = Math.sin(titleBlink.phase) > 0 ? '1' : '0'; } }, 0);
+        tl.fromTo(runtimePlate, { opacity: 0, y: 18, scale: 0.985 }, { opacity: 1, y: 0, scale: 1, duration: 0.85, ease: 'power3.out' }, 0.55);
+        tl.fromTo(proofWindow, { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' }, 1.2);
+        tl.to(spinner, { rotation: 1440, transformOrigin: '50% 50%', duration: 12.4, ease: 'none' }, 0.1);
+
+        rowSpinners.forEach((element, index) => {
+          tl.to(element, { rotation: 1080, transformOrigin: '50% 50%', duration: 7.4 - index * 0.55, ease: 'none' }, 4 + index * 0.62);
+        });
+
+        const resolveTimes = [5.35, 6.85, 8.45, 10.2, 12.15];
+        validators.forEach((row, index) => {
+          const running = row.querySelector('.frame-f06-evidence-gates-running');
+          const passed = row.querySelector('.frame-f06-evidence-gates-passed');
+          const appearAt = 4 + index * 0.65;
+          const resolveAt = resolveTimes[index];
+
+          tl.set(passed, { opacity: 0, scale: 0.74 }, 0);
+          tl.fromTo(row, { opacity: 0, scale: 0, y: 18 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: 'power3.out' }, appearAt);
+          tl.to(running, { scale: 0.74, opacity: 0, duration: 0.34, ease: 'power2.in' }, resolveAt);
+          tl.to(passed, { scale: 1, opacity: 1, duration: 0.56, ease: 'back.out(1.4)' }, resolveAt + 0.2);
+          tl.call(() => { progress.textContent = `${index + 1} / 5 groups`; }, [], resolveAt + 0.44);
+        });
+        tl.call(() => { scanState.textContent = 'COMPLETE'; }, [], 12.45);
+        tl.to(root.querySelector('.frame-f06-evidence-gates-scan-arc'), { stroke: '#40e0c0', duration: 0.2, ease: 'none' }, 12.45);
+
+        receiptPaths.forEach((path) => {
+          const length = path.getTotalLength();
+          path.style.strokeDasharray = String(length);
+          path.style.strokeDashoffset = String(length);
+        });
+        tl.set(refuseVerdict, { opacity: 0, scale: 0.72 }, 0);
+        tl.fromTo(receipt, { opacity: 0, scale: 0.82, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 13);
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-count-wrap'), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.62, ease: 'power3.out' }, 13.2);
+        receiptPaths.forEach((path, index) => {
+          tl.to(path, { strokeDashoffset: 0, duration: 1.3, ease: 'power2.inOut' }, 13.55 + index * 0.32);
+        });
+        receiptChips.forEach((chip, index) => {
+          tl.fromTo(chip, { opacity: 0, scale: 0, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.48, ease: 'power3.out' }, 14.05 + index * 0.09);
+        });
+        tl.fromTo(mergeVerdict, { opacity: 0, scale: 0.84 }, { opacity: 1, scale: 1, duration: 0.55, ease: 'power3.out' }, 15.2);
+
+        const graphStates = [
+          { t: 0, text: 'COMPLETE GRAPH' },
+          { t: 0.55, text: 'CHECKING LINEAGE…' },
+          { t: 1.25, text: 'CHECKING LINEAG_' },
+          { t: 1.65, text: 'CHECKING' },
+          { t: 2.05, text: 'UNRESOLVED' }
+        ];
+        const graphDriver = { time: 0 };
+        const graphBlink = { phase: 0 };
+        const textAt = (time) => {
+          for (let index = graphStates.length - 1; index >= 0; index -= 1) {
+            if (time >= graphStates[index].t) return graphStates[index].text;
+          }
+          return '';
+        };
+
+        tl.fromTo(safetyPhase, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.62, ease: 'power3.out' }, 16.5);
+        tl.to(receipt, { x: 480, y: -235, scale: 0.58, duration: 0.85, ease: 'power3.inOut' }, 16.5);
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-stack-card'), { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.52, ease: 'power3.out' }, 16.55);
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-completeness-card'), { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.52, ease: 'power3.out' }, 16.72);
+        tl.fromTo(root.querySelector('.frame-f06-evidence-gates-mutation-card'), { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.52, ease: 'power3.out' }, 16.89);
+        tl.to(lineagePage, { opacity: 0, scale: 0.72, y: -70, duration: 0.58, ease: 'power2.in' }, 17.05);
+        tl.to(graphDriver, { time: 3.25, duration: 3.25, ease: 'none', onUpdate: () => { completenessText.textContent = textAt(graphDriver.time); completenessText.style.color = graphDriver.time >= 2.05 ? '#ff7048' : '#e7eeeb'; } }, 16.5);
+        tl.to(graphBlink, { phase: Math.PI * 10, duration: 3.5, ease: 'none', onUpdate: () => { completenessCursor.style.opacity = Math.sin(graphBlink.phase) > 0 ? '1' : '0'; } }, 16.5);
+        tl.fromTo(risk, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.46, ease: 'power3.out' }, 18.6);
+        tl.fromTo(laneFill, { scaleX: 0, opacity: 0.28 }, { scaleX: 1, opacity: 1, duration: 2.7, ease: 'power2.inOut' }, 16.8);
+        tl.fromTo(laneLock, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 19.25);
+        tl.call(() => { laneState.textContent = 'BLOCKED'; }, [], 19.3);
+        tl.to(completenessCursor, { opacity: 0, duration: 0.12, ease: 'none' }, 19.85);
+
+        tl.to(receipt, { x: 0, y: 0, scale: 1, duration: 0.62, ease: 'power3.inOut' }, 20);
+        tl.to(mergeVerdict, { scale: 0.72, opacity: 0, duration: 0.34, ease: 'power2.in' }, 20);
+        tl.to(refuseVerdict, { scale: 1, opacity: 1, duration: 0.58, ease: 'back.out(1.4)' }, 20.2);
+        tl.fromTo(zeroMutations, { opacity: 0, y: 9 }, { opacity: 1, y: 0, duration: 0.42, ease: 'power3.out' }, 20.72);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines['06-evidence-gates'] = tl;
+      })();
+    </script>
+  </div>
+</template>

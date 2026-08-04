@@ -1,0 +1,37 @@
+version: 2
+models:
+- name: stg_orders
+  description: Compatibility model generated from DataHub RFC-42.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: order_id
+    data_type: bigint
+    data_tests:
+    - not_null
+    - unique
+  - name: customer_id
+    data_type: bigint
+    data_tests:
+    - not_null
+  - name: amount_usd
+    data_type: decimal(12,2)
+    data_tests:
+    - not_null
+  - name: customer_tier
+    data_type: varchar
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - bronze
+          - silver
+          - gold
+  - name: ordered_at
+    data_type: timestamp
+    data_tests:
+    - not_null
+  meta:
+    evidencegraph_change: EG-042

@@ -1,0 +1,1791 @@
+{
+  "bgm": null,
+  "bgm_pending": false,
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/voice/01.wav",
+      "duration_s": 14,
+      "words": [
+        {
+          "id": "w0",
+          "text": "A",
+          "start": 0.08,
+          "end": 0.237
+        },
+        {
+          "id": "w1",
+          "text": "schema",
+          "start": 0.237,
+          "end": 0.634
+        },
+        {
+          "id": "w2",
+          "text": "change",
+          "start": 0.634,
+          "end": 1.03
+        },
+        {
+          "id": "w3",
+          "text": "should",
+          "start": 1.03,
+          "end": 1.426
+        },
+        {
+          "id": "w4",
+          "text": "not",
+          "start": 1.426,
+          "end": 1.624
+        },
+        {
+          "id": "w5",
+          "text": "become",
+          "start": 1.624,
+          "end": 2.02
+        },
+        {
+          "id": "w6",
+          "text": "an",
+          "start": 2.02,
+          "end": 2.178
+        },
+        {
+          "id": "w7",
+          "text": "incident.",
+          "start": 2.178,
+          "end": 2.895
+        },
+        {
+          "id": "w8",
+          "text": "Before",
+          "start": 2.895,
+          "end": 3.291
+        },
+        {
+          "id": "w9",
+          "text": "anyone",
+          "start": 3.291,
+          "end": 3.687
+        },
+        {
+          "id": "w10",
+          "text": "merges",
+          "start": 3.687,
+          "end": 4.084
+        },
+        {
+          "id": "w11",
+          "text": "it,",
+          "start": 4.084,
+          "end": 4.319
+        },
+        {
+          "id": "w12",
+          "text": "EvidenceGraph",
+          "start": 4.319,
+          "end": 5.178
+        },
+        {
+          "id": "w13",
+          "text": "asks",
+          "start": 5.178,
+          "end": 5.442
+        },
+        {
+          "id": "w14",
+          "text": "a",
+          "start": 5.442,
+          "end": 5.599
+        },
+        {
+          "id": "w15",
+          "text": "harder",
+          "start": 5.599,
+          "end": 5.996
+        },
+        {
+          "id": "w16",
+          "text": "question:",
+          "start": 5.996,
+          "end": 6.603
+        },
+        {
+          "id": "w17",
+          "text": "what",
+          "start": 6.603,
+          "end": 6.867
+        },
+        {
+          "id": "w18",
+          "text": "will",
+          "start": 6.867,
+          "end": 7.131
+        },
+        {
+          "id": "w19",
+          "text": "this",
+          "start": 7.131,
+          "end": 7.395
+        },
+        {
+          "id": "w20",
+          "text": "change",
+          "start": 7.395,
+          "end": 7.791
+        },
+        {
+          "id": "w21",
+          "text": "actually",
+          "start": 7.791,
+          "end": 8.32
+        },
+        {
+          "id": "w22",
+          "text": "break?",
+          "start": 8.32,
+          "end": 8.839
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/voice/02.wav",
+      "duration_s": 20,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Repository",
+          "start": 0.08,
+          "end": 0.757
+        },
+        {
+          "id": "w1",
+          "text": "search",
+          "start": 0.757,
+          "end": 1.163
+        },
+        {
+          "id": "w2",
+          "text": "finds",
+          "start": 1.163,
+          "end": 1.501
+        },
+        {
+          "id": "w3",
+          "text": "three",
+          "start": 1.501,
+          "end": 1.84
+        },
+        {
+          "id": "w4",
+          "text": "of",
+          "start": 1.84,
+          "end": 2.001
+        },
+        {
+          "id": "w5",
+          "text": "seven",
+          "start": 2.001,
+          "end": 2.339
+        },
+        {
+          "id": "w6",
+          "text": "downstream",
+          "start": 2.339,
+          "end": 3.016
+        },
+        {
+          "id": "w7",
+          "text": "consumers.",
+          "start": 3.016,
+          "end": 3.819
+        },
+        {
+          "id": "w8",
+          "text": "It",
+          "start": 3.819,
+          "end": 3.98
+        },
+        {
+          "id": "w9",
+          "text": "misses",
+          "start": 3.98,
+          "end": 4.386
+        },
+        {
+          "id": "w10",
+          "text": "the",
+          "start": 4.386,
+          "end": 4.589
+        },
+        {
+          "id": "w11",
+          "text": "dashboard,",
+          "start": 4.589,
+          "end": 5.279
+        },
+        {
+          "id": "w12",
+          "text": "the",
+          "start": 5.279,
+          "end": 5.482
+        },
+        {
+          "id": "w13",
+          "text": "machine-learning",
+          "start": 5.482,
+          "end": 6.497
+        },
+        {
+          "id": "w14",
+          "text": "feature,",
+          "start": 6.497,
+          "end": 7.051
+        },
+        {
+          "id": "w15",
+          "text": "the",
+          "start": 7.051,
+          "end": 7.255
+        },
+        {
+          "id": "w16",
+          "text": "model,",
+          "start": 7.255,
+          "end": 7.674
+        },
+        {
+          "id": "w17",
+          "text": "and",
+          "start": 7.674,
+          "end": 7.877
+        },
+        {
+          "id": "w18",
+          "text": "the",
+          "start": 7.877,
+          "end": 8.08
+        },
+        {
+          "id": "w19",
+          "text": "production",
+          "start": 8.08,
+          "end": 8.756
+        },
+        {
+          "id": "w20",
+          "text": "deployment.",
+          "start": 8.756,
+          "end": 9.627
+        },
+        {
+          "id": "w21",
+          "text": "That",
+          "start": 9.627,
+          "end": 9.897
+        },
+        {
+          "id": "w22",
+          "text": "is",
+          "start": 9.897,
+          "end": 10.059
+        },
+        {
+          "id": "w23",
+          "text": "a",
+          "start": 10.059,
+          "end": 10.22
+        },
+        {
+          "id": "w24",
+          "text": "forty-two",
+          "start": 10.22,
+          "end": 10.761
+        },
+        {
+          "id": "w25",
+          "text": "point",
+          "start": 10.761,
+          "end": 11.1
+        },
+        {
+          "id": "w26",
+          "text": "nine",
+          "start": 11.1,
+          "end": 11.37
+        },
+        {
+          "id": "w27",
+          "text": "percent",
+          "start": 11.37,
+          "end": 11.844
+        },
+        {
+          "id": "w28",
+          "text": "view",
+          "start": 11.844,
+          "end": 12.115
+        },
+        {
+          "id": "w29",
+          "text": "—",
+          "start": 12.115,
+          "end": 12.276
+        },
+        {
+          "id": "w30",
+          "text": "and",
+          "start": 12.276,
+          "end": 12.479
+        },
+        {
+          "id": "w31",
+          "text": "a",
+          "start": 12.479,
+          "end": 12.64
+        },
+        {
+          "id": "w32",
+          "text": "false-safe",
+          "start": 12.64,
+          "end": 13.249
+        },
+        {
+          "id": "w33",
+          "text": "decision",
+          "start": 13.249,
+          "end": 13.791
+        },
+        {
+          "id": "w34",
+          "text": "waiting",
+          "start": 13.791,
+          "end": 14.265
+        },
+        {
+          "id": "w35",
+          "text": "to",
+          "start": 14.265,
+          "end": 14.426
+        },
+        {
+          "id": "w36",
+          "text": "happen.",
+          "start": 14.426,
+          "end": 15.025
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/voice/03.wav",
+      "duration_s": 19,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.046
+        },
+        {
+          "id": "w1",
+          "text": "reads",
+          "start": 1.046,
+          "end": 1.418
+        },
+        {
+          "id": "w2",
+          "text": "DataHub",
+          "start": 1.418,
+          "end": 1.939
+        },
+        {
+          "id": "w3",
+          "text": "through",
+          "start": 1.939,
+          "end": 2.459
+        },
+        {
+          "id": "w4",
+          "text": "the",
+          "start": 2.459,
+          "end": 2.682
+        },
+        {
+          "id": "w5",
+          "text": "official",
+          "start": 2.682,
+          "end": 3.277
+        },
+        {
+          "id": "w6",
+          "text": "M",
+          "start": 3.277,
+          "end": 3.454
+        },
+        {
+          "id": "w7",
+          "text": "C",
+          "start": 3.454,
+          "end": 3.631
+        },
+        {
+          "id": "w8",
+          "text": "P",
+          "start": 3.631,
+          "end": 3.808
+        },
+        {
+          "id": "w9",
+          "text": "server",
+          "start": 3.808,
+          "end": 4.254
+        },
+        {
+          "id": "w10",
+          "text": "and",
+          "start": 4.254,
+          "end": 4.477
+        },
+        {
+          "id": "w11",
+          "text": "the",
+          "start": 4.477,
+          "end": 4.7
+        },
+        {
+          "id": "w12",
+          "text": "Python",
+          "start": 4.7,
+          "end": 5.146
+        },
+        {
+          "id": "w13",
+          "text": "S",
+          "start": 5.146,
+          "end": 5.323
+        },
+        {
+          "id": "w14",
+          "text": "D",
+          "start": 5.323,
+          "end": 5.5
+        },
+        {
+          "id": "w15",
+          "text": "K.",
+          "start": 5.5,
+          "end": 5.889
+        },
+        {
+          "id": "w16",
+          "text": "Schemas,",
+          "start": 5.889,
+          "end": 6.498
+        },
+        {
+          "id": "w17",
+          "text": "ownership,",
+          "start": 6.498,
+          "end": 7.256
+        },
+        {
+          "id": "w18",
+          "text": "lineage,",
+          "start": 7.256,
+          "end": 7.865
+        },
+        {
+          "id": "w19",
+          "text": "contracts,",
+          "start": 7.865,
+          "end": 8.622
+        },
+        {
+          "id": "w20",
+          "text": "tags,",
+          "start": 8.622,
+          "end": 9.008
+        },
+        {
+          "id": "w21",
+          "text": "documentation,",
+          "start": 9.008,
+          "end": 10.063
+        },
+        {
+          "id": "w22",
+          "text": "dashboards,",
+          "start": 10.063,
+          "end": 10.895
+        },
+        {
+          "id": "w23",
+          "text": "and",
+          "start": 10.895,
+          "end": 11.118
+        },
+        {
+          "id": "w24",
+          "text": "machine-learning",
+          "start": 11.118,
+          "end": 12.233
+        },
+        {
+          "id": "w25",
+          "text": "metadata",
+          "start": 12.233,
+          "end": 12.828
+        },
+        {
+          "id": "w26",
+          "text": "become",
+          "start": 12.828,
+          "end": 13.274
+        },
+        {
+          "id": "w27",
+          "text": "one",
+          "start": 13.274,
+          "end": 13.497
+        },
+        {
+          "id": "w28",
+          "text": "executable",
+          "start": 13.497,
+          "end": 14.241
+        },
+        {
+          "id": "w29",
+          "text": "context",
+          "start": 14.241,
+          "end": 14.761
+        },
+        {
+          "id": "w30",
+          "text": "graph.",
+          "start": 14.761,
+          "end": 15.345
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/voice/04.wav",
+      "duration_s": 21,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Now",
+          "start": 0.08,
+          "end": 0.309
+        },
+        {
+          "id": "w1",
+          "text": "the",
+          "start": 0.309,
+          "end": 0.539
+        },
+        {
+          "id": "w2",
+          "text": "blast",
+          "start": 0.539,
+          "end": 0.921
+        },
+        {
+          "id": "w3",
+          "text": "radius",
+          "start": 0.921,
+          "end": 1.38
+        },
+        {
+          "id": "w4",
+          "text": "is",
+          "start": 1.38,
+          "end": 1.562
+        },
+        {
+          "id": "w5",
+          "text": "complete:",
+          "start": 1.562,
+          "end": 2.265
+        },
+        {
+          "id": "w6",
+          "text": "two",
+          "start": 2.265,
+          "end": 2.494
+        },
+        {
+          "id": "w7",
+          "text": "dbt",
+          "start": 2.494,
+          "end": 2.724
+        },
+        {
+          "id": "w8",
+          "text": "models,",
+          "start": 2.724,
+          "end": 3.274
+        },
+        {
+          "id": "w9",
+          "text": "an",
+          "start": 3.274,
+          "end": 3.456
+        },
+        {
+          "id": "w10",
+          "text": "Airflow",
+          "start": 3.456,
+          "end": 3.991
+        },
+        {
+          "id": "w11",
+          "text": "job,",
+          "start": 3.991,
+          "end": 4.311
+        },
+        {
+          "id": "w12",
+          "text": "an",
+          "start": 4.311,
+          "end": 4.493
+        },
+        {
+          "id": "w13",
+          "text": "executive",
+          "start": 4.493,
+          "end": 5.182
+        },
+        {
+          "id": "w14",
+          "text": "dashboard,",
+          "start": 5.182,
+          "end": 5.961
+        },
+        {
+          "id": "w15",
+          "text": "an",
+          "start": 5.961,
+          "end": 6.143
+        },
+        {
+          "id": "w16",
+          "text": "M",
+          "start": 6.143,
+          "end": 6.325
+        },
+        {
+          "id": "w17",
+          "text": "L",
+          "start": 6.325,
+          "end": 6.507
+        },
+        {
+          "id": "w18",
+          "text": "feature,",
+          "start": 6.507,
+          "end": 7.134
+        },
+        {
+          "id": "w19",
+          "text": "a",
+          "start": 7.134,
+          "end": 7.316
+        },
+        {
+          "id": "w20",
+          "text": "model,",
+          "start": 7.316,
+          "end": 7.789
+        },
+        {
+          "id": "w21",
+          "text": "and",
+          "start": 7.789,
+          "end": 8.018
+        },
+        {
+          "id": "w22",
+          "text": "its",
+          "start": 8.018,
+          "end": 8.248
+        },
+        {
+          "id": "w23",
+          "text": "production",
+          "start": 8.248,
+          "end": 9.013
+        },
+        {
+          "id": "w24",
+          "text": "deployment.",
+          "start": 9.013,
+          "end": 9.996
+        },
+        {
+          "id": "w25",
+          "text": "Each",
+          "start": 9.996,
+          "end": 10.302
+        },
+        {
+          "id": "w26",
+          "text": "path",
+          "start": 10.302,
+          "end": 10.608
+        },
+        {
+          "id": "w27",
+          "text": "is",
+          "start": 10.608,
+          "end": 10.79
+        },
+        {
+          "id": "w28",
+          "text": "routed",
+          "start": 10.79,
+          "end": 11.248
+        },
+        {
+          "id": "w29",
+          "text": "to",
+          "start": 11.248,
+          "end": 11.431
+        },
+        {
+          "id": "w30",
+          "text": "its",
+          "start": 11.431,
+          "end": 11.66
+        },
+        {
+          "id": "w31",
+          "text": "owner,",
+          "start": 11.66,
+          "end": 12.133
+        },
+        {
+          "id": "w32",
+          "text": "prioritized,",
+          "start": 12.133,
+          "end": 13.066
+        },
+        {
+          "id": "w33",
+          "text": "and",
+          "start": 13.066,
+          "end": 13.295
+        },
+        {
+          "id": "w34",
+          "text": "linked",
+          "start": 13.295,
+          "end": 13.754
+        },
+        {
+          "id": "w35",
+          "text": "to",
+          "start": 13.754,
+          "end": 13.936
+        },
+        {
+          "id": "w36",
+          "text": "the",
+          "start": 13.936,
+          "end": 14.165
+        },
+        {
+          "id": "w37",
+          "text": "exact",
+          "start": 14.165,
+          "end": 14.548
+        },
+        {
+          "id": "w38",
+          "text": "DataHub",
+          "start": 14.548,
+          "end": 15.083
+        },
+        {
+          "id": "w39",
+          "text": "object",
+          "start": 15.083,
+          "end": 15.542
+        },
+        {
+          "id": "w40",
+          "text": "that",
+          "start": 15.542,
+          "end": 15.848
+        },
+        {
+          "id": "w41",
+          "text": "supports",
+          "start": 15.848,
+          "end": 16.459
+        },
+        {
+          "id": "w42",
+          "text": "it.",
+          "start": 16.459,
+          "end": 16.86
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/voice/05.wav",
+      "duration_s": 20,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.11
+        },
+        {
+          "id": "w1",
+          "text": "does",
+          "start": 1.11,
+          "end": 1.427
+        },
+        {
+          "id": "w2",
+          "text": "not",
+          "start": 1.427,
+          "end": 1.664
+        },
+        {
+          "id": "w3",
+          "text": "stop",
+          "start": 1.664,
+          "end": 1.981
+        },
+        {
+          "id": "w4",
+          "text": "at",
+          "start": 1.981,
+          "end": 2.17
+        },
+        {
+          "id": "w5",
+          "text": "an",
+          "start": 2.17,
+          "end": 2.359
+        },
+        {
+          "id": "w6",
+          "text": "explanation.",
+          "start": 2.359,
+          "end": 3.456
+        },
+        {
+          "id": "w7",
+          "text": "It",
+          "start": 3.456,
+          "end": 3.645
+        },
+        {
+          "id": "w8",
+          "text": "compiles",
+          "start": 3.645,
+          "end": 4.279
+        },
+        {
+          "id": "w9",
+          "text": "nine",
+          "start": 4.279,
+          "end": 4.596
+        },
+        {
+          "id": "w10",
+          "text": "concrete",
+          "start": 4.596,
+          "end": 5.229
+        },
+        {
+          "id": "w11",
+          "text": "artifacts:",
+          "start": 5.229,
+          "end": 6.037
+        },
+        {
+          "id": "w12",
+          "text": "S",
+          "start": 6.037,
+          "end": 6.225
+        },
+        {
+          "id": "w13",
+          "text": "Q",
+          "start": 6.225,
+          "end": 6.414
+        },
+        {
+          "id": "w14",
+          "text": "L,",
+          "start": 6.414,
+          "end": 6.697
+        },
+        {
+          "id": "w15",
+          "text": "dbt",
+          "start": 6.697,
+          "end": 6.935
+        },
+        {
+          "id": "w16",
+          "text": "model",
+          "start": 6.935,
+          "end": 7.331
+        },
+        {
+          "id": "w17",
+          "text": "and",
+          "start": 7.331,
+          "end": 7.568
+        },
+        {
+          "id": "w18",
+          "text": "tests,",
+          "start": 7.568,
+          "end": 8.059
+        },
+        {
+          "id": "w19",
+          "text": "validation",
+          "start": 8.059,
+          "end": 8.851
+        },
+        {
+          "id": "w20",
+          "text": "queries,",
+          "start": 8.851,
+          "end": 9.5
+        },
+        {
+          "id": "w21",
+          "text": "an",
+          "start": 9.5,
+          "end": 9.689
+        },
+        {
+          "id": "w22",
+          "text": "Airflow",
+          "start": 9.689,
+          "end": 10.243
+        },
+        {
+          "id": "w23",
+          "text": "evidence",
+          "start": 10.243,
+          "end": 10.877
+        },
+        {
+          "id": "w24",
+          "text": "gate,",
+          "start": 10.877,
+          "end": 11.288
+        },
+        {
+          "id": "w25",
+          "text": "an",
+          "start": 11.288,
+          "end": 11.477
+        },
+        {
+          "id": "w26",
+          "text": "M",
+          "start": 11.477,
+          "end": 11.665
+        },
+        {
+          "id": "w27",
+          "text": "L",
+          "start": 11.665,
+          "end": 11.854
+        },
+        {
+          "id": "w28",
+          "text": "contract,",
+          "start": 11.854,
+          "end": 12.582
+        },
+        {
+          "id": "w29",
+          "text": "a",
+          "start": 12.582,
+          "end": 12.771
+        },
+        {
+          "id": "w30",
+          "text": "migration",
+          "start": 12.771,
+          "end": 13.484
+        },
+        {
+          "id": "w31",
+          "text": "plan,",
+          "start": 13.484,
+          "end": 13.895
+        },
+        {
+          "id": "w32",
+          "text": "and",
+          "start": 13.895,
+          "end": 14.132
+        },
+        {
+          "id": "w33",
+          "text": "a",
+          "start": 14.132,
+          "end": 14.321
+        },
+        {
+          "id": "w34",
+          "text": "real",
+          "start": 14.321,
+          "end": 14.638
+        },
+        {
+          "id": "w35",
+          "text": "unified",
+          "start": 14.638,
+          "end": 15.193
+        },
+        {
+          "id": "w36",
+          "text": "diff",
+          "start": 15.193,
+          "end": 15.509
+        },
+        {
+          "id": "w37",
+          "text": "that",
+          "start": 15.509,
+          "end": 15.826
+        },
+        {
+          "id": "w38",
+          "text": "Git",
+          "start": 15.826,
+          "end": 16.064
+        },
+        {
+          "id": "w39",
+          "text": "can",
+          "start": 16.064,
+          "end": 16.302
+        },
+        {
+          "id": "w40",
+          "text": "apply",
+          "start": 16.302,
+          "end": 16.698
+        },
+        {
+          "id": "w41",
+          "text": "cleanly.",
+          "start": 16.698,
+          "end": 17.479
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/voice/06.wav",
+      "duration_s": 22,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Fourteen",
+          "start": 0.08,
+          "end": 0.675
+        },
+        {
+          "id": "w1",
+          "text": "deterministic",
+          "start": 0.675,
+          "end": 1.642
+        },
+        {
+          "id": "w2",
+          "text": "gates",
+          "start": 1.642,
+          "end": 2.014
+        },
+        {
+          "id": "w3",
+          "text": "run",
+          "start": 2.014,
+          "end": 2.237
+        },
+        {
+          "id": "w4",
+          "text": "in",
+          "start": 2.237,
+          "end": 2.414
+        },
+        {
+          "id": "w5",
+          "text": "their",
+          "start": 2.414,
+          "end": 2.786
+        },
+        {
+          "id": "w6",
+          "text": "native",
+          "start": 2.786,
+          "end": 3.232
+        },
+        {
+          "id": "w7",
+          "text": "environments:",
+          "start": 3.232,
+          "end": 4.213
+        },
+        {
+          "id": "w8",
+          "text": "Duck",
+          "start": 4.213,
+          "end": 4.511
+        },
+        {
+          "id": "w9",
+          "text": "D",
+          "start": 4.511,
+          "end": 4.688
+        },
+        {
+          "id": "w10",
+          "text": "B,",
+          "start": 4.688,
+          "end": 4.954
+        },
+        {
+          "id": "w11",
+          "text": "dbt",
+          "start": 4.954,
+          "end": 5.177
+        },
+        {
+          "id": "w12",
+          "text": "Core,",
+          "start": 5.177,
+          "end": 5.563
+        },
+        {
+          "id": "w13",
+          "text": "the",
+          "start": 5.563,
+          "end": 5.786
+        },
+        {
+          "id": "w14",
+          "text": "official",
+          "start": 5.786,
+          "end": 6.381
+        },
+        {
+          "id": "w15",
+          "text": "Airflow",
+          "start": 6.381,
+          "end": 6.902
+        },
+        {
+          "id": "w16",
+          "text": "container,",
+          "start": 6.902,
+          "end": 7.66
+        },
+        {
+          "id": "w17",
+          "text": "feature-parity",
+          "start": 7.66,
+          "end": 8.626
+        },
+        {
+          "id": "w18",
+          "text": "checks,",
+          "start": 8.626,
+          "end": 9.161
+        },
+        {
+          "id": "w19",
+          "text": "and",
+          "start": 9.161,
+          "end": 9.384
+        },
+        {
+          "id": "w20",
+          "text": "Git",
+          "start": 9.384,
+          "end": 9.608
+        },
+        {
+          "id": "w21",
+          "text": "patch",
+          "start": 9.608,
+          "end": 9.979
+        },
+        {
+          "id": "w22",
+          "text": "application.",
+          "start": 9.979,
+          "end": 11.01
+        },
+        {
+          "id": "w23",
+          "text": "All",
+          "start": 11.01,
+          "end": 11.233
+        },
+        {
+          "id": "w24",
+          "text": "fourteen",
+          "start": 11.233,
+          "end": 11.828
+        },
+        {
+          "id": "w25",
+          "text": "pass.",
+          "start": 11.828,
+          "end": 12.338
+        },
+        {
+          "id": "w26",
+          "text": "Remove",
+          "start": 12.338,
+          "end": 12.785
+        },
+        {
+          "id": "w27",
+          "text": "one",
+          "start": 12.785,
+          "end": 13.008
+        },
+        {
+          "id": "w28",
+          "text": "lineage",
+          "start": 13.008,
+          "end": 13.528
+        },
+        {
+          "id": "w29",
+          "text": "page,",
+          "start": 13.528,
+          "end": 13.914
+        },
+        {
+          "id": "w30",
+          "text": "and",
+          "start": 13.914,
+          "end": 14.138
+        },
+        {
+          "id": "w31",
+          "text": "EvidenceGraph",
+          "start": 14.138,
+          "end": 15.105
+        },
+        {
+          "id": "w32",
+          "text": "refuses",
+          "start": 15.105,
+          "end": 15.625
+        },
+        {
+          "id": "w33",
+          "text": "the",
+          "start": 15.625,
+          "end": 15.848
+        },
+        {
+          "id": "w34",
+          "text": "safe-to-merge",
+          "start": 15.848,
+          "end": 16.666
+        },
+        {
+          "id": "w35",
+          "text": "verdict",
+          "start": 16.666,
+          "end": 17.187
+        },
+        {
+          "id": "w36",
+          "text": "and",
+          "start": 17.187,
+          "end": 17.41
+        },
+        {
+          "id": "w37",
+          "text": "blocks",
+          "start": 17.41,
+          "end": 17.857
+        },
+        {
+          "id": "w38",
+          "text": "every",
+          "start": 17.857,
+          "end": 18.228
+        },
+        {
+          "id": "w39",
+          "text": "mutation.",
+          "start": 18.228,
+          "end": 19.036
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "path": "assets/voice/07.wav",
+      "duration_s": 22,
+      "words": [
+        {
+          "id": "w0",
+          "text": "With",
+          "start": 0.08,
+          "end": 0.383
+        },
+        {
+          "id": "w1",
+          "text": "explicit",
+          "start": 0.383,
+          "end": 0.988
+        },
+        {
+          "id": "w2",
+          "text": "approval,",
+          "start": 0.988,
+          "end": 1.683
+        },
+        {
+          "id": "w3",
+          "text": "three",
+          "start": 1.683,
+          "end": 2.061
+        },
+        {
+          "id": "w4",
+          "text": "scoped",
+          "start": 2.061,
+          "end": 2.514
+        },
+        {
+          "id": "w5",
+          "text": "results",
+          "start": 2.514,
+          "end": 3.044
+        },
+        {
+          "id": "w6",
+          "text": "write",
+          "start": 3.044,
+          "end": 3.422
+        },
+        {
+          "id": "w7",
+          "text": "back",
+          "start": 3.422,
+          "end": 3.725
+        },
+        {
+          "id": "w8",
+          "text": "into",
+          "start": 3.725,
+          "end": 4.027
+        },
+        {
+          "id": "w9",
+          "text": "DataHub",
+          "start": 4.027,
+          "end": 4.556
+        },
+        {
+          "id": "w10",
+          "text": "and",
+          "start": 4.556,
+          "end": 4.783
+        },
+        {
+          "id": "w11",
+          "text": "verify",
+          "start": 4.783,
+          "end": 5.237
+        },
+        {
+          "id": "w12",
+          "text": "by",
+          "start": 5.237,
+          "end": 5.417
+        },
+        {
+          "id": "w13",
+          "text": "readback.",
+          "start": 5.417,
+          "end": 6.238
+        },
+        {
+          "id": "w14",
+          "text": "A",
+          "start": 6.238,
+          "end": 6.418
+        },
+        {
+          "id": "w15",
+          "text": "new",
+          "start": 6.418,
+          "end": 6.645
+        },
+        {
+          "id": "w16",
+          "text": "client",
+          "start": 6.645,
+          "end": 7.099
+        },
+        {
+          "id": "w17",
+          "text": "retries",
+          "start": 7.099,
+          "end": 7.628
+        },
+        {
+          "id": "w18",
+          "text": "the",
+          "start": 7.628,
+          "end": 7.855
+        },
+        {
+          "id": "w19",
+          "text": "same",
+          "start": 7.855,
+          "end": 8.158
+        },
+        {
+          "id": "w20",
+          "text": "plan:",
+          "start": 8.158,
+          "end": 8.55
+        },
+        {
+          "id": "w21",
+          "text": "three",
+          "start": 8.55,
+          "end": 8.928
+        },
+        {
+          "id": "w22",
+          "text": "verified",
+          "start": 8.928,
+          "end": 9.533
+        },
+        {
+          "id": "w23",
+          "text": "no-ops,",
+          "start": 9.533,
+          "end": 10.002
+        },
+        {
+          "id": "w24",
+          "text": "no",
+          "start": 10.002,
+          "end": 10.182
+        },
+        {
+          "id": "w25",
+          "text": "duplicates.",
+          "start": 10.182,
+          "end": 11.154
+        },
+        {
+          "id": "w26",
+          "text": "In",
+          "start": 11.154,
+          "end": 11.426
+        },
+        {
+          "id": "w27",
+          "text": "the",
+          "start": 11.426,
+          "end": 11.758
+        },
+        {
+          "id": "w28",
+          "text": "deterministic",
+          "start": 11.758,
+          "end": 12.45
+        },
+        {
+          "id": "w29",
+          "text": "closure",
+          "start": 12.45,
+          "end": 12.958
+        },
+        {
+          "id": "w30",
+          "text": "replay,",
+          "start": 12.958,
+          "end": 13.428
+        },
+        {
+          "id": "w31",
+          "text": "EvidenceGraph",
+          "start": 13.428,
+          "end": 14.121
+        },
+        {
+          "id": "w32",
+          "text": "requires",
+          "start": 14.121,
+          "end": 14.664
+        },
+        {
+          "id": "w33",
+          "text": "a",
+          "start": 14.664,
+          "end": 14.869
+        },
+        {
+          "id": "w34",
+          "text": "newer",
+          "start": 14.869,
+          "end": 15.299
+        },
+        {
+          "id": "w35",
+          "text": "complete",
+          "start": 15.299,
+          "end": 15.842
+        },
+        {
+          "id": "w36",
+          "text": "graph",
+          "start": 15.842,
+          "end": 16.271
+        },
+        {
+          "id": "w37",
+          "text": "and",
+          "start": 16.271,
+          "end": 16.604
+        },
+        {
+          "id": "w38",
+          "text": "closes",
+          "start": 16.604,
+          "end": 17.074
+        },
+        {
+          "id": "w39",
+          "text": "only",
+          "start": 17.074,
+          "end": 17.458
+        },
+        {
+          "id": "w40",
+          "text": "when",
+          "start": 17.458,
+          "end": 17.842
+        },
+        {
+          "id": "w41",
+          "text": "the",
+          "start": 17.842,
+          "end": 18.174
+        },
+        {
+          "id": "w42",
+          "text": "retired",
+          "start": 18.174,
+          "end": 18.682
+        },
+        {
+          "id": "w43",
+          "text": "field",
+          "start": 18.682,
+          "end": 19.112
+        },
+        {
+          "id": "w44",
+          "text": "has",
+          "start": 19.112,
+          "end": 19.444
+        },
+        {
+          "id": "w45",
+          "text": "zero",
+          "start": 19.444,
+          "end": 19.828
+        },
+        {
+          "id": "w46",
+          "text": "remaining",
+          "start": 19.828,
+          "end": 20.404
+        },
+        {
+          "id": "w47",
+          "text": "consumers.",
+          "start": 20.404,
+          "end": 20.98
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "path": "assets/voice/08.wav",
+      "duration_s": 12,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.018
+        },
+        {
+          "id": "w1",
+          "text": "makes",
+          "start": 1.018,
+          "end": 1.379
+        },
+        {
+          "id": "w2",
+          "text": "DataHub's",
+          "start": 1.379,
+          "end": 1.956
+        },
+        {
+          "id": "w3",
+          "text": "context",
+          "start": 1.956,
+          "end": 2.461
+        },
+        {
+          "id": "w4",
+          "text": "graph",
+          "start": 2.461,
+          "end": 2.822
+        },
+        {
+          "id": "w5",
+          "text": "operational.",
+          "start": 2.822,
+          "end": 3.822
+        },
+        {
+          "id": "w6",
+          "text": "Inspect",
+          "start": 3.822,
+          "end": 4.328
+        },
+        {
+          "id": "w7",
+          "text": "the",
+          "start": 4.328,
+          "end": 4.544
+        },
+        {
+          "id": "w8",
+          "text": "public",
+          "start": 4.544,
+          "end": 4.977
+        },
+        {
+          "id": "w9",
+          "text": "replay,",
+          "start": 4.977,
+          "end": 5.496
+        },
+        {
+          "id": "w10",
+          "text": "audit",
+          "start": 5.496,
+          "end": 5.857
+        },
+        {
+          "id": "w11",
+          "text": "every",
+          "start": 5.857,
+          "end": 6.218
+        },
+        {
+          "id": "w12",
+          "text": "claim",
+          "start": 6.218,
+          "end": 6.578
+        },
+        {
+          "id": "w13",
+          "text": "in",
+          "start": 6.578,
+          "end": 6.75
+        },
+        {
+          "id": "w14",
+          "text": "the",
+          "start": 6.75,
+          "end": 6.967
+        },
+        {
+          "id": "w15",
+          "text": "evidence",
+          "start": 6.967,
+          "end": 7.544
+        },
+        {
+          "id": "w16",
+          "text": "ledger,",
+          "start": 7.544,
+          "end": 8.063
+        },
+        {
+          "id": "w17",
+          "text": "and",
+          "start": 8.063,
+          "end": 8.279
+        },
+        {
+          "id": "w18",
+          "text": "run",
+          "start": 8.279,
+          "end": 8.496
+        },
+        {
+          "id": "w19",
+          "text": "the",
+          "start": 8.496,
+          "end": 8.712
+        },
+        {
+          "id": "w20",
+          "text": "complete",
+          "start": 8.712,
+          "end": 9.29
+        },
+        {
+          "id": "w21",
+          "text": "open-source",
+          "start": 9.29,
+          "end": 10.011
+        },
+        {
+          "id": "w22",
+          "text": "system",
+          "start": 10.011,
+          "end": 10.444
+        },
+        {
+          "id": "w23",
+          "text": "yourself.",
+          "start": 10.444,
+          "end": 11.228
+        }
+      ]
+    }
+  ],
+  "sfx": []
+}
