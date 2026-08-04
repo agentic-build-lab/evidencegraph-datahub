@@ -29,24 +29,27 @@ test("server-renders the production EvidenceGraph experience", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>EvidenceGraph[^<]*DataHub-native change assurance<\/title>/i);
-  assert.match(html, /Repository view [^<]* 3 consumers/i);
-  assert.match(html, /DataHub-grounded recall/i);
-  assert.match(html, /7\/7/);
-  assert.match(html, /14\/14 native gates/);
-  assert.match(html, /3\/3 verified receipts/);
+  assert.match(html, /<title>EvidenceGraph Assurance Studio[^<]*DataHub-native change assurance<\/title>/i);
+  assert.match(html, /PUBLIC EVIDENCE REPLAY · LABELED SOURCES/i);
+  assert.match(html, /FIELD-AWARE DOWNSTREAM LINEAGE/i);
+  assert.match(html, /Repository analysis sees only three consumers/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);
   assert.doesNotMatch(html, /C:[\\/]+Users|datahub_agent_hackathon|New project 8/i);
 });
 
 test("uses repository-owned fonts and ships inspectable public evidence", async () => {
-  const [layout, css, manifest, ledger, validations, writebacks, sansFont, monoFont] = await Promise.all([
+  const [layout, page, css, manifest, ledger, context, validations, writebacks, retries, refusal, closure, sansFont, monoFont] = await Promise.all([
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../public/evidence/manifest.json", import.meta.url), "utf8"),
     readFile(new URL("../public/evidence/flagship/evidence-ledger.live.sanitized.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/evidence/flagship/context-snapshot.live.sanitized.json", import.meta.url), "utf8"),
     readFile(new URL("../public/evidence/flagship/validation-receipts.json", import.meta.url), "utf8"),
     readFile(new URL("../public/evidence/flagship/writeback-receipts.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/evidence/flagship/writeback-retry-receipts.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/evidence/refusal/incomplete-lineage-ledger.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/evidence/closure/closure-receipt.json", import.meta.url), "utf8"),
     readFile(new URL("../public/fonts/Geist-Variable.woff2", import.meta.url)),
     readFile(new URL("../public/fonts/GeistMono-Regular.woff2", import.meta.url)),
   ]);
@@ -54,11 +57,31 @@ test("uses repository-owned fonts and ships inspectable public evidence", async 
   assert.doesNotMatch(layout, /next\/font/);
   assert.match(css, /url\("\/fonts\/Geist-Variable\.woff2"\)/);
   assert.match(css, /url\("\/fonts\/GeistMono-Regular\.woff2"\)/);
+  assert.match(page, /DataHub MCP/);
+  assert.match(page, /DataHub SDK/);
+  assert.doesNotMatch(page, /Agent Context Kit/);
+  assert.match(page, /Missing lineage/);
+  assert.match(page, /WRITEBACK BLOCKED — INCOMPLETE LINEAGE/);
+  assert.match(page, /SEPARATE APPROVED RUN/);
+  assert.match(page, /DETERMINISTIC REPLAY/);
+  assert.match(page, /claimId: "CLM-006"/);
+  assert.match(page, /ownerFor\(/);
+  assert.match(page, /maximumMismatchRate: 0\.0/);
   assert.ok(sansFont.byteLength > 60_000);
   assert.ok(monoFont.byteLength > 40_000);
 
   assert.equal(JSON.parse(manifest).flagship_run_id, "EG-6385813884D5");
-  assert.equal(JSON.parse(ledger).impacts.length, 7);
+  const parsedLedger = JSON.parse(ledger);
+  const parsedContext = JSON.parse(context);
+  const parsedRefusal = JSON.parse(refusal);
+  assert.equal(parsedLedger.impacts.length, 7);
+  assert.equal(parsedLedger.artifacts.length, 9);
+  assert.equal(parsedContext.assets.find((asset) => asset.name === "churn-api-prod").owners[0], "urn:li:corpGroup:ml-platform");
   assert.equal(JSON.parse(validations).length, 14);
   assert.equal(JSON.parse(writebacks).length, 3);
+  assert.equal(JSON.parse(retries).length, 3);
+  assert.equal(parsedRefusal.writeback_proposals.length, 0);
+  assert.equal(parsedRefusal.safety_decision.may_generate, true);
+  assert.equal(parsedRefusal.safety_decision.may_propose_writeback, false);
+  assert.equal(JSON.parse(closure).status, "closed");
 });
