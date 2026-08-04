@@ -1,0 +1,754 @@
+<template>
+  <div id="root" data-composition-id="02-repo-blind-spot" data-width="1920" data-height="1080" data-duration="20.5">
+    <div class="clip f02-ground" data-start="0" data-duration="20.5" data-track-index="0">
+      <img class="f02-ground-image" src="assets/scroll-028.png" alt="" data-layout-allow-overflow />
+      <div class="f02-ground-wash"></div>
+      <div class="f02-grid"></div>
+    </div>
+
+    <div class="f02-safe-stage">
+      <div id="f02-repo-blind-spot-camera" class="f02-camera" data-layout-allow-overlap>
+        <img class="f02-support-shot f02-context-layer" src="assets/scroll-000.png" alt="" />
+
+        <div class="f02-header">
+          <div class="f02-eyebrow">REPOSITORY VIEW</div>
+          <div class="f02-scope-pill">ABLATION</div>
+        </div>
+
+        <section class="f02-instrument f02-context-layer" aria-label="Three of seven consumers found">
+          <svg class="f02-ring" viewBox="0 0 400 400" aria-hidden="true">
+            <g class="f02-ring-base">
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(51.43 200 200)" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(102.86 200 200)" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(154.29 200 200)" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(205.72 200 200)" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(257.15 200 200)" />
+              <path d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(308.58 200 200)" />
+            </g>
+            <g class="f02-ring-active">
+              <path class="f02-segment-accent" d="M200 42 A158 158 0 0 1 323.5 101.5" data-layout-ignore />
+              <path class="f02-segment-accent" d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(51.43 200 200)" data-layout-ignore />
+              <path class="f02-segment-accent" d="M200 42 A158 158 0 0 1 323.5 101.5" transform="rotate(102.86 200 200)" data-layout-ignore />
+            </g>
+          </svg>
+          <div class="f02-counter-lockup">
+            <div class="f02-counter-row">
+              <span id="f02-repo-blind-spot-counter" class="f02-counter">0</span>
+              <span class="f02-counter-total">/ 7</span>
+            </div>
+            <div class="f02-counter-label">FOUND</div>
+          </div>
+        </section>
+
+        <section class="f02-known f02-context-layer" aria-label="Consumers found in repository context">
+          <div class="f02-section-label">KNOWN IN CODE</div>
+          <article class="f02-known-card">
+            <span class="f02-card-index">01</span>
+            <span class="f02-card-type">DBT</span>
+            <strong>stg_orders</strong>
+          </article>
+          <article class="f02-known-card">
+            <span class="f02-card-index">02</span>
+            <span class="f02-card-type">DBT</span>
+            <strong>fct_customer_value</strong>
+          </article>
+          <article class="f02-known-card">
+            <span class="f02-card-index">03</span>
+            <span class="f02-card-type">AIRFLOW</span>
+            <strong>build_customer_value</strong>
+          </article>
+        </section>
+
+        <section class="f02-ghost-field" aria-label="Consumers missing from repository context">
+          <div class="f02-missing-label">OUTSIDE THE REPOSITORY</div>
+          <article class="f02-ghost-card" data-depth="1">
+            <div class="f02-node-icon">
+              <span></span><span></span><span></span>
+            </div>
+            <div><small>04</small><strong>DASHBOARD</strong></div>
+          </article>
+          <article class="f02-ghost-card" data-depth="2">
+            <div class="f02-feature-icon">ƒ</div>
+            <div><small>05</small><strong>ML FEATURE</strong></div>
+          </article>
+          <article class="f02-ghost-card" data-depth="3">
+            <div class="f02-model-icon"><i></i><i></i><i></i></div>
+            <div><small>06</small><strong>MODEL</strong></div>
+          </article>
+          <article class="f02-ghost-card" data-depth="4">
+            <div class="f02-owner-icon"><i></i><span></span></div>
+            <div><small>07</small><strong>DEPLOYMENT</strong></div>
+          </article>
+        </section>
+
+        <section class="f02-verdict" aria-label="Repository coverage is forty-two point nine percent">
+          <div class="f02-coverage-lockup">
+            <div id="f02-repo-blind-spot-coverage" class="f02-coverage">0.0%</div>
+            <div class="f02-coverage-label">COVERAGE</div>
+          </div>
+          <div class="f02-false-safe">
+            <span class="f02-warning-dot">!</span>
+            <strong>FALSE-SAFE</strong>
+            <span class="f02-verdict-chip">DECISION</span>
+            <svg class="f02-marker" viewBox="0 0 520 170" aria-hidden="true">
+              <path id="f02-repo-blind-spot-marker" d="M31 92 C41 26 141 12 269 15 C410 17 492 36 493 91 C493 143 402 158 259 157 C119 156 20 144 31 92 Z" />
+            </svg>
+          </div>
+        </section>
+      </div>
+
+      <div class="f02-progress"><span></span></div>
+    </div>
+  </div>
+
+  <style>
+    @font-face {
+      font-family: "Geist";
+      src: url("assets/fonts/Geist-Variable.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      container-type: size;
+      color: #e7eeeb;
+      font-family: "Geist", sans-serif;
+    }
+
+    .f02-ground {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0c1b22;
+    }
+
+    .f02-ground-image {
+      position: absolute;
+      inset: -4%;
+      width: 108%;
+      height: 108%;
+      object-fit: cover;
+      opacity: 0.35;
+      filter: saturate(0.7) contrast(1.04);
+      transform: scale(1.02);
+    }
+
+    .f02-ground-wash {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(12, 27, 34, 0.97) 0%, rgba(12, 27, 34, 0.74) 52%, rgba(12, 27, 34, 0.92) 100%),
+        linear-gradient(180deg, rgba(12, 27, 34, 0.18), rgba(12, 27, 34, 0.72));
+    }
+
+    .f02-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.38;
+      background-image:
+        linear-gradient(rgba(64, 224, 192, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(64, 224, 192, 0.055) 1px, transparent 1px);
+      background-size: 4.2cqw 4.2cqw;
+      mask-image: linear-gradient(90deg, transparent, black 18%, black 82%, transparent);
+    }
+
+    .f02-safe-stage {
+      position: absolute;
+      inset: 0 0 17cqh 0;
+      overflow: hidden;
+    }
+
+    .f02-camera {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    .f02-header {
+      position: absolute;
+      top: 5cqh;
+      left: 5cqw;
+      right: 5cqw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 30;
+    }
+
+    .f02-eyebrow,
+    .f02-section-label,
+    .f02-missing-label,
+    .f02-counter-label,
+    .f02-coverage-label {
+      color: #40e0c0;
+      font-size: 0.8cqw;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+
+    .f02-scope-pill {
+      padding: 0.55cqh 1.05cqw;
+      border: 1px solid rgba(64, 224, 192, 0.2);
+      border-radius: 100px;
+      background: rgba(64, 224, 192, 0.08);
+      color: #40e0c0;
+      font-size: 0.7cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .f02-support-shot {
+      --dof: 0px;
+      position: absolute;
+      top: 15cqh;
+      right: 4.5cqw;
+      width: 34cqw;
+      height: 54cqh;
+      object-fit: cover;
+      object-position: 50% 12%;
+      opacity: 0.17;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      filter: blur(var(--dof));
+      will-change: filter;
+    }
+
+    .f02-context-layer {
+      --dof: 0px;
+      filter: blur(var(--dof));
+      will-change: filter;
+    }
+
+    .f02-instrument {
+      position: absolute;
+      top: 14cqh;
+      left: 50%;
+      width: 28cqw;
+      height: 54cqh;
+      margin-left: -14cqw;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+    }
+
+    .f02-ring {
+      position: absolute;
+      width: 25cqw;
+      height: 25cqw;
+      max-height: 52cqh;
+      overflow: visible;
+    }
+
+    .f02-ring-base path,
+    .f02-ring-active path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-width: 18;
+    }
+
+    .f02-ring-base path {
+      stroke: rgba(64, 224, 192, 0.13);
+    }
+
+    .f02-ring-active path {
+      stroke: #40e0c0;
+    }
+
+    .f02-counter-lockup {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      z-index: 2;
+    }
+
+    .f02-counter-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      width: 15cqw;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .f02-counter {
+      display: inline-block;
+      color: #40e0c0;
+      font-size: 7.4cqw;
+      font-weight: 720;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      transform-origin: 80% 70%;
+    }
+
+    .f02-counter-total {
+      margin-left: 1cqw;
+      color: rgba(231, 238, 235, 0.58);
+      font-size: 2.1cqw;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .f02-counter-label {
+      margin-top: 1.8cqh;
+      font-size: 0.95cqw;
+    }
+
+    .f02-known {
+      position: absolute;
+      top: 17cqh;
+      right: 5cqw;
+      width: 38cqw;
+      display: grid;
+      gap: 1.35cqh;
+      z-index: 12;
+    }
+
+    .f02-section-label {
+      margin: 0 0 0.9cqh 0.3cqw;
+      color: rgba(231, 238, 235, 0.5);
+    }
+
+    .f02-known-card,
+    .f02-ghost-card {
+      min-height: 9.3cqh;
+      display: grid;
+      align-items: center;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(64, 224, 192, 0.04);
+    }
+
+    .f02-known-card {
+      grid-template-columns: 3.2cqw 5.2cqw 1fr;
+      padding: 0 1.55cqw;
+    }
+
+    .f02-card-index,
+    .f02-ghost-card small {
+      color: rgba(231, 238, 235, 0.42);
+      font-size: 0.76cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .f02-card-type {
+      color: #40e0c0;
+      font-size: 0.73cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .f02-known-card strong,
+    .f02-ghost-card strong {
+      color: #e7eeeb;
+      font-size: 1.45cqw;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .f02-ghost-field {
+      position: absolute;
+      top: 14cqh;
+      left: 29cqw;
+      width: 42cqw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4cqw;
+      z-index: 20;
+    }
+
+    .f02-missing-label {
+      grid-column: 1 / -1;
+      margin: 0 0 0.4cqh 0.2cqw;
+      color: #ff7048;
+    }
+
+    .f02-ghost-card {
+      --dof: 0px;
+      min-height: 18cqh;
+      grid-template-columns: 4.8cqw 1fr;
+      gap: 1cqw;
+      padding: 0 1.5cqw;
+      filter: blur(var(--dof));
+      will-change: filter;
+      border-color: rgba(64, 224, 192, 0.2);
+      background: rgba(12, 27, 34, 0.82);
+    }
+
+    .f02-ghost-card > div:last-child {
+      display: grid;
+      gap: 0.8cqh;
+    }
+
+    .f02-node-icon,
+    .f02-feature-icon,
+    .f02-model-icon,
+    .f02-owner-icon {
+      width: 3.8cqw;
+      height: 3.8cqw;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 12px;
+      background: rgba(64, 224, 192, 0.08);
+      color: #40e0c0;
+    }
+
+    .f02-node-icon {
+      grid-template-columns: repeat(3, 0.5cqw);
+      gap: 0.28cqw;
+    }
+
+    .f02-node-icon span {
+      width: 0.48cqw;
+      height: 0.48cqw;
+      border-radius: 50%;
+      background: #40e0c0;
+    }
+
+    .f02-feature-icon {
+      font-size: 2.25cqw;
+      font-weight: 600;
+    }
+
+    .f02-model-icon {
+      grid-template-columns: repeat(3, 0.55cqw);
+      gap: 0.26cqw;
+    }
+
+    .f02-model-icon i {
+      display: block;
+      width: 0.55cqw;
+      height: 1.6cqh;
+      border-radius: 100px;
+      background: #40e0c0;
+    }
+
+    .f02-model-icon i:nth-child(2) {
+      height: 2.7cqh;
+    }
+
+    .f02-owner-icon {
+      position: relative;
+    }
+
+    .f02-owner-icon i {
+      width: 0.92cqw;
+      height: 0.92cqw;
+      border-radius: 50%;
+      background: #40e0c0;
+    }
+
+    .f02-owner-icon span {
+      width: 1.65cqw;
+      height: 0.85cqw;
+      margin-top: -0.25cqh;
+      border-radius: 100px 100px 20px 20px;
+      background: #40e0c0;
+    }
+
+    .f02-verdict {
+      position: absolute;
+      top: 13cqh;
+      left: 26cqw;
+      width: 48cqw;
+      display: grid;
+      justify-items: center;
+      z-index: 40;
+    }
+
+    .f02-coverage-lockup {
+      display: grid;
+      justify-items: center;
+    }
+
+    .f02-coverage {
+      display: inline-block;
+      width: 31cqw;
+      color: #40e0c0;
+      font-size: 7.2cqw;
+      font-weight: 720;
+      line-height: 0.95;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.055em;
+      transform-origin: center 70%;
+    }
+
+    .f02-coverage-label {
+      margin-top: 1.5cqh;
+      color: rgba(231, 238, 235, 0.56);
+      font-size: 0.9cqw;
+    }
+
+    .f02-false-safe {
+      position: relative;
+      width: 27cqw;
+      min-height: 10.5cqh;
+      margin-top: 5.5cqh;
+      display: grid;
+      grid-template-columns: 2.3cqw 1fr auto;
+      align-items: center;
+      gap: 1cqw;
+      padding: 0 1.6cqw;
+      border: 1.5px solid rgba(255, 112, 72, 0.34);
+      border-radius: 14px;
+      background: rgba(255, 112, 72, 0.07);
+    }
+
+    .f02-warning-dot {
+      width: 2.15cqw;
+      height: 2.15cqw;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid #ff7048;
+      border-radius: 50%;
+      color: #ff7048;
+      font-size: 1.25cqw;
+      font-weight: 700;
+    }
+
+    .f02-false-safe strong {
+      color: #e7eeeb;
+      font-size: 1.7cqw;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .f02-verdict-chip {
+      padding: 0.55cqh 0.8cqw;
+      border-radius: 100px;
+      background: rgba(255, 112, 72, 0.09);
+      color: #ff7048;
+      font-size: 0.65cqw;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+    }
+
+    .f02-marker {
+      position: absolute;
+      inset: -2.6cqh -1.3cqw -2.6cqh -1.3cqw;
+      width: calc(100% + 2.6cqw);
+      height: calc(100% + 5.2cqh);
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .f02-marker path {
+      fill: none;
+      stroke: #ff7048;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .f02-progress {
+      position: absolute;
+      left: 5cqw;
+      right: 5cqw;
+      bottom: 0.65cqh;
+      height: 3px;
+      overflow: hidden;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    .f02-progress span {
+      display: block;
+      width: 30%;
+      height: 100%;
+      background: #40e0c0;
+      transform-origin: left center;
+    }
+  </style>
+
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const camera = document.getElementById("f02-repo-blind-spot-camera");
+      const counter = document.getElementById("f02-repo-blind-spot-counter");
+      const coverage = document.getElementById("f02-repo-blind-spot-coverage");
+      const marker = document.getElementById("f02-repo-blind-spot-marker");
+      const accentSegments = gsap.utils.toArray(".f02-segment-accent");
+
+      accentSegments.forEach((segment) => {
+        const length = segment.getTotalLength();
+        segment.style.strokeDasharray = `${length}`;
+        segment.style.strokeDashoffset = `${length}`;
+      });
+
+      const markerLength = marker.getTotalLength();
+      marker.style.strokeDasharray = `${markerLength}`;
+      marker.style.strokeDashoffset = `${markerLength}`;
+
+      const countState = { value: 0 };
+      const coverageState = { value: 0 };
+      const phase = { scale: 0.96, x: 0, y: 0 };
+      const drift = { p: 0 };
+
+      camera.style.transform = "translate(0px, 0px) scale(0.96)";
+
+      tl.fromTo(
+        ".f02-instrument",
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" },
+        0.05,
+      );
+      tl.to(
+        countState,
+        {
+          value: 3,
+          duration: 2.4,
+          ease: "power3.out",
+          onUpdate: () => {
+            counter.textContent = Math.round(countState.value).toLocaleString();
+          },
+        },
+        0.3,
+      );
+      tl.fromTo(
+        counter,
+        { scale: 0.58 },
+        { scale: 1, duration: 2.4, ease: "power3.out" },
+        0.3,
+      );
+      tl.to(
+        accentSegments,
+        { strokeDashoffset: 0, duration: 2.16, ease: "power3.out", stagger: 0.12 },
+        0.3,
+      );
+      tl.fromTo(
+        ".f02-counter-label",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" },
+        0.65,
+      );
+
+      tl.to(
+        ".f02-instrument",
+        { x: -430, scale: 0.82, duration: 1.15, ease: "power2.inOut" },
+        4.0,
+      );
+      tl.fromTo(
+        ".f02-known-card",
+        { opacity: 0, x: 95 },
+        { opacity: 1, x: 0, duration: 0.72, ease: "power3.out", stagger: 0.18 },
+        4.35,
+      );
+      tl.fromTo(
+        ".f02-section-label",
+        { opacity: 0, x: 34 },
+        { opacity: 1, x: 0, duration: 0.55, ease: "power2.out" },
+        4.2,
+      );
+
+      tl.to(phase, { scale: 1.14, x: -80, y: -8, duration: 2.15, ease: "power2.inOut" }, 9.0);
+      tl.to(
+        ".f02-instrument",
+        { "--dof": "8px", opacity: 0.3, duration: 1.0, ease: "power2.inOut" },
+        9.0,
+      );
+      tl.to(
+        ".f02-known",
+        { "--dof": "11px", opacity: 0.22, duration: 1.0, ease: "power2.inOut" },
+        9.0,
+      );
+      tl.to(
+        ".f02-support-shot",
+        { "--dof": "9px", opacity: 0.08, duration: 1.0, ease: "power2.inOut" },
+        9.0,
+      );
+      tl.fromTo(
+        ".f02-missing-label",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" },
+        9.15,
+      );
+
+      gsap.utils.toArray(".f02-ghost-card").forEach((card, index) => {
+        const depth = Number(card.dataset.depth) || 1;
+        tl.fromTo(
+          card,
+          { "--dof": `${5 + depth * 2.5}px`, opacity: 0, y: 34, scale: 0.92 },
+          {
+            "--dof": "0px",
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.82,
+            ease: "power2.out",
+          },
+          9.45 + index * 1.18,
+        );
+      });
+
+      tl.to(phase, { scale: 1.04, x: 0, y: 0, duration: 1.15, ease: "power2.inOut" }, 15.0);
+      tl.to(
+        ".f02-ghost-card",
+        { "--dof": "8px", opacity: 0.2, duration: 0.9, ease: "power2.inOut" },
+        15.0,
+      );
+      tl.to(
+        ".f02-missing-label",
+        { "--dof": "7px", opacity: 0.2, duration: 0.9, ease: "power2.inOut" },
+        15.0,
+      );
+      tl.fromTo(
+        ".f02-verdict",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.85, ease: "power2.out" },
+        15.1,
+      );
+      tl.to(
+        coverageState,
+        {
+          value: 42.9,
+          duration: 1.4,
+          ease: "power3.out",
+          onUpdate: () => {
+            coverage.textContent = `${coverageState.value.toFixed(1)}%`;
+          },
+        },
+        15.2,
+      );
+      tl.fromTo(
+        coverage,
+        { scale: 0.7 },
+        { scale: 1, duration: 1.4, ease: "power3.out" },
+        15.2,
+      );
+      tl.fromTo(
+        ".f02-false-safe",
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.72, ease: "power2.out" },
+        16.35,
+      );
+      tl.to(marker, { strokeDashoffset: 0, duration: 1.1, ease: "power2.out" }, 17.15);
+
+      tl.to(
+        drift,
+        {
+          p: Math.PI * 3,
+          duration: 20,
+          ease: "none",
+          onUpdate: () => {
+            const dx = Math.sin(drift.p) * 3;
+            const dy = Math.sin(drift.p * 1.31) * 2;
+            camera.style.transform = `translate(${phase.x + dx}px, ${phase.y + dy}px) scale(${phase.scale})`;
+          },
+        },
+        0,
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["02-repo-blind-spot"] = tl;
+    })();
+  </script>
+</template>

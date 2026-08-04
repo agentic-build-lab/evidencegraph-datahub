@@ -1,0 +1,543 @@
+<template>
+  <div id="root" data-composition-id="04-complete-blast-radius" data-width="1920" data-height="1080" data-duration="21.5">
+    <div
+      class="clip f04-complete-blast-radius-ground"
+      data-start="0"
+      data-duration="21.5"
+      data-track-index="0"
+    >
+      <img
+        class="f04-complete-blast-radius-background-image"
+        src="assets/scroll-057.png"
+        alt="Recovered EvidenceGraph impact view"
+      />
+      <div class="f04-complete-blast-radius-background-veil"></div>
+      <div class="f04-complete-blast-radius-progress-track">
+        <div class="f04-complete-blast-radius-progress-fill"></div>
+      </div>
+    </div>
+
+    <div
+      class="clip f04-complete-blast-radius-content"
+      data-start="0"
+      data-duration="21.5"
+      data-track-index="1"
+    >
+      <div class="f04-complete-blast-radius-header">
+        <div class="f04-complete-blast-radius-eyebrow">BLAST RADIUS / DATAHUB CONTEXT</div>
+        <div class="f04-complete-blast-radius-phase-pill">EVIDENCE BOUND</div>
+      </div>
+
+      <div class="f04-complete-blast-radius-known-counter">
+        <span class="f04-complete-blast-radius-known-number">3</span>
+        <span class="f04-complete-blast-radius-known-label">known</span>
+      </div>
+
+      <div class="f04-complete-blast-radius-baseline-stage">
+        <img
+          class="f04-complete-blast-radius-baseline-image"
+          src="assets/scroll-028.png"
+          alt="Repository-only EvidenceGraph baseline"
+        />
+        <div class="f04-complete-blast-radius-baseline-veil"></div>
+
+        <article class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-known-card">
+          <div class="f04-complete-blast-radius-kind">DBT MODEL</div>
+          <div class="f04-complete-blast-radius-name">stg_orders</div>
+          <div class="f04-complete-blast-radius-meta" data-row="0"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+
+        <article class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-known-card">
+          <div class="f04-complete-blast-radius-kind">DBT MODEL</div>
+          <div class="f04-complete-blast-radius-name">fct_customer_value</div>
+          <div class="f04-complete-blast-radius-meta" data-row="1"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+
+        <article class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-known-card">
+          <div class="f04-complete-blast-radius-kind">AIRFLOW JOB</div>
+          <div class="f04-complete-blast-radius-name">daily_customer_value</div>
+          <div class="f04-complete-blast-radius-meta" data-row="2"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+      </div>
+
+      <div class="f04-complete-blast-radius-hidden-stage">
+        <article
+          class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-hidden-card"
+          data-entry-x="-54"
+          data-entry-y="-22"
+        >
+          <div class="f04-complete-blast-radius-kind">DASHBOARD</div>
+          <div class="f04-complete-blast-radius-name">Executive Revenue</div>
+          <div class="f04-complete-blast-radius-meta" data-row="3"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+
+        <article
+          class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-hidden-card"
+          data-entry-x="58"
+          data-entry-y="-18"
+        >
+          <div class="f04-complete-blast-radius-kind">ML FEATURE VIEW</div>
+          <div class="f04-complete-blast-radius-name">customer_tier_signal</div>
+          <div class="f04-complete-blast-radius-meta" data-row="4"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+
+        <article
+          class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-hidden-card"
+          data-entry-x="-48"
+          data-entry-y="24"
+        >
+          <div class="f04-complete-blast-radius-kind">ML MODEL</div>
+          <div class="f04-complete-blast-radius-name">churn_propensity_v4</div>
+          <div class="f04-complete-blast-radius-meta" data-row="5"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+
+        <article
+          class="f04-complete-blast-radius-impact-card f04-complete-blast-radius-hidden-card"
+          data-entry-x="56"
+          data-entry-y="22"
+        >
+          <div class="f04-complete-blast-radius-kind">TEAM / DEPLOYMENT</div>
+          <div class="f04-complete-blast-radius-name">ML Platform · churn-api-prod</div>
+          <div class="f04-complete-blast-radius-meta" data-row="6"></div>
+          <div class="f04-complete-blast-radius-evidence-mark"></div>
+        </article>
+      </div>
+
+      <div class="f04-complete-blast-radius-grounded-line">
+        <span class="f04-complete-blast-radius-grounded-value">7/7</span>
+        <span class="f04-complete-blast-radius-grounded-label">grounded</span>
+      </div>
+
+      <div class="f04-complete-blast-radius-evidence-column" aria-hidden="true">
+        <div class="f04-complete-blast-radius-evidence-sweep"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      container-type: size;
+      color: #e7eeeb;
+    }
+
+    #root *,
+    #root *::before,
+    #root *::after {
+      box-sizing: border-box;
+    }
+
+    #root [class~="f04-complete-blast-radius-ground"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0c1b22;
+    }
+
+    #root [class~="f04-complete-blast-radius-background-image"] {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.35;
+      filter: saturate(0.72) contrast(0.92);
+    }
+
+    #root [class~="f04-complete-blast-radius-background-veil"] {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(12, 27, 34, 0.97) 0%, rgba(12, 27, 34, 0.88) 42%, rgba(12, 27, 34, 0.78) 100%),
+        linear-gradient(180deg, rgba(12, 27, 34, 0.24), rgba(12, 27, 34, 0.78));
+    }
+
+    #root [class~="f04-complete-blast-radius-content"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #root [class~="f04-complete-blast-radius-header"] {
+      position: absolute;
+      top: 5.4cqh;
+      left: 5cqw;
+      right: 5cqw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #root [class~="f04-complete-blast-radius-eyebrow"] {
+      color: #40e0c0;
+      font-size: 0.8cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f04-complete-blast-radius-phase-pill"] {
+      padding: 0.75cqh 0.9cqw;
+      border: 1px solid rgba(64, 224, 192, 0.2);
+      border-radius: 100px;
+      color: #40e0c0;
+      background: rgba(64, 224, 192, 0.08);
+      font-size: 0.7cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f04-complete-blast-radius-known-counter"] {
+      position: absolute;
+      top: 10.8cqh;
+      left: 5cqw;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6cqw;
+      color: #e7eeeb;
+    }
+
+    #root [class~="f04-complete-blast-radius-known-number"] {
+      color: #40e0c0;
+      font-size: 3cqw;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    #root [class~="f04-complete-blast-radius-known-label"] {
+      color: #ff7048;
+      font-size: 1.25cqw;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    #root [class~="f04-complete-blast-radius-baseline-stage"] {
+      position: absolute;
+      top: 18cqh;
+      left: 5cqw;
+      width: 35cqw;
+      height: 59.5cqh;
+      padding: 1.35cqh 1.05cqw;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 1.2cqh;
+      overflow: hidden;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(64, 224, 192, 0.04);
+    }
+
+    #root [class~="f04-complete-blast-radius-baseline-image"] {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.34;
+    }
+
+    #root [class~="f04-complete-blast-radius-baseline-veil"] {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 27, 34, 0.78);
+    }
+
+    #root [class~="f04-complete-blast-radius-hidden-stage"] {
+      position: absolute;
+      top: 18cqh;
+      left: 42cqw;
+      width: 53cqw;
+      height: 59.5cqh;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 1.2cqh 0.75cqw;
+    }
+
+    #root [class~="f04-complete-blast-radius-impact-card"] {
+      position: relative;
+      z-index: 2;
+      min-width: 0;
+      padding: 1.25cqh 1cqw 1.05cqh;
+      overflow: hidden;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 12px;
+      background: rgba(11, 32, 39, 0.94);
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f04-complete-blast-radius-kind"] {
+      color: #40e0c0;
+      font-size: 0.68cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #root [class~="f04-complete-blast-radius-name"] {
+      margin-top: 0.45cqh;
+      overflow: hidden;
+      color: #e7eeeb;
+      font-size: 1.14cqw;
+      font-weight: 650;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    #root [class~="f04-complete-blast-radius-meta"] {
+      min-height: 7.2cqh;
+      margin-top: 0.8cqh;
+      color: #ff7048;
+      font-size: 0.68cqw;
+      font-weight: 400;
+      line-height: 1.48;
+      white-space: pre-line;
+    }
+
+    #root [class~="f04-complete-blast-radius-evidence-mark"] {
+      position: absolute;
+      right: 0.85cqw;
+      bottom: 1cqh;
+      width: 5.8cqw;
+      height: 3px;
+      border-radius: 6px;
+      background: #40e0c0;
+      transform-origin: left center;
+    }
+
+    #root [class~="f04-complete-blast-radius-grounded-line"] {
+      position: absolute;
+      top: 9.2cqh;
+      left: 42cqw;
+      right: 5cqw;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 0.8cqw;
+      color: #e7eeeb;
+      will-change: transform, opacity, filter;
+    }
+
+    #root [class~="f04-complete-blast-radius-grounded-value"] {
+      color: #40e0c0;
+      font-size: 3cqw;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    #root [class~="f04-complete-blast-radius-grounded-label"] {
+      color: #e7eeeb;
+      font-size: 1.8cqw;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    #root [class~="f04-complete-blast-radius-evidence-column"] {
+      position: absolute;
+      z-index: 4;
+      top: 18cqh;
+      right: 5cqw;
+      width: 12cqw;
+      height: 59.5cqh;
+      overflow: hidden;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    #root [class~="f04-complete-blast-radius-evidence-sweep"] {
+      position: absolute;
+      top: -8%;
+      left: -7cqw;
+      width: 5cqw;
+      height: 116%;
+      opacity: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(64, 224, 192, 0),
+        rgba(64, 224, 192, 0.34),
+        rgba(64, 224, 192, 0)
+      );
+      filter: blur(6px);
+      will-change: transform, opacity;
+    }
+
+    #root [class~="f04-complete-blast-radius-progress-track"] {
+      position: absolute;
+      top: 82.25cqh;
+      left: 5cqw;
+      right: 5cqw;
+      height: 3px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    #root [class~="f04-complete-blast-radius-progress-fill"] {
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: 6px;
+      background: #40e0c0;
+    }
+  </style>
+
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="04-complete-blast-radius"]');
+    const pick = (name) =>
+      root.getElementsByClassName(`f04-complete-blast-radius-${name}`)[0] ?? null;
+    const pickAll = (name) =>
+      Array.from(root.getElementsByClassName(`f04-complete-blast-radius-${name}`));
+
+      const header = pick("header");
+      const counter = pick("known-counter");
+      const baselineStage = pick("baseline-stage");
+      const knownCards = pickAll("known-card");
+      const hiddenCards = pickAll("hidden-card");
+      const metaFields = pickAll("meta");
+      const evidenceMarks = pickAll("evidence-mark");
+      const groundedLine = pick("grounded-line");
+      const sweep = pick("evidence-sweep");
+      const progress = pick("progress-fill");
+
+      const rowFacts = [
+        { owner: "analytics-engineering", severity: "CRITICAL", urn: "urn:li:dataset" },
+        { owner: "growth-analytics", severity: "BLOCKER", urn: "urn:li:dataset" },
+        { owner: "data-platform", severity: "HIGH", urn: "urn:li:dataJob" },
+        { owner: "finance-analytics", severity: "CRITICAL", urn: "urn:li:dashboard" },
+        { owner: "risk-ml", severity: "BLOCKER", urn: "urn:li:mlFeature" },
+        { owner: "risk-ml", severity: "CRITICAL", urn: "urn:li:mlModel" },
+        { owner: "ml-platform", severity: "BLOCKER", urn: "urn:li:mlDeployment" },
+      ];
+
+      const sequences = rowFacts.map((fact) => [
+        { t: 0, text: "" },
+        { t: 0.16, text: `owner · ${fact.owner}` },
+        { t: 0.42, text: `owner · ${fact.owner}\nseverity · ${fact.severity}` },
+        {
+          t: 0.72,
+          text: `owner · ${fact.owner}\nseverity · ${fact.severity}\nevidence · ${fact.urn}`,
+        },
+      ]);
+
+      const textAt = (sequence, time) => {
+        for (let i = sequence.length - 1; i >= 0; i -= 1) {
+          if (time >= sequence[i].t) return sequence[i].text;
+        }
+        return "";
+      };
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(header, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 0.05);
+      tl.fromTo(
+        counter,
+        { opacity: 0, x: -34, filter: "blur(7px)" },
+        { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out" },
+        0.12,
+      );
+      tl.fromTo(
+        baselineStage,
+        { opacity: 0.28, x: -18 },
+        { opacity: 1, x: 0, duration: 0.75, ease: "power2.out" },
+        0,
+      );
+
+      knownCards.forEach((card, index) => {
+        tl.fromTo(
+          card,
+          { opacity: 0, x: -40, y: 10, filter: "blur(7px)" },
+          { opacity: 1, x: 0, y: 0, filter: "blur(0px)", duration: 0.56, ease: "power3.out" },
+          0.45 + index * 0.62,
+        );
+      });
+
+      const hiddenEntryTimes = [4.18, 5.78, 7.48, 9.18];
+      hiddenCards.forEach((card, index) => {
+        const entryX = Number(card.dataset.entryX);
+        const entryY = Number(card.dataset.entryY);
+        tl.fromTo(
+          card,
+          { opacity: 0, x: entryX, y: entryY, scale: 0.82, filter: "blur(9px)" },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 1.02,
+            ease: "power3.out",
+          },
+          hiddenEntryTimes[index],
+        );
+      });
+
+      metaFields.forEach((field, index) => {
+        const driver = { t: 0 };
+        let lastText = "";
+        const start = 11 + index * 0.68;
+        tl.to(
+          driver,
+          {
+            t: 0.9,
+            duration: 0.9,
+            ease: "none",
+            onUpdate: () => {
+              const next = textAt(sequences[index], driver.t);
+              if (next !== lastText) {
+                field.textContent = next;
+                lastText = next;
+              }
+            },
+          },
+          start,
+        );
+        tl.fromTo(
+          evidenceMarks[index],
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.44, ease: "power2.out" },
+          start + 0.72,
+        );
+      });
+
+      tl.fromTo(
+        groundedLine,
+        { opacity: 0, y: -18, scale: 0.96, filter: "blur(8px)" },
+        { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.82, ease: "power3.out" },
+        16.5,
+      );
+
+      tl.fromTo(
+        sweep,
+        { x: -150, opacity: 0 },
+        { x: 340, opacity: 0.3, duration: 1.35, ease: "none" },
+        17.35,
+      );
+      tl.to(sweep, { opacity: 0, duration: 0.3, ease: "power1.in" }, 18.45);
+
+      tl.fromTo(progress, { width: "0%" }, { width: "100%", duration: 18.75, ease: "none" }, 0);
+
+      const hold = { t: 0 };
+      tl.to(hold, { t: 1, duration: 2.25, ease: "none" }, 18.75);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["04-complete-blast-radius"] = tl;
+    })();
+  </script>
+</template>

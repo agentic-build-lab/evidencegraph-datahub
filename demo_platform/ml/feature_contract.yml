@@ -1,0 +1,11 @@
+apiVersion: evidencegraph.io/v1
+kind: MLFeatureContract
+metadata:
+  name: customer-tier-signal-v1
+spec:
+  sourceField: customer_tier
+  outputFeature: customer_tier_signal
+  allowedValues: [bronze, silver, gold]
+  model: churn_propensity_v4
+  deployment: churn_api_prod
+

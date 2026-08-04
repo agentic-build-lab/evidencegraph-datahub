@@ -1,0 +1,31 @@
+{
+  "change_id": "EG-042",
+  "proposal_revision": "rev-842-customer-segmentation",
+  "before_snapshot_id": "commerce-platform-2026-08-03T12:00:00Z",
+  "after_snapshot_id": "commerce-platform-2026-08-03T13:00:00Z-after-reingestion",
+  "patch_sha256": "cc6f7862f37c81300ba5cc087f793b4c7cb75da8d8169ddc20f8b6f575790a73",
+  "applied_at": "2026-08-03T12:30:00Z",
+  "oldest_after_observation_at": "2026-08-03T13:00:00Z",
+  "newest_after_observation_at": "2026-08-03T13:00:00Z",
+  "remaining_impact_urns": [],
+  "validation_ids": [
+    "VAL-INTEGRITY",
+    "VAL-PARSE-01",
+    "VAL-PARSE-02",
+    "VAL-PARSE-03",
+    "VAL-PARSE-04",
+    "VAL-PARSE-05",
+    "VAL-PARSE-06",
+    "VAL-PARSE-07",
+    "VAL-PARSE-08",
+    "VAL-PATCH-APPLY",
+    "VAL-DUCKDB-PARITY",
+    "VAL-DBT-BUILD",
+    "VAL-AIRFLOW-DAG",
+    "VAL-ML-PARITY"
+  ],
+  "status": "closed",
+  "reasons": [
+    "Fresh DataHub context proves the approved revision is closed."
+  ]
+}

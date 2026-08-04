@@ -1,0 +1,4 @@
+interface:
+  display_name: "DataHub Change Assurance"
+  short_description: "Turn data changes into evidenced migration gates"
+  default_prompt: "Use $datahub-change-assurance to assess this proposed data change with DataHub context and produce a fail-closed migration decision."

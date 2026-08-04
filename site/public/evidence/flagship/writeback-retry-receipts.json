@@ -1,0 +1,26 @@
+[
+  {
+    "proposal_id": "WB-TAG",
+    "tool": "add_tags",
+    "status": "skipped_idempotent_verified",
+    "response_sha256": "d33aafbe5d76094a58742543db2572440d526894e1fae0ec105beadebdedb9a3",
+    "target_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+    "executed_at": "2026-08-03T16:12:09.636699Z"
+  },
+  {
+    "proposal_id": "WB-DESCRIPTION",
+    "tool": "update_description",
+    "status": "skipped_idempotent_verified",
+    "response_sha256": "a4cfe03dac90dc9255c2576d765a931a1e0e251c6b268a4d1713e3987c63208b",
+    "target_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+    "executed_at": "2026-08-03T16:12:10.074803Z"
+  },
+  {
+    "proposal_id": "WB-DOCUMENT",
+    "tool": "save_document",
+    "status": "skipped_idempotent_verified",
+    "response_sha256": "8c200457108642fa180b93aa09050f0fb887743ef810061d6f0bbff05817a1d3",
+    "target_urn": "urn:li:document:shared-c7b28ccf-cb81-4772-a4c4-218562dfffd0",
+    "executed_at": "2026-08-03T16:12:11.739551Z"
+  }
+]

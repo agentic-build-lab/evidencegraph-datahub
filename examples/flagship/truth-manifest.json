@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "change_id": "EG-042",
+  "source_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+  "affected_assets": [
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.stg_orders,PROD)",
+      "asset_kind": "dataset",
+      "evaluation_class": "repository"
+    },
+    {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,analytics.fct_customer_value,PROD)",
+      "asset_kind": "dataset",
+      "evaluation_class": "repository"
+    },
+    {
+      "urn": "urn:li:dataJob:(urn:li:dataFlow:(airflow,daily_customer_value,prod),build_customer_value)",
+      "asset_kind": "data_job",
+      "evaluation_class": "repository"
+    },
+    {
+      "urn": "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "asset_kind": "dashboard",
+      "evaluation_class": "bi"
+    },
+    {
+      "urn": "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "asset_kind": "ml_feature",
+      "evaluation_class": "ml"
+    },
+    {
+      "urn": "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "asset_kind": "ml_model",
+      "evaluation_class": "ml"
+    },
+    {
+      "urn": "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)",
+      "asset_kind": "ml_model_deployment",
+      "evaluation_class": "ml"
+    }
+  ]
+}

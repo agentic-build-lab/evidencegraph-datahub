@@ -1,0 +1,18 @@
+{
+  "change_id": "EG-042",
+  "asset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,commerce.raw_orders,PROD)",
+  "kind": "drop_column",
+  "field": "customer_tier",
+  "proposed_field": null,
+  "proposed_type": null,
+  "requested_by": "urn:li:corpuser:producer-platform-bot",
+  "reason": "Consolidate legacy customer segmentation on the new producer-owned segment_code field.",
+  "proposal_revision": "rev-842-customer-segmentation",
+  "before_contract": {
+    "required_fields": ["order_id", "customer_id", "amount_usd", "customer_tier", "ordered_at"]
+  },
+  "after_contract": {
+    "required_fields": ["order_id", "customer_id", "amount_usd", "segment_code", "ordered_at"]
+  },
+  "repository_ref": "commerce-data-platform/pull/842"
+}

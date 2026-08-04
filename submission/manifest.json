@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "EvidenceGraph",
+    "version": "0.1.0",
+    "category": "Metadata-Aware Code Generation & Development",
+    "license": "Apache-2.0",
+    "release_commit": "v0.1.0^{commit}",
+    "release_tag": "v0.1.0"
+  },
+  "submission": {
+    "status": "draft",
+    "devpost_url": "<DEVPOST_PROJECT_URL>",
+    "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
+    "demo_url": "https://evidencegraph-datahub.liu891855.chatgpt.site",
+    "video_url": "<PUBLIC_VIDEO_URL>",
+    "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples",
+    "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.1.0"
+  },
+  "verified_metrics": {
+    "declared_affected_assets": 7,
+    "repository_only_assets_found": 3,
+    "datahub_context_assets_found": 7,
+    "repository_only_recall_percent": 42.9,
+    "datahub_context_recall_percent": 100.0,
+    "recall_delta_percentage_points": 57.1,
+    "generated_artifacts": 9,
+    "validators_passed": 14,
+    "validators_total": 14,
+    "dbt_core_version": "1.12.0",
+    "dbt_tests_passed": 7,
+    "dbt_tests_total": 7,
+    "airflow_version": "3.3.0",
+    "airflow_validation_environment": "official apache/airflow:3.3.0-python3.12 container"
+  },
+  "datahub": {
+    "core_version": "v1.6.0",
+    "mcp_package": "mcp-server-datahub@0.6.0",
+    "primary_agent_interface": "DataHub MCP Server",
+    "sdk_scope": "demo bootstrap and narrow relationship enrichment not exposed as MCP lineage nodes"
+  },
+  "public_documents": [
+    "README.md",
+    "HACKATHON_PROVENANCE.md",
+    "docs/architecture.md",
+    "docs/DEMO.md",
+    "docs/REPRODUCIBILITY.md",
+    "docs/SECURITY.md",
+    "docs/LIMITATIONS.md",
+    "docs/CLAIMS.md"
+  ],
+  "submission_assets": [
+    "submission/devpost.md",
+    "submission/elevator-pitch.txt",
+    "submission/technology-tags.txt",
+    "submission/video-script.md",
+    "submission/gallery.md",
+    "submission/feedback.md"
+  ],
+  "explicit_non_claims": [
+    "fresh-graph closure is proven only by the labeled deterministic before/after replay",
+    "write-back idempotence is proven only for an immediate stateless retry of the identical proposal set",
+    "7-of-7 recall is scoped to the declared synthetic test universe",
+    "the public demo exposes no DataHub mutation path",
+    "EvidenceGraph does not apply production data or code changes"
+  ],
+  "release_gates": {
+    "all_placeholders_replaced": false,
+    "public_repository_signed_out_check": false,
+    "public_demo_signed_out_check": true,
+    "public_video_under_three_minutes": false,
+    "sample_output_link_check": false,
+    "clean_clone_reproduction": false,
+    "secret_and_personal_data_scan": false,
+    "dependency_audit": false,
+    "devpost_final_preview_reviewed": false,
+    "devpost_submitted": false
+  }
+}

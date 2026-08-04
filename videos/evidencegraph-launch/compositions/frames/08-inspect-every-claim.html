@@ -1,0 +1,540 @@
+<template>
+  <style>
+    #root {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      container-type: size;
+      color: #e7eeeb;
+      font-family: sans-serif;
+      isolation: isolate;
+    }
+
+    [class~="f08-inspect-every-claim-background"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0c1b22;
+    }
+
+    [class~="f08-inspect-every-claim-background"] img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+      opacity: 0.55;
+      filter: saturate(0.72) contrast(1.06);
+    }
+
+    [class~="f08-inspect-every-claim-background"]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 27, 34, 0.54) 0%, rgba(12, 27, 34, 0.7) 72%, #0c1b22 100%),
+        radial-gradient(circle at 50% 35%, rgba(64, 224, 192, 0.07), transparent 46%);
+    }
+
+    [class~="f08-inspect-every-claim-scene"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    [class~="f08-inspect-every-claim-topline"] {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      top: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #40e0c0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-topline-rule"] {
+      display: inline-block;
+      width: 60px;
+      height: 4px;
+      margin-right: 16px;
+      border-radius: 2px;
+      background: #40e0c0;
+      vertical-align: middle;
+    }
+
+    [class~="f08-inspect-every-claim-lockup-stage"] {
+      position: absolute;
+      left: 300px;
+      top: 168px;
+      width: 1320px;
+      height: 610px;
+    }
+
+    [class~="f08-inspect-every-claim-chain-card"] {
+      position: absolute;
+      left: 100px;
+      width: 1120px;
+      height: 454px;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 14px;
+      background: rgba(12, 27, 34, 0.88);
+    }
+
+    [class~="f08-inspect-every-claim-chain-card"][data-depth="3"] {
+      top: 70px;
+      opacity: 0.26;
+    }
+
+    [class~="f08-inspect-every-claim-chain-card"][data-depth="2"] {
+      top: 50px;
+      opacity: 0.46;
+    }
+
+    [class~="f08-inspect-every-claim-chain-card"][data-depth="1"] {
+      top: 30px;
+      opacity: 0.7;
+    }
+
+    [class~="f08-inspect-every-claim-lockup"] {
+      position: absolute;
+      left: 100px;
+      top: 10px;
+      width: 1120px;
+      height: 454px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border: 1.5px solid rgba(64, 224, 192, 0.34);
+      border-radius: 14px;
+      background: rgba(12, 27, 34, 0.96);
+    }
+
+    [class~="f08-inspect-every-claim-mark"] {
+      position: relative;
+      width: 78px;
+      height: 78px;
+      margin-bottom: 24px;
+      border: 1.5px solid rgba(64, 224, 192, 0.44);
+      border-radius: 50%;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    [class~="f08-inspect-every-claim-mark"]::before,
+    [class~="f08-inspect-every-claim-mark"]::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: #40e0c0;
+    }
+
+    [class~="f08-inspect-every-claim-mark"]::before {
+      left: 18px;
+      top: 26px;
+      width: 13px;
+      height: 13px;
+      box-shadow: 29px -10px 0 #40e0c0, 34px 21px 0 #40e0c0;
+    }
+
+    [class~="f08-inspect-every-claim-mark"]::after {
+      left: 27px;
+      top: 31px;
+      width: 35px;
+      height: 2px;
+      border-radius: 2px;
+      transform: rotate(-18deg);
+      transform-origin: left center;
+    }
+
+    [class~="f08-inspect-every-claim-wordmark"] {
+      margin: 0;
+      color: #e7eeeb;
+      font-size: 76px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    [class~="f08-inspect-every-claim-wordmark"] span {
+      color: #40e0c0;
+    }
+
+    [class~="f08-inspect-every-claim-subtitle"] {
+      margin-top: 18px;
+      color: #b4c2bf;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    [class~="f08-inspect-every-claim-rails-stage"] {
+      position: absolute;
+      left: 254px;
+      top: 164px;
+      width: 1412px;
+      height: 620px;
+      box-sizing: border-box;
+      padding: 48px 54px;
+      border: 1.5px solid rgba(64, 224, 192, 0.28);
+      border-radius: 14px;
+      background: rgba(12, 27, 34, 0.96);
+      transform-origin: center center;
+    }
+
+    [class~="f08-inspect-every-claim-rails-head"] {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 26px;
+    }
+
+    [class~="f08-inspect-every-claim-rails-title"] {
+      margin: 0;
+      color: #e7eeeb;
+      font-size: 35px;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    [class~="f08-inspect-every-claim-rails-index"] {
+      color: #40e0c0;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-rail"] {
+      position: relative;
+      display: grid;
+      grid-template-columns: 66px 260px 1fr;
+      gap: 22px;
+      align-items: center;
+      min-height: 124px;
+      margin-top: 15px;
+      padding: 0 30px 0 0;
+      box-sizing: border-box;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 12px;
+      background: rgba(64, 224, 192, 0.04);
+    }
+
+    [class~="f08-inspect-every-claim-rail-marker"] {
+      width: 4px;
+      height: 58px;
+      margin-left: 30px;
+      border-radius: 2px;
+      background: #40e0c0;
+      transform-origin: center bottom;
+    }
+
+    [class~="f08-inspect-every-claim-rail-label"] {
+      color: #40e0c0;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-text-wrap"] {
+      display: inline-flex;
+      align-items: baseline;
+      min-width: 820px;
+      white-space: nowrap;
+      color: #e7eeeb;
+      font-family: monospace;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    [class~="f08-inspect-every-claim-cursor"] {
+      display: inline-block;
+      width: 12px;
+      margin-left: 4px;
+      color: #40e0c0;
+    }
+
+    [class~="f08-inspect-every-claim-final-card"] {
+      position: absolute;
+      left: 282px;
+      top: 172px;
+      width: 1356px;
+      height: 596px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 48px 68px;
+      border: 1.5px solid rgba(64, 224, 192, 0.34);
+      border-radius: 14px;
+      background: rgba(12, 27, 34, 0.97);
+      transform-origin: center center;
+    }
+
+    [class~="f08-inspect-every-claim-final-eyebrow"] {
+      color: #40e0c0;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-metrics"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    [class~="f08-inspect-every-claim-metric"] {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 18px 24px;
+      border: 1.5px solid rgba(64, 224, 192, 0.2);
+      border-radius: 100px;
+      background: rgba(64, 224, 192, 0.04);
+    }
+
+    [class~="f08-inspect-every-claim-metric-value"] {
+      color: #40e0c0;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    [class~="f08-inspect-every-claim-metric-label"] {
+      color: #b4c2bf;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-url-card"] {
+      width: 100%;
+      margin-top: 44px;
+      padding: 28px 38px;
+      box-sizing: border-box;
+      border: 1.5px solid rgba(64, 224, 192, 0.42);
+      border-radius: 14px;
+      background: rgba(64, 224, 192, 0.08);
+      text-align: center;
+    }
+
+    [class~="f08-inspect-every-claim-url-label"] {
+      display: block;
+      margin-bottom: 12px;
+      color: #40e0c0;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    [class~="f08-inspect-every-claim-url"] {
+      color: #e7eeeb;
+      font-family: monospace;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    [class~="f08-inspect-every-claim-progress"] {
+      position: absolute;
+      left: 96px;
+      top: 836px;
+      width: 1728px;
+      height: 3px;
+      overflow: hidden;
+      background: rgba(64, 224, 192, 0.08);
+    }
+
+    [class~="f08-inspect-every-claim-progress-fill"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #40e0c0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="08-inspect-every-claim" data-width="1920" data-height="1080" data-duration="12">
+    <div class="f08-inspect-every-claim-background clip" data-start="0" data-duration="12" data-track-index="0">
+      <img src="assets/scroll-100.png" alt="EvidenceGraph closed-loop public replay">
+    </div>
+
+    <div class="f08-inspect-every-claim-scene clip" data-start="0" data-duration="12" data-track-index="1">
+      <div class="f08-inspect-every-claim-topline">
+        <span><span class="f08-inspect-every-claim-topline-rule"></span>EvidenceGraph</span>
+        <span>public · inspectable · open source</span>
+      </div>
+
+      <section class="f08-inspect-every-claim-lockup-stage" aria-label="EvidenceGraph operational context graph">
+        <div class="f08-inspect-every-claim-chain-card" data-depth="3"></div>
+        <div class="f08-inspect-every-claim-chain-card" data-depth="2"></div>
+        <div class="f08-inspect-every-claim-chain-card" data-depth="1"></div>
+        <div class="f08-inspect-every-claim-lockup">
+          <div class="f08-inspect-every-claim-mark" aria-hidden="true"></div>
+          <h1 class="f08-inspect-every-claim-wordmark">Evidence<span>Graph</span></h1>
+          <div class="f08-inspect-every-claim-subtitle">Operational context graph</div>
+        </div>
+      </section>
+
+      <section class="f08-inspect-every-claim-rails-stage" aria-label="Inspection paths">
+        <div class="f08-inspect-every-claim-rails-head">
+          <h2 class="f08-inspect-every-claim-rails-title">Inspect the proof chain</h2>
+          <span class="f08-inspect-every-claim-rails-index">03 inspection paths</span>
+        </div>
+
+        <div class="f08-inspect-every-claim-rail" data-rail="1">
+          <span class="f08-inspect-every-claim-rail-marker"></span>
+          <span class="f08-inspect-every-claim-rail-label">Public replay</span>
+          <span class="f08-inspect-every-claim-text-wrap"><span class="f08-inspect-every-claim-text" data-text="1"></span><span class="f08-inspect-every-claim-cursor" data-cursor="1">_</span></span>
+        </div>
+        <div class="f08-inspect-every-claim-rail" data-rail="2">
+          <span class="f08-inspect-every-claim-rail-marker"></span>
+          <span class="f08-inspect-every-claim-rail-label">Evidence ledger</span>
+          <span class="f08-inspect-every-claim-text-wrap"><span class="f08-inspect-every-claim-text" data-text="2"></span><span class="f08-inspect-every-claim-cursor" data-cursor="2">_</span></span>
+        </div>
+        <div class="f08-inspect-every-claim-rail" data-rail="3">
+          <span class="f08-inspect-every-claim-rail-marker"></span>
+          <span class="f08-inspect-every-claim-rail-label">Source code</span>
+          <span class="f08-inspect-every-claim-text-wrap"><span class="f08-inspect-every-claim-text" data-text="3"></span><span class="f08-inspect-every-claim-cursor" data-cursor="3">_</span></span>
+        </div>
+      </section>
+
+      <section class="f08-inspect-every-claim-final-card" aria-label="EvidenceGraph public replay">
+        <span class="f08-inspect-every-claim-final-eyebrow">EvidenceGraph · replay the evidence</span>
+        <div class="f08-inspect-every-claim-metrics">
+          <span class="f08-inspect-every-claim-metric"><strong class="f08-inspect-every-claim-metric-value">7/7</strong><span class="f08-inspect-every-claim-metric-label">impact</span></span>
+          <span class="f08-inspect-every-claim-metric"><strong class="f08-inspect-every-claim-metric-value">14/14</strong><span class="f08-inspect-every-claim-metric-label">gates</span></span>
+          <span class="f08-inspect-every-claim-metric"><strong class="f08-inspect-every-claim-metric-value">3/3</strong><span class="f08-inspect-every-claim-metric-label">verified</span></span>
+        </div>
+        <div class="f08-inspect-every-claim-url-card">
+          <span class="f08-inspect-every-claim-url-label">Public replay</span>
+          <span class="f08-inspect-every-claim-url">evidencegraph-datahub.liu891855.chatgpt.site</span>
+        </div>
+      </section>
+
+      <div class="f08-inspect-every-claim-progress"><span class="f08-inspect-every-claim-progress-fill"></span></div>
+    </div>
+  </div>
+
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="08-inspect-every-claim"]');
+      const q = (selector) => root.querySelector(selector);
+      const qa = (selector) => Array.from(root.querySelectorAll(selector));
+      const lockupStage = q('[class~="f08-inspect-every-claim-lockup-stage"]');
+      const lockup = q('[class~="f08-inspect-every-claim-lockup"]');
+      const chainCards = qa('[class~="f08-inspect-every-claim-chain-card"]');
+      const wordmark = q('[class~="f08-inspect-every-claim-wordmark"]');
+      const subtitle = q('[class~="f08-inspect-every-claim-subtitle"]');
+      const railsStage = q('[class~="f08-inspect-every-claim-rails-stage"]');
+      const rails = qa('[class~="f08-inspect-every-claim-rail"]');
+      const markers = qa('[class~="f08-inspect-every-claim-rail-marker"]');
+      const texts = qa('[class~="f08-inspect-every-claim-text"]');
+      const cursors = qa('[class~="f08-inspect-every-claim-cursor"]');
+      const finalCard = q('[class~="f08-inspect-every-claim-final-card"]');
+      const metrics = qa('[class~="f08-inspect-every-claim-metric"]');
+      const urlCard = q('[class~="f08-inspect-every-claim-url-card"]');
+
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["08-inspect-every-claim"] = tl;
+
+      gsap.set(railsStage, { opacity: 0 });
+      gsap.set(finalCard, { opacity: 0 });
+
+      tl.fromTo(chainCards, { opacity: 0, y: 22, scale: 0.98 }, { opacity: (index) => [0.26, 0.46, 0.7][index], y: 0, scale: 1, duration: 0.58, stagger: 0.13, ease: "power3.out" }, 0.0)
+        .fromTo(lockup, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.62, ease: "power3.out" }, 0.18)
+        .fromTo(wordmark, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.52, ease: "power2.out" }, 0.42)
+        .fromTo(subtitle, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.48, ease: "power2.out" }, 0.78)
+        .set(lockupStage, { opacity: 0 }, 3.0)
+        .set(railsStage, { opacity: 1, scale: 1, filter: "blur(0px)" }, 3.0)
+        .fromTo(rails[0], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 3.02)
+        .fromTo(markers[0], { scaleY: 0 }, { scaleY: 1, duration: 0.34, ease: "power2.out" }, 3.04)
+        .fromTo(rails[1], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 4.17)
+        .fromTo(markers[1], { scaleY: 0 }, { scaleY: 1, duration: 0.34, ease: "power2.out" }, 4.19)
+        .fromTo(rails[2], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 5.42)
+        .fromTo(markers[2], { scaleY: 0 }, { scaleY: 1, duration: 0.34, ease: "power2.out" }, 5.44);
+
+      const sequences = [
+        [
+          { t: 0.0, text: "" },
+          { t: 0.12, text: "PUBLIC" },
+          { t: 0.32, text: "PUBLIC REPLAY" },
+          { t: 0.58, text: "evidencegraph-datahub" },
+          { t: 0.88, text: "evidencegraph-datahub.liu891855.chatgpt.site" },
+          { t: 1.08, text: "evidencegraph-datahub.liu891855.chatgpt.site  ✓" }
+        ],
+        [
+          { t: 0.0, text: "" },
+          { t: 1.18, text: "CLAIMS" },
+          { t: 1.42, text: "EVIDENCE LEDGER" },
+          { t: 1.72, text: "outputs/evidence-ledger.json" },
+          { t: 2.08, text: "claim · source · confidence · test  ✓" }
+        ],
+        [
+          { t: 0.0, text: "" },
+          { t: 2.42, text: "SOURCE" },
+          { t: 2.66, text: "OPEN-SOURCE REPOSITORY" },
+          { t: 2.96, text: "github.com/agentic-build-lab" },
+          { t: 3.32, text: "github.com/agentic-build-lab/evidencegraph-datahub  ✓" }
+        ]
+      ];
+
+      const textAt = (sequence, time) => {
+        for (let index = sequence.length - 1; index >= 0; index -= 1) {
+          if (time >= sequence[index].t) return sequence[index].text;
+        }
+        return "";
+      };
+
+      const driver = { t: 0 };
+      tl.to(driver, {
+        t: 4,
+        duration: 4,
+        ease: "none",
+        onUpdate: () => {
+          texts.forEach((element, index) => {
+            element.textContent = textAt(sequences[index], driver.t);
+          });
+        }
+      }, 3.0);
+
+      const blink = { p: 0 };
+      tl.to(blink, {
+        p: Math.PI * 12,
+        duration: 4,
+        ease: "none",
+        onUpdate: () => {
+          const active = driver.t < 1.18 ? 0 : driver.t < 2.42 ? 1 : driver.t < 3.72 ? 2 : -1;
+          cursors.forEach((cursor, index) => {
+            cursor.style.opacity = index === active && Math.sin(blink.p) > 0 ? "1" : "0";
+          });
+        }
+      }, 3.0);
+
+      tl.to(railsStage, { scale: 0.8, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 6.8)
+        .to(railsStage, { opacity: 0.15, duration: 0.2, ease: "none" }, 6.8)
+        .set(railsStage, { opacity: 0 }, 7.0)
+        .fromTo(finalCard, { opacity: 0.15, scale: 1.25, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.52, ease: "expo.out" }, 7.0)
+        .fromTo(metrics, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.42, stagger: 0.28, ease: "power2.out" }, 7.42)
+        .fromTo(urlCard, { opacity: 0, y: 18, scale: 0.985 }, { opacity: 1, y: 0, scale: 1, duration: 0.72, ease: "power3.out" }, 8.55);
+    })();
+  </script>
+</template>

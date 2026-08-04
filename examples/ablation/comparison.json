@@ -1,0 +1,39 @@
+{
+  "additional_truth_assets_found_with_datahub": [
+    "urn:li:dashboard:(looker,executive_revenue_watch)",
+    "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+    "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+    "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)"
+  ],
+  "datahub": {
+    "assets_found": 7,
+    "bi_recall_percent": 100.0,
+    "false_negatives": 0,
+    "false_positives": 0,
+    "false_safe": false,
+    "missed_urns": [],
+    "ml_recall_percent": 100.0,
+    "recall_percent": 100.0,
+    "true_positives": 7,
+    "unexpected_urns": []
+  },
+  "recall_delta_percentage_points": 57.1,
+  "repository_only": {
+    "assets_found": 3,
+    "bi_recall_percent": 0.0,
+    "false_negatives": 4,
+    "false_positives": 0,
+    "false_safe": true,
+    "missed_urns": [
+      "urn:li:dashboard:(looker,executive_revenue_watch)",
+      "urn:li:mlFeature:(customer_profile,customer_tier_signal)",
+      "urn:li:mlModel:(urn:li:dataPlatform:mlflow,churn_propensity_v4,PROD)",
+      "urn:li:mlModelDeployment:(urn:li:dataPlatform:kubernetes,churn_api_prod,PROD)"
+    ],
+    "ml_recall_percent": 0.0,
+    "recall_percent": 42.9,
+    "true_positives": 3,
+    "unexpected_urns": []
+  },
+  "truth_assets": 7
+}
