@@ -146,7 +146,7 @@ information.
 - Public demo: `https://evidencegraph-datahub.liu891855.chatgpt.site`
 - Public repository: `https://github.com/agentic-build-lab/evidencegraph-datahub`
 - Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples`
-- Demo video: `<PUBLIC_VIDEO_URL>`
+- Demo video: `https://youtu.be/MFDSc8Nx1Qs`
 - Release: `https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.1.0`
 
 ## Built with

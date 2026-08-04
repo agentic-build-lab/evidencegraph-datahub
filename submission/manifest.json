@@ -13,7 +13,7 @@
     "devpost_url": "<DEVPOST_PROJECT_URL>",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
     "demo_url": "https://evidencegraph-datahub.liu891855.chatgpt.site",
-    "video_url": "<PUBLIC_VIDEO_URL>",
+    "video_url": "https://youtu.be/MFDSc8Nx1Qs",
     "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples",
     "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.1.0"
   },
@@ -66,13 +66,13 @@
   ],
   "release_gates": {
     "all_placeholders_replaced": false,
-    "public_repository_signed_out_check": false,
+    "public_repository_signed_out_check": true,
     "public_demo_signed_out_check": true,
-    "public_video_under_three_minutes": false,
+    "public_video_under_three_minutes": true,
     "sample_output_link_check": false,
     "clean_clone_reproduction": false,
     "secret_and_personal_data_scan": false,
-    "dependency_audit": false,
+    "dependency_audit": true,
     "devpost_final_preview_reviewed": false,
     "devpost_submitted": false
   }
