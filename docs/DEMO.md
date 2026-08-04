@@ -102,4 +102,4 @@ available evidence and names the next safe action.
 - Live demo: `https://github.com/agentic-build-lab/evidencegraph-datahub`
 - Repository: `https://github.com/agentic-build-lab/evidencegraph-datahub`
 - Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/main/examples`
-- Video: `<PUBLIC_VIDEO_URL>`
+- Video: `https://youtu.be/MFDSc8Nx1Qs`

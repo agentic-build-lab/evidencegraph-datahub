@@ -3,7 +3,7 @@
 **Final duration:** 2:30
 **Format:** 1920×1080, 30 fps, English narration and captions
 **Voice:** Kokoro `af_heart`, generated offline
-**Public URL:** `<PUBLIC_VIDEO_URL>`
+**Public URL:** `https://youtu.be/MFDSc8Nx1Qs`
 
 ## 0:00–0:14 — The change is not the incident
 
