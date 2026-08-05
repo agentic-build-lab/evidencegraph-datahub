@@ -1,0 +1,22 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Synthetic credential strings used only by negative security tests"
+paths = [
+  '''(^|/)tests/test_freeze_examples\.py$''',
+  '''(^|/)tests/test_endpoint_policy\.py$''',
+  '''(^|/)tests/context/test_mcp_adapter\.py$''',
+]
+
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Deterministic SHA-256 idempotency keys in sanitized write-back receipts"
+condition = "AND"
+regexTarget = "line"
+regexes = [
+  '''^\s*"idempotency_key"\s*:\s*"[0-9a-f]{64}",?\s*$''',
+]
+paths = [
+  '''(^|/)(examples/flagship|site/public/evidence/flagship|public/evidence/flagship)/evidence-ledger\.live\.sanitized\.json$''',
+]

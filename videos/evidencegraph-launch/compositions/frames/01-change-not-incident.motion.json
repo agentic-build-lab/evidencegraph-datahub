@@ -1,0 +1,10 @@
+{
+  "duration": 9.714,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f01-diff-card", "bySec": 0.8 },
+    { "kind": "appearsBy", "selector": "#f01-product-frame", "bySec": 3.8 },
+    { "kind": "appearsBy", "selector": "#f01-question-b", "bySec": 8.1 },
+    { "kind": "staysInFrame", "selector": "#f01-diff-card" },
+    { "kind": "staysInFrame", "selector": "#f01-assurance-bar" }
+  ]
+}

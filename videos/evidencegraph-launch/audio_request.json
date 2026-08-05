@@ -24,7 +24,7 @@
     },
     {
       "id": "06",
-      "text": "Fourteen deterministic gates run in their native environments: Duck D B, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All fourteen pass. Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation."
+      "text": "Fourteen deterministic gates: Duck D B, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All fourteen pass. Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation."
     },
     {
       "id": "07",
@@ -32,11 +32,15 @@
     },
     {
       "id": "08",
-      "text": "EvidenceGraph makes DataHub's context graph operational. Inspect the public replay, audit every claim in the evidence ledger, and run the complete open-source system yourself."
+      "text": "EvidenceGraph makes DataHub's context graph operational. Inspect the public replay, audit every claim in the evidence ledger."
     }
   ],
   "bgm": {
-    "mode": "none"
+    "mode": "licensed-external-edit",
+    "title": "A Little Story",
+    "composer": "Kei Morimoto",
+    "provider": "DOVA-SYNDROME",
+    "included_in_repository": false
   },
   "voice": "af_heart"
 }

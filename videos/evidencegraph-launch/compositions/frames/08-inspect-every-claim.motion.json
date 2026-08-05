@@ -1,0 +1,11 @@
+{
+  "duration": 13.644,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f08-run-camera", "bySec": 0.9 },
+    { "kind": "appearsBy", "selector": "#f08-ledger-camera", "bySec": 7.4 },
+    { "kind": "appearsBy", "selector": "#f08-terminal", "bySec": 10.3 },
+    { "kind": "appearsBy", "selector": "#f08-cta", "bySec": 10.4 },
+    { "kind": "staysInFrame", "selector": "#f08-terminal" },
+    { "kind": "staysInFrame", "selector": "#f08-cta" }
+  ]
+}

@@ -12,12 +12,12 @@ or revised if their release evidence does not match the final commit.
 | C-002 | Repository-only analysis finds 3 of 7 affected assets, while DataHub-grounded analysis finds 7 of 7. | Deterministic ablation against the same frozen truth set. |
 | C-003 | DataHub improves recall from 42.9% to 100.0%, a gain of 57.1 percentage points, and recovers one dashboard plus an ML feature, model, and deployment. | Ablation result and additional-asset URNs. |
 | C-004 | EvidenceGraph generates nine artifacts spanning SQL, dbt, a real unified diff, validation, orchestration, ML compatibility, a migration plan, and a manifest. | Flagship artifact manifest and ledger. |
-| C-005 | The verified flagship bundle passed 14 of 14 validation gates. | Release-candidate validation receipts. |
+| C-005 | The verified flagship bundle passed 14 of 14 deterministic gates: one integrity/evidence-binding check, eight structured-file parser checks, and five native or integration checks. | Release-candidate validation receipts. |
 | C-006 | dbt Core 1.12.0 built the generated model and passed 7 of 7 schema and data tests. | `VAL-DBT-BUILD`, exit code 0. |
 | C-007 | The generated Airflow DAG passed DagBag import and dependency-gate assertions in the official Airflow 3.3.0 Linux container. | `VAL-AIRFLOW-DAG`, official `apache/airflow:3.3.0-python3.12` image, exit code 0. |
 | C-008 | The SQL compatibility view executed in DuckDB and preserved the expected contract for 4 of 4 synthetic rows. | `VAL-DUCKDB-PARITY`. |
 | C-009 | The ML compatibility mapping passed parity for 4 synthetic rows at a 0.0 mismatch rate. | `VAL-ML-PARITY`. |
-| C-010 | The live integration used `mcp-server-datahub@0.6.0` to collect entity, schema, dataset-lineage, and column-lineage context from DataHub Core v1.6.0. | Sanitized MCP verification report and normalized live context snapshot. |
+| C-010 | The live integration used `mcp-server-datahub@0.6.0` to collect entity, schema, dataset-lineage, and column-lineage context from DataHub Core v1.6.0. | [Sanitized MCP observation trace](../examples/flagship/mcp-trace.sanitized.json) and [normalized live context snapshot](../examples/flagship/context-snapshot.live.sanitized.json). |
 | C-011 | A controlled local run applied and read back three allowlisted DataHub metadata operations: tag addition, description append, and evidence-document save. | Mutation receipts with `applied_verified` status. |
 | C-012 | Live write-back requires `--apply`, `EVIDENCEGRAPH_ENABLE_WRITES=true`, and MCP mutation-tool availability. | Policy implementation and negative tests. |
 | C-013 | The demonstration uses synthetic data and invented asset and team identities. | Fixture source and provenance record. |
@@ -48,7 +48,7 @@ Do not state or imply that EvidenceGraph currently:
 
 ## Immutable release references
 
-- Frozen flagship package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples`
-- Release commit: resolve `v0.1.0^{commit}` from the annotated release tag
-- Release tag: `v0.1.0`
+- Frozen flagship package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples`
+- Release commit: resolve `v0.2.0^{commit}` from the release tag
+- Release tag: `v0.2.0`
 - Public demo: `https://evidencegraph-datahub.liu891855.chatgpt.site`

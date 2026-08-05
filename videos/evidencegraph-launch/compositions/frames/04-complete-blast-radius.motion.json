@@ -1,0 +1,9 @@
+{
+  "duration": 18.089,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f04-live-stage", "bySec": 0.6 },
+    { "kind": "appearsBy", "selector": "[data-eg04=\"impact-board\"]", "bySec": 7.2 },
+    { "kind": "appearsBy", "selector": "[data-eg04=\"queue\"]", "bySec": 13.5 },
+    { "kind": "staysInFrame", "selector": "[data-eg04=\"queue\"]" }
+  ]
+}

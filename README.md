@@ -1,7 +1,7 @@
 # EvidenceGraph
 
 > A DataHub-native data-change assurance compiler that turns a breaking change into a
-> complete impact map, validated migration code, and an evidence-backed go/no-go decision.
+> completeness-verdict impact map, validated migration code, and an evidence-backed go/no-go decision.
 
 [**Live public replay**](https://evidencegraph-datahub.liu891855.chatgpt.site) ·
 [**Frozen evidence package**](examples/README.md) ·
@@ -9,11 +9,14 @@
 [Demo guide](docs/DEMO.md) ·
 [Security](docs/SECURITY.md)
 
+![EvidenceGraph — data changes, proven safe](site/public/og.png)
+
 Removing `customer_tier` looks manageable to a repository-only scanner: it finds 3 of 7
 affected assets. It cannot see the executive dashboard or the production ML feature → model →
 deployment chain. DataHub reveals all 7 consumers. EvidenceGraph makes that context executable:
-it compiles a coordinated migration pack, runs native validators, refuses unsafe actions, and
-writes the verified decision back to DataHub.
+it compiles a coordinated migration pack, runs a 14-gate validation suite, and refuses unsafe
+actions. In a separate approved local run, it writes three scoped metadata results to DataHub
+and verifies each by readback.
 
 | Measured on the frozen synthetic truth set | Repository only | DataHub context |
 | --- | ---: | ---: |
@@ -39,7 +42,7 @@ flowchart LR
   V --> S{"Evidence sufficient?"}
   S -->|"yes"| W["Governed DataHub write-back"]
   S -->|"no"| R["Fail-closed refusal"]
-  W --> F["Fresh-graph closure"]
+  W --> F["Newer-graph closure gate"]
 ```
 
 DataHub is not a lookup layer here. Its metadata directly determines:
@@ -48,11 +51,20 @@ DataHub is not a lookup layer here. Its metadata directly determines:
   in scope;
 - whether a column-level patch is safe to generate at all;
 - the remediation order and owner routing;
-- every claim's provenance and confidence;
+- every impact claim's provenance and confidence;
 - whether the agent may propose or execute metadata changes.
 
 Remove precise column lineage, an owner, a required validator, or a fresh post-change
 observation and the outcome changes from a migration proposal to a machine-readable refusal.
+
+The paired public replays make that causal effect inspectable. With the recorded complete
+graph, EvidenceGraph grounds 7 of 7 declared impacts and allows write-back proposals only after
+all 14 gates pass. Remove one lineage page and confidence is capped at 0.65, the same nine
+drafts are quarantined, and write-back proposals fall to zero.
+
+Every impact claim links to DataHub URNs and recorded observations. Every generated file links
+to the claim IDs and target objects it used. Every validation result links to an artifact hash
+and a structured receipt.
 
 Agenticity here means a bounded observe → derive → compile → validate → decide → act →
 read-back loop whose next action is determined by evidence state, not a scripted chat response.
@@ -75,7 +87,9 @@ For proposal `EG-042`, EvidenceGraph produces **9 evidence-bound artifacts**:
 - a versioned ML feature migration contract;
 - a risk-ranked migration plan and claim-binding manifest.
 
-The frozen run passed **14/14 gates**:
+The frozen run passed **14/14 deterministic gates**: one artifact-integrity and
+evidence-binding check, eight structured-file parser checks, and five native or integration
+checks:
 
 - DuckDB preserved 4/4 synthetic rows;
 - dbt Core 1.12.0 completed `dbt build` with 7/7 tests;
@@ -90,7 +104,10 @@ Inspect the [live sanitized ledger](examples/flagship/evidence-ledger.live.sanit
 
 ## Quick deterministic replay
 
-Python 3.11 or 3.12 is supported. Docker is required for the official Airflow container path.
+Python 3.11 or 3.12 is supported. Docker is required for the official Airflow
+container path. Native Airflow execution is unsupported on Windows; use the
+pinned Docker image or run the validation suite in WSL2/Linux. EvidenceGraph
+fails this gate closed when neither path is available.
 
 ```bash
 uv sync --all-extras --locked --python 3.12
@@ -98,9 +115,12 @@ uv run --no-sync evidencegraph demo --output outputs/demo
 uv run --no-sync evidencegraph ablation
 ```
 
-Expected: 7 impacts, 9 artifacts, 14/14 validators passed, and a dry-run write-back proposal.
-No DataHub account, token, LLM key, or network access is required after dependencies are
-installed.
+Expected on Linux, WSL2, or Windows with the pinned Airflow image available:
+7 impacts, 9 artifacts, 14/14 validators passed, and a dry-run write-back
+proposal. Windows without the pinned container intentionally reports 13/14 and
+blocks the proposal at `VAL-AIRFLOW-DAG`. No DataHub account, token, LLM key,
+or network access is required after dependencies and the selected native
+validation environment are installed.
 
 ## Live DataHub + MCP path
 
@@ -183,6 +203,8 @@ truth-set regressions, validator fail-close behavior, scoped mutations, partial 
 collisions, exact readback, idempotent retry, and stale closure. See
 [HACKATHON_PROVENANCE.md](HACKATHON_PROVENANCE.md) for the new-project disclosure and
 [docs/LIMITATIONS.md](docs/LIMITATIONS.md) for the declared boundaries.
+The pinned history/archive secret scan and publication-asset allowlist are in
+[docs/RELEASE_GATES.md](docs/RELEASE_GATES.md).
 
 ## License
 

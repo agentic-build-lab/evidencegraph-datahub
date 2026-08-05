@@ -449,6 +449,52 @@ class BundleValidator:
         started = time.monotonic()
         command_label = "Airflow DagBag import + dependency assertion"
         reported_version = airflow_version
+        docker = shutil.which("docker")
+        image = "apache/airflow:3.3.0-python3.12"
+        use_container = False
+        if os.name == "nt":
+            if docker is None:
+                return self._result(
+                    "VAL-AIRFLOW-DAG",
+                    "Import Airflow DAG and validate dependency gate",
+                    ValidationStatus.FAILED,
+                    (
+                        "Native Airflow validation is unsupported on Windows. "
+                        "Run the pinned official Linux container through Docker or use WSL2/Linux."
+                    ),
+                    (dag.relative_path,),
+                    "official Airflow Linux container required on Windows",
+                    airflow_version,
+                    None,
+                    int((time.monotonic() - started) * 1000),
+                )
+            inspected = subprocess.run(  # nosec B603
+                [docker, "image", "inspect", image],
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=15,
+                check=False,
+                env=_minimal_validation_environment(include_docker=True),
+            )
+            if inspected.returncode != 0:
+                return self._result(
+                    "VAL-AIRFLOW-DAG",
+                    "Import Airflow DAG and validate dependency gate",
+                    ValidationStatus.FAILED,
+                    (
+                        "The pinned official Airflow Linux image is unavailable on Windows. "
+                        "Start Docker and pull apache/airflow:3.3.0-python3.12, or use WSL2/Linux."
+                    ),
+                    (dag.relative_path,),
+                    "docker image inspect apache/airflow:3.3.0-python3.12",
+                    airflow_version,
+                    inspected.returncode,
+                    int((time.monotonic() - started) * 1000),
+                    _sanitize_output(inspected.stdout + "\n" + inspected.stderr),
+                )
+            use_container = True
         check_program = """
 import json
 import os
@@ -519,18 +565,6 @@ print(json.dumps({'dag_id': dag.dag_id, 'task_ids': sorted(dag.task_ids), 'gate'
                 environment["AIRFLOW__CORE__LOAD_EXAMPLES"] = "false"
                 environment["PYTHONUTF8"] = "1"
                 environment["PYTHONIOENCODING"] = "utf-8"
-                docker = shutil.which("docker")
-                image = "apache/airflow:3.3.0-python3.12"
-                use_container = False
-                if os.name == "nt" and docker is not None:
-                    # Read-only Docker image inspection with a fixed argument vector.
-                    inspected = subprocess.run(  # nosec B603
-                        [docker, "image", "inspect", image],
-                        capture_output=True,
-                        timeout=15,
-                        check=False,
-                    )
-                    use_container = inspected.returncode == 0
                 if use_container and docker is not None:
                     command = [
                         docker,

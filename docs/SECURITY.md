@@ -66,17 +66,26 @@ The public replay is deployed at
 `https://evidencegraph-datahub.liu891855.chatgpt.site`; an anonymous HTTP request returned 200
 without an application login or private-membership gate.
 
+The deployed judge surface is a read-only server-rendered replay. It has no
+application API, form submission, uploaded content, arbitrary scenario input,
+or mutation route, so there is no public agent execution to rate-limit or time
+out. The worker adds a Content Security Policy, HSTS on HTTPS, clickjacking and
+MIME-sniffing defenses, a restrictive permissions policy, same-origin resource
+boundaries, and a strict referrer policy to every application response. These
+headers are asserted in the rendered-site test.
+
 ## Dependency and release checks
 
 The final release gate includes linting, type checking, the full automated test
-suite, dependency audit, secret scan over Git history, release-archive scan, and
-signed-out public-link verification.
+suite, dependency audit, a Gitleaks 8.30.1 scan over complete Git history, a
+second scan over the clean release-tree archive, and signed-out public-link
+verification. The pinned CI commands and manual publication allowlist are
+documented in [`RELEASE_GATES.md`](RELEASE_GATES.md).
 
 The release dependency audit reports one accepted upstream exception:
 `setuptools 81.0.0` is affected by `PYSEC-2026-3447` / `CVE-2026-59890`
 (`GHSA-h35f-9h28-mq5c`), fixed in 83.0.0. The
-official `datahub-agent-context==1.6.0.17` package pins
-`acryl-datahub==1.6.0.6`, whose declared requirement is `setuptools<82`, so a
+official `acryl-datahub==1.6.0.6` package declares `setuptools<82`, so a
 non-vulnerable resolver solution does not currently exist without breaking the
 official DataHub dependency contract. EvidenceGraph does not invoke setuptools
 at runtime, build or publish source distributions, accept package archives, or

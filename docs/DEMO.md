@@ -29,8 +29,10 @@ then emits nine migration artifacts and runs fourteen validation gates.
 
 ## Fast deterministic run
 
-Prerequisites: Python 3.11 or 3.12. Docker is required only for the verified
-official Airflow container path.
+Prerequisites: Python 3.11 or 3.12. Docker is required for the verified
+official Airflow container path on Windows; native Airflow execution is
+unsupported there, so Windows without the pinned image fails that gate closed.
+WSL2 and Linux can use the locked native environment.
 
 ```bash
 uv sync --all-extras --locked --python 3.12
@@ -38,7 +40,8 @@ uv run --no-sync evidencegraph demo --output outputs/demo
 uv run --no-sync evidencegraph ablation
 ```
 
-Expected release-candidate results:
+Expected release-candidate results on Linux, WSL2, or Windows with the pinned
+Airflow image available:
 
 - 7 downstream impacts;
 - 9 generated artifacts;

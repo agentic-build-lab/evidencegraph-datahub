@@ -2,20 +2,20 @@
   "schema_version": "1.0",
   "project": {
     "name": "EvidenceGraph",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "category": "Metadata-Aware Code Generation & Development",
     "license": "Apache-2.0",
-    "release_commit": "v0.1.0^{commit}",
-    "release_tag": "v0.1.0"
+    "release_commit": "pending-v0.2.0-release-commit",
+    "release_tag": "v0.2.0"
   },
   "submission": {
-    "status": "submitted",
+    "status": "update_in_progress",
     "devpost_url": "https://devpost.com/software/evidencegraph",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
     "demo_url": "https://evidencegraph-datahub.liu891855.chatgpt.site",
-    "video_url": "https://youtu.be/MFDSc8Nx1Qs",
-    "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples",
-    "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.1.0"
+    "video_url": "pending-final-render-and-upload",
+    "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples",
+    "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.2.0"
   },
   "verified_metrics": {
     "declared_affected_assets": 7,
@@ -36,7 +36,7 @@
   "datahub": {
     "core_version": "v1.6.0",
     "mcp_package": "mcp-server-datahub@0.6.0",
-    "agent_context_kit_package": "datahub-agent-context==1.6.0.17",
+    "python_sdk_package": "acryl-datahub==1.6.0.6",
     "primary_agent_interface": "DataHub MCP Server",
     "sdk_scope": "demo bootstrap and narrow relationship enrichment not exposed as MCP lineage nodes"
   },
@@ -62,7 +62,9 @@
     "submission/elevator-pitch.txt",
     "submission/technology-tags.txt",
     "submission/video-script.md",
+    "submission/youtube.md",
     "submission/gallery.md",
+    "submission/release-notes-v0.2.0.md",
     "submission/feedback.md"
   ],
   "explicit_non_claims": [
@@ -73,18 +75,18 @@
     "EvidenceGraph does not apply production data or code changes"
   ],
   "release_gates": {
-    "all_placeholders_replaced": true,
-    "public_repository_signed_out_check": true,
+    "all_placeholders_replaced": false,
+    "public_repository_signed_out_check": false,
     "public_demo_signed_out_check": true,
-    "public_devpost_signed_out_check": true,
-    "public_video_under_three_minutes": true,
-    "public_release_signed_out_check": true,
-    "release_asset_checksum_check": true,
-    "sample_output_link_check": true,
-    "clean_clone_reproduction": true,
-    "secret_and_personal_data_scan": true,
-    "dependency_audit": true,
-    "devpost_final_preview_reviewed": true,
-    "devpost_submitted": true
+    "public_devpost_signed_out_check": false,
+    "public_video_under_three_minutes": false,
+    "public_release_signed_out_check": false,
+    "release_asset_checksum_check": false,
+    "sample_output_link_check": false,
+    "clean_clone_reproduction": false,
+    "secret_and_personal_data_scan": false,
+    "dependency_audit": false,
+    "devpost_final_preview_reviewed": false,
+    "devpost_submitted": false
   }
 }

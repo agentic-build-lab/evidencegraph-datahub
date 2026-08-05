@@ -32,13 +32,13 @@ type AssetNode = {
 };
 
 const runStages = [
-  { label: "Observe", title: "Read schema and contract", tool: "DataHub MCP", receipt: "schema + active Tier 1 contract", evidenceMode: "LIVE MCP READ" },
-  { label: "Resolve", title: "Join ownership, docs, and ML context", tool: "DataHub SDK", receipt: "owners + RFC-42 + modeled gaps", evidenceMode: "LIVE DATAHUB READ" },
-  { label: "Traverse", title: "Exhaust paginated lineage", tool: "DataHub MCP", receipt: "7 consumers · frontier exhausted", evidenceMode: "LIVE MCP READ" },
+  { label: "Observe", title: "Read schema and source entity", tool: "DataHub MCP", receipt: "schema + source entity", evidenceMode: "RECORDED LIVE MCP TRACE" },
+  { label: "Resolve", title: "Join contract, ownership, docs, and ML gaps", tool: "DataHub SDK", receipt: "contract + owner + RFC-42 + ML gaps", evidenceMode: "RECORDED LIVE SDK TRACE" },
+  { label: "Traverse", title: "Exhaust paginated lineage", tool: "DataHub MCP", receipt: "7 consumers · frontier exhausted", evidenceMode: "RECORDED LIVE MCP TRACE" },
   { label: "Compile", title: "Generate migration bundle", tool: "EvidenceGraph", receipt: `${flagshipLedger.artifacts.length} artifacts · 7 impact claim bindings`, evidenceMode: "FROZEN RUN OUTPUT" },
-  { label: "Validate", title: "Run deterministic and native gates", tool: "DuckDB · dbt · Airflow", receipt: `${validationReceipts.filter((item) => item.status === "passed").length} / ${validationReceipts.length} passed`, evidenceMode: "RECORDED RECEIPTS" },
-  { label: "Write back", title: "Apply governed graph updates", tool: "DataHub MCP", receipt: `${writebackReceipts.filter((item) => item.status === "applied_verified").length} / ${writebackReceipts.length} applied and read back`, evidenceMode: "SEPARATE APPROVED RUN" },
-  { label: "Close", title: "Verify a fresh context graph", tool: "EvidenceGraph", receipt: `${closureReceipt.remaining_impact_urns.length} old-field consumers`, evidenceMode: "DETERMINISTIC REPLAY" },
+  { label: "Validate", title: "Run deterministic and native gates", tool: "DuckDB · dbt · Airflow", receipt: `${validationReceipts.filter((item) => item.status === "passed").length} / ${validationReceipts.length} passed`, evidenceMode: "RECORDED VALIDATION RECEIPTS" },
+  { label: "Write back", title: "Apply governed graph updates", tool: "DataHub MCP", receipt: `${writebackReceipts.filter((item) => item.status === "applied_verified").length} / ${writebackReceipts.length} applied and read back`, evidenceMode: "RECORDED APPROVED WRITE-BACK" },
+  { label: "Close", title: "Verify a newer complete context graph", tool: "EvidenceGraph", receipt: `${closureReceipt.remaining_impact_urns.length} old-field consumers`, evidenceMode: "DETERMINISTIC CLOSURE REPLAY" },
 ] as const;
 
 const completeClaims = new Map(flagshipLedger.claims.map((claim) => [claim.claim_id, claim]));
@@ -363,7 +363,7 @@ export default function Home() {
             ))}
           </div>
           <button className={running ? "primary-action running" : "primary-action"} onClick={runAssurance} disabled={running}>
-            <span>{running ? "RUNNING" : completed ? "RUN AGAIN" : "RUN ASSURANCE"}</span>
+            <span>{running ? "REPLAYING" : completed ? "REPLAY AGAIN" : "REPLAY ASSURANCE"}</span>
             <b>{running ? `${Math.round(progress)}%` : "→"}</b>
           </button>
         </div>
@@ -498,7 +498,7 @@ function GraphWorkspace({ runStep, completed, graphMode, visibleNodes, selectedN
             <span>?</span><div><strong>Lineage page unavailable</strong><small>Completeness cannot be established</small></div>
           </div>
         )}
-        {!completed && runStep < 0 && <div className="run-prompt"><i />Run Assurance to traverse DataHub</div>}
+        {!completed && runStep < 0 && <div className="run-prompt"><i />Replay the recorded assurance run</div>}
         {runStep >= 0 && !completed && <div className="scan-frontier" style={{ left: `${Math.min(82, 20 + runStep * 11)}%` }} />}
       </div>
 
@@ -624,7 +624,7 @@ function EvidenceInspector({ node, completed, graphMode, decision }: { node: Ass
       </div>
       <div className="confidence-block">
         <div className="confidence-ring"><span>{confidence === null ? "—" : Math.round(confidence * 100)}<small>{confidence === null ? "" : "%"}</small></span></div>
-        <div><span>CONFIDENCE</span><strong>{blocked && node.id !== "source" ? "Capped by incomplete frontier" : completed ? "Deterministically evidenced" : "Awaiting traversal"}</strong><small>{blocked && node.id !== "source" ? "Useful draft · not sufficient authority" : completed ? "No model judgment in risk propagation" : "Run Assurance to collect observations"}</small></div>
+        <div><span>CONFIDENCE</span><strong>{blocked && node.id !== "source" ? "Capped by incomplete frontier" : completed ? "Deterministically evidenced" : "Awaiting replay"}</strong><small>{blocked && node.id !== "source" ? "Useful draft · not sufficient authority" : completed ? "No model judgment in risk propagation" : "Replay recorded observations"}</small></div>
       </div>
       <dl className="asset-facts">
         <div><dt>Owner</dt><dd>{node.owner}</dd></div>
@@ -652,7 +652,7 @@ function AgentTrace({ runStep, completed, graphMode, expanded, onToggle }: { run
   return (
     <section className={expanded ? "agent-trace" : "agent-trace collapsed"}>
       <button className="trace-heading" onClick={onToggle} aria-expanded={expanded}>
-        <div><span className={runStep >= 0 ? "live-dot active" : "live-dot"} /><strong>Agent trace</strong><code>{blocked ? "refused · evidence preserved" : completed ? "complete · labeled multi-run proof" : runStep >= 0 ? `running · step ${runStep + 1}/${runStages.length}` : "ready"}</code></div>
+        <div><span className={runStep >= 0 ? "live-dot active" : "live-dot"} /><strong>Agent trace</strong><code>{blocked ? "refused · evidence preserved" : completed ? "complete · labeled multi-run proof" : runStep >= 0 ? `replaying · step ${runStep + 1}/${runStages.length}` : "ready"}</code></div>
         <span>{expanded ? "Collapse ↓" : "Expand ↑"}</span>
       </button>
       {expanded && <div className="trace-track">
@@ -673,7 +673,7 @@ function AgentTrace({ runStep, completed, graphMode, expanded, onToggle }: { run
           const evidenceMode = blocked && index === 5 ? "REFUSAL FIXTURE" : blocked && index === 6 ? "NOT RUN" : stage.evidenceMode;
           return <div className={refused ? "trace-step blocked" : quarantined ? "trace-step quarantined" : done ? "trace-step done" : active ? "trace-step active" : "trace-step"} key={stage.label}>
             <div className="trace-number">{refused ? "×" : quarantined ? "!" : done ? "✓" : String(index + 1).padStart(2, "0")}</div>
-            <div><span>{stage.label.toUpperCase()}</span><em>{evidenceMode}</em><strong>{stage.title}</strong><code>{stage.tool}</code><small>{blocked && index >= 2 ? blockedReceipt : done ? stage.receipt : active ? "executing…" : "queued"}</small></div>
+            <div><span>{stage.label.toUpperCase()}</span><em>{evidenceMode}</em><strong>{stage.title}</strong><code>{stage.tool}</code><small>{blocked && index >= 2 ? blockedReceipt : done ? stage.receipt : active ? "replaying…" : "queued"}</small></div>
           </div>;
         })}
       </div>}

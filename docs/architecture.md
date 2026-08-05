@@ -4,7 +4,7 @@
 
 EvidenceGraph accepts a proposed data change and returns four coupled outputs:
 
-1. a complete downstream impact graph;
+1. a downstream impact graph with an explicit completeness verdict;
 2. a risk-ranked migration and remediation plan;
 3. pull-request-ready migration artifacts with deterministic validation results;
 4. an evidence ledger that distinguishes observations, derived claims,
@@ -59,7 +59,7 @@ migration work.
 | --- | --- | --- |
 | DataHub OSS | v1.6.0 | Stores the heterogeneous operational context graph and durable write-back. |
 | Official DataHub MCP Server | `mcp-server-datahub@0.6.0` | Primary search, entity/schema, paginated lineage, document search, and allowlisted mutation boundary. |
-| DataHub Python SDK | `acryl-datahub==1.6.0.6` through Agent Context Kit 1.6.0.17 | Synthetic bootstrap and narrow aspect enrichment where MCP does not expose document contents, contract details, or the ML deployment relationship. |
+| DataHub Python SDK | `acryl-datahub==1.6.0.6` | Synthetic bootstrap and narrow aspect enrichment where MCP does not expose document contents, contract details, or the ML deployment relationship. |
 | DataHub Skill | `skills/datahub-change-assurance` | Reusable agent workflow and public-claim guardrails. |
 
 ## Completeness contract

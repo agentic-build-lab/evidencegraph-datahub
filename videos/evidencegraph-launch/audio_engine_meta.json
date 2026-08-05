@@ -1,15 +1,26 @@
 {
   "tts_provider": "kokoro",
   "voice_id": "af_heart",
-  "bgm": null,
+  "metadata_scope": "speech-only TTS durations before frame padding plus the licensed background-music edit; canonical file and word timing is audio_meta.json",
+  "voice_duration_semantics": "Each voice duration measures spoken audio before frame padding and is not the composition timeline length.",
+  "bgm": {
+    "path": ".media/audio/bgm/bgm_001.edit.mp3",
+    "title": "A Little Story",
+    "composer": "Kei Morimoto",
+    "provider": "DOVA-SYNDROME",
+    "source_duration_s": 174.72,
+    "target_duration_s": 130,
+    "volume": 0.085,
+    "included_in_repository": false
+  },
   "bgm_pending": false,
-  "bgm_provider": null,
+  "bgm_provider": "DOVA-SYNDROME",
   "bgm_pid": null,
   "bgm_log": null,
-  "bgm_mode": null,
-  "bgm_target_duration_s": null,
-  "bgm_seed_duration_s": null,
-  "bgm_loop_count": null,
+  "bgm_mode": "licensed-external-edit",
+  "bgm_target_duration_s": 130,
+  "bgm_seed_duration_s": 174.72,
+  "bgm_loop_count": 1,
   "voices": [
     {
       "id": "01",
@@ -44,7 +55,7 @@
     {
       "id": "06",
       "path": "assets/voice/06.wav",
-      "duration_s": 19.136,
+      "duration_s": 20.081,
       "words": []
     },
     {
@@ -55,11 +66,12 @@
     },
     {
       "id": "08",
-      "path": "assets/voice/08.wav",
-      "duration_s": 11.328,
+      "path": "assets/voice/08.trimmed.wav",
+      "duration_s": 8.22,
       "words": []
     }
   ],
   "sfx": [],
-  "total_duration_s": 124.117
+  "spoken_audio_total_duration_s": 121.954,
+  "composition_duration_s": 130
 }

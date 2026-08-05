@@ -1,577 +1,767 @@
 <template>
   <style>
+    @font-face {
+      font-family: "Geist";
+      src: url("assets/fonts/Geist-Variable.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 100 900;
+    }
+
+    @font-face {
+      font-family: "Geist Mono";
+      src: url("assets/fonts/GeistMono-Regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+    }
+
     #root {
       position: relative;
       width: 1920px;
       height: 1080px;
       overflow: hidden;
-      container-type: size;
-      color: #e7eeeb;
-      font-family: sans-serif;
       isolation: isolate;
+      color: #e7eeeb;
+      font-family: "Geist";
     }
 
-    [class~="f05-migration-bundle-background"] {
+    .f05-migration-bundle-ground {
       position: absolute;
       inset: 0;
       overflow: hidden;
       background:
-        radial-gradient(circle at 78% 18%, rgba(64, 224, 192, 0.09), transparent 30%),
-        linear-gradient(135deg, #10252c 0%, #0c1b22 58%, #0a171d 100%);
+        radial-gradient(circle at 78% 28%, rgba(64, 224, 192, 0.12), transparent 34%),
+        radial-gradient(circle at 12% 74%, rgba(64, 224, 192, 0.06), transparent 31%),
+        #0c1b22;
     }
 
-    [class~="f05-migration-bundle-background"]::before {
+    .f05-migration-bundle-ground img {
+      position: absolute;
+      inset: -70px;
+      width: 2060px;
+      height: 1220px;
+      object-fit: cover;
+      object-position: 50% 10%;
+      opacity: 0.12;
+      filter: saturate(0.66) contrast(1.08) brightness(0.72) blur(1px);
+    }
+
+    .f05-migration-bundle-ground::after {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.28;
-      background-image:
-        linear-gradient(rgba(64, 224, 192, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(64, 224, 192, 0.045) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+      background:
+        linear-gradient(rgba(64, 224, 192, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(64, 224, 192, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(12, 27, 34, 0.1), rgba(12, 27, 34, 0.82));
+      background-size: 48px 48px, 48px 48px, 100% 100%;
     }
 
-    [class~="f05-migration-bundle-scene"] {
+    .f05-migration-bundle-workspace {
       position: absolute;
       inset: 0;
-      overflow: hidden;
+      transform-origin: 50% 42%;
     }
 
-    [class~="f05-migration-bundle-kicker"] {
+    .f05-migration-bundle-topbar {
       position: absolute;
-      left: 96px;
-      top: 54px;
+      left: 86px;
+      right: 86px;
+      top: 52px;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .f05-migration-bundle-title-lockup {
+      min-width: 570px;
+    }
+
+    .f05-migration-bundle-eyebrow {
+      margin: 0 0 7px;
       color: #40e0c0;
-      font-size: 15px;
-      font-weight: 600;
+      font-family: "Geist Mono";
+      font-size: 14px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    [class~="f05-migration-bundle-title"] {
-      position: absolute;
-      left: 96px;
-      top: 76px;
+    .f05-migration-bundle-title {
       margin: 0;
-      max-width: 920px;
       color: #e7eeeb;
       font-size: 48px;
-      font-weight: 700;
-      line-height: 1.04;
-      letter-spacing: -0.035em;
+      font-weight: 690;
+      line-height: 1;
+      letter-spacing: -0.04em;
     }
 
-    [class~="f05-migration-bundle-title"] span {
+    .f05-migration-bundle-title strong {
       color: #40e0c0;
+      font-weight: 740;
     }
 
-    [class~="f05-migration-bundle-count"] {
+    .f05-migration-bundle-provenance {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .f05-migration-bundle-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 13px;
+      border: 1px solid rgba(121, 184, 171, 0.3);
+      border-radius: 999px;
+      color: #9cb0aa;
+      background: rgba(18, 42, 51, 0.72);
+      font-family: "Geist Mono";
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .f05-migration-bundle-chip--mint {
+      border-color: rgba(64, 224, 192, 0.42);
+      color: #40e0c0;
+      background: rgba(64, 224, 192, 0.1);
+    }
+
+    .f05-migration-bundle-progress {
       position: absolute;
-      right: 98px;
-      top: 74px;
+      left: 86px;
+      right: 86px;
+      top: 145px;
+      height: 2px;
+      overflow: hidden;
+      background: rgba(121, 184, 171, 0.13);
+    }
+
+    .f05-migration-bundle-progress > span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #40e0c0, rgba(64, 224, 192, 0.35));
+      transform-origin: 0 50%;
+    }
+
+    .f05-migration-bundle-manifest {
+      position: absolute;
+      left: 86px;
+      top: 169px;
+      width: 1748px;
+      height: 621px;
+      box-sizing: border-box;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(121, 184, 171, 0.26);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(23, 54, 65, 0.96), rgba(18, 42, 51, 0.94));
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), inset 0 1px rgba(231, 238, 235, 0.035);
+    }
+
+    .f05-migration-bundle-manifest-head {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0 4px 20px;
+      border-bottom: 1px solid rgba(121, 184, 171, 0.18);
+    }
+
+    .f05-migration-bundle-count {
       display: flex;
       align-items: baseline;
       gap: 12px;
       color: #40e0c0;
+      white-space: nowrap;
     }
 
-    [class~="f05-migration-bundle-count-number"] {
-      font-size: 46px;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.03em;
+    .f05-migration-bundle-count b {
+      font-size: 65px;
+      font-weight: 750;
+      line-height: 0.95;
+      letter-spacing: -0.055em;
     }
 
-    [class~="f05-migration-bundle-count-label"] {
+    .f05-migration-bundle-count span {
+      font-family: "Geist Mono";
+      font-size: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .f05-migration-bundle-manifest-meta {
+      color: #9cb0aa;
+      font-family: "Geist Mono";
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      line-height: 1.5;
     }
 
-    [class~="f05-migration-bundle-page-stage"] {
-      position: absolute;
-      left: 96px;
-      top: 162px;
-      width: 1460px;
-      height: 652px;
-      transform-origin: 82% 58%;
-    }
-
-    [class~="f05-migration-bundle-tilt-card"] {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      border: 1.5px solid rgba(64, 224, 192, 0.2);
-      border-radius: 14px;
-      background: #10252c;
-      transform: perspective(1500px) rotateY(-4deg) rotateX(1.5deg);
-      transform-origin: center center;
-      transform-style: preserve-3d;
-    }
-
-    [class~="f05-migration-bundle-window-bar"] {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 56px;
+    .f05-migration-bundle-compile-state {
+      margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 0 24px;
-      border-bottom: 1px solid rgba(64, 224, 192, 0.16);
-      background: rgba(12, 27, 34, 0.96);
+      gap: 11px;
+      color: #9cb0aa;
+      font-family: "Geist Mono";
+      font-size: 13px;
+      letter-spacing: 0.08em;
     }
 
-    [class~="f05-migration-bundle-window-dot"] {
-      width: 8px;
-      height: 8px;
+    .f05-migration-bundle-compile-dot {
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background: rgba(64, 224, 192, 0.35);
+      background: #40e0c0;
+      box-shadow: 0 0 0 5px rgba(64, 224, 192, 0.1);
     }
 
-    [class~="f05-migration-bundle-window-path"] {
-      margin-left: 10px;
-      color: #e7eeeb;
-      font-family: monospace;
-      font-size: 13px;
-      letter-spacing: 0.02em;
+    .f05-migration-bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      padding-top: 20px;
     }
 
-    [class~="f05-migration-bundle-window-mode"] {
-      margin-left: auto;
-      padding: 7px 12px;
-      border: 1px solid rgba(64, 224, 192, 0.2);
-      border-radius: 100px;
-      color: #40e0c0;
-      background: rgba(64, 224, 192, 0.08);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    [class~="f05-migration-bundle-viewport"] {
-      position: absolute;
-      z-index: 1;
-      top: 56px;
-      left: 0;
-      right: 0;
-      bottom: 0;
+    .f05-migration-bundle-file {
+      position: relative;
+      min-height: 139px;
+      box-sizing: border-box;
+      padding: 17px 18px 15px;
       overflow: hidden;
+      border: 1px solid rgba(121, 184, 171, 0.21);
+      border-radius: 16px;
+      background: rgba(12, 27, 34, 0.46);
+      box-shadow: inset 0 1px rgba(231, 238, 235, 0.025);
     }
 
-    [class~="f05-migration-bundle-page-content"] {
+    .f05-migration-bundle-file::before {
+      content: "";
       position: absolute;
-      top: 0;
       left: 0;
-      width: 100%;
-      padding: 26px 28px 42px;
-      box-sizing: border-box;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #40e0c0;
+      opacity: 0.15;
     }
 
-    [class~="f05-migration-bundle-manifest-head"] {
-      display: grid;
-      grid-template-columns: 58px 1fr 210px 130px;
-      gap: 16px;
+    .f05-migration-bundle-file-top {
+      display: flex;
       align-items: center;
-      height: 36px;
-      padding: 0 20px;
-      color: #656565;
-      font-family: monospace;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      gap: 9px;
     }
 
-    [class~="f05-migration-bundle-row"] {
-      display: grid;
-      grid-template-columns: 58px 1fr 210px 130px;
-      gap: 16px;
-      align-items: center;
-      min-height: 78px;
-      margin: 8px 0;
-      padding: 0 20px;
-      box-sizing: border-box;
-      border: 1.5px solid rgba(64, 224, 192, 0.2);
-      border-radius: 12px;
-      background: rgba(64, 224, 192, 0.04);
-    }
-
-    [class~="f05-migration-bundle-row-index"] {
-      color: #40e0c0;
-      font-family: monospace;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    [class~="f05-migration-bundle-row-name"] {
-      color: #e7eeeb;
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-    }
-
-    [class~="f05-migration-bundle-row-name"] small {
-      display: block;
-      margin-top: 4px;
-      color: #8da09d;
-      font-family: monospace;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0;
-    }
-
-    [class~="f05-migration-bundle-row-kind"] {
-      color: #8da09d;
-      font-family: monospace;
+    .f05-migration-bundle-file-index {
+      color: #9cb0aa;
+      font-family: "Geist Mono";
       font-size: 12px;
     }
 
-    [class~="f05-migration-bundle-row-status"] {
-      justify-self: end;
-      color: #40e0c0;
-      font-family: monospace;
+    .f05-migration-bundle-type {
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #9cb0aa;
+      background: rgba(121, 184, 171, 0.09);
+      font-family: "Geist Mono";
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .f05-migration-bundle-state {
+      position: relative;
+      margin-left: auto;
+      min-width: 50px;
+      height: 16px;
+      color: #9cb0aa;
+      font-family: "Geist Mono";
       font-size: 11px;
-      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-align: right;
     }
 
-    [class~="f05-migration-bundle-patch-row"] {
-      position: relative;
-      min-height: 112px;
-      border-color: rgba(64, 224, 192, 0.48);
-      background: rgba(64, 224, 192, 0.09);
+    .f05-migration-bundle-state span {
+      position: absolute;
+      right: 0;
+      top: 0;
     }
 
-    [class~="f05-migration-bundle-marker-wrap"] {
+    .f05-migration-bundle-state-ready {
+      color: #40e0c0;
+      opacity: 0;
+    }
+
+    .f05-migration-bundle-filename {
+      margin: 17px 0 0;
+      overflow: hidden;
+      color: #e7eeeb;
+      font-family: "Geist Mono";
+      font-size: 16px;
+      line-height: 1.25;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .f05-migration-bundle-owner {
+      position: absolute;
+      left: 18px;
+      bottom: 14px;
+      color: #9cb0aa;
+      font-size: 12px;
+    }
+
+    .f05-migration-bundle-owner b {
+      color: #c9d5d1;
+      font-weight: 560;
+    }
+
+    .f05-migration-bundle-inspection {
+      position: absolute;
+      left: 86px;
+      top: 169px;
+      width: 1748px;
+      height: 520px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      transform-origin: 50% 48%;
+    }
+
+    .f05-migration-bundle-code-card {
       position: relative;
-      display: inline-block;
+      box-sizing: border-box;
+      overflow: hidden;
+      border: 1px solid rgba(121, 184, 171, 0.27);
+      border-radius: 24px;
+      background: rgba(18, 42, 51, 0.97);
+      box-shadow: 0 26px 78px rgba(0, 0, 0, 0.34), inset 0 1px rgba(231, 238, 235, 0.035);
+    }
+
+    .f05-migration-bundle-card-head {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 24px;
+      border-bottom: 1px solid rgba(121, 184, 171, 0.18);
+    }
+
+    .f05-migration-bundle-card-kicker {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #40e0c0;
+      background: rgba(64, 224, 192, 0.1);
+      font-family: "Geist Mono";
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    .f05-migration-bundle-card-name {
+      color: #e7eeeb;
+      font-family: "Geist Mono";
+      font-size: 14px;
+    }
+
+    .f05-migration-bundle-card-meta {
+      margin-left: auto;
+      color: #9cb0aa;
+      font-family: "Geist Mono";
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .f05-migration-bundle-code {
+      margin: 0;
+      padding: 26px 24px;
+      color: #c9d5d1;
+      font-family: "Geist Mono";
+      font-size: 18px;
+      line-height: 1.66;
+      white-space: pre-wrap;
+    }
+
+    .f05-migration-bundle-line {
+      display: block;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 6px;
+    }
+
+    .f05-migration-bundle-line--muted {
+      color: #9cb0aa;
+    }
+
+    .f05-migration-bundle-line--minus {
+      color: #ff9a7d;
+      background: rgba(255, 112, 72, 0.11);
+    }
+
+    .f05-migration-bundle-line--plus {
+      color: #74efd6;
+      background: rgba(64, 224, 192, 0.11);
+    }
+
+    .f05-migration-bundle-claim-chain {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr 18px 1.35fr 18px 1.35fr 18px 1.1fr;
+      align-items: stretch;
+      gap: 7px;
+    }
+
+    .f05-migration-bundle-chain-step {
+      min-width: 0;
+      padding: 13px 12px;
+      border: 1px solid rgba(64, 224, 192, 0.26);
+      border-radius: 12px;
+      background: rgba(64, 224, 192, 0.07);
+    }
+
+    .f05-migration-bundle-chain-step span {
+      display: block;
+      color: #8fa7a0;
+      font: 400 9px/1 "Geist Mono";
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .f05-migration-bundle-chain-step b {
+      display: block;
+      overflow: hidden;
       margin-top: 8px;
-      font-family: monospace;
-      font-size: 13px;
+      color: #e7eeeb;
+      font: 550 11px/1.25 "Geist Mono";
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .f05-migration-bundle-chain-step:last-child {
+      border-color: rgba(64, 224, 192, 0.52);
+      background: rgba(64, 224, 192, 0.12);
+    }
+
+    .f05-migration-bundle-chain-arrow {
+      display: grid;
+      place-items: center;
+      color: #40e0c0;
+      font-size: 18px;
+    }
+
+    .f05-migration-bundle-sql-keyword {
+      color: #74efd6;
+    }
+
+    .f05-migration-bundle-sql-field {
       color: #e7eeeb;
     }
 
-    [class~="f05-migration-bundle-marker-bar"] {
+    .f05-migration-bundle-expected {
       position: absolute;
-      inset: -3px -7px;
-      z-index: 0;
-      border-radius: 4px;
-      background: #40e0c0;
-      opacity: 0.22;
-      transform: scaleX(0);
-      transform-origin: left center;
-    }
-
-    [class~="f05-migration-bundle-marker-text"] {
-      position: relative;
-      z-index: 1;
-    }
-
-    [class~="f05-migration-bundle-patch-chip"] {
-      justify-self: end;
-      padding: 9px 14px;
-      border: 1px solid rgba(64, 224, 192, 0.48);
-      border-radius: 100px;
-      color: #40e0c0;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-sizing: border-box;
+      padding: 0 20px;
+      border: 1px solid rgba(64, 224, 192, 0.3);
+      border-radius: 16px;
       background: rgba(64, 224, 192, 0.08);
-      font-family: monospace;
-      font-size: 11px;
-      font-weight: 600;
     }
 
-    [class~="f05-migration-bundle-spotlight"] {
-      position: absolute;
-      z-index: 3;
-      inset: 56px 0 0;
-      pointer-events: none;
-      opacity: 0;
-      background: radial-gradient(ellipse 60% 28% at 50% 82%, transparent 42%, rgba(4, 13, 17, 0.82) 100%);
+    .f05-migration-bundle-expected-label {
+      color: #9cb0aa;
+      font-family: "Geist Mono";
+      font-size: 12px;
+      letter-spacing: 0.09em;
     }
 
-    [class~="f05-migration-bundle-proof-rail"] {
+    .f05-migration-bundle-expected-value {
+      color: #40e0c0;
+      font-size: 42px;
+      font-weight: 730;
+      letter-spacing: -0.04em;
+    }
+
+    .f05-migration-bundle-expected-note {
+      margin-left: auto;
+      color: #c9d5d1;
+      font-family: "Geist Mono";
+      font-size: 13px;
+    }
+
+    .f05-migration-bundle-command {
       position: absolute;
-      right: 96px;
-      top: 180px;
-      width: 236px;
-      height: 612px;
+      left: 110px;
+      right: 110px;
+      top: 707px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-sizing: border-box;
+      padding: 0 22px;
+      border: 1px solid rgba(121, 184, 171, 0.28);
+      border-radius: 16px;
+      background: rgba(12, 27, 34, 0.97);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+    }
+
+    .f05-migration-bundle-prompt {
+      color: #40e0c0;
+      font-family: "Geist Mono";
+      font-size: 20px;
+    }
+
+    .f05-migration-bundle-command-text {
+      color: #e7eeeb;
+      font-family: "Geist Mono";
+      font-size: 18px;
+    }
+
+    .f05-migration-bundle-pass {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 16px;
+      border: 1px solid rgba(64, 224, 192, 0.45);
+      border-radius: 999px;
+      color: #40e0c0;
+      background: rgba(64, 224, 192, 0.1);
+      font-family: "Geist Mono";
+      font-size: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    .f05-migration-bundle-pass-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #40e0c0;
+      box-shadow: 0 0 0 5px rgba(64, 224, 192, 0.1);
+    }
+
+    .f05-migration-bundle-proof-rail {
+      position: absolute;
+      left: 86px;
+      top: 807px;
+      width: 1748px;
+      height: 69px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr auto;
+      align-items: center;
+      gap: 0;
+      box-sizing: border-box;
+      padding: 0 18px;
+      border: 1px solid rgba(64, 224, 192, 0.31);
+      border-radius: 16px;
+      background: rgba(18, 42, 51, 0.98);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .f05-migration-bundle-proof-cell {
+      min-width: 0;
+      padding: 0 18px;
+      border-right: 1px solid rgba(121, 184, 171, 0.18);
+    }
+
+    .f05-migration-bundle-proof-cell:first-child {
+      padding-left: 4px;
+    }
+
+    .f05-migration-bundle-proof-cell span {
+      display: block;
+      margin-bottom: 4px;
+      color: #9cb0aa;
+      font-family: "Geist Mono";
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .f05-migration-bundle-proof-cell b {
+      display: block;
       overflow: hidden;
-      border: 1.5px solid rgba(64, 224, 192, 0.2);
-      border-radius: 14px;
-      background: rgba(64, 224, 192, 0.04);
+      color: #c9d5d1;
+      font-family: "Geist Mono";
+      font-size: 13px;
+      font-weight: 400;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    [class~="f05-migration-bundle-proof-rail"] img {
+    .f05-migration-bundle-draft-badge {
+      margin-left: 18px;
+      padding: 11px 15px;
+      border: 1px solid rgba(64, 224, 192, 0.42);
+      border-radius: 999px;
+      color: #40e0c0;
+      background: rgba(64, 224, 192, 0.1);
+      font-family: "Geist Mono";
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .f05-migration-bundle-draft-badge small {
+      margin-left: 8px;
+      color: #9cb0aa;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .f05-live-stage {
+      position: absolute;
+      inset: 50px 86px 188px;
+      z-index: 12;
+      overflow: hidden;
+      border: 1px solid rgba(121, 184, 171, 0.34);
+      border-radius: 24px;
+      background: #07141b;
+      box-shadow: 0 34px 96px rgba(0, 0, 0, 0.48);
+    }
+
+    .f05-live-stage video {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 100% 12%;
-      opacity: 0.22;
-      filter: saturate(0.75) contrast(1.08);
+      object-position: center top;
     }
 
-    [class~="f05-migration-bundle-proof-rail"]::after {
-      content: "DETERMINISTIC RECEIPT";
+    .f05-live-label {
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 12px 10px;
-      border-radius: 10px;
-      color: #40e0c0;
-      background: rgba(12, 27, 34, 0.92);
-      font-family: monospace;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-align: center;
-    }
-
-    [class~="f05-migration-bundle-focus-card"] {
-      position: absolute;
-      z-index: 8;
-      left: 420px;
-      top: 214px;
-      width: 1080px;
-      height: 526px;
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: 32px 34px;
-      border: 1.5px solid rgba(64, 224, 192, 0.52);
-      border-radius: 14px;
-      background: #10252c;
-      transform-origin: 88% 84%;
-    }
-
-    [class~="f05-migration-bundle-focus-head"] {
+      z-index: 13;
+      top: 26px;
+      left: 28px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(64, 224, 192, 0.16);
-    }
-
-    [class~="f05-migration-bundle-focus-tag"] {
-      padding: 8px 12px;
-      border-radius: 100px;
-      color: #0c1b22;
-      background: #40e0c0;
-      font-family: monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      gap: 10px;
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid rgba(64, 224, 192, 0.34);
+      border-radius: 999px;
+      color: #c8fff4;
+      background: rgba(7, 20, 27, 0.9);
+      font: 500 12px/1 "Geist Mono", monospace;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    [class~="f05-migration-bundle-focus-name"] {
-      color: #e7eeeb;
-      font-family: monospace;
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    [class~="f05-migration-bundle-focus-meta"] {
-      margin-left: auto;
-      color: #8da09d;
-      font-family: monospace;
-      font-size: 12px;
-    }
-
-    [class~="f05-migration-bundle-diff"] {
-      margin: 23px 0 0;
-      padding: 0;
-      list-style: none;
-      color: #c8d4d1;
-      font-family: monospace;
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    [class~="f05-migration-bundle-diff-line"] {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 10px;
-      min-height: 29px;
-      padding: 0 10px;
-      border-radius: 6px;
-      white-space: pre;
-    }
-
-    [class~="f05-migration-bundle-diff-line"][data-kind="minus"] {
-      color: #f19b86;
-      background: rgba(220, 38, 38, 0.08);
-    }
-
-    [class~="f05-migration-bundle-diff-line"][data-kind="plus"] {
-      color: #7ef3d8;
-      background: rgba(5, 150, 105, 0.1);
-    }
-
-    [class~="f05-migration-bundle-receipt"] {
-      position: absolute;
-      right: 34px;
-      bottom: 30px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 17px;
-      border: 1px solid rgba(5, 150, 105, 0.46);
-      border-radius: 100px;
-      color: #7ef3d8;
-      background: rgba(5, 150, 105, 0.1);
-      font-family: monospace;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    [class~="f05-migration-bundle-receipt-dot"] {
-      width: 9px;
-      height: 9px;
+    .f05-live-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #059669;
-    }
-
-    [class~="f05-migration-bundle-progress"] {
-      position: absolute;
-      left: 96px;
-      top: 836px;
-      width: 1728px;
-      height: 3px;
-      overflow: hidden;
-      background: rgba(64, 224, 192, 0.08);
-    }
-
-    [class~="f05-migration-bundle-progress-fill"] {
-      display: block;
-      width: 0;
-      height: 100%;
       background: #40e0c0;
-      transform-origin: left center;
+      box-shadow: 0 0 16px rgba(64, 224, 192, 0.6);
     }
   </style>
 
-  <div id="root" data-composition-id="05-migration-bundle" data-width="1920" data-height="1080" data-duration="20.4">
-    <div class="f05-migration-bundle-background clip" data-start="0" data-duration="20.4" data-track-index="0"></div>
+  <div data-hf-id="hf-luoi" id="root" data-composition-id="05-migration-bundle" data-start="0" data-width="1920" data-height="1080" data-duration="18.492">
+    <div data-hf-id="hf-3u8q" id="f05-ground" class="f05-migration-bundle-ground clip" data-start="0" data-duration="18.492" data-track-index="0">
+      <img data-hf-id="hf-4oz2" src="assets/studio-full-page.png" alt="EvidenceGraph Assurance Studio interface">
+    </div>
 
-    <div class="f05-migration-bundle-scene clip" data-start="0" data-duration="20.4" data-track-index="1" data-layout-allow-overlap>
-      <div class="f05-migration-bundle-kicker">EvidenceGraph · migration compiler</div>
-      <h1 class="f05-migration-bundle-title">Not advice. <span>A migration bundle.</span></h1>
-      <div class="f05-migration-bundle-count" aria-label="Nine artifacts">
-        <span class="f05-migration-bundle-count-number">09</span>
-        <span class="f05-migration-bundle-count-label">artifacts</span>
-      </div>
+    <div id="f05-live-stage" class="f05-live-stage" data-layout-allow-occlusion="">
+      <video id="f05-live-video" class="clip" src="assets/evidencegraph-assurance-studio.mp4" muted playsinline data-start="0" data-duration="2.8" data-media-start="6.8" data-track-index="10"></video>
+      <div class="f05-live-label">Real migration pack inspection</div>
+    </div>
 
-      <div class="f05-migration-bundle-page-stage">
-        <div class="f05-migration-bundle-tilt-card">
-          <div class="f05-migration-bundle-window-bar">
-            <span class="f05-migration-bundle-window-dot"></span>
-            <span class="f05-migration-bundle-window-dot"></span>
-            <span class="f05-migration-bundle-window-dot"></span>
-            <span class="f05-migration-bundle-window-path">artifacts/manifest.json</span>
-            <span class="f05-migration-bundle-window-mode">proposal · bounded</span>
-          </div>
-
-          <div class="f05-migration-bundle-viewport">
-            <div class="f05-migration-bundle-page-content" data-layout-allow-overflow>
-              <div class="f05-migration-bundle-manifest-head">
-                <span>no.</span><span>artifact</span><span>type</span><span>status</span>
-              </div>
-
-              <div class="f05-migration-bundle-row" data-row="1">
-                <span class="f05-migration-bundle-row-index">01</span>
-                <span class="f05-migration-bundle-row-name">SQL rename patch<small>sql/rename_customer_ltv.sql</small></span>
-                <span class="f05-migration-bundle-row-kind">warehouse/sql</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="2">
-                <span class="f05-migration-bundle-row-index">02</span>
-                <span class="f05-migration-bundle-row-name">dbt model<small>models/fct_customer_value.sql</small></span>
-                <span class="f05-migration-bundle-row-kind">dbt/model</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="3">
-                <span class="f05-migration-bundle-row-index">03</span>
-                <span class="f05-migration-bundle-row-name">dbt tests<small>models/fct_customer_value.yml</small></span>
-                <span class="f05-migration-bundle-row-kind">dbt/assertion</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="4">
-                <span class="f05-migration-bundle-row-index">04</span>
-                <span class="f05-migration-bundle-row-name">Validation queries<small>validation/post_migration.sql</small></span>
-                <span class="f05-migration-bundle-row-kind">quality/sql</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="5">
-                <span class="f05-migration-bundle-row-index">05</span>
-                <span class="f05-migration-bundle-row-name">Airflow evidence gate<small>dags/evidence_gate.py</small></span>
-                <span class="f05-migration-bundle-row-kind">orchestration</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="6">
-                <span class="f05-migration-bundle-row-index">06</span>
-                <span class="f05-migration-bundle-row-name">ML feature contract<small>ml/customer_ltv_contract.yml</small></span>
-                <span class="f05-migration-bundle-row-kind">ml/contract</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="7">
-                <span class="f05-migration-bundle-row-index">07</span>
-                <span class="f05-migration-bundle-row-name">Migration plan<small>MIGRATION_PLAN.md</small></span>
-                <span class="f05-migration-bundle-row-kind">runbook</span>
-                <span class="f05-migration-bundle-row-status">READY</span>
-              </div>
-              <div class="f05-migration-bundle-row" data-row="8">
-                <span class="f05-migration-bundle-row-index">08</span>
-                <span class="f05-migration-bundle-row-name">Evidence manifest<small>evidence/ledger.json</small></span>
-                <span class="f05-migration-bundle-row-kind">provenance</span>
-                <span class="f05-migration-bundle-row-status">SEALED</span>
-              </div>
-              <div class="f05-migration-bundle-row f05-migration-bundle-patch-row" data-row="9">
-                <span class="f05-migration-bundle-row-index">09</span>
-                <span class="f05-migration-bundle-row-name">Unified diff<small>patches/customer_ltv_to_lifetime_value.diff</small>
-                  <span class="f05-migration-bundle-marker-wrap">
-                    <span class="f05-migration-bundle-marker-bar"></span>
-                    <span class="f05-migration-bundle-marker-text">git apply --check</span>
-                  </span>
-                </span>
-                <span class="f05-migration-bundle-row-kind">git/patch</span>
-                <span class="f05-migration-bundle-patch-chip">PATCH · HINGE</span>
-              </div>
-            </div>
-          </div>
-          <div class="f05-migration-bundle-spotlight"></div>
+    <div data-hf-id="hf-rg8n" id="f05-workspace" class="f05-migration-bundle-workspace clip" data-start="0" data-duration="18.492" data-track-index="1" data-layout-allow-overlap="">
+      <header data-hf-id="hf-lm6y" class="f05-migration-bundle-topbar" id="f05-migration-bundle-topbar">
+        <div data-hf-id="hf-gib3" class="f05-migration-bundle-title-lockup">
+          <p data-hf-id="hf-9s1l" class="f05-migration-bundle-eyebrow">EvidenceGraph · Artifact Compiler</p>
+          <h1 data-hf-id="hf-tgqm" class="f05-migration-bundle-title">Migration pack / <strong data-hf-id="hf-poo2">9 files</strong></h1>
         </div>
-      </div>
-
-      <aside class="f05-migration-bundle-proof-rail" aria-label="Deterministic receipt preview">
-        <img src="assets/scroll-057.png" alt="EvidenceGraph proof view with deterministic receipts">
-      </aside>
-
-      <section class="f05-migration-bundle-focus-card" aria-label="Unified diff applies cleanly">
-        <div class="f05-migration-bundle-focus-head">
-          <span class="f05-migration-bundle-focus-tag">unified diff</span>
-          <span class="f05-migration-bundle-focus-name">customer_ltv_to_lifetime_value.diff</span>
-          <span class="f05-migration-bundle-focus-meta">1 file · 2 hunks</span>
+        <div data-hf-id="hf-98vf" class="f05-migration-bundle-provenance">
+          <span data-hf-id="hf-4zvo" class="f05-migration-bundle-chip">FROZEN RUN</span>
+          <span data-hf-id="hf-i07b" class="f05-migration-bundle-chip f05-migration-bundle-chip--mint">PROPOSAL ONLY</span>
         </div>
-        <ul class="f05-migration-bundle-diff">
-          <li class="f05-migration-bundle-diff-line"><span>@@</span><span>-12,7 +12,7 @@ select</span></li>
-          <li class="f05-migration-bundle-diff-line" data-kind="minus"><span>−</span><span>customer_ltv as customer_ltv,</span></li>
-          <li class="f05-migration-bundle-diff-line" data-kind="plus"><span>+</span><span>customer_lifetime_value as customer_lifetime_value,</span></li>
-          <li class="f05-migration-bundle-diff-line"><span>@@</span><span>-31,5 +31,5 @@ features</span></li>
-          <li class="f05-migration-bundle-diff-line" data-kind="minus"><span>−</span><span>feature_name: customer_ltv</span></li>
-          <li class="f05-migration-bundle-diff-line" data-kind="plus"><span>+</span><span>feature_name: customer_lifetime_value</span></li>
-        </ul>
-        <div class="f05-migration-bundle-receipt">
-          <span class="f05-migration-bundle-receipt-dot"></span>
-          <span>git apply --check · applies cleanly</span>
+      </header>
+
+      <div data-hf-id="hf-dzmc" class="f05-migration-bundle-progress" aria-hidden="true"><span data-hf-id="hf-jxth" id="f05-migration-bundle-progress-fill"></span></div>
+
+      <section data-hf-id="hf-wzup" class="f05-migration-bundle-manifest" id="f05-migration-bundle-manifest" aria-label="Nine-file migration manifest">
+        <div data-hf-id="hf-hqlk" class="f05-migration-bundle-manifest-head">
+          <div data-hf-id="hf-u5hr" class="f05-migration-bundle-count"><b data-hf-id="hf-9fpe">09</b><span data-hf-id="hf-yv4s">FILES</span></div>
+          <div data-hf-id="hf-t0y2" class="f05-migration-bundle-manifest-meta">impact graph → bounded drafts<br data-hf-id="hf-x5px">claim IDs + target URNs bind every artifact</div>
+          <div data-hf-id="hf-u1pt" class="f05-migration-bundle-compile-state"><span data-hf-id="hf-4za2" class="f05-migration-bundle-compile-dot"></span><span data-hf-id="hf-3ewf" id="f05-migration-bundle-group-label">COMPILING / SQL</span></div>
+        </div>
+
+        <div data-hf-id="hf-fqsy" class="f05-migration-bundle-grid">
+          <article data-hf-id="hf-7c22" class="f05-migration-bundle-file" data-group="sql">
+            <div data-hf-id="hf-c41m" class="f05-migration-bundle-file-top"><span data-hf-id="hf-6nsj" class="f05-migration-bundle-file-index">01</span><span data-hf-id="hf-qmhb" class="f05-migration-bundle-type">SQL</span><span data-hf-id="hf-lieg" class="f05-migration-bundle-state"><span data-hf-id="hf-xnvn" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-0sj5" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-giuv" class="f05-migration-bundle-filename">sql/customer_tier_compatibility.sql</p><span data-hf-id="hf-apa7" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-ojld">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-09sc" class="f05-migration-bundle-file" data-group="dbt">
+            <div data-hf-id="hf-g65a" class="f05-migration-bundle-file-top"><span data-hf-id="hf-69hi" class="f05-migration-bundle-file-index">02</span><span data-hf-id="hf-mb6k" class="f05-migration-bundle-type">DBT MODEL</span><span data-hf-id="hf-pf1c" class="f05-migration-bundle-state"><span data-hf-id="hf-n2g3" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-xqw5" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-qx0m" class="f05-migration-bundle-filename">dbt/models/staging/stg_orders.sql</p><span data-hf-id="hf-dy0v" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-yiat">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-uap0" class="f05-migration-bundle-file" data-group="dbt">
+            <div data-hf-id="hf-gkgb" class="f05-migration-bundle-file-top"><span data-hf-id="hf-5v6h" class="f05-migration-bundle-file-index">03</span><span data-hf-id="hf-yuuj" class="f05-migration-bundle-type">DBT TEST</span><span data-hf-id="hf-o849" class="f05-migration-bundle-state"><span data-hf-id="hf-mo52" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-yxt8" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-feyw" class="f05-migration-bundle-filename">dbt/models/staging/stg_orders.yml</p><span data-hf-id="hf-djpu" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-zp7w">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-tl72" class="f05-migration-bundle-file" data-group="sql">
+            <div data-hf-id="hf-gyrc" class="f05-migration-bundle-file-top"><span data-hf-id="hf-5gvg" class="f05-migration-bundle-file-index">04</span><span data-hf-id="hf-afwq" class="f05-migration-bundle-type">VALIDATION</span><span data-hf-id="hf-omfa" class="f05-migration-bundle-state"><span data-hf-id="hf-m9u1" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-yji7" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-0t68" class="f05-migration-bundle-filename">validation/validate_customer_tier.sql</p><span data-hf-id="hf-d5et" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-zawv">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-0b7l" class="f05-migration-bundle-file" data-group="orchestration">
+            <div data-hf-id="hf-e6m5" class="f05-migration-bundle-file-top"><span data-hf-id="hf-52kf" class="f05-migration-bundle-file-index">05</span><span data-hf-id="hf-drz7" class="f05-migration-bundle-type">AIRFLOW</span><span data-hf-id="hf-nfi7" class="f05-migration-bundle-state"><span data-hf-id="hf-lvj0" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-zqfa" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-xaym" class="f05-migration-bundle-filename">orchestration/evidencegraph_change_gate.py</p><span data-hf-id="hf-fxk0" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-0hty">7 claims / 1 target</b></span>
+          </article>
+          <article data-hf-id="hf-wipd" class="f05-migration-bundle-file" data-group="ml">
+            <div data-hf-id="hf-ekx6" class="f05-migration-bundle-file-top"><span data-hf-id="hf-4o9e" class="f05-migration-bundle-file-index">06</span><span data-hf-id="hf-wc0m" class="f05-migration-bundle-type">ML CONTRACT</span><span data-hf-id="hf-ntt8" class="f05-migration-bundle-state"><span data-hf-id="hf-lh7z" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-zc49" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-xhxl" class="f05-migration-bundle-filename">ml/customer_tier_feature_v2.yml</p><span data-hf-id="hf-fj8z" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-03ix">7 claims / 3 targets</b></span>
+          </article>
+          <article data-hf-id="hf-ijwz" class="f05-migration-bundle-file" data-group="plan">
+            <div data-hf-id="hf-ez87" class="f05-migration-bundle-file-top"><span data-hf-id="hf-49yd" class="f05-migration-bundle-file-index">07</span><span data-hf-id="hf-z4le" class="f05-migration-bundle-type">PLAN</span><span data-hf-id="hf-mmw5" class="f05-migration-bundle-state"><span data-hf-id="hf-l2wy" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-0j1c" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-gh81" class="f05-migration-bundle-filename">MIGRATION_PLAN.md</p><span data-hf-id="hf-f4xy" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-22ue">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-wb03" class="f05-migration-bundle-file" data-group="plan">
+            <div data-hf-id="hf-fdj8" class="f05-migration-bundle-file-top"><span data-hf-id="hf-3vnc" class="f05-migration-bundle-file-index">08</span><span data-hf-id="hf-60e4" class="f05-migration-bundle-type">EVIDENCE MANIFEST</span><span data-hf-id="hf-n176" class="f05-migration-bundle-state"><span data-hf-id="hf-kolx" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-04qb" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-5wt3" class="f05-migration-bundle-filename">evidencegraph-manifest.json</p><span data-hf-id="hf-eqmx" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-349h">7 claims / 7 targets</b></span>
+          </article>
+          <article data-hf-id="hf-vwp2" class="f05-migration-bundle-file" data-group="plan">
+            <div data-hf-id="hf-iyah" class="f05-migration-bundle-file-top"><span data-hf-id="hf-3hcb" class="f05-migration-bundle-file-index">09</span><span data-hf-id="hf-z67g" class="f05-migration-bundle-type">UNIFIED DIFF</span><span data-hf-id="hf-lua3" class="f05-migration-bundle-state"><span data-hf-id="hf-kaaw" class="f05-migration-bundle-state-queued">QUEUED</span><span data-hf-id="hf-uyqy" class="f05-migration-bundle-state-ready">READY</span></span></div>
+            <p data-hf-id="hf-xpgp" class="f05-migration-bundle-filename">patches/demo-platform.patch</p><span data-hf-id="hf-b5vo" class="f05-migration-bundle-owner">bound · <b data-hf-id="hf-1ag0">7 claims / 7 targets</b></span>
+          </article>
         </div>
       </section>
 
-      <div class="f05-migration-bundle-progress"><span class="f05-migration-bundle-progress-fill"></span></div>
+      <section data-hf-id="hf-9znn" class="f05-migration-bundle-inspection" id="f05-migration-bundle-inspection" aria-label="Patch and deterministic validation inspection" data-layout-allow-occlusion="">
+        <article data-hf-id="hf-ydy9" class="f05-migration-bundle-code-card">
+          <div data-hf-id="hf-xzgr" class="f05-migration-bundle-card-head"><span data-hf-id="hf-6mdy" class="f05-migration-bundle-card-kicker">UNIFIED DIFF · EXCERPT</span><span data-hf-id="hf-e7lr" class="f05-migration-bundle-card-name">patches/demo-platform.patch</span><span data-hf-id="hf-44n6" class="f05-migration-bundle-card-meta">1 FILE · 1 HUNK</span></div>
+          <pre data-hf-id="hf-gu9q" class="f05-migration-bundle-code" aria-label="Unified diff excerpt"><span data-hf-id="hf-zwzl" class="f05-migration-bundle-line f05-migration-bundle-line--muted">@@ -1,8 +1,14 @@ stg_orders</span><span data-hf-id="hf-jfyl" class="f05-migration-bundle-line f05-migration-bundle-line--minus">-    customer_tier,</span><span data-hf-id="hf-gkd1" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+    CASE segment_code</span><span data-hf-id="hf-5ws7" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+      WHEN 'B' THEN 'bronze'</span><span data-hf-id="hf-iz4g" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+      WHEN 'G' THEN 'gold'</span><span data-hf-id="hf-tu20" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+    END AS customer_tier,</span></pre>
+          <div class="f05-migration-bundle-claim-chain" aria-label="Claim to target to generated artifact to validation receipt">
+            <div class="f05-migration-bundle-chain-step"><span>DataHub claim</span><b>CLM-006 · 1.00</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
+            <div class="f05-migration-bundle-chain-step"><span>Target URN</span><b>dbt · analytics.stg_orders</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
+            <div class="f05-migration-bundle-chain-step"><span>Generated hunk</span><b>stg_orders.sql · tier</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
+            <div class="f05-migration-bundle-chain-step"><span>Receipt</span><b>VAL-DBT-BUILD · 7/7</b></div>
+          </div>
+        </article>
+
+        <article data-hf-id="hf-cit1" class="f05-migration-bundle-code-card">
+          <div data-hf-id="hf-4v1n" class="f05-migration-bundle-card-head"><span data-hf-id="hf-juzv" class="f05-migration-bundle-card-kicker">DETERMINISTIC CHECK</span><span data-hf-id="hf-gkcd" class="f05-migration-bundle-card-name">validation/validate_customer_tier.sql</span><span data-hf-id="hf-h1fr" class="f05-migration-bundle-card-meta">READ ONLY</span></div>
+          <pre data-hf-id="hf-6m1n" class="f05-migration-bundle-code" aria-label="Validation query"><span data-hf-id="hf-aqxc" class="f05-migration-bundle-line"><span data-hf-id="hf-nwkl" class="f05-migration-bundle-sql-keyword">select</span> n.order_id, n.segment_code</span><span data-hf-id="hf-9sc3" class="f05-migration-bundle-line"><span data-hf-id="hf-8p6l" class="f05-migration-bundle-sql-keyword">from</span> raw_orders_next <span data-hf-id="hf-z16d" class="f05-migration-bundle-sql-keyword">as</span> n</span><span data-hf-id="hf-4cwl" class="f05-migration-bundle-line"><span data-hf-id="hf-c7ds" class="f05-migration-bundle-sql-keyword">where</span> actual <span data-hf-id="hf-rvay" class="f05-migration-bundle-sql-keyword">is null</span></span><span data-hf-id="hf-ew2k" class="f05-migration-bundle-line">   <span data-hf-id="hf-1ovw" class="f05-migration-bundle-sql-keyword">or</span> actual &lt;&gt; expected;</span></pre>
+          <div data-hf-id="hf-jqfe" class="f05-migration-bundle-expected" id="f05-migration-bundle-expected"><span data-hf-id="hf-wu74" class="f05-migration-bundle-expected-label">PASS CONDITION<br data-hf-id="hf-rsrt">returned rows</span><strong data-hf-id="hf-kqd0" class="f05-migration-bundle-expected-value">0</strong><span data-hf-id="hf-z8qi" class="f05-migration-bundle-expected-note">fixture: complete-lineage</span></div>
+        </article>
+      </section>
+
+      <div data-hf-id="hf-uyhc" class="f05-migration-bundle-command" id="f05-migration-bundle-command" aria-label="Git patch verification"><span data-hf-id="hf-jdu1" class="f05-migration-bundle-prompt">$</span><span data-hf-id="hf-ie0h" class="f05-migration-bundle-command-text">git apply --check migration/patches/demo-platform.patch</span><span data-hf-id="hf-g7p0" class="f05-migration-bundle-pass" id="f05-migration-bundle-pass"><span data-hf-id="hf-hgxc" class="f05-migration-bundle-pass-dot"></span>PASS</span></div>
+
+      <div data-hf-id="hf-xmiz" class="f05-migration-bundle-proof-rail" id="f05-migration-bundle-proof-rail" aria-label="Migration pack proof metadata">
+        <div data-hf-id="hf-amyx" class="f05-migration-bundle-proof-cell"><span data-hf-id="hf-3tu6">MANIFEST SHA-256</span><b data-hf-id="hf-ceey">159356a8…036f6</b></div>
+        <div data-hf-id="hf-linx" class="f05-migration-bundle-proof-cell"><span data-hf-id="hf-qsw7">RUN ID</span><b data-hf-id="hf-7qyz">EG-6385813884D5</b></div>
+        <div data-hf-id="hf-mpl0" class="f05-migration-bundle-proof-cell"><span data-hf-id="hf-em8q">AUTHORITY</span><b data-hf-id="hf-gve8">draft generation only</b></div>
+        <div data-hf-id="hf-5tjz" class="f05-migration-bundle-draft-badge">PR-READY DRAFTS <small data-hf-id="hf-u5oz">NO MERGE</small></div>
+      </div>
     </div>
   </div>
 
@@ -585,41 +775,57 @@
       window.__timelines = window.__timelines || {};
       window.__timelines["05-migration-bundle"] = tl;
 
-      const title = q('[class~="f05-migration-bundle-title"]');
-      const kicker = q('[class~="f05-migration-bundle-kicker"]');
-      const count = q('[class~="f05-migration-bundle-count"]');
-      const stage = q('[class~="f05-migration-bundle-page-stage"]');
-      const page = q('[class~="f05-migration-bundle-page-content"]');
-      const proof = q('[class~="f05-migration-bundle-proof-rail"]');
-      const rows = qa('[class~="f05-migration-bundle-row"]');
-      const spotlight = q('[class~="f05-migration-bundle-spotlight"]');
-      const marker = q('[class~="f05-migration-bundle-marker-bar"]');
-      const patchChip = q('[class~="f05-migration-bundle-patch-chip"]');
-      const focus = q('[class~="f05-migration-bundle-focus-card"]');
-      const diffLines = qa('[class~="f05-migration-bundle-diff-line"]');
-      const receipt = q('[class~="f05-migration-bundle-receipt"]');
-      const progress = q('[class~="f05-migration-bundle-progress-fill"]');
+      const workspace = q('.f05-migration-bundle-workspace');
+      const topbar = q('.f05-migration-bundle-topbar');
+      const manifest = q('.f05-migration-bundle-manifest');
+      const progress = q('#f05-migration-bundle-progress-fill');
+      const inspection = q('#f05-migration-bundle-inspection');
+      const command = q('#f05-migration-bundle-command');
+      const pass = q('#f05-migration-bundle-pass');
+      const proofRail = q('#f05-migration-bundle-proof-rail');
+      const expected = q('#f05-migration-bundle-expected');
+      const diffLines = qa('.f05-migration-bundle-code-card:first-child .f05-migration-bundle-line');
+      const queryLines = qa('.f05-migration-bundle-code-card:last-child .f05-migration-bundle-line');
+      const claimChain = qa('.f05-migration-bundle-claim-chain > *');
 
-      tl.fromTo(kicker, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.0)
-        .fromTo(title, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.48, ease: "power3.out" }, 0.12)
-        .fromTo(stage, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.68, ease: "power3.out" }, 0.32)
-        .fromTo(rows.slice(0, 2), { opacity: 0, x: -28 }, { opacity: 1, x: 0, duration: 0.58, stagger: 0.56, ease: "power2.out" }, 0.72)
-        .fromTo(proof, { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 2.55)
-        .to(page, { y: -210, duration: 2.05, ease: "power3.out" }, 3.55)
-        .fromTo(rows.slice(2, 4), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, stagger: 1.05, ease: "power2.out" }, 4.05)
-        .to(page, { y: -448, duration: 2.05, ease: "power3.out" }, 6.25)
-        .fromTo(rows.slice(4, 6), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, stagger: 1.08, ease: "power2.out" }, 6.58)
-        .to(page, { y: -704, duration: 2.5, ease: "power3.out" }, 9.05)
-        .fromTo(rows.slice(6, 9), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.95, ease: "power2.out" }, 9.32)
-        .fromTo(count, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.48, ease: "power2.out" }, 12.15)
-        .to(progress, { width: "100%", duration: 12.4, ease: "none" }, 0.0)
-        .to(spotlight, { opacity: 1, duration: 0.72, ease: "power1.inOut" }, 13.0)
-        .to(marker, { scaleX: 1, duration: 0.72, ease: "power2.out" }, 13.55)
-        .fromTo(patchChip, { scale: 1 }, { scale: 1.08, duration: 0.42, ease: "back.out(1.6)" }, 14.45)
-        .fromTo(patchChip, { borderColor: "rgba(64, 224, 192, 0.48)" }, { borderColor: "rgba(64, 224, 192, 0.92)", duration: 0.5, ease: "power1.inOut" }, 15.18)
-        .fromTo(focus, { opacity: 0, x: 560, y: 330, scale: 0.18 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 1.28, ease: "power4.out" }, 17.0)
-        .fromTo(diffLines, { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.34, stagger: 0.12, ease: "power2.out" }, 18.0)
-        .fromTo(receipt, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.62, ease: "back.out(1.45)" }, 19.08);
+      const files = qa('.f05-migration-bundle-file');
+      const fileMoments = [2.85, 6.55, 7.20, 7.90, 8.88, 11.18, 11.90, 12.60, 13.72];
+      const fileLabels = ['SQL', 'DBT MODEL', 'DBT TEST', 'VALIDATION', 'AIRFLOW', 'ML CONTRACT', 'MIGRATION PLAN', 'EVIDENCE MANIFEST', 'UNIFIED DIFF'];
+
+      tl.fromTo(workspace, { scale: 0.992, y: 8 }, { scale: 1, y: 0, duration: 18.1, ease: 'none' }, 0)
+        .fromTo('#f05-live-stage', { opacity: 0 }, { opacity: 1, duration: 0.22, ease: 'power1.out' }, 0)
+        .fromTo('#f05-live-stage .f05-live-label', { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.44, ease: 'power2.out' }, 0.18)
+        .fromTo(topbar, { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.48, ease: 'power3.out' }, 2.28)
+        .fromTo(manifest, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.58, ease: 'power3.out' }, 2.36)
+        .set(files, { opacity: 0, y: 18 }, 2.36)
+        .set('.f05-migration-bundle-count b', { textContent: '00' }, 2.36)
+        .fromTo(progress, { scaleX: 0 }, { scaleX: 1, duration: 15.2, ease: 'none' }, 2.42)
+        .to('#f05-live-stage', { opacity: 0, duration: 0.34, ease: 'power2.out' }, 2.46);
+
+      files.forEach((file, index) => {
+        const ready = file.querySelector('.f05-migration-bundle-state-ready');
+        const queued = file.querySelector('.f05-migration-bundle-state-queued');
+        const at = fileMoments[index];
+        tl.fromTo(file, { opacity: 0, y: 18, borderColor: 'rgba(121, 184, 171, 0.16)' }, { opacity: 1, y: 0, borderColor: 'rgba(64, 224, 192, 0.62)', duration: 0.48, ease: 'power3.out' }, at)
+          .fromTo(ready, { opacity: 0 }, { opacity: 1, duration: 0.22, ease: 'power2.out' }, at + 0.18)
+          .to(queued, { opacity: 0, duration: 0.18, ease: 'power2.out' }, at + 0.18)
+          .set('.f05-migration-bundle-count b', { textContent: String(index + 1).padStart(2, '0') }, at + 0.24)
+          .set('#f05-migration-bundle-group-label', { textContent: 'COMPILED / ' + fileLabels[index] }, at + 0.24);
+        if (index > 0) {
+          tl.to(files[index - 1], { borderColor: 'rgba(121, 184, 171, 0.28)', backgroundColor: 'rgba(12, 27, 34, 0.58)', duration: 0.28, ease: 'power2.out' }, at);
+        }
+      });
+
+      tl.to(manifest, { opacity: 0.1, y: -18, scale: 0.975, duration: 0.5, ease: 'power3.inOut' }, 13.82)
+        .fromTo(inspection, { opacity: 0, y: 28, scale: 0.975 }, { opacity: 1, y: 0, scale: 1, duration: 0.62, ease: 'power3.out' }, 13.86)
+        .fromTo(diffLines, { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.26, stagger: 0.13, ease: 'power2.out' }, 14.02)
+        .fromTo(claimChain, { opacity: 0, x: 12 }, { opacity: 1, x: 0, duration: 0.28, stagger: 0.1, ease: 'power2.out' }, 14.34)
+        .fromTo(queryLines, { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.28, stagger: 0.16, ease: 'power2.out' }, 15.02)
+        .fromTo(expected, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.42, ease: 'power3.out' }, 15.78)
+        .fromTo(command, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.48, ease: 'power3.out' }, 16.18)
+        .fromTo(pass, { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out' }, 16.72)
+        .fromTo(proofRail, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 17.14)
+        .fromTo('.f05-migration-bundle-draft-badge', { opacity: 0, x: 16 }, { opacity: 1, x: 0, duration: 0.4, ease: 'power3.out' }, 17.66);
     })();
   </script>
 </template>

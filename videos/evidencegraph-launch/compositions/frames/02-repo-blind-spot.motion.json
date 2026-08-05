@@ -1,0 +1,12 @@
+{
+  "duration": 16.155,
+  "assertions": [
+    { "kind": "appearsBy", "selector": ".f02-overview", "bySec": 0.9 },
+    { "kind": "appearsBy", "selector": ".f02-board", "bySec": 5.0 },
+    { "kind": "appearsBy", "selector": ".f02-verdict", "bySec": 10.6 },
+    { "kind": "appearsBy", "selector": ".f02-coverage-block", "bySec": 10.8 },
+    { "kind": "appearsBy", "selector": ".f02-decision-block", "bySec": 12.0 },
+    { "kind": "staysInFrame", "selector": "#f02-repo-blind-spot-coverage" },
+    { "kind": "staysInFrame", "selector": "#f02-repo-blind-spot-flip" }
+  ]
+}

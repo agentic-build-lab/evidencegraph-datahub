@@ -9,6 +9,34 @@ permissions:
   contents: read
 
 jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Pin Gitleaks image
+        run: docker pull ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+      - name: Scan complete Git history
+        run: >-
+          docker run --rm
+          -v "$PWD:/repo"
+          ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+          git --config /repo/.gitleaks.toml --redact --no-banner
+          --log-opts="--all" /repo
+      - name: Build release-tree archive
+        run: |
+          mkdir -p /tmp/evidencegraph-release
+          git archive --format=tar HEAD -o /tmp/evidencegraph-release.tar
+          tar -xf /tmp/evidencegraph-release.tar -C /tmp/evidencegraph-release
+      - name: Scan release-tree archive
+        run: >-
+          docker run --rm
+          -v "/tmp/evidencegraph-release:/release"
+          ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+          dir --config /release/.gitleaks.toml --redact --no-banner /release
+
   python:
     strategy:
       fail-fast: false

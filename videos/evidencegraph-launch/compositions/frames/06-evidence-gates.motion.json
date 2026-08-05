@@ -1,0 +1,11 @@
+{
+  "duration": 18.452,
+  "assertions": [
+    { "kind": "appearsBy", "selector": ".f06-gate-panel", "bySec": 0.9 },
+    { "kind": "appearsBy", "selector": ".f06-pass-total", "bySec": 9.2 },
+    { "kind": "appearsBy", "selector": "#f06-live-stage", "bySec": 11.0 },
+    { "kind": "appearsBy", "selector": ".f06-risk-card", "bySec": 15.5 },
+    { "kind": "appearsBy", "selector": ".f06-lock-badge", "bySec": 17.0 },
+    { "kind": "staysInFrame", "selector": ".f06-authority-board" }
+  ]
+}

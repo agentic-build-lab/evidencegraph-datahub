@@ -1,0 +1,10 @@
+{
+  "duration": 18.492,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f05-live-stage", "bySec": 0.6 },
+    { "kind": "appearsBy", "selector": ".f05-migration-bundle-topbar", "bySec": 3.0 },
+    { "kind": "appearsBy", "selector": ".f05-migration-bundle-file:first-child", "bySec": 3.6 },
+    { "kind": "appearsBy", "selector": "#f05-migration-bundle-inspection", "bySec": 14.7 },
+    { "kind": "staysInFrame", "selector": "#f05-migration-bundle-inspection" }
+  ]
+}

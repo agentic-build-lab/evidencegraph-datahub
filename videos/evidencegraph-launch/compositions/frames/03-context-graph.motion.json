@@ -1,0 +1,10 @@
+{
+  "duration": 16.433,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f03-context-graph-ingress-mcp", "bySec": 3.3 },
+    { "kind": "appearsBy", "selector": "#f03-context-graph-ingress-sdk", "bySec": 4.9 },
+    { "kind": "appearsBy", "selector": "#f03-context-graph-node-dashboard", "bySec": 10.8 },
+    { "kind": "appearsBy", "selector": "#f03-context-graph-decision", "bySec": 15.0 },
+    { "kind": "staysInFrame", "selector": "#f03-context-graph-decision" }
+  ]
+}

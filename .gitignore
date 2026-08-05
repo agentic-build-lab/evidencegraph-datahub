@@ -25,12 +25,27 @@ node_modules/
 # delivery binaries are published separately as release assets.
 videos/**/capture/
 videos/**/snapshots/
+videos/**/snapshots*/
 videos/**/renders/
 videos/**/assets/voice/raw/
+videos/**/assets/product-demo-v2/frame-*.png
+videos/**/.waveform-cache/
 videos/**/.hyperframes/anim-map/
 videos/**/.hyperframes/check-*.json
 videos/**/.hyperframes/lint-*.json
 videos/**/.hyperframes/frame-packets/
+videos/**/.hyperframes/word-captions-original.json
+videos/**/.thumbnails/
+
+# Licensed BGM is embedded in the rendered film but must not be redistributed
+# as a standalone source asset. Keep provenance and credits in the repository.
+videos/**/.media/audio/
+videos/**/assets/A_Little_Story_Kei_Morimoto.mp3
+videos/**/assets/voice/*-original.wav
 
 # Internal release operations are intentionally excluded from the public entry.
 docs/submission-checklist.md
+
+# Local QA and render diagnostics.
+.artifacts/
+.tmp/

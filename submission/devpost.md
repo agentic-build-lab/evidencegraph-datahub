@@ -1,7 +1,7 @@
 # EvidenceGraph
 
 > EvidenceGraph uses DataHub's context graph to turn breaking data changes into
-> complete impact maps, validated migration code, and evidence-backed go/no-go
+> impact maps with explicit completeness verdicts, validated migration code, and evidence-backed go/no-go
 > decisions.
 
 ## Inspiration
@@ -26,13 +26,15 @@ change and runs a bounded workflow:
 2. prove whether the requested downstream frontier is complete;
 3. compute affected assets and evidence-backed risk priorities;
 4. generate a cross-system migration bundle;
-5. run deterministic and native validators;
+5. run a deterministic 14-gate suite with native and integration receipts;
 6. issue a go/no-go decision with unresolved risks; and
 7. optionally write an allowlisted evidence marker and document back to
    DataHub after explicit safety gates.
 
-Every factual claim in the output links to a DataHub URN and an observation or
-deterministic derivation. A missing lineage page, unresolved field, owner gap,
+Every impact claim links to DataHub URNs and recorded observations. Every
+generated file links to the claim IDs and target objects it used. Every
+validation result links to an artifact hash and a structured receipt. A missing
+lineage page, unresolved field, owner gap,
 evidence conflict, or failed validator blocks write-back and safe-to-merge
 status.
 
@@ -54,7 +56,11 @@ a dbt model and tests, a real unified diff, validation SQL, an Airflow publicati
 feature compatibility contract, a risk-ranked migration plan, and an artifact
 manifest.
 
-The verified bundle passed 14 of 14 gates. dbt Core 1.12.0 built the generated
+The frozen flagship bundle passed 14 of 14 deterministic gates: one
+artifact-integrity and evidence-binding check, eight structured-file parser
+checks, and five native or integration checks—Git patch application, DuckDB
+parity, dbt build, Airflow DagBag and dependency-gate execution in the official
+container, and ML feature parity. dbt Core 1.12.0 built the generated
 model and passed 7 of 7 tests. DuckDB executed the SQL compatibility plan. The
 generated DAG passed DagBag import and dependency assertions inside the
 official Apache Airflow 3.3.0 Linux container. The ML parity check reported a
@@ -67,13 +73,19 @@ Removing it changes the result: EvidenceGraph loses four non-repository
 consumers, owner routing, governed context, and the evidence needed to authorize
 action.
 
+DataHub changes both scope and authority. With the recorded complete graph,
+EvidenceGraph grounds 7 of 7 declared impacts and permits write-back proposals
+only after all 14 gates pass. In the paired missing-lineage replay, one
+unavailable page caps confidence at 0.65, quarantines the same nine drafts, and
+reduces write-back proposals to zero.
+
 The official DataHub MCP Server is the runtime boundary for search, entity
 context, schemas, dataset lineage, column lineage, and governed mutations. The
-demo pins `mcp-server-datahub@0.6.0`. The official DataHub Agent Context Kit
-dependency (`datahub-agent-context==1.6.0.17`, via its DataHub Python SDK)
-provides the narrow aspect reader that enriches relationships MCP 0.6.0 does not
-expose as lineage nodes, including the modeled ML deployment link. DataHub Core
-v1.6.0 stores the heterogeneous graph and the bounded write-back.
+demo pins `mcp-server-datahub@0.6.0`. The official DataHub Python SDK
+(`acryl-datahub==1.6.0.6`) provides the narrow aspect reader used for document,
+contract, ML-property, and modeled deployment relationships that MCP 0.6.0 does
+not expose as lineage nodes. DataHub Core v1.6.0 stores the heterogeneous graph
+and the bounded write-back.
 
 ## How we built it
 
@@ -146,9 +158,9 @@ information.
 
 - Public demo: `https://evidencegraph-datahub.liu891855.chatgpt.site`
 - Public repository: `https://github.com/agentic-build-lab/evidencegraph-datahub`
-- Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.1.0/examples`
+- Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples`
 - Demo video: `https://youtu.be/MFDSc8Nx1Qs`
-- Release: `https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.1.0`
+- Release: `https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.2.0`
 
 ## Built with
 

@@ -1,0 +1,10 @@
+{
+  "duration": 22.322,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#f07-writeback-closure-card-approved", "bySec": 1.2 },
+    { "kind": "appearsBy", "selector": "#f07-writeback-closure-card-retry", "bySec": 7.2 },
+    { "kind": "appearsBy", "selector": "#f07-writeback-closure-card-replay", "bySec": 12.2 },
+    { "kind": "appearsBy", "selector": "#f07-writeback-closure-final", "bySec": 20.2 },
+    { "kind": "staysInFrame", "selector": "#f07-writeback-closure-viewport" }
+  ]
+}
