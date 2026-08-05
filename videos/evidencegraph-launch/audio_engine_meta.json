@@ -1,8 +1,9 @@
 {
   "tts_provider": "kokoro",
   "voice_id": "af_heart",
-  "metadata_scope": "speech-only TTS durations before frame padding plus the licensed background-music edit; canonical file and word timing is audio_meta.json",
-  "voice_duration_semantics": "Each voice duration measures spoken audio before frame padding and is not the composition timeline length.",
+  "speed": 1.05,
+  "metadata_scope": "Speech-only TTS durations before composition placement plus the licensed background-music edit; canonical word timing is audio_meta.json.",
+  "voice_duration_semantics": "Each voice duration measures spoken audio and is not the composition timeline length.",
   "bgm": {
     "path": ".media/audio/bgm/bgm_001.edit.mp3",
     "title": "A Little Story",
@@ -25,53 +26,53 @@
     {
       "id": "01",
       "path": "assets/voice/01.wav",
-      "duration_s": 8.939,
+      "duration_s": 9.003,
       "words": []
     },
     {
       "id": "02",
       "path": "assets/voice/02.wav",
-      "duration_s": 15.125,
+      "duration_s": 14.016,
       "words": []
     },
     {
       "id": "03",
       "path": "assets/voice/03.wav",
-      "duration_s": 15.445,
+      "duration_s": 14.805,
       "words": []
     },
     {
       "id": "04",
       "path": "assets/voice/04.wav",
-      "duration_s": 16.96,
+      "duration_s": 14.123,
       "words": []
     },
     {
       "id": "05",
       "path": "assets/voice/05.wav",
-      "duration_s": 17.579,
+      "duration_s": 15.488,
       "words": []
     },
     {
       "id": "06",
       "path": "assets/voice/06.wav",
-      "duration_s": 20.081,
+      "duration_s": 16.085,
       "words": []
     },
     {
       "id": "07",
       "path": "assets/voice/07.wav",
-      "duration_s": 19.605,
+      "duration_s": 19.819,
       "words": []
     },
     {
       "id": "08",
-      "path": "assets/voice/08.trimmed.wav",
-      "duration_s": 8.22,
+      "path": "assets/voice/08.wav",
+      "duration_s": 12.864,
       "words": []
     }
   ],
   "sfx": [],
-  "spoken_audio_total_duration_s": 121.954,
+  "spoken_audio_total_duration_s": 116.203,
   "composition_duration_s": 130
 }

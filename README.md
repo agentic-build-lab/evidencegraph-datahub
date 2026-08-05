@@ -15,8 +15,8 @@ Removing `customer_tier` looks manageable to a repository-only scanner: it finds
 affected assets. It cannot see the executive dashboard or the production ML feature → model →
 deployment chain. DataHub reveals all 7 consumers. EvidenceGraph makes that context executable:
 it compiles a coordinated migration pack, runs a 14-gate validation suite, and refuses unsafe
-actions. In a separate approved local run, it writes three scoped metadata results to DataHub
-and verifies each by readback.
+actions. In a controlled, explicitly approved local DataHub run, it writes three scoped metadata
+results to DataHub and verifies each by readback.
 
 | Measured on the frozen synthetic truth set | Repository only | DataHub context |
 | --- | ---: | ---: |
@@ -60,7 +60,8 @@ observation and the outcome changes from a migration proposal to a machine-reada
 The paired public replays make that causal effect inspectable. With the recorded complete
 graph, EvidenceGraph grounds 7 of 7 declared impacts and allows write-back proposals only after
 all 14 gates pass. Remove one lineage page and confidence is capped at 0.65, the same nine
-drafts are quarantined, and write-back proposals fall to zero.
+drafts are quarantined, and write-back proposals fall to zero. The 1.00/0.65 values are
+deterministic policy scores in the frozen flagship scenario, not calibrated production probabilities.
 
 Every impact claim links to DataHub URNs and recorded observations. Every generated file links
 to the claim IDs and target objects it used. Every validation result links to an artifact hash

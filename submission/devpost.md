@@ -77,7 +77,8 @@ DataHub changes both scope and authority. With the recorded complete graph,
 EvidenceGraph grounds 7 of 7 declared impacts and permits write-back proposals
 only after all 14 gates pass. In the paired missing-lineage replay, one
 unavailable page caps confidence at 0.65, quarantines the same nine drafts, and
-reduces write-back proposals to zero.
+reduces write-back proposals to zero. The 1.00/0.65 values are deterministic
+policy scores in the frozen flagship scenario, not calibrated production probabilities.
 
 The official DataHub MCP Server is the runtime boundary for search, entity
 context, schemas, dataset lineage, column lineage, and governed mutations. The

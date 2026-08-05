@@ -102,7 +102,7 @@ Contains object type, short name, owner, severity, and one source pointer. Use m
 
 ### Provenance chip
 
-Persistent small mono labels such as `RECORDED LIVE MCP TRACE`, `FROZEN RUN`, `RECORDED VALIDATION RECEIPTS`, `RECORDED APPROVED WRITE-BACK`, and `DETERMINISTIC CLOSURE REPLAY`. These are factual state boundaries, not decoration.
+Persistent small mono labels such as `SANITIZED MCP OBSERVATION TRACE`, `FROZEN RUN`, `RECORDED VALIDATION RECEIPTS`, `RECORDED APPROVED WRITE-BACK`, and `DETERMINISTIC CLOSURE REPLAY`. These are factual state boundaries, not decoration.
 
 ### Policy card
 

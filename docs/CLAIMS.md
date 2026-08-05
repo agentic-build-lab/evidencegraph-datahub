@@ -23,6 +23,7 @@ or revised if their release evidence does not match the final commit.
 | C-013 | The demonstration uses synthetic data and invented asset and team identities. | Fixture source and provenance record. |
 | C-014 | An immediate stateless retry of the identical write-back proposal set produced 3 of 3 verified no-ops and reused the same document URN. | Frozen write-back retry receipts. |
 | C-015 | The deterministic closure replay closes only from a complete graph whose observations postdate the applied patch and report zero old-field consumers; stale input is refused in tests. | Before/after fixtures, closure receipt, and closure tests. |
+| C-016 | In the frozen flagship scoring policy, complete evidence yields impact confidence 1.00; omitting one required lineage page caps it at 0.65. | Planner policy and the complete/incomplete flagship ledgers. These are deterministic policy scores, not calibrated production probabilities. |
 
 ## Required qualifiers
 

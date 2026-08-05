@@ -669,9 +669,9 @@
       <img data-hf-id="hf-4oz2" src="assets/studio-full-page.png" alt="EvidenceGraph Assurance Studio interface">
     </div>
 
-    <div id="f05-live-stage" class="f05-live-stage" data-layout-allow-occlusion="">
-      <video id="f05-live-video" class="clip" src="assets/evidencegraph-assurance-studio.mp4" muted playsinline data-start="0" data-duration="2.8" data-media-start="6.8" data-track-index="10"></video>
-      <div class="f05-live-label">Real migration pack inspection</div>
+    <div data-hf-id="hf-ncc0" id="f05-live-stage" class="f05-live-stage" data-layout-allow-occlusion="">
+      <video data-hf-id="hf-esed" id="f05-live-video" class="clip" src="assets/evidencegraph-assurance-studio.mp4" muted playsinline data-start="0" data-duration="2.8" data-media-start="6.8" data-track-index="10"></video>
+      <div data-hf-id="hf-pozy" class="f05-live-label">Recorded product replay · migration pack</div>
     </div>
 
     <div data-hf-id="hf-rg8n" id="f05-workspace" class="f05-migration-bundle-workspace clip" data-start="0" data-duration="18.492" data-track-index="1" data-layout-allow-overlap="">
@@ -690,7 +690,7 @@
 
       <section data-hf-id="hf-wzup" class="f05-migration-bundle-manifest" id="f05-migration-bundle-manifest" aria-label="Nine-file migration manifest">
         <div data-hf-id="hf-hqlk" class="f05-migration-bundle-manifest-head">
-          <div data-hf-id="hf-u5hr" class="f05-migration-bundle-count"><b data-hf-id="hf-9fpe">09</b><span data-hf-id="hf-yv4s">FILES</span></div>
+          <div data-hf-id="hf-u5hr" class="f05-migration-bundle-count"><b data-hf-id="hf-9fpe">09</b><span data-hf-id="hf-yv4s">OF 9</span></div>
           <div data-hf-id="hf-t0y2" class="f05-migration-bundle-manifest-meta">impact graph → bounded drafts<br data-hf-id="hf-x5px">claim IDs + target URNs bind every artifact</div>
           <div data-hf-id="hf-u1pt" class="f05-migration-bundle-compile-state"><span data-hf-id="hf-4za2" class="f05-migration-bundle-compile-dot"></span><span data-hf-id="hf-3ewf" id="f05-migration-bundle-group-label">COMPILING / SQL</span></div>
         </div>
@@ -739,11 +739,11 @@
         <article data-hf-id="hf-ydy9" class="f05-migration-bundle-code-card">
           <div data-hf-id="hf-xzgr" class="f05-migration-bundle-card-head"><span data-hf-id="hf-6mdy" class="f05-migration-bundle-card-kicker">UNIFIED DIFF · EXCERPT</span><span data-hf-id="hf-e7lr" class="f05-migration-bundle-card-name">patches/demo-platform.patch</span><span data-hf-id="hf-44n6" class="f05-migration-bundle-card-meta">1 FILE · 1 HUNK</span></div>
           <pre data-hf-id="hf-gu9q" class="f05-migration-bundle-code" aria-label="Unified diff excerpt"><span data-hf-id="hf-zwzl" class="f05-migration-bundle-line f05-migration-bundle-line--muted">@@ -1,8 +1,14 @@ stg_orders</span><span data-hf-id="hf-jfyl" class="f05-migration-bundle-line f05-migration-bundle-line--minus">-    customer_tier,</span><span data-hf-id="hf-gkd1" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+    CASE segment_code</span><span data-hf-id="hf-5ws7" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+      WHEN 'B' THEN 'bronze'</span><span data-hf-id="hf-iz4g" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+      WHEN 'G' THEN 'gold'</span><span data-hf-id="hf-tu20" class="f05-migration-bundle-line f05-migration-bundle-line--plus">+    END AS customer_tier,</span></pre>
-          <div class="f05-migration-bundle-claim-chain" aria-label="Claim to target to generated artifact to validation receipt">
-            <div class="f05-migration-bundle-chain-step"><span>DataHub claim</span><b>CLM-006 · 1.00</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
-            <div class="f05-migration-bundle-chain-step"><span>Target URN</span><b>dbt · analytics.stg_orders</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
-            <div class="f05-migration-bundle-chain-step"><span>Generated hunk</span><b>stg_orders.sql · tier</b></div><div class="f05-migration-bundle-chain-arrow">→</div>
-            <div class="f05-migration-bundle-chain-step"><span>Receipt</span><b>VAL-DBT-BUILD · 7/7</b></div>
+          <div data-hf-id="hf-zi1x" class="f05-migration-bundle-claim-chain" aria-label="Claim to target to generated artifact to validation receipt">
+            <div data-hf-id="hf-fmmg" class="f05-migration-bundle-chain-step"><span data-hf-id="hf-s878">DataHub claim</span><b data-hf-id="hf-xs96">CLM-006 · GROUNDED</b></div><div data-hf-id="hf-nlv9" class="f05-migration-bundle-chain-arrow">→</div>
+            <div data-hf-id="hf-7p34" class="f05-migration-bundle-chain-step"><span data-hf-id="hf-8zan">Target URN</span><b data-hf-id="hf-0p42">dbt · analytics.stg_orders</b></div><div data-hf-id="hf-e7c9" class="f05-migration-bundle-chain-arrow">→</div>
+            <div data-hf-id="hf-6i61" class="f05-migration-bundle-chain-step"><span data-hf-id="hf-82qy">Generated hunk</span><b data-hf-id="hf-rs8a">stg_orders.sql · tier</b></div><div data-hf-id="hf-fe9c" class="f05-migration-bundle-chain-arrow">→</div>
+            <div data-hf-id="hf-6wh2" class="f05-migration-bundle-chain-step"><span data-hf-id="hf-cyfj">Receipt</span><b data-hf-id="hf-z04o">VAL-DBT-BUILD · 7/7</b></div>
           </div>
         </article>
 

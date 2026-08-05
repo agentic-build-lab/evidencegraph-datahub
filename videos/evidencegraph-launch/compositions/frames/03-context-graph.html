@@ -35,13 +35,14 @@
     #root [data-role="connector-map"] path[data-ingress] { stroke-width: 3; stroke: rgba(64,224,192,.62); }
 
     #root [data-role="ingress"] {
-      position: absolute; left: 92px; width: 290px; min-height: 80px; padding: 18px 20px;
+      position: absolute; left: 92px; width: 340px; min-height: 80px; padding: 18px 20px;
       border: 1.5px solid rgba(64,224,192,.24); border-radius: 14px; background: rgba(64,224,192,.055); z-index: 5;
     }
     #root [data-role="ingress"][data-channel="mcp"] { top: 178px; }
     #root [data-role="ingress"][data-channel="sdk"] { top: 502px; }
-    #root [data-role="ingress-kicker"] { margin-bottom: 8px; color: rgba(231,238,235,.62); font-family: "Geist Mono", monospace; font-size: 11px; letter-spacing: .13em; }
+    #root [data-role="ingress-kicker"] { margin-bottom: 8px; color: rgba(231,238,235,.62); font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .10em; }
     #root [data-role="ingress-label"] { color: #E7EEEB; font-size: 20px; font-weight: 700; letter-spacing: -.02em; }
+    #root [data-role="ingress-tools"] { margin-top: 9px; color: #8FD8CB; font-family: "Geist Mono", monospace; font-size: 16px; line-height: 1.35; letter-spacing: 0; }
     #root [data-role="ingress-port"] { position: absolute; right: -7px; top: 34px; width: 13px; height: 13px; border-radius: 50%; border: 3px solid #0C1B22; background: #40E0C0; }
 
     #root [data-role="node"] {
@@ -115,8 +116,8 @@
       <div data-hf-id="hf-h1gk" id="f03-context-graph-camera-outer" data-role="camera-outer">
         <div data-hf-id="hf-bux8" id="f03-context-graph-camera-inner" data-role="camera-inner">
           <svg data-hf-id="hf-c5ep" id="f03-context-graph-connectors" data-role="connector-map" viewBox="0 0 1920 792" aria-hidden="true">
-            <path data-hf-id="hf-heje" id="f03-context-graph-path-mcp" data-ingress="true" d="M 382 218 C 570 218, 684 298, 820 350" />
-            <path data-hf-id="hf-1pus" id="f03-context-graph-path-sdk" data-ingress="true" d="M 382 542 C 570 542, 684 488, 820 438" />
+            <path data-hf-id="hf-heje" id="f03-context-graph-path-mcp" data-ingress="true" d="M 432 218 C 570 218, 684 298, 820 350" />
+            <path data-hf-id="hf-1pus" id="f03-context-graph-path-sdk" data-ingress="true" d="M 432 542 C 570 542, 684 488, 820 438" />
             <path data-hf-id="hf-cilc" id="f03-context-graph-path-schema" d="M 700 156 C 780 188, 830 270, 866 328" />
             <path data-hf-id="hf-ska7" id="f03-context-graph-path-contract" d="M 694 564 C 774 540, 824 498, 866 462" />
             <path data-hf-id="hf-i1o0" id="f03-context-graph-path-owner" d="M 842 82 C 874 156, 890 232, 910 300" />
@@ -128,7 +129,7 @@
           </svg>
 
           <div data-hf-id="hf-tq5s" id="f03-context-graph-ingress-mcp" data-role="ingress" data-channel="mcp">
-            <div data-hf-id="hf-5lz5" data-role="ingress-kicker">RECORDED LIVE MCP TRACE</div><div data-hf-id="hf-adpn" data-role="ingress-label">OFFICIAL MCP SERVER</div><span data-hf-id="hf-xbrd" data-role="ingress-port"></span>
+            <div data-hf-id="hf-5lz5" data-role="ingress-kicker">SANITIZED MCP OBSERVATION TRACE</div><div data-hf-id="hf-adpn" data-role="ingress-label">OFFICIAL MCP SERVER</div><div data-role="ingress-tools">get_entities · list_schema_fields<br>get_lineage · page 1 · exhausted</div><span data-hf-id="hf-xbrd" data-role="ingress-port"></span>
           </div>
           <div data-hf-id="hf-9d3w" id="f03-context-graph-ingress-sdk" data-role="ingress" data-channel="sdk">
             <div data-hf-id="hf-bsgc" data-role="ingress-kicker">TYPED ACCESS</div><div data-hf-id="hf-ao0f" data-role="ingress-label">PYTHON SDK</div><span data-hf-id="hf-0drx" data-role="ingress-port"></span>
