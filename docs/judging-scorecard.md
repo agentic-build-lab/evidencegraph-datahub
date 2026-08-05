@@ -83,7 +83,7 @@ test, trace, public demo state, or immutable output.
 | Checkpoint | 4-point evidence target |
 | --- | --- |
 | Judge-first demo | A no-login public demo loads reliably, exposes the flagship scenario in one action, shows progress and refusal states, and provides a deterministic replay if live dependencies are unavailable. |
-| Under-three-minute video | A 2:30-2:50 video shows the breaking change, hidden BI/ML blast radius, generated artifacts, native tests, refusal/approval boundary, fresh-graph closure, and DataHub write-back/read-back. |
+| Under-three-minute video | A tightly paced 2:10 video shows the breaking change, hidden BI/ML blast radius, generated artifacts, native tests, refusal/approval boundary, fresh-graph closure, and DataHub write-back/read-back. |
 | README and setup | The first screen explains the value and why DataHub is essential. A quick locked fixture path and a documented local DataHub path are both available; commands are copy-paste tested. |
 | Inspectable examples | `examples/` contains the input proposal, repo-only and DataHub runs, migration pack, validator receipts, evidence ledger, write-back receipt, closure receipt, and known-risk notes. |
 | Visual and narrative coherence | Architecture, UI, video, Devpost text, and README use the same scenario, terminology, measured numbers, and safety claims. All links are checked immediately before submission. |

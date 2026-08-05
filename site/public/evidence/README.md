@@ -11,11 +11,12 @@ Python SDK aspect enrichment for MCP gaps.
 - Improvement: **+57.1 percentage points**; the hidden BI and ML consumers are recovered.
 - Migration bundle: **9 artifacts** across SQL, dbt, Airflow, ML, plan,
   manifest, and a real unified diff.
-- Validation: **14/14 passed**, including DuckDB,
-  dbt Core 1.12.0, official Airflow 3.3.0 container import/gate execution, ML parity, and
-  `git apply --check`.
-- DataHub write-back: **3/3 applied and read back**; an immediate stateless retry was **3/3
-  verified no-op**.
+- Validation: **14/14 passed**—one integrity/evidence-binding check, eight
+  structured-file parser checks, and five native or integration checks across
+  Git patch application, DuckDB parity, dbt build, official Airflow 3.3.0
+  container import/gate execution, and ML parity.
+- Separate approved DataHub run: **3/3 applied and read back**; an immediate
+  stateless retry was **3/3 verified no-op**.
 
 ## Inspect in order
 

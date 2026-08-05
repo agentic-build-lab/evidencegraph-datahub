@@ -1,0 +1,64 @@
+{
+  "source": "https://github.com/agentic-build-lab/evidencegraph-datahub",
+  "capturedAt": "2026-08-04",
+  "fps": 10,
+  "frames": 168,
+  "viewport": {
+    "width": 1265,
+    "height": 712
+  },
+  "actions": [
+    {
+      "frame": 5,
+      "action": "Replay assurance"
+    },
+    {
+      "frame": 68,
+      "action": "Open migration pack"
+    },
+    {
+      "frame": 77,
+      "action": "Inspect dbt artifact"
+    },
+    {
+      "frame": 84,
+      "action": "Inspect Airflow gate"
+    },
+    {
+      "frame": 91,
+      "action": "Inspect ML contract"
+    },
+    {
+      "frame": 99,
+      "action": "Open evidence ledger"
+    },
+    {
+      "frame": 108,
+      "action": "Inspect dashboard claim"
+    },
+    {
+      "frame": 116,
+      "action": "Inspect completeness claim"
+    },
+    {
+      "frame": 126,
+      "action": "Remove lineage page"
+    },
+    {
+      "frame": 135,
+      "action": "Inspect refusal claim"
+    },
+    {
+      "frame": 143,
+      "action": "Open blocked write-back"
+    },
+    {
+      "frame": 152,
+      "action": "Restore complete graph"
+    },
+    {
+      "frame": 158,
+      "action": "Open verified write-back"
+    }
+  ]
+}

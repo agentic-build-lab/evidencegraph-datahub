@@ -8,7 +8,7 @@ async function render() {
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request("https://localhost/", {
       headers: { accept: "text/html" },
     }),
     {
@@ -27,6 +27,11 @@ test("server-renders the production EvidenceGraph experience", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  assert.match(response.headers.get("content-security-policy") ?? "", /frame-ancestors 'none'/);
+  assert.equal(response.headers.get("strict-transport-security"), "max-age=63072000; includeSubDomains; preload");
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
 
   const html = await response.text();
   assert.match(html, /<title>EvidenceGraph Assurance Studio[^<]*DataHub-native change assurance<\/title>/i);
@@ -34,7 +39,7 @@ test("server-renders the production EvidenceGraph experience", async () => {
   assert.match(html, /FIELD-AWARE DOWNSTREAM LINEAGE/i);
   assert.match(html, /Repository analysis sees only three consumers/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);
-  assert.doesNotMatch(html, /C:[\\/]+Users|datahub_agent_hackathon|New project 8/i);
+  assert.doesNotMatch(html, /(?:^|[\s"'(>])[A-Za-z]:[\\/]|file:\/\/\//i);
 });
 
 test("uses repository-owned fonts and ships inspectable public evidence", async () => {
@@ -63,7 +68,11 @@ test("uses repository-owned fonts and ships inspectable public evidence", async 
   assert.match(page, /Missing lineage/);
   assert.match(page, /WRITEBACK BLOCKED — INCOMPLETE LINEAGE/);
   assert.match(page, /SEPARATE APPROVED RUN/);
-  assert.match(page, /DETERMINISTIC REPLAY/);
+  assert.match(page, /RECORDED LIVE MCP TRACE/);
+  assert.match(page, /RECORDED LIVE SDK TRACE/);
+  assert.match(page, /RECORDED APPROVED WRITE-BACK/);
+  assert.match(page, /DETERMINISTIC CLOSURE REPLAY/);
+  assert.match(page, /REPLAY ASSURANCE/);
   assert.match(page, /claimId: "CLM-006"/);
   assert.match(page, /ownerFor\(/);
   assert.match(page, /maximumMismatchRate: 0\.0/);

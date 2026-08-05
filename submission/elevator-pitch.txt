@@ -1,1 +1,1 @@
-EvidenceGraph uses DataHub's context graph to turn breaking data changes into complete impact maps, validated migration code, and evidence-backed go/no-go decisions.
+EvidenceGraph uses DataHub's context graph to turn breaking data changes into impact maps with explicit completeness verdicts, validated migration code, and evidence-backed go/no-go decisions.

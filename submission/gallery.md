@@ -35,18 +35,19 @@ verified local-integration evidence.
 - Caption: **EvidenceGraph compiles nine reviewable artifacts across SQL, dbt,
   Airflow, ML compatibility, planning, and a cleanly applying unified diff.**
 
-## Gallery 5 — native validation receipts
+## Gallery 5 — recorded validation receipts
 
 - File: `submission/gallery/05-native-validation.jpg`
-- Caption: **Fourteen deterministic gates pass, including dbt Core, DuckDB,
-  official Airflow 3.3.0, ML parity, and Git patch application.**
+- Caption: **The recorded suite passes 14/14 gates: one integrity check, eight
+  parser checks, and five native or integration checks across Git, DuckDB, dbt,
+  Airflow, and ML parity.**
 
 ## Gallery 6 — governed write-back and closure
 
 - File: `submission/gallery/06-writeback-closure.jpg`
-- Caption: **Three scoped writes verify by readback and retry without duplicates;
-  the labeled deterministic closure replay then requires a newer complete graph
-  with zero old-field consumers.**
+- Caption: **A separate approved DataHub run records three readback-verified
+  writes and three verified retry no-ops; the deterministic fixture replay then
+  requires newer complete evidence and zero old-field consumers before closure.**
 
 ## Gallery 7 — inspect every claim
 
