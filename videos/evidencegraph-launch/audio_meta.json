@@ -1,1723 +1,1607 @@
-﻿{
-    "bgm":  {
-                "path":  ".media/audio/bgm/bgm_001.edit.mp3",
-                "volume":  0.085,
-                "title":  "A Little Story",
-                "composer":  "Kei Morimoto",
-                "provider":  "DOVA-SYNDROME",
-                "source_url":  "https://dova-s.jp/bgm/detail/19278/track/1",
-                "license_url":  "https://dova-s.jp/en/contents/license"
-            },
-    "bgm_pending":  false,
-    "voices":  [
-                   {
-                       "frame":  1,
-                       "path":  "assets/voice/01.wav",
-                       "duration_s":  14,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "A",
-                                         "start":  0.08,
-                                         "end":  0.237
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "schema",
-                                         "start":  0.237,
-                                         "end":  0.634
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "change",
-                                         "start":  0.634,
-                                         "end":  1.03
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "should",
-                                         "start":  1.03,
-                                         "end":  1.426
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "not",
-                                         "start":  1.426,
-                                         "end":  1.624
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "become",
-                                         "start":  1.624,
-                                         "end":  2.02
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "an",
-                                         "start":  2.02,
-                                         "end":  2.178
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "incident.",
-                                         "start":  2.178,
-                                         "end":  2.895
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "Before",
-                                         "start":  2.895,
-                                         "end":  3.291
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "anyone",
-                                         "start":  3.291,
-                                         "end":  3.687
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "merges",
-                                         "start":  3.687,
-                                         "end":  4.084
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "it,",
-                                         "start":  4.084,
-                                         "end":  4.319
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "EvidenceGraph",
-                                         "start":  4.319,
-                                         "end":  5.178
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "asks",
-                                         "start":  5.178,
-                                         "end":  5.442
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "a",
-                                         "start":  5.442,
-                                         "end":  5.599
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "harder",
-                                         "start":  5.599,
-                                         "end":  5.996
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "question:",
-                                         "start":  5.996,
-                                         "end":  6.603
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "what",
-                                         "start":  6.603,
-                                         "end":  6.867
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "will",
-                                         "start":  6.867,
-                                         "end":  7.131
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "this",
-                                         "start":  7.131,
-                                         "end":  7.395
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "change",
-                                         "start":  7.395,
-                                         "end":  7.791
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "actually",
-                                         "start":  7.791,
-                                         "end":  8.32
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "break?",
-                                         "start":  8.32,
-                                         "end":  8.839
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  2,
-                       "path":  "assets/voice/02.wav",
-                       "duration_s":  20,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "Repository",
-                                         "start":  0.08,
-                                         "end":  0.757
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "search",
-                                         "start":  0.757,
-                                         "end":  1.163
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "finds",
-                                         "start":  1.163,
-                                         "end":  1.501
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "three",
-                                         "start":  1.501,
-                                         "end":  1.84
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "of",
-                                         "start":  1.84,
-                                         "end":  2.001
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "seven",
-                                         "start":  2.001,
-                                         "end":  2.339
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "downstream",
-                                         "start":  2.339,
-                                         "end":  3.016
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "consumers.",
-                                         "start":  3.016,
-                                         "end":  3.819
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "It",
-                                         "start":  3.819,
-                                         "end":  3.98
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "misses",
-                                         "start":  3.98,
-                                         "end":  4.386
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "the",
-                                         "start":  4.386,
-                                         "end":  4.589
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "dashboard,",
-                                         "start":  4.589,
-                                         "end":  5.279
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "the",
-                                         "start":  5.279,
-                                         "end":  5.482
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "machine-learning",
-                                         "start":  5.482,
-                                         "end":  6.497
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "feature,",
-                                         "start":  6.497,
-                                         "end":  7.051
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "the",
-                                         "start":  7.051,
-                                         "end":  7.255
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "model,",
-                                         "start":  7.255,
-                                         "end":  7.674
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "and",
-                                         "start":  7.674,
-                                         "end":  7.877
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "the",
-                                         "start":  7.877,
-                                         "end":  8.08
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "production",
-                                         "start":  8.08,
-                                         "end":  8.756
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "deployment.",
-                                         "start":  8.756,
-                                         "end":  9.627
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "That",
-                                         "start":  9.627,
-                                         "end":  9.897
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "is",
-                                         "start":  9.897,
-                                         "end":  10.059
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "a",
-                                         "start":  10.059,
-                                         "end":  10.22
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "forty-two",
-                                         "start":  10.22,
-                                         "end":  10.761
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "point",
-                                         "start":  10.761,
-                                         "end":  11.1
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "nine",
-                                         "start":  11.1,
-                                         "end":  11.37
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "percent",
-                                         "start":  11.37,
-                                         "end":  11.844
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "view",
-                                         "start":  11.844,
-                                         "end":  12.115
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "and",
-                                         "start":  12.276,
-                                         "end":  12.479
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "a",
-                                         "start":  12.479,
-                                         "end":  12.64
-                                     },
-                                     {
-                                         "id":  "w31",
-                                         "text":  "false-safe",
-                                         "start":  12.64,
-                                         "end":  13.249
-                                     },
-                                     {
-                                         "id":  "w32",
-                                         "text":  "decision",
-                                         "start":  13.249,
-                                         "end":  13.791
-                                     },
-                                     {
-                                         "id":  "w33",
-                                         "text":  "waiting",
-                                         "start":  13.791,
-                                         "end":  14.265
-                                     },
-                                     {
-                                         "id":  "w34",
-                                         "text":  "to",
-                                         "start":  14.265,
-                                         "end":  14.426
-                                     },
-                                     {
-                                         "id":  "w35",
-                                         "text":  "happen.",
-                                         "start":  14.426,
-                                         "end":  15.025
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  3,
-                       "path":  "assets/voice/03.wav",
-                       "duration_s":  19,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "EvidenceGraph",
-                                         "start":  0.08,
-                                         "end":  1.046
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "reads",
-                                         "start":  1.046,
-                                         "end":  1.418
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "DataHub",
-                                         "start":  1.418,
-                                         "end":  1.939
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "through",
-                                         "start":  1.939,
-                                         "end":  2.459
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "the",
-                                         "start":  2.459,
-                                         "end":  2.682
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "official",
-                                         "start":  2.682,
-                                         "end":  3.277
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "M",
-                                         "start":  3.277,
-                                         "end":  3.454
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "C",
-                                         "start":  3.454,
-                                         "end":  3.631
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "P",
-                                         "start":  3.631,
-                                         "end":  3.808
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "server",
-                                         "start":  3.808,
-                                         "end":  4.254
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "and",
-                                         "start":  4.254,
-                                         "end":  4.477
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "the",
-                                         "start":  4.477,
-                                         "end":  4.7
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "Python",
-                                         "start":  4.7,
-                                         "end":  5.146
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "S",
-                                         "start":  5.146,
-                                         "end":  5.323
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "D",
-                                         "start":  5.323,
-                                         "end":  5.5
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "K.",
-                                         "start":  5.5,
-                                         "end":  5.889
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "Schemas,",
-                                         "start":  5.889,
-                                         "end":  6.498
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "ownership,",
-                                         "start":  6.498,
-                                         "end":  7.256
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "lineage,",
-                                         "start":  7.256,
-                                         "end":  7.865
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "contracts,",
-                                         "start":  7.865,
-                                         "end":  8.622
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "tags,",
-                                         "start":  8.622,
-                                         "end":  9.008
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "documentation,",
-                                         "start":  9.008,
-                                         "end":  10.063
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "dashboards,",
-                                         "start":  10.063,
-                                         "end":  10.895
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "and",
-                                         "start":  10.895,
-                                         "end":  11.118
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "machine-learning",
-                                         "start":  11.118,
-                                         "end":  12.233
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "metadata",
-                                         "start":  12.233,
-                                         "end":  12.828
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "become",
-                                         "start":  12.828,
-                                         "end":  13.274
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "one",
-                                         "start":  13.274,
-                                         "end":  13.497
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "executable",
-                                         "start":  13.497,
-                                         "end":  14.241
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "context",
-                                         "start":  14.241,
-                                         "end":  14.761
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "graph.",
-                                         "start":  14.761,
-                                         "end":  15.345
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  4,
-                       "path":  "assets/voice/04.wav",
-                       "duration_s":  21,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "Now",
-                                         "start":  0.08,
-                                         "end":  0.309
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "the",
-                                         "start":  0.309,
-                                         "end":  0.539
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "blast",
-                                         "start":  0.539,
-                                         "end":  0.921
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "radius",
-                                         "start":  0.921,
-                                         "end":  1.38
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "is",
-                                         "start":  1.38,
-                                         "end":  1.562
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "complete:",
-                                         "start":  1.562,
-                                         "end":  2.265
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "two",
-                                         "start":  2.265,
-                                         "end":  2.494
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "dbt",
-                                         "start":  2.494,
-                                         "end":  2.724
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "models,",
-                                         "start":  2.724,
-                                         "end":  3.274
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "an",
-                                         "start":  3.274,
-                                         "end":  3.456
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "Airflow",
-                                         "start":  3.456,
-                                         "end":  3.991
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "job,",
-                                         "start":  3.991,
-                                         "end":  4.311
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "an",
-                                         "start":  4.311,
-                                         "end":  4.493
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "executive",
-                                         "start":  4.493,
-                                         "end":  5.182
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "dashboard,",
-                                         "start":  5.182,
-                                         "end":  5.961
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "an",
-                                         "start":  5.961,
-                                         "end":  6.143
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "M",
-                                         "start":  6.143,
-                                         "end":  6.325
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "L",
-                                         "start":  6.325,
-                                         "end":  6.507
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "feature,",
-                                         "start":  6.507,
-                                         "end":  7.134
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "a",
-                                         "start":  7.134,
-                                         "end":  7.316
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "model,",
-                                         "start":  7.316,
-                                         "end":  7.789
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "and",
-                                         "start":  7.789,
-                                         "end":  8.018
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "its",
-                                         "start":  8.018,
-                                         "end":  8.248
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "production",
-                                         "start":  8.248,
-                                         "end":  9.013
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "deployment.",
-                                         "start":  9.013,
-                                         "end":  9.996
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "Each",
-                                         "start":  9.996,
-                                         "end":  10.302
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "path",
-                                         "start":  10.302,
-                                         "end":  10.608
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "is",
-                                         "start":  10.608,
-                                         "end":  10.79
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "routed",
-                                         "start":  10.79,
-                                         "end":  11.248
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "to",
-                                         "start":  11.248,
-                                         "end":  11.431
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "its",
-                                         "start":  11.431,
-                                         "end":  11.66
-                                     },
-                                     {
-                                         "id":  "w31",
-                                         "text":  "owner,",
-                                         "start":  11.66,
-                                         "end":  12.133
-                                     },
-                                     {
-                                         "id":  "w32",
-                                         "text":  "prioritized,",
-                                         "start":  12.133,
-                                         "end":  13.066
-                                     },
-                                     {
-                                         "id":  "w33",
-                                         "text":  "and",
-                                         "start":  13.066,
-                                         "end":  13.295
-                                     },
-                                     {
-                                         "id":  "w34",
-                                         "text":  "linked",
-                                         "start":  13.295,
-                                         "end":  13.754
-                                     },
-                                     {
-                                         "id":  "w35",
-                                         "text":  "to",
-                                         "start":  13.754,
-                                         "end":  13.936
-                                     },
-                                     {
-                                         "id":  "w36",
-                                         "text":  "the",
-                                         "start":  13.936,
-                                         "end":  14.165
-                                     },
-                                     {
-                                         "id":  "w37",
-                                         "text":  "exact",
-                                         "start":  14.165,
-                                         "end":  14.548
-                                     },
-                                     {
-                                         "id":  "w38",
-                                         "text":  "DataHub",
-                                         "start":  14.548,
-                                         "end":  15.083
-                                     },
-                                     {
-                                         "id":  "w39",
-                                         "text":  "object",
-                                         "start":  15.083,
-                                         "end":  15.542
-                                     },
-                                     {
-                                         "id":  "w40",
-                                         "text":  "that",
-                                         "start":  15.542,
-                                         "end":  15.848
-                                     },
-                                     {
-                                         "id":  "w41",
-                                         "text":  "supports",
-                                         "start":  15.848,
-                                         "end":  16.459
-                                     },
-                                     {
-                                         "id":  "w42",
-                                         "text":  "it.",
-                                         "start":  16.459,
-                                         "end":  16.86
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  5,
-                       "path":  "assets/voice/05.wav",
-                       "duration_s":  20,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "EvidenceGraph",
-                                         "start":  0.08,
-                                         "end":  1.11
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "does",
-                                         "start":  1.11,
-                                         "end":  1.427
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "not",
-                                         "start":  1.427,
-                                         "end":  1.664
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "stop",
-                                         "start":  1.664,
-                                         "end":  1.981
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "at",
-                                         "start":  1.981,
-                                         "end":  2.17
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "an",
-                                         "start":  2.17,
-                                         "end":  2.359
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "explanation.",
-                                         "start":  2.359,
-                                         "end":  3.456
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "It",
-                                         "start":  3.456,
-                                         "end":  3.645
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "compiles",
-                                         "start":  3.645,
-                                         "end":  4.279
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "nine",
-                                         "start":  4.279,
-                                         "end":  4.596
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "concrete",
-                                         "start":  4.596,
-                                         "end":  5.229
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "artifacts:",
-                                         "start":  5.229,
-                                         "end":  6.037
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "S",
-                                         "start":  6.037,
-                                         "end":  6.225
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "Q",
-                                         "start":  6.225,
-                                         "end":  6.414
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "L,",
-                                         "start":  6.414,
-                                         "end":  6.697
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "dbt",
-                                         "start":  6.697,
-                                         "end":  6.935
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "model",
-                                         "start":  6.935,
-                                         "end":  7.331
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "and",
-                                         "start":  7.331,
-                                         "end":  7.568
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "tests,",
-                                         "start":  7.568,
-                                         "end":  8.059
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "validation",
-                                         "start":  8.059,
-                                         "end":  8.851
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "queries,",
-                                         "start":  8.851,
-                                         "end":  9.5
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "an",
-                                         "start":  9.5,
-                                         "end":  9.689
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "Airflow",
-                                         "start":  9.689,
-                                         "end":  10.243
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "evidence",
-                                         "start":  10.243,
-                                         "end":  10.877
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "gate,",
-                                         "start":  10.877,
-                                         "end":  11.288
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "an",
-                                         "start":  11.288,
-                                         "end":  11.477
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "M",
-                                         "start":  11.477,
-                                         "end":  11.665
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "L",
-                                         "start":  11.665,
-                                         "end":  11.854
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "contract,",
-                                         "start":  11.854,
-                                         "end":  12.582
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "a",
-                                         "start":  12.582,
-                                         "end":  12.771
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "migration",
-                                         "start":  12.771,
-                                         "end":  13.484
-                                     },
-                                     {
-                                         "id":  "w31",
-                                         "text":  "plan,",
-                                         "start":  13.484,
-                                         "end":  13.895
-                                     },
-                                     {
-                                         "id":  "w32",
-                                         "text":  "and",
-                                         "start":  13.895,
-                                         "end":  14.132
-                                     },
-                                     {
-                                         "id":  "w33",
-                                         "text":  "a",
-                                         "start":  14.132,
-                                         "end":  14.321
-                                     },
-                                     {
-                                         "id":  "w34",
-                                         "text":  "real",
-                                         "start":  14.321,
-                                         "end":  14.638
-                                     },
-                                     {
-                                         "id":  "w35",
-                                         "text":  "unified",
-                                         "start":  14.638,
-                                         "end":  15.193
-                                     },
-                                     {
-                                         "id":  "w36",
-                                         "text":  "diff",
-                                         "start":  15.193,
-                                         "end":  15.509
-                                     },
-                                     {
-                                         "id":  "w37",
-                                         "text":  "that",
-                                         "start":  15.509,
-                                         "end":  15.826
-                                     },
-                                     {
-                                         "id":  "w38",
-                                         "text":  "Git",
-                                         "start":  15.826,
-                                         "end":  16.064
-                                     },
-                                     {
-                                         "id":  "w39",
-                                         "text":  "can",
-                                         "start":  16.064,
-                                         "end":  16.302
-                                     },
-                                     {
-                                         "id":  "w40",
-                                         "text":  "apply",
-                                         "start":  16.302,
-                                         "end":  16.698
-                                     },
-                                     {
-                                         "id":  "w41",
-                                         "text":  "cleanly.",
-                                         "start":  16.698,
-                                         "end":  17.479
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  6,
-                       "path":  "assets/voice/06.wav",
-                       "duration_s":  20.081,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "Fourteen",
-                                         "start":  0.08,
-                                         "end":  0.675
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "deterministic",
-                                         "start":  0.675,
-                                         "end":  1.642
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "gates:",
-                                         "start":  1.642,
-                                         "end":  2.014
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "Duck",
-                                         "start":  2.294,
-                                         "end":  2.592
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "D",
-                                         "start":  2.592,
-                                         "end":  2.769
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "B,",
-                                         "start":  2.769,
-                                         "end":  3.035
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "dbt",
-                                         "start":  3.035,
-                                         "end":  3.258
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "Core,",
-                                         "start":  3.258,
-                                         "end":  3.644
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "the",
-                                         "start":  3.644,
-                                         "end":  3.867
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "official",
-                                         "start":  3.867,
-                                         "end":  4.462
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "Airflow",
-                                         "start":  4.462,
-                                         "end":  4.983
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "container,",
-                                         "start":  4.983,
-                                         "end":  5.741
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "feature-parity",
-                                         "start":  5.741,
-                                         "end":  6.707
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "checks,",
-                                         "start":  6.707,
-                                         "end":  7.242
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "and",
-                                         "start":  7.242,
-                                         "end":  7.465
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "Git",
-                                         "start":  7.465,
-                                         "end":  7.689
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "patch",
-                                         "start":  7.689,
-                                         "end":  8.06
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "application.",
-                                         "start":  8.06,
-                                         "end":  9.091
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "All",
-                                         "start":  9.091,
-                                         "end":  9.314
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "fourteen",
-                                         "start":  9.314,
-                                         "end":  9.909
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "pass.",
-                                         "start":  9.909,
-                                         "end":  10.419
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "Remove",
-                                         "start":  10.419,
-                                         "end":  10.866
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "one",
-                                         "start":  10.866,
-                                         "end":  11.089
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "lineage",
-                                         "start":  11.089,
-                                         "end":  11.609
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "page,",
-                                         "start":  11.609,
-                                         "end":  11.995
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "and",
-                                         "start":  11.995,
-                                         "end":  12.219
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "EvidenceGraph",
-                                         "start":  12.219,
-                                         "end":  13.186
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "refuses",
-                                         "start":  13.186,
-                                         "end":  13.706
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "the",
-                                         "start":  13.706,
-                                         "end":  13.929
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "safe-to-merge",
-                                         "start":  13.929,
-                                         "end":  14.747
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "verdict",
-                                         "start":  14.747,
-                                         "end":  15.268
-                                     },
-                                     {
-                                         "id":  "w31",
-                                         "text":  "and",
-                                         "start":  15.268,
-                                         "end":  15.491
-                                     },
-                                     {
-                                         "id":  "w32",
-                                         "text":  "blocks",
-                                         "start":  15.491,
-                                         "end":  15.938
-                                     },
-                                     {
-                                         "id":  "w33",
-                                         "text":  "every",
-                                         "start":  15.938,
-                                         "end":  16.309
-                                     },
-                                     {
-                                         "id":  "w34",
-                                         "text":  "mutation.",
-                                         "start":  16.309,
-                                         "end":  17.117
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  7,
-                       "path":  "assets/voice/07.wav",
-                       "duration_s":  22,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "With",
-                                         "start":  0.08,
-                                         "end":  0.383
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "explicit",
-                                         "start":  0.383,
-                                         "end":  0.988
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "approval,",
-                                         "start":  0.988,
-                                         "end":  1.683
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "three",
-                                         "start":  1.683,
-                                         "end":  2.061
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "scoped",
-                                         "start":  2.061,
-                                         "end":  2.514
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "results",
-                                         "start":  2.514,
-                                         "end":  3.044
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "write",
-                                         "start":  3.044,
-                                         "end":  3.422
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "back",
-                                         "start":  3.422,
-                                         "end":  3.725
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "into",
-                                         "start":  3.725,
-                                         "end":  4.027
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "DataHub",
-                                         "start":  4.027,
-                                         "end":  4.556
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "and",
-                                         "start":  4.556,
-                                         "end":  4.783
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "verify",
-                                         "start":  4.783,
-                                         "end":  5.237
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "by",
-                                         "start":  5.237,
-                                         "end":  5.417
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "readback.",
-                                         "start":  5.417,
-                                         "end":  6.238
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "A",
-                                         "start":  6.238,
-                                         "end":  6.418
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "new",
-                                         "start":  6.418,
-                                         "end":  6.645
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "client",
-                                         "start":  6.645,
-                                         "end":  7.099
-                                     },
-                                     {
-                                         "id":  "w17",
-                                         "text":  "retries",
-                                         "start":  7.099,
-                                         "end":  7.628
-                                     },
-                                     {
-                                         "id":  "w18",
-                                         "text":  "the",
-                                         "start":  7.628,
-                                         "end":  7.855
-                                     },
-                                     {
-                                         "id":  "w19",
-                                         "text":  "same",
-                                         "start":  7.855,
-                                         "end":  8.158
-                                     },
-                                     {
-                                         "id":  "w20",
-                                         "text":  "plan:",
-                                         "start":  8.158,
-                                         "end":  8.55
-                                     },
-                                     {
-                                         "id":  "w21",
-                                         "text":  "three",
-                                         "start":  8.55,
-                                         "end":  8.928
-                                     },
-                                     {
-                                         "id":  "w22",
-                                         "text":  "verified",
-                                         "start":  8.928,
-                                         "end":  9.533
-                                     },
-                                     {
-                                         "id":  "w23",
-                                         "text":  "no-ops,",
-                                         "start":  9.533,
-                                         "end":  10.002
-                                     },
-                                     {
-                                         "id":  "w24",
-                                         "text":  "no",
-                                         "start":  10.002,
-                                         "end":  10.182
-                                     },
-                                     {
-                                         "id":  "w25",
-                                         "text":  "duplicates.",
-                                         "start":  10.182,
-                                         "end":  11.154
-                                     },
-                                     {
-                                         "id":  "w26",
-                                         "text":  "In",
-                                         "start":  11.154,
-                                         "end":  11.426
-                                     },
-                                     {
-                                         "id":  "w27",
-                                         "text":  "the",
-                                         "start":  11.426,
-                                         "end":  11.758
-                                     },
-                                     {
-                                         "id":  "w28",
-                                         "text":  "deterministic",
-                                         "start":  11.758,
-                                         "end":  12.45
-                                     },
-                                     {
-                                         "id":  "w29",
-                                         "text":  "closure",
-                                         "start":  12.45,
-                                         "end":  12.958
-                                     },
-                                     {
-                                         "id":  "w30",
-                                         "text":  "replay,",
-                                         "start":  12.958,
-                                         "end":  13.428
-                                     },
-                                     {
-                                         "id":  "w31",
-                                         "text":  "EvidenceGraph",
-                                         "start":  13.428,
-                                         "end":  14.121
-                                     },
-                                     {
-                                         "id":  "w32",
-                                         "text":  "requires",
-                                         "start":  14.121,
-                                         "end":  14.664
-                                     },
-                                     {
-                                         "id":  "w33",
-                                         "text":  "a",
-                                         "start":  14.664,
-                                         "end":  14.869
-                                     },
-                                     {
-                                         "id":  "w34",
-                                         "text":  "newer",
-                                         "start":  14.869,
-                                         "end":  15.299
-                                     },
-                                     {
-                                         "id":  "w35",
-                                         "text":  "complete",
-                                         "start":  15.299,
-                                         "end":  15.842
-                                     },
-                                     {
-                                         "id":  "w36",
-                                         "text":  "graph",
-                                         "start":  15.842,
-                                         "end":  16.271
-                                     },
-                                     {
-                                         "id":  "w37",
-                                         "text":  "and",
-                                         "start":  16.271,
-                                         "end":  16.604
-                                     },
-                                     {
-                                         "id":  "w38",
-                                         "text":  "closes",
-                                         "start":  16.604,
-                                         "end":  17.074
-                                     },
-                                     {
-                                         "id":  "w39",
-                                         "text":  "only",
-                                         "start":  17.074,
-                                         "end":  17.458
-                                     },
-                                     {
-                                         "id":  "w40",
-                                         "text":  "when",
-                                         "start":  17.458,
-                                         "end":  17.842
-                                     },
-                                     {
-                                         "id":  "w41",
-                                         "text":  "the",
-                                         "start":  17.842,
-                                         "end":  18.174
-                                     },
-                                     {
-                                         "id":  "w42",
-                                         "text":  "retired",
-                                         "start":  18.174,
-                                         "end":  18.682
-                                     },
-                                     {
-                                         "id":  "w43",
-                                         "text":  "field",
-                                         "start":  18.682,
-                                         "end":  19.112
-                                     },
-                                     {
-                                         "id":  "w44",
-                                         "text":  "has",
-                                         "start":  19.112,
-                                         "end":  19.444
-                                     },
-                                     {
-                                         "id":  "w45",
-                                         "text":  "zero",
-                                         "start":  19.444,
-                                         "end":  19.828
-                                     },
-                                     {
-                                         "id":  "w46",
-                                         "text":  "remaining",
-                                         "start":  19.828,
-                                         "end":  20.404
-                                     },
-                                     {
-                                         "id":  "w47",
-                                         "text":  "consumers.",
-                                         "start":  20.404,
-                                         "end":  20.98
-                                     }
-                                 ]
-                   },
-                   {
-                       "frame":  8,
-                       "path":  "assets/voice/08.trimmed.wav",
-                       "duration_s":  8.22,
-                       "words":  [
-                                     {
-                                         "id":  "w0",
-                                         "text":  "EvidenceGraph",
-                                         "start":  0.08,
-                                         "end":  1.018
-                                     },
-                                     {
-                                         "id":  "w1",
-                                         "text":  "makes",
-                                         "start":  1.018,
-                                         "end":  1.379
-                                     },
-                                     {
-                                         "id":  "w2",
-                                         "text":  "DataHub\u0027s",
-                                         "start":  1.379,
-                                         "end":  1.956
-                                     },
-                                     {
-                                         "id":  "w3",
-                                         "text":  "context",
-                                         "start":  1.956,
-                                         "end":  2.461
-                                     },
-                                     {
-                                         "id":  "w4",
-                                         "text":  "graph",
-                                         "start":  2.461,
-                                         "end":  2.822
-                                     },
-                                     {
-                                         "id":  "w5",
-                                         "text":  "operational.",
-                                         "start":  2.822,
-                                         "end":  3.822
-                                     },
-                                     {
-                                         "id":  "w6",
-                                         "text":  "Inspect",
-                                         "start":  3.822,
-                                         "end":  4.328
-                                     },
-                                     {
-                                         "id":  "w7",
-                                         "text":  "the",
-                                         "start":  4.328,
-                                         "end":  4.544
-                                     },
-                                     {
-                                         "id":  "w8",
-                                         "text":  "public",
-                                         "start":  4.544,
-                                         "end":  4.977
-                                     },
-                                     {
-                                         "id":  "w9",
-                                         "text":  "replay,",
-                                         "start":  4.977,
-                                         "end":  5.496
-                                     },
-                                     {
-                                         "id":  "w10",
-                                         "text":  "audit",
-                                         "start":  5.496,
-                                         "end":  5.857
-                                     },
-                                     {
-                                         "id":  "w11",
-                                         "text":  "every",
-                                         "start":  5.857,
-                                         "end":  6.218
-                                     },
-                                     {
-                                         "id":  "w12",
-                                         "text":  "claim",
-                                         "start":  6.218,
-                                         "end":  6.578
-                                     },
-                                     {
-                                         "id":  "w13",
-                                         "text":  "in",
-                                         "start":  6.578,
-                                         "end":  6.75
-                                     },
-                                     {
-                                         "id":  "w14",
-                                         "text":  "the",
-                                         "start":  6.75,
-                                         "end":  6.967
-                                     },
-                                     {
-                                         "id":  "w15",
-                                         "text":  "evidence",
-                                         "start":  6.967,
-                                         "end":  7.544
-                                     },
-                                     {
-                                         "id":  "w16",
-                                         "text":  "ledger.",
-                                         "start":  7.544,
-                                         "end":  8.063
-                                     }
-                                 ]
-                   }
-               ],
-    "sfx":  [
-
-            ]
+{
+  "bgm": {
+    "path": ".media/audio/bgm/bgm_001.edit.mp3",
+    "volume": 0.085,
+    "title": "A Little Story",
+    "composer": "Kei Morimoto",
+    "provider": "DOVA-SYNDROME",
+    "source_url": "https://dova-s.jp/bgm/detail/19278/track/1",
+    "license_url": "https://dova-s.jp/en/contents/license"
+  },
+  "bgm_pending": false,
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/voice/01.wav",
+      "duration_s": 9.003,
+      "words": [
+        {
+          "id": "w0",
+          "text": "A",
+          "start": 0.08,
+          "end": 0.236
+        },
+        {
+          "id": "w1",
+          "text": "schema",
+          "start": 0.236,
+          "end": 0.63
+        },
+        {
+          "id": "w2",
+          "text": "change",
+          "start": 0.63,
+          "end": 1.024
+        },
+        {
+          "id": "w3",
+          "text": "should",
+          "start": 1.024,
+          "end": 1.418
+        },
+        {
+          "id": "w4",
+          "text": "not",
+          "start": 1.418,
+          "end": 1.615
+        },
+        {
+          "id": "w5",
+          "text": "become",
+          "start": 1.615,
+          "end": 2.008
+        },
+        {
+          "id": "w6",
+          "text": "an",
+          "start": 2.008,
+          "end": 2.165
+        },
+        {
+          "id": "w7",
+          "text": "incident.",
+          "start": 2.165,
+          "end": 2.877
+        },
+        {
+          "id": "w8",
+          "text": "EvidenceGraph,",
+          "start": 2.877,
+          "end": 3.808
+        },
+        {
+          "id": "w9",
+          "text": "an",
+          "start": 3.808,
+          "end": 3.965
+        },
+        {
+          "id": "w10",
+          "text": "autonomous",
+          "start": 3.965,
+          "end": 4.621
+        },
+        {
+          "id": "w11",
+          "text": "assurance",
+          "start": 4.621,
+          "end": 5.212
+        },
+        {
+          "id": "w12",
+          "text": "agent,",
+          "start": 5.212,
+          "end": 5.618
+        },
+        {
+          "id": "w13",
+          "text": "asks",
+          "start": 5.618,
+          "end": 5.881
+        },
+        {
+          "id": "w14",
+          "text": "before",
+          "start": 5.881,
+          "end": 6.274
+        },
+        {
+          "id": "w15",
+          "text": "merge:",
+          "start": 6.274,
+          "end": 6.681
+        },
+        {
+          "id": "w16",
+          "text": "what",
+          "start": 6.681,
+          "end": 6.943
+        },
+        {
+          "id": "w17",
+          "text": "will",
+          "start": 6.943,
+          "end": 7.206
+        },
+        {
+          "id": "w18",
+          "text": "this",
+          "start": 7.206,
+          "end": 7.468
+        },
+        {
+          "id": "w19",
+          "text": "change",
+          "start": 7.468,
+          "end": 7.862
+        },
+        {
+          "id": "w20",
+          "text": "actually",
+          "start": 7.862,
+          "end": 8.387
+        },
+        {
+          "id": "w21",
+          "text": "break?",
+          "start": 8.387,
+          "end": 8.903
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/voice/02.wav",
+      "duration_s": 14.016,
+      "words": [
+        {
+          "id": "w0",
+          "text": "In",
+          "start": 0.08,
+          "end": 0.247
+        },
+        {
+          "id": "w1",
+          "text": "our",
+          "start": 0.247,
+          "end": 0.457
+        },
+        {
+          "id": "w2",
+          "text": "frozen",
+          "start": 0.457,
+          "end": 0.878
+        },
+        {
+          "id": "w3",
+          "text": "synthetic",
+          "start": 0.878,
+          "end": 1.509
+        },
+        {
+          "id": "w4",
+          "text": "seven-consumer",
+          "start": 1.509,
+          "end": 2.42
+        },
+        {
+          "id": "w5",
+          "text": "truth",
+          "start": 2.42,
+          "end": 2.77
+        },
+        {
+          "id": "w6",
+          "text": "set,",
+          "start": 2.77,
+          "end": 3.064
+        },
+        {
+          "id": "w7",
+          "text": "repository",
+          "start": 3.064,
+          "end": 3.765
+        },
+        {
+          "id": "w8",
+          "text": "search",
+          "start": 3.765,
+          "end": 4.186
+        },
+        {
+          "id": "w9",
+          "text": "finds",
+          "start": 4.186,
+          "end": 4.536
+        },
+        {
+          "id": "w10",
+          "text": "only",
+          "start": 4.536,
+          "end": 4.817
+        },
+        {
+          "id": "w11",
+          "text": "three.",
+          "start": 4.817,
+          "end": 5.367
+        },
+        {
+          "id": "w12",
+          "text": "It",
+          "start": 5.367,
+          "end": 5.534
+        },
+        {
+          "id": "w13",
+          "text": "misses",
+          "start": 5.534,
+          "end": 5.955
+        },
+        {
+          "id": "w14",
+          "text": "the",
+          "start": 5.955,
+          "end": 6.165
+        },
+        {
+          "id": "w15",
+          "text": "dashboard,",
+          "start": 6.165,
+          "end": 6.88
+        },
+        {
+          "id": "w16",
+          "text": "machine-learning",
+          "start": 6.88,
+          "end": 7.931
+        },
+        {
+          "id": "w17",
+          "text": "feature,",
+          "start": 7.931,
+          "end": 8.505
+        },
+        {
+          "id": "w18",
+          "text": "model,",
+          "start": 8.505,
+          "end": 8.939
+        },
+        {
+          "id": "w19",
+          "text": "and",
+          "start": 8.939,
+          "end": 9.149
+        },
+        {
+          "id": "w20",
+          "text": "deployment:",
+          "start": 9.149,
+          "end": 9.934
+        },
+        {
+          "id": "w21",
+          "text": "a",
+          "start": 9.934,
+          "end": 10.101
+        },
+        {
+          "id": "w22",
+          "text": "forty-two",
+          "start": 10.101,
+          "end": 10.661
+        },
+        {
+          "id": "w23",
+          "text": "point",
+          "start": 10.661,
+          "end": 11.012
+        },
+        {
+          "id": "w24",
+          "text": "nine",
+          "start": 11.012,
+          "end": 11.292
+        },
+        {
+          "id": "w25",
+          "text": "percent",
+          "start": 11.292,
+          "end": 11.783
+        },
+        {
+          "id": "w26",
+          "text": "view,",
+          "start": 11.783,
+          "end": 12.147
+        },
+        {
+          "id": "w27",
+          "text": "and",
+          "start": 12.147,
+          "end": 12.357
+        },
+        {
+          "id": "w28",
+          "text": "a",
+          "start": 12.357,
+          "end": 12.524
+        },
+        {
+          "id": "w29",
+          "text": "false-safe",
+          "start": 12.524,
+          "end": 13.155
+        },
+        {
+          "id": "w30",
+          "text": "decision.",
+          "start": 13.155,
+          "end": 13.916
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/voice/03.wav",
+      "duration_s": 14.805,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.038
+        },
+        {
+          "id": "w1",
+          "text": "reads",
+          "start": 1.038,
+          "end": 1.406
+        },
+        {
+          "id": "w2",
+          "text": "DataHub",
+          "start": 1.406,
+          "end": 1.922
+        },
+        {
+          "id": "w3",
+          "text": "through",
+          "start": 1.922,
+          "end": 2.438
+        },
+        {
+          "id": "w4",
+          "text": "the",
+          "start": 2.438,
+          "end": 2.659
+        },
+        {
+          "id": "w5",
+          "text": "official",
+          "start": 2.659,
+          "end": 3.249
+        },
+        {
+          "id": "w6",
+          "text": "M",
+          "start": 3.249,
+          "end": 3.424
+        },
+        {
+          "id": "w7",
+          "text": "C",
+          "start": 3.424,
+          "end": 3.599
+        },
+        {
+          "id": "w8",
+          "text": "P",
+          "start": 3.599,
+          "end": 3.775
+        },
+        {
+          "id": "w9",
+          "text": "server",
+          "start": 3.775,
+          "end": 4.217
+        },
+        {
+          "id": "w10",
+          "text": "and",
+          "start": 4.217,
+          "end": 4.438
+        },
+        {
+          "id": "w11",
+          "text": "Python",
+          "start": 4.438,
+          "end": 4.88
+        },
+        {
+          "id": "w12",
+          "text": "S",
+          "start": 4.88,
+          "end": 5.056
+        },
+        {
+          "id": "w13",
+          "text": "D",
+          "start": 5.056,
+          "end": 5.231
+        },
+        {
+          "id": "w14",
+          "text": "K.",
+          "start": 5.231,
+          "end": 5.617
+        },
+        {
+          "id": "w15",
+          "text": "Schemas,",
+          "start": 5.617,
+          "end": 6.221
+        },
+        {
+          "id": "w16",
+          "text": "ownership,",
+          "start": 6.221,
+          "end": 6.972
+        },
+        {
+          "id": "w17",
+          "text": "lineage,",
+          "start": 6.972,
+          "end": 7.575
+        },
+        {
+          "id": "w18",
+          "text": "contracts,",
+          "start": 7.575,
+          "end": 8.326
+        },
+        {
+          "id": "w19",
+          "text": "dashboards,",
+          "start": 8.326,
+          "end": 9.151
+        },
+        {
+          "id": "w20",
+          "text": "and",
+          "start": 9.151,
+          "end": 9.372
+        },
+        {
+          "id": "w21",
+          "text": "M",
+          "start": 9.372,
+          "end": 9.547
+        },
+        {
+          "id": "w22",
+          "text": "L",
+          "start": 9.547,
+          "end": 9.723
+        },
+        {
+          "id": "w23",
+          "text": "metadata",
+          "start": 9.723,
+          "end": 10.312
+        },
+        {
+          "id": "w24",
+          "text": "form",
+          "start": 10.312,
+          "end": 10.607
+        },
+        {
+          "id": "w25",
+          "text": "an",
+          "start": 10.607,
+          "end": 10.782
+        },
+        {
+          "id": "w26",
+          "text": "executable",
+          "start": 10.782,
+          "end": 11.519
+        },
+        {
+          "id": "w27",
+          "text": "graph",
+          "start": 11.519,
+          "end": 11.888
+        },
+        {
+          "id": "w28",
+          "text": "controlling",
+          "start": 11.888,
+          "end": 12.698
+        },
+        {
+          "id": "w29",
+          "text": "scope,",
+          "start": 12.698,
+          "end": 13.154
+        },
+        {
+          "id": "w30",
+          "text": "plans,",
+          "start": 13.154,
+          "end": 13.611
+        },
+        {
+          "id": "w31",
+          "text": "and",
+          "start": 13.611,
+          "end": 13.832
+        },
+        {
+          "id": "w32",
+          "text": "authority.",
+          "start": 13.832,
+          "end": 14.705
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/voice/04.wav",
+      "duration_s": 14.123,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Against",
+          "start": 0.08,
+          "end": 0.608
+        },
+        {
+          "id": "w1",
+          "text": "that",
+          "start": 0.608,
+          "end": 0.909
+        },
+        {
+          "id": "w2",
+          "text": "frozen",
+          "start": 0.909,
+          "end": 1.362
+        },
+        {
+          "id": "w3",
+          "text": "truth",
+          "start": 1.362,
+          "end": 1.738
+        },
+        {
+          "id": "w4",
+          "text": "set,",
+          "start": 1.738,
+          "end": 2.054
+        },
+        {
+          "id": "w5",
+          "text": "DataHub",
+          "start": 2.054,
+          "end": 2.582
+        },
+        {
+          "id": "w6",
+          "text": "grounds",
+          "start": 2.582,
+          "end": 3.11
+        },
+        {
+          "id": "w7",
+          "text": "all",
+          "start": 3.11,
+          "end": 3.336
+        },
+        {
+          "id": "w8",
+          "text": "seven",
+          "start": 3.336,
+          "end": 3.713
+        },
+        {
+          "id": "w9",
+          "text": "impacts:",
+          "start": 3.713,
+          "end": 4.33
+        },
+        {
+          "id": "w10",
+          "text": "two",
+          "start": 4.33,
+          "end": 4.556
+        },
+        {
+          "id": "w11",
+          "text": "dbt",
+          "start": 4.556,
+          "end": 4.783
+        },
+        {
+          "id": "w12",
+          "text": "models,",
+          "start": 4.783,
+          "end": 5.325
+        },
+        {
+          "id": "w13",
+          "text": "Airflow,",
+          "start": 5.325,
+          "end": 5.942
+        },
+        {
+          "id": "w14",
+          "text": "a",
+          "start": 5.942,
+          "end": 6.122
+        },
+        {
+          "id": "w15",
+          "text": "dashboard,",
+          "start": 6.122,
+          "end": 6.89
+        },
+        {
+          "id": "w16",
+          "text": "an",
+          "start": 6.89,
+          "end": 7.069
+        },
+        {
+          "id": "w17",
+          "text": "M",
+          "start": 7.069,
+          "end": 7.249
+        },
+        {
+          "id": "w18",
+          "text": "L",
+          "start": 7.249,
+          "end": 7.428
+        },
+        {
+          "id": "w19",
+          "text": "feature,",
+          "start": 7.428,
+          "end": 8.046
+        },
+        {
+          "id": "w20",
+          "text": "model,",
+          "start": 8.046,
+          "end": 8.512
+        },
+        {
+          "id": "w21",
+          "text": "and",
+          "start": 8.512,
+          "end": 8.739
+        },
+        {
+          "id": "w22",
+          "text": "deployment.",
+          "start": 8.739,
+          "end": 9.708
+        },
+        {
+          "id": "w23",
+          "text": "Every",
+          "start": 9.708,
+          "end": 10.085
+        },
+        {
+          "id": "w24",
+          "text": "path",
+          "start": 10.085,
+          "end": 10.386
+        },
+        {
+          "id": "w25",
+          "text": "carries",
+          "start": 10.386,
+          "end": 10.914
+        },
+        {
+          "id": "w26",
+          "text": "its",
+          "start": 10.914,
+          "end": 11.14
+        },
+        {
+          "id": "w27",
+          "text": "owner,",
+          "start": 11.14,
+          "end": 11.607
+        },
+        {
+          "id": "w28",
+          "text": "priority,",
+          "start": 11.607,
+          "end": 12.3
+        },
+        {
+          "id": "w29",
+          "text": "and",
+          "start": 12.3,
+          "end": 12.526
+        },
+        {
+          "id": "w30",
+          "text": "exact",
+          "start": 12.526,
+          "end": 12.903
+        },
+        {
+          "id": "w31",
+          "text": "source",
+          "start": 12.903,
+          "end": 13.355
+        },
+        {
+          "id": "w32",
+          "text": "object.",
+          "start": 13.355,
+          "end": 14.023
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/voice/05.wav",
+      "duration_s": 15.488,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.083
+        },
+        {
+          "id": "w1",
+          "text": "compiles",
+          "start": 1.083,
+          "end": 1.7
+        },
+        {
+          "id": "w2",
+          "text": "nine",
+          "start": 1.7,
+          "end": 2.009
+        },
+        {
+          "id": "w3",
+          "text": "pull-request-ready",
+          "start": 2.009,
+          "end": 3.243
+        },
+        {
+          "id": "w4",
+          "text": "drafts",
+          "start": 3.243,
+          "end": 3.706
+        },
+        {
+          "id": "w5",
+          "text": "for",
+          "start": 3.706,
+          "end": 3.937
+        },
+        {
+          "id": "w6",
+          "text": "human",
+          "start": 3.937,
+          "end": 4.323
+        },
+        {
+          "id": "w7",
+          "text": "review,",
+          "start": 4.323,
+          "end": 4.878
+        },
+        {
+          "id": "w8",
+          "text": "never",
+          "start": 4.878,
+          "end": 5.263
+        },
+        {
+          "id": "w9",
+          "text": "auto-merged:",
+          "start": 5.263,
+          "end": 6.127
+        },
+        {
+          "id": "w10",
+          "text": "S",
+          "start": 6.127,
+          "end": 6.31
+        },
+        {
+          "id": "w11",
+          "text": "Q",
+          "start": 6.31,
+          "end": 6.494
+        },
+        {
+          "id": "w12",
+          "text": "L,",
+          "start": 6.494,
+          "end": 6.77
+        },
+        {
+          "id": "w13",
+          "text": "dbt",
+          "start": 6.77,
+          "end": 7.001
+        },
+        {
+          "id": "w14",
+          "text": "model",
+          "start": 7.001,
+          "end": 7.387
+        },
+        {
+          "id": "w15",
+          "text": "and",
+          "start": 7.387,
+          "end": 7.618
+        },
+        {
+          "id": "w16",
+          "text": "tests,",
+          "start": 7.618,
+          "end": 8.096
+        },
+        {
+          "id": "w17",
+          "text": "validation",
+          "start": 8.096,
+          "end": 8.867
+        },
+        {
+          "id": "w18",
+          "text": "queries,",
+          "start": 8.867,
+          "end": 9.499
+        },
+        {
+          "id": "w19",
+          "text": "an",
+          "start": 9.499,
+          "end": 9.683
+        },
+        {
+          "id": "w20",
+          "text": "Airflow",
+          "start": 9.683,
+          "end": 10.223
+        },
+        {
+          "id": "w21",
+          "text": "evidence",
+          "start": 10.223,
+          "end": 10.84
+        },
+        {
+          "id": "w22",
+          "text": "gate,",
+          "start": 10.84,
+          "end": 11.24
+        },
+        {
+          "id": "w23",
+          "text": "an",
+          "start": 11.24,
+          "end": 11.424
+        },
+        {
+          "id": "w24",
+          "text": "M",
+          "start": 11.424,
+          "end": 11.608
+        },
+        {
+          "id": "w25",
+          "text": "L",
+          "start": 11.608,
+          "end": 11.792
+        },
+        {
+          "id": "w26",
+          "text": "contract,",
+          "start": 11.792,
+          "end": 12.501
+        },
+        {
+          "id": "w27",
+          "text": "migration",
+          "start": 12.501,
+          "end": 13.195
+        },
+        {
+          "id": "w28",
+          "text": "plan,",
+          "start": 13.195,
+          "end": 13.595
+        },
+        {
+          "id": "w29",
+          "text": "and",
+          "start": 13.595,
+          "end": 13.827
+        },
+        {
+          "id": "w30",
+          "text": "a",
+          "start": 13.827,
+          "end": 14.01
+        },
+        {
+          "id": "w31",
+          "text": "real",
+          "start": 14.01,
+          "end": 14.319
+        },
+        {
+          "id": "w32",
+          "text": "unified",
+          "start": 14.319,
+          "end": 14.859
+        },
+        {
+          "id": "w33",
+          "text": "diff.",
+          "start": 14.859,
+          "end": 15.388
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/voice/06.wav",
+      "duration_s": 16.085,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Fourteen",
+          "start": 0.08,
+          "end": 0.662
+        },
+        {
+          "id": "w1",
+          "text": "deterministic",
+          "start": 0.662,
+          "end": 1.607
+        },
+        {
+          "id": "w2",
+          "text": "gates",
+          "start": 1.607,
+          "end": 1.971
+        },
+        {
+          "id": "w3",
+          "text": "run",
+          "start": 1.971,
+          "end": 2.189
+        },
+        {
+          "id": "w4",
+          "text": "in",
+          "start": 2.189,
+          "end": 2.363
+        },
+        {
+          "id": "w5",
+          "text": "Duck",
+          "start": 2.363,
+          "end": 2.654
+        },
+        {
+          "id": "w6",
+          "text": "D",
+          "start": 2.654,
+          "end": 2.827
+        },
+        {
+          "id": "w7",
+          "text": "B,",
+          "start": 2.827,
+          "end": 3.086
+        },
+        {
+          "id": "w8",
+          "text": "dbt",
+          "start": 3.086,
+          "end": 3.305
+        },
+        {
+          "id": "w9",
+          "text": "Core,",
+          "start": 3.305,
+          "end": 3.682
+        },
+        {
+          "id": "w10",
+          "text": "the",
+          "start": 3.682,
+          "end": 3.9
+        },
+        {
+          "id": "w11",
+          "text": "official",
+          "start": 3.9,
+          "end": 4.482
+        },
+        {
+          "id": "w12",
+          "text": "Airflow",
+          "start": 4.482,
+          "end": 4.992
+        },
+        {
+          "id": "w13",
+          "text": "container,",
+          "start": 4.992,
+          "end": 5.733
+        },
+        {
+          "id": "w14",
+          "text": "feature-parity",
+          "start": 5.733,
+          "end": 6.678
+        },
+        {
+          "id": "w15",
+          "text": "checks,",
+          "start": 6.678,
+          "end": 7.201
+        },
+        {
+          "id": "w16",
+          "text": "and",
+          "start": 7.201,
+          "end": 7.42
+        },
+        {
+          "id": "w17",
+          "text": "Git",
+          "start": 7.42,
+          "end": 7.638
+        },
+        {
+          "id": "w18",
+          "text": "patch",
+          "start": 7.638,
+          "end": 8.001
+        },
+        {
+          "id": "w19",
+          "text": "application.",
+          "start": 8.001,
+          "end": 9.009
+        },
+        {
+          "id": "w20",
+          "text": "All",
+          "start": 9.009,
+          "end": 9.228
+        },
+        {
+          "id": "w21",
+          "text": "pass.",
+          "start": 9.228,
+          "end": 9.726
+        },
+        {
+          "id": "w22",
+          "text": "Remove",
+          "start": 9.726,
+          "end": 10.163
+        },
+        {
+          "id": "w23",
+          "text": "one",
+          "start": 10.163,
+          "end": 10.381
+        },
+        {
+          "id": "w24",
+          "text": "lineage",
+          "start": 10.381,
+          "end": 10.89
+        },
+        {
+          "id": "w25",
+          "text": "page,",
+          "start": 10.89,
+          "end": 11.268
+        },
+        {
+          "id": "w26",
+          "text": "and",
+          "start": 11.268,
+          "end": 11.486
+        },
+        {
+          "id": "w27",
+          "text": "EvidenceGraph",
+          "start": 11.486,
+          "end": 12.432
+        },
+        {
+          "id": "w28",
+          "text": "revokes",
+          "start": 12.432,
+          "end": 12.941
+        },
+        {
+          "id": "w29",
+          "text": "proposal",
+          "start": 12.941,
+          "end": 13.523
+        },
+        {
+          "id": "w30",
+          "text": "authority",
+          "start": 13.523,
+          "end": 14.177
+        },
+        {
+          "id": "w31",
+          "text": "and",
+          "start": 14.177,
+          "end": 14.395
+        },
+        {
+          "id": "w32",
+          "text": "blocks",
+          "start": 14.395,
+          "end": 14.832
+        },
+        {
+          "id": "w33",
+          "text": "every",
+          "start": 14.832,
+          "end": 15.196
+        },
+        {
+          "id": "w34",
+          "text": "mutation.",
+          "start": 15.196,
+          "end": 15.985
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "path": "assets/voice/07.wav",
+      "duration_s": 18.389,
+      "words": [
+        {
+          "id": "w0",
+          "text": "With",
+          "start": 0.08,
+          "end": 0.373
+        },
+        {
+          "id": "w1",
+          "text": "explicit",
+          "start": 0.373,
+          "end": 0.96
+        },
+        {
+          "id": "w2",
+          "text": "approval,",
+          "start": 0.96,
+          "end": 1.635
+        },
+        {
+          "id": "w3",
+          "text": "a",
+          "start": 1.635,
+          "end": 1.809
+        },
+        {
+          "id": "w4",
+          "text": "tag,",
+          "start": 1.809,
+          "end": 2.117
+        },
+        {
+          "id": "w5",
+          "text": "description,",
+          "start": 2.117,
+          "end": 3.011
+        },
+        {
+          "id": "w6",
+          "text": "and",
+          "start": 3.011,
+          "end": 3.231
+        },
+        {
+          "id": "w7",
+          "text": "evidence",
+          "start": 3.231,
+          "end": 3.818
+        },
+        {
+          "id": "w8",
+          "text": "document",
+          "start": 3.818,
+          "end": 4.405
+        },
+        {
+          "id": "w9",
+          "text": "write",
+          "start": 4.405,
+          "end": 4.772
+        },
+        {
+          "id": "w10",
+          "text": "back",
+          "start": 4.772,
+          "end": 5.066
+        },
+        {
+          "id": "w11",
+          "text": "to",
+          "start": 5.066,
+          "end": 5.24
+        },
+        {
+          "id": "w12",
+          "text": "DataHub",
+          "start": 5.24,
+          "end": 5.754
+        },
+        {
+          "id": "w13",
+          "text": "and",
+          "start": 5.754,
+          "end": 5.974
+        },
+        {
+          "id": "w14",
+          "text": "verify",
+          "start": 5.974,
+          "end": 6.414
+        },
+        {
+          "id": "w15",
+          "text": "by",
+          "start": 6.414,
+          "end": 6.589
+        },
+        {
+          "id": "w16",
+          "text": "readback.",
+          "start": 6.589,
+          "end": 7.385
+        },
+        {
+          "id": "w17",
+          "text": "A",
+          "start": 7.385,
+          "end": 7.56
+        },
+        {
+          "id": "w18",
+          "text": "fresh",
+          "start": 7.56,
+          "end": 7.927
+        },
+        {
+          "id": "w19",
+          "text": "client",
+          "start": 7.927,
+          "end": 8.367
+        },
+        {
+          "id": "w20",
+          "text": "retries",
+          "start": 8.367,
+          "end": 8.881
+        },
+        {
+          "id": "w21",
+          "text": "them:",
+          "start": 8.881,
+          "end": 9.262
+        },
+        {
+          "id": "w22",
+          "text": "three",
+          "start": 9.262,
+          "end": 9.628
+        },
+        {
+          "id": "w23",
+          "text": "verified",
+          "start": 9.628,
+          "end": 10.215
+        },
+        {
+          "id": "w24",
+          "text": "no-ops,",
+          "start": 10.215,
+          "end": 10.67
+        },
+        {
+          "id": "w25",
+          "text": "zero",
+          "start": 10.67,
+          "end": 10.963
+        },
+        {
+          "id": "w26",
+          "text": "duplicates.",
+          "start": 10.963,
+          "end": 11.906
+        },
+        {
+          "id": "w27",
+          "text": "A",
+          "start": 11.906,
+          "end": 12.081
+        },
+        {
+          "id": "w28",
+          "text": "labeled",
+          "start": 12.081,
+          "end": 12.595
+        },
+        {
+          "id": "w29",
+          "text": "closure",
+          "start": 12.595,
+          "end": 13.108
+        },
+        {
+          "id": "w30",
+          "text": "replay",
+          "start": 13.108,
+          "end": 13.548
+        },
+        {
+          "id": "w31",
+          "text": "closes",
+          "start": 13.548,
+          "end": 13.989
+        },
+        {
+          "id": "w32",
+          "text": "only",
+          "start": 13.989,
+          "end": 14.282
+        },
+        {
+          "id": "w33",
+          "text": "on",
+          "start": 14.282,
+          "end": 14.457
+        },
+        {
+          "id": "w34",
+          "text": "a",
+          "start": 14.457,
+          "end": 14.631
+        },
+        {
+          "id": "w35",
+          "text": "newer",
+          "start": 14.631,
+          "end": 14.998
+        },
+        {
+          "id": "w36",
+          "text": "complete",
+          "start": 14.998,
+          "end": 15.585
+        },
+        {
+          "id": "w37",
+          "text": "graph",
+          "start": 15.585,
+          "end": 15.952
+        },
+        {
+          "id": "w38",
+          "text": "with",
+          "start": 15.952,
+          "end": 16.245
+        },
+        {
+          "id": "w39",
+          "text": "zero",
+          "start": 16.245,
+          "end": 16.539
+        },
+        {
+          "id": "w40",
+          "text": "retired-field",
+          "start": 16.539,
+          "end": 17.419
+        },
+        {
+          "id": "w41",
+          "text": "consumers.",
+          "start": 17.419,
+          "end": 18.289
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "path": "assets/voice/08.wav",
+      "duration_s": 12.864,
+      "words": [
+        {
+          "id": "w0",
+          "text": "EvidenceGraph",
+          "start": 0.08,
+          "end": 1.022
+        },
+        {
+          "id": "w1",
+          "text": "turns",
+          "start": 1.022,
+          "end": 1.385
+        },
+        {
+          "id": "w2",
+          "text": "DataHub",
+          "start": 1.385,
+          "end": 1.892
+        },
+        {
+          "id": "w3",
+          "text": "into",
+          "start": 1.892,
+          "end": 2.182
+        },
+        {
+          "id": "w4",
+          "text": "an",
+          "start": 2.182,
+          "end": 2.354
+        },
+        {
+          "id": "w5",
+          "text": "observe,",
+          "start": 2.354,
+          "end": 2.948
+        },
+        {
+          "id": "w6",
+          "text": "plan,",
+          "start": 2.948,
+          "end": 3.324
+        },
+        {
+          "id": "w7",
+          "text": "validate,",
+          "start": 3.324,
+          "end": 3.99
+        },
+        {
+          "id": "w8",
+          "text": "refuse-or-act",
+          "start": 3.99,
+          "end": 4.788
+        },
+        {
+          "id": "w9",
+          "text": "loop.",
+          "start": 4.788,
+          "end": 5.285
+        },
+        {
+          "id": "w10",
+          "text": "In",
+          "start": 5.285,
+          "end": 5.457
+        },
+        {
+          "id": "w11",
+          "text": "the",
+          "start": 5.457,
+          "end": 5.675
+        },
+        {
+          "id": "w12",
+          "text": "public",
+          "start": 5.675,
+          "end": 6.11
+        },
+        {
+          "id": "w13",
+          "text": "deterministic",
+          "start": 6.11,
+          "end": 7.052
+        },
+        {
+          "id": "w14",
+          "text": "replay,",
+          "start": 7.052,
+          "end": 7.573
+        },
+        {
+          "id": "w15",
+          "text": "audit",
+          "start": 7.573,
+          "end": 7.935
+        },
+        {
+          "id": "w16",
+          "text": "each",
+          "start": 7.935,
+          "end": 8.225
+        },
+        {
+          "id": "w17",
+          "text": "claim,",
+          "start": 8.225,
+          "end": 8.674
+        },
+        {
+          "id": "w18",
+          "text": "source",
+          "start": 8.674,
+          "end": 9.109
+        },
+        {
+          "id": "w19",
+          "text": "object,",
+          "start": 9.109,
+          "end": 9.63
+        },
+        {
+          "id": "w20",
+          "text": "confidence,",
+          "start": 9.63,
+          "end": 10.441
+        },
+        {
+          "id": "w21",
+          "text": "test",
+          "start": 10.441,
+          "end": 10.731
+        },
+        {
+          "id": "w22",
+          "text": "receipt,",
+          "start": 10.731,
+          "end": 11.325
+        },
+        {
+          "id": "w23",
+          "text": "and",
+          "start": 11.325,
+          "end": 11.542
+        },
+        {
+          "id": "w24",
+          "text": "unresolved",
+          "start": 11.542,
+          "end": 12.267
+        },
+        {
+          "id": "w25",
+          "text": "risk.",
+          "start": 12.267,
+          "end": 12.764
+        }
+      ]
+    }
+  ],
+  "sfx": []
 }

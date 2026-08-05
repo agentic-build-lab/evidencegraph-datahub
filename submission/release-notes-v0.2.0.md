@@ -18,7 +18,7 @@ and the authority it is allowed to exercise.
 - Demonstrates the complete-versus-missing-lineage authority switch: complete
   evidence permits reviewable proposals; incomplete evidence caps confidence,
   quarantines drafts, and produces zero write-back proposals.
-- Includes recorded, readback-verified DataHub write-back receipts, an
+- Includes recorded, readback-verified controlled local DataHub write-back receipts, an
   immediate stateless retry with three verified no-ops, and a separately
   labeled deterministic closure replay.
 
@@ -26,7 +26,7 @@ and the authority it is allowed to exercise.
 
 The hosted Assurance Studio is a read-only replay over repository-owned
 evidence and exposes no DataHub credential or mutation endpoint. Recorded
-write-back receipts come from a separate approved local DataHub run. Fresh
+write-back receipts come from a controlled, explicitly approved local DataHub run. Fresh
 graph closure is claimed only for the labeled deterministic before/after
 replay, and the 7-of-7 measurement is scoped to the declared synthetic graph.
 

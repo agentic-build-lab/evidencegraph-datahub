@@ -1,7 +1,7 @@
 # SCRIPT — EvidenceGraph
 
 - **Voice:** Kokoro af_heart (offline)
-- **Voice settings:** speed 1.02
+- **Voice settings:** speed 1.05
 - **Voice direction:** Calm, technically credible, and decisive. Let numbers breathe. Avoid hype.
 **Caption direction:** One complete phrase or clause at a time; maximum two lines; no word-by-word highlighting.
 
@@ -13,7 +13,7 @@
 
 **Delivery:** Open with concern, then land the assurance question firmly.
 
-    A schema change should not become an incident. Before anyone merges it, EvidenceGraph asks a harder question: what will this change actually break?
+    A schema change should not become an incident. EvidenceGraph, an autonomous assurance agent, asks before merge: what will this change actually break?
 
 ## Line 2 — Repository context is incomplete (Frame 2)
 
@@ -21,7 +21,7 @@
 
 **Delivery:** Measured and factual; pause after three of seven.
 
-    Repository search finds three of seven downstream consumers. It misses the dashboard, the machine-learning feature, the model, and the production deployment. That is a forty-two point nine percent view — and a false-safe decision waiting to happen.
+    In our frozen synthetic seven-consumer truth set, repository search finds only three. It misses the dashboard, machine-learning feature, model, and deployment: a forty-two point nine percent view, and a false-safe decision.
 
 ## Line 3 — Make the context graph executable (Frame 3)
 
@@ -29,15 +29,15 @@
 
 **Delivery:** Build momentum through the context types, then resolve on context graph.
 
-    EvidenceGraph reads DataHub through the official MCP server and the Python SDK. Schemas, ownership, lineage, contracts, tags, documentation, dashboards, and machine-learning metadata become one executable context graph.
+    EvidenceGraph reads DataHub through the official MCP server and Python SDK. Schemas, ownership, lineage, contracts, dashboards, and ML metadata form an executable graph controlling scope, plans, and authority.
 
-## Line 4 — Recover the complete blast radius (Frame 4)
+## Line 4 — Ground all seven declared truth-set impacts (Frame 4)
 
 **Time:** 40.902–58.991s
 
 **Delivery:** Confident enumeration, with emphasis on exact DataHub object.
 
-    Now the blast radius is complete: two dbt models, an Airflow job, an executive dashboard, an ML feature, a model, and its production deployment. Each path is routed to its owner, prioritized, and linked to the exact DataHub object that supports it.
+    Against that frozen truth set, DataHub grounds all seven impacts: two dbt models, Airflow, a dashboard, an ML feature, model, and deployment. Every path carries its owner, priority, and exact source object.
 
 ## Line 5 — Compile migration, not advice (Frame 5)
 
@@ -45,7 +45,7 @@
 
 **Delivery:** Crisp artifact roll call; emphasize the real unified diff.
 
-    EvidenceGraph does not stop at an explanation. It compiles nine concrete artifacts: SQL, dbt model and tests, validation queries, an Airflow evidence gate, an ML contract, a migration plan, and a real unified diff that Git can apply cleanly.
+    EvidenceGraph compiles nine pull-request-ready drafts for human review, never auto-merged: SQL, dbt model and tests, validation queries, an Airflow evidence gate, an ML contract, migration plan, and a real unified diff.
 
 ## Line 6 — Evidence changes authority (Frame 6)
 
@@ -53,7 +53,7 @@
 
 **Delivery:** Accelerate through the passing gates, then become deliberately firm on refusal.
 
-    Fourteen deterministic gates: DuckDB, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All fourteen pass. Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation.
+    Fourteen deterministic gates run in DuckDB, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All pass. Remove one lineage page, and EvidenceGraph revokes proposal authority and blocks every mutation.
 
 ## Line 7 — Governed writeback and closure (Frame 7)
 
@@ -61,7 +61,7 @@
 
 **Delivery:** Three clean proof beats: verified writeback, no-op retry, fresh closure.
 
-    With explicit approval, three scoped results write back into DataHub and verify by readback. A new client retries the same plan: three verified no-ops, no duplicates. In the deterministic closure replay, EvidenceGraph requires a newer complete graph and closes only when the retired field has zero remaining consumers.
+    With explicit approval in a controlled local DataHub run, a tag, description, and evidence document write back and verify by readback. A fresh client retries them: three verified no-ops, zero duplicates. A labeled closure replay closes only on a newer complete graph with zero retired-field consumers.
 
 ## Line 8 — Inspect every claim (Frame 8)
 
@@ -69,4 +69,4 @@
 
 **Delivery:** Quiet, confident invitation to inspect rather than believe.
 
-    EvidenceGraph makes DataHub's context graph operational. Inspect the public replay, audit every claim in the evidence ledger.
+    EvidenceGraph turns DataHub into an observe, plan, validate, refuse-or-act loop. In the public deterministic replay, audit each claim, source object, confidence, test receipt, and unresolved risk.

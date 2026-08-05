@@ -8,164 +8,158 @@
       "id": "phrase-0",
       "frame": 1,
       "start": 0.08,
-      "end": 2.86,
+      "end": 2.8419999999999996,
       "text": "A schema change should not become an incident.",
       "words": [
         {
           "id": "phrase-0-word-0",
           "text": "A",
           "start": 0.08,
-          "end": 0.237
+          "end": 0.236
         },
         {
           "id": "phrase-0-word-1",
           "text": "schema",
-          "start": 0.237,
-          "end": 0.634
+          "start": 0.236,
+          "end": 0.63
         },
         {
           "id": "phrase-0-word-2",
           "text": "change",
-          "start": 0.634,
-          "end": 1.03
+          "start": 0.63,
+          "end": 1.024
         },
         {
           "id": "phrase-0-word-3",
           "text": "should",
-          "start": 1.03,
-          "end": 1.426
+          "start": 1.024,
+          "end": 1.418
         },
         {
           "id": "phrase-0-word-4",
           "text": "not",
-          "start": 1.426,
-          "end": 1.624
+          "start": 1.418,
+          "end": 1.615
         },
         {
           "id": "phrase-0-word-5",
           "text": "become",
-          "start": 1.624,
-          "end": 2.02
+          "start": 1.615,
+          "end": 2.008
         },
         {
           "id": "phrase-0-word-6",
           "text": "an",
-          "start": 2.02,
-          "end": 2.178
+          "start": 2.008,
+          "end": 2.165
         },
         {
           "id": "phrase-0-word-7",
           "text": "incident.",
-          "start": 2.178,
-          "end": 2.895
+          "start": 2.165,
+          "end": 2.877
         }
       ]
     },
     {
       "id": "phrase-1",
       "frame": 1,
-      "start": 2.895,
-      "end": 6.568,
-      "text": "Before anyone merges it, EvidenceGraph asks a harder question:",
+      "start": 2.877,
+      "end": 6.646,
+      "text": "EvidenceGraph, an autonomous assurance agent, asks before merge:",
       "words": [
         {
           "id": "phrase-1-word-0",
-          "text": "Before",
-          "start": 2.895,
-          "end": 3.291
+          "text": "EvidenceGraph,",
+          "start": 2.877,
+          "end": 3.808
         },
         {
           "id": "phrase-1-word-1",
-          "text": "anyone",
-          "start": 3.291,
-          "end": 3.687
+          "text": "an",
+          "start": 3.808,
+          "end": 3.965
         },
         {
           "id": "phrase-1-word-2",
-          "text": "merges",
-          "start": 3.687,
-          "end": 4.084
+          "text": "autonomous",
+          "start": 3.965,
+          "end": 4.621
         },
         {
           "id": "phrase-1-word-3",
-          "text": "it,",
-          "start": 4.084,
-          "end": 4.319
+          "text": "assurance",
+          "start": 4.621,
+          "end": 5.212
         },
         {
           "id": "phrase-1-word-4",
-          "text": "EvidenceGraph",
-          "start": 4.319,
-          "end": 5.178
+          "text": "agent,",
+          "start": 5.212,
+          "end": 5.618
         },
         {
           "id": "phrase-1-word-5",
           "text": "asks",
-          "start": 5.178,
-          "end": 5.442
+          "start": 5.618,
+          "end": 5.881
         },
         {
           "id": "phrase-1-word-6",
-          "text": "a",
-          "start": 5.442,
-          "end": 5.599
+          "text": "before",
+          "start": 5.881,
+          "end": 6.274
         },
         {
           "id": "phrase-1-word-7",
-          "text": "harder",
-          "start": 5.599,
-          "end": 5.996
-        },
-        {
-          "id": "phrase-1-word-8",
-          "text": "question:",
-          "start": 5.996,
-          "end": 6.603
+          "text": "merge:",
+          "start": 6.274,
+          "end": 6.681
         }
       ]
     },
     {
       "id": "phrase-2",
       "frame": 1,
-      "start": 6.603,
-      "end": 8.999,
+      "start": 6.681,
+      "end": 9.063,
       "text": "what will this change actually break?",
       "words": [
         {
           "id": "phrase-2-word-0",
           "text": "what",
-          "start": 6.603,
-          "end": 6.867
+          "start": 6.681,
+          "end": 6.943
         },
         {
           "id": "phrase-2-word-1",
           "text": "will",
-          "start": 6.867,
-          "end": 7.131
+          "start": 6.943,
+          "end": 7.206
         },
         {
           "id": "phrase-2-word-2",
           "text": "this",
-          "start": 7.131,
-          "end": 7.395
+          "start": 7.206,
+          "end": 7.468
         },
         {
           "id": "phrase-2-word-3",
           "text": "change",
-          "start": 7.395,
-          "end": 7.791
+          "start": 7.468,
+          "end": 7.862
         },
         {
           "id": "phrase-2-word-4",
           "text": "actually",
-          "start": 7.791,
-          "end": 8.32
+          "start": 7.862,
+          "end": 8.387
         },
         {
           "id": "phrase-2-word-5",
           "text": "break?",
-          "start": 8.32,
-          "end": 8.839
+          "start": 8.387,
+          "end": 8.903
         }
       ]
     },
@@ -173,1763 +167,1715 @@
       "id": "phrase-3",
       "frame": 2,
       "start": 9.544,
-      "end": 13.248,
-      "text": "Repository search finds three of seven downstream consumers.",
+      "end": 12.493,
+      "text": "In our frozen synthetic seven-consumer truth set,",
       "words": [
         {
           "id": "phrase-3-word-0",
-          "text": "Repository",
+          "text": "In",
           "start": 9.544,
-          "end": 10.221
+          "end": 9.711
         },
         {
           "id": "phrase-3-word-1",
-          "text": "search",
-          "start": 10.221,
-          "end": 10.627
+          "text": "our",
+          "start": 9.711,
+          "end": 9.921
         },
         {
           "id": "phrase-3-word-2",
-          "text": "finds",
-          "start": 10.627,
-          "end": 10.965
+          "text": "frozen",
+          "start": 9.921,
+          "end": 10.342
         },
         {
           "id": "phrase-3-word-3",
-          "text": "three",
-          "start": 10.965,
-          "end": 11.304
+          "text": "synthetic",
+          "start": 10.342,
+          "end": 10.973
         },
         {
           "id": "phrase-3-word-4",
-          "text": "of",
-          "start": 11.304,
-          "end": 11.465
+          "text": "seven-consumer",
+          "start": 10.973,
+          "end": 11.884
         },
         {
           "id": "phrase-3-word-5",
-          "text": "seven",
-          "start": 11.465,
-          "end": 11.803
+          "text": "truth",
+          "start": 11.884,
+          "end": 12.234
         },
         {
           "id": "phrase-3-word-6",
-          "text": "downstream",
-          "start": 11.803,
-          "end": 12.48
-        },
-        {
-          "id": "phrase-3-word-7",
-          "text": "consumers.",
-          "start": 12.48,
-          "end": 13.283
+          "text": "set,",
+          "start": 12.234,
+          "end": 12.528
         }
       ]
     },
     {
       "id": "phrase-4",
       "frame": 2,
-      "start": 13.283,
-      "end": 16.48,
-      "text": "It misses the dashboard, the machine-learning feature,",
+      "start": 12.528,
+      "end": 14.796,
+      "text": "repository search finds only three.",
       "words": [
         {
           "id": "phrase-4-word-0",
-          "text": "It",
-          "start": 13.283,
-          "end": 13.444
+          "text": "repository",
+          "start": 12.528,
+          "end": 13.229
         },
         {
           "id": "phrase-4-word-1",
-          "text": "misses",
-          "start": 13.444,
-          "end": 13.85
+          "text": "search",
+          "start": 13.229,
+          "end": 13.65
         },
         {
           "id": "phrase-4-word-2",
-          "text": "the",
-          "start": 13.85,
-          "end": 14.053
+          "text": "finds",
+          "start": 13.65,
+          "end": 14
         },
         {
           "id": "phrase-4-word-3",
-          "text": "dashboard,",
-          "start": 14.053,
-          "end": 14.743
+          "text": "only",
+          "start": 14,
+          "end": 14.281
         },
         {
           "id": "phrase-4-word-4",
-          "text": "the",
-          "start": 14.743,
-          "end": 14.946
-        },
-        {
-          "id": "phrase-4-word-5",
-          "text": "machine-learning",
-          "start": 14.946,
-          "end": 15.961
-        },
-        {
-          "id": "phrase-4-word-6",
-          "text": "feature,",
-          "start": 15.961,
-          "end": 16.515
+          "text": "three.",
+          "start": 14.281,
+          "end": 14.831
         }
       ]
     },
     {
       "id": "phrase-5",
       "frame": 2,
-      "start": 16.515,
-      "end": 19.056,
-      "text": "the model, and the production deployment.",
+      "start": 14.831,
+      "end": 18.368,
+      "text": "It misses the dashboard, machine-learning feature, model,",
       "words": [
         {
           "id": "phrase-5-word-0",
-          "text": "the",
-          "start": 16.515,
-          "end": 16.719
+          "text": "It",
+          "start": 14.831,
+          "end": 14.998
         },
         {
           "id": "phrase-5-word-1",
-          "text": "model,",
-          "start": 16.719,
-          "end": 17.138
+          "text": "misses",
+          "start": 14.998,
+          "end": 15.419
         },
         {
           "id": "phrase-5-word-2",
-          "text": "and",
-          "start": 17.138,
-          "end": 17.341
+          "text": "the",
+          "start": 15.419,
+          "end": 15.629
         },
         {
           "id": "phrase-5-word-3",
-          "text": "the",
-          "start": 17.341,
-          "end": 17.544
+          "text": "dashboard,",
+          "start": 15.629,
+          "end": 16.344
         },
         {
           "id": "phrase-5-word-4",
-          "text": "production",
-          "start": 17.544,
-          "end": 18.22
+          "text": "machine-learning",
+          "start": 16.344,
+          "end": 17.395
         },
         {
           "id": "phrase-5-word-5",
-          "text": "deployment.",
-          "start": 18.22,
-          "end": 19.091
+          "text": "feature,",
+          "start": 17.395,
+          "end": 17.969
+        },
+        {
+          "id": "phrase-5-word-6",
+          "text": "model,",
+          "start": 17.969,
+          "end": 18.403
         }
       ]
     },
     {
       "id": "phrase-6",
       "frame": 2,
-      "start": 19.091,
-      "end": 24.649,
-      "text": "That is a 42.9 percent view and a false-safe decision waiting to happen.",
+      "start": 18.403,
+      "end": 21.576,
+      "text": "and deployment: a 42.9 percent view,",
       "words": [
         {
           "id": "phrase-6-word-0",
-          "text": "That",
-          "start": 19.091,
-          "end": 19.361
+          "text": "and",
+          "start": 18.403,
+          "end": 18.613
         },
         {
           "id": "phrase-6-word-1",
-          "text": "is",
-          "start": 19.361,
-          "end": 19.523
+          "text": "deployment:",
+          "start": 18.613,
+          "end": 19.398
         },
         {
           "id": "phrase-6-word-2",
           "text": "a",
-          "start": 19.523,
-          "end": 19.684
+          "start": 19.398,
+          "end": 19.565
         },
         {
           "id": "phrase-6-word-3",
           "text": "forty-two",
-          "start": 19.684,
-          "end": 20.225
+          "start": 19.565,
+          "end": 20.125
         },
         {
           "id": "phrase-6-word-4",
           "text": "point",
-          "start": 20.225,
-          "end": 20.564
+          "start": 20.125,
+          "end": 20.476
         },
         {
           "id": "phrase-6-word-5",
           "text": "nine",
-          "start": 20.564,
-          "end": 20.834
+          "start": 20.476,
+          "end": 20.756
         },
         {
           "id": "phrase-6-word-6",
           "text": "percent",
-          "start": 20.834,
-          "end": 21.308
+          "start": 20.756,
+          "end": 21.247
         },
         {
           "id": "phrase-6-word-7",
-          "text": "view",
-          "start": 21.308,
-          "end": 21.579
-        },
-        {
-          "id": "phrase-6-word-8",
-          "text": "and",
-          "start": 21.74,
-          "end": 21.943
-        },
-        {
-          "id": "phrase-6-word-9",
-          "text": "a",
-          "start": 21.943,
-          "end": 22.104
-        },
-        {
-          "id": "phrase-6-word-10",
-          "text": "false-safe",
-          "start": 22.104,
-          "end": 22.713
-        },
-        {
-          "id": "phrase-6-word-11",
-          "text": "decision",
-          "start": 22.713,
-          "end": 23.255
-        },
-        {
-          "id": "phrase-6-word-12",
-          "text": "waiting",
-          "start": 23.255,
-          "end": 23.729
-        },
-        {
-          "id": "phrase-6-word-13",
-          "text": "to",
-          "start": 23.729,
-          "end": 23.89
-        },
-        {
-          "id": "phrase-6-word-14",
-          "text": "happen.",
-          "start": 23.89,
-          "end": 24.489
+          "text": "view,",
+          "start": 21.247,
+          "end": 21.611
         }
       ]
     },
     {
       "id": "phrase-7",
-      "frame": 3,
-      "start": 25.199,
-      "end": 30.973,
-      "text": "EvidenceGraph reads DataHub through the official MCP server and the Python SDK.",
+      "frame": 2,
+      "start": 21.611,
+      "end": 23.54,
+      "text": "and a false-safe decision.",
       "words": [
         {
           "id": "phrase-7-word-0",
-          "text": "EvidenceGraph",
-          "start": 25.199,
-          "end": 26.165
+          "text": "and",
+          "start": 21.611,
+          "end": 21.821
         },
         {
           "id": "phrase-7-word-1",
-          "text": "reads",
-          "start": 26.165,
-          "end": 26.537
+          "text": "a",
+          "start": 21.821,
+          "end": 21.988
         },
         {
           "id": "phrase-7-word-2",
-          "text": "DataHub",
-          "start": 26.537,
-          "end": 27.058
+          "text": "false-safe",
+          "start": 21.988,
+          "end": 22.619
         },
         {
           "id": "phrase-7-word-3",
-          "text": "through",
-          "start": 27.058,
-          "end": 27.578
-        },
-        {
-          "id": "phrase-7-word-4",
-          "text": "the",
-          "start": 27.578,
-          "end": 27.801
-        },
-        {
-          "id": "phrase-7-word-5",
-          "text": "official",
-          "start": 27.801,
-          "end": 28.396
-        },
-        {
-          "id": "phrase-7-word-6",
-          "text": "M",
-          "start": 28.396,
-          "end": 28.573
-        },
-        {
-          "id": "phrase-7-word-7",
-          "text": "C",
-          "start": 28.573,
-          "end": 28.75
-        },
-        {
-          "id": "phrase-7-word-8",
-          "text": "P",
-          "start": 28.75,
-          "end": 28.927
-        },
-        {
-          "id": "phrase-7-word-9",
-          "text": "server",
-          "start": 28.927,
-          "end": 29.373
-        },
-        {
-          "id": "phrase-7-word-10",
-          "text": "and",
-          "start": 29.373,
-          "end": 29.596
-        },
-        {
-          "id": "phrase-7-word-11",
-          "text": "the",
-          "start": 29.596,
-          "end": 29.819
-        },
-        {
-          "id": "phrase-7-word-12",
-          "text": "Python",
-          "start": 29.819,
-          "end": 30.265
-        },
-        {
-          "id": "phrase-7-word-13",
-          "text": "S",
-          "start": 30.265,
-          "end": 30.442
-        },
-        {
-          "id": "phrase-7-word-14",
-          "text": "D",
-          "start": 30.442,
-          "end": 30.619
-        },
-        {
-          "id": "phrase-7-word-15",
-          "text": "K.",
-          "start": 30.619,
-          "end": 31.008
+          "text": "decision.",
+          "start": 22.619,
+          "end": 23.38
         }
       ]
     },
     {
       "id": "phrase-8",
       "frame": 3,
-      "start": 31.008,
-      "end": 35.147000000000006,
-      "text": "Schemas, ownership, lineage, contracts, tags, documentation,",
+      "start": 25.199,
+      "end": 29.522,
+      "text": "EvidenceGraph reads DataHub through the official MCP server and",
       "words": [
         {
           "id": "phrase-8-word-0",
-          "text": "Schemas,",
-          "start": 31.008,
-          "end": 31.617
+          "text": "EvidenceGraph",
+          "start": 25.199,
+          "end": 26.157
         },
         {
           "id": "phrase-8-word-1",
-          "text": "ownership,",
-          "start": 31.617,
-          "end": 32.375
+          "text": "reads",
+          "start": 26.157,
+          "end": 26.525
         },
         {
           "id": "phrase-8-word-2",
-          "text": "lineage,",
-          "start": 32.375,
-          "end": 32.984
+          "text": "DataHub",
+          "start": 26.525,
+          "end": 27.041
         },
         {
           "id": "phrase-8-word-3",
-          "text": "contracts,",
-          "start": 32.984,
-          "end": 33.741
+          "text": "through",
+          "start": 27.041,
+          "end": 27.557
         },
         {
           "id": "phrase-8-word-4",
-          "text": "tags,",
-          "start": 33.741,
-          "end": 34.127
+          "text": "the",
+          "start": 27.557,
+          "end": 27.778
         },
         {
           "id": "phrase-8-word-5",
-          "text": "documentation,",
-          "start": 34.127,
-          "end": 35.182
+          "text": "official",
+          "start": 27.778,
+          "end": 28.368
+        },
+        {
+          "id": "phrase-8-word-6",
+          "text": "M",
+          "start": 28.368,
+          "end": 28.543
+        },
+        {
+          "id": "phrase-8-word-7",
+          "text": "C",
+          "start": 28.543,
+          "end": 28.718
+        },
+        {
+          "id": "phrase-8-word-8",
+          "text": "P",
+          "start": 28.718,
+          "end": 28.894
+        },
+        {
+          "id": "phrase-8-word-9",
+          "text": "server",
+          "start": 28.894,
+          "end": 29.336
+        },
+        {
+          "id": "phrase-8-word-10",
+          "text": "and",
+          "start": 29.336,
+          "end": 29.557
         }
       ]
     },
     {
       "id": "phrase-9",
       "frame": 3,
-      "start": 35.182,
-      "end": 40.624,
-      "text": "dashboards, and machine-learning metadata become one executable context graph.",
+      "start": 29.557,
+      "end": 30.701,
+      "text": "Python SDK.",
       "words": [
         {
           "id": "phrase-9-word-0",
-          "text": "dashboards,",
-          "start": 35.182,
-          "end": 36.014
+          "text": "Python",
+          "start": 29.557,
+          "end": 29.999
         },
         {
           "id": "phrase-9-word-1",
-          "text": "and",
-          "start": 36.014,
-          "end": 36.237
+          "text": "S",
+          "start": 29.999,
+          "end": 30.175
         },
         {
           "id": "phrase-9-word-2",
-          "text": "machine-learning",
-          "start": 36.237,
-          "end": 37.352
+          "text": "D",
+          "start": 30.175,
+          "end": 30.35
         },
         {
           "id": "phrase-9-word-3",
-          "text": "metadata",
-          "start": 37.352,
-          "end": 37.947
-        },
-        {
-          "id": "phrase-9-word-4",
-          "text": "become",
-          "start": 37.947,
-          "end": 38.393
-        },
-        {
-          "id": "phrase-9-word-5",
-          "text": "one",
-          "start": 38.393,
-          "end": 38.616
-        },
-        {
-          "id": "phrase-9-word-6",
-          "text": "executable",
-          "start": 38.616,
-          "end": 39.36
-        },
-        {
-          "id": "phrase-9-word-7",
-          "text": "context",
-          "start": 39.36,
-          "end": 39.88
-        },
-        {
-          "id": "phrase-9-word-8",
-          "text": "graph.",
-          "start": 39.88,
-          "end": 40.464
+          "text": "K.",
+          "start": 30.35,
+          "end": 30.736
         }
       ]
     },
     {
       "id": "phrase-10",
-      "frame": 4,
-      "start": 41.132,
-      "end": 44.291000000000004,
-      "text": "Now the blast radius is complete: two dbt models,",
+      "frame": 3,
+      "start": 30.736,
+      "end": 34.23500000000001,
+      "text": "Schemas, ownership, lineage, contracts, dashboards,",
       "words": [
         {
           "id": "phrase-10-word-0",
-          "text": "Now",
-          "start": 41.132,
-          "end": 41.361
+          "text": "Schemas,",
+          "start": 30.736,
+          "end": 31.34
         },
         {
           "id": "phrase-10-word-1",
-          "text": "the",
-          "start": 41.361,
-          "end": 41.591
+          "text": "ownership,",
+          "start": 31.34,
+          "end": 32.091
         },
         {
           "id": "phrase-10-word-2",
-          "text": "blast",
-          "start": 41.591,
-          "end": 41.973
+          "text": "lineage,",
+          "start": 32.091,
+          "end": 32.694
         },
         {
           "id": "phrase-10-word-3",
-          "text": "radius",
-          "start": 41.973,
-          "end": 42.432
+          "text": "contracts,",
+          "start": 32.694,
+          "end": 33.445
         },
         {
           "id": "phrase-10-word-4",
-          "text": "is",
-          "start": 42.432,
-          "end": 42.614
-        },
-        {
-          "id": "phrase-10-word-5",
-          "text": "complete:",
-          "start": 42.614,
-          "end": 43.317
-        },
-        {
-          "id": "phrase-10-word-6",
-          "text": "two",
-          "start": 43.317,
-          "end": 43.546
-        },
-        {
-          "id": "phrase-10-word-7",
-          "text": "dbt",
-          "start": 43.546,
-          "end": 43.776
-        },
-        {
-          "id": "phrase-10-word-8",
-          "text": "models,",
-          "start": 43.776,
-          "end": 44.326
+          "text": "dashboards,",
+          "start": 33.445,
+          "end": 34.27
         }
       ]
     },
     {
       "id": "phrase-11",
-      "frame": 4,
-      "start": 44.326,
-      "end": 48.151,
-      "text": "an Airflow job, an executive dashboard, an ML feature,",
+      "frame": 3,
+      "start": 34.27,
+      "end": 38.23800000000001,
+      "text": "and ML metadata form an executable graph controlling scope,",
       "words": [
         {
           "id": "phrase-11-word-0",
-          "text": "an",
-          "start": 44.326,
-          "end": 44.508
+          "text": "and",
+          "start": 34.27,
+          "end": 34.491
         },
         {
           "id": "phrase-11-word-1",
-          "text": "Airflow",
-          "start": 44.508,
-          "end": 45.043
+          "text": "M",
+          "start": 34.491,
+          "end": 34.666
         },
         {
           "id": "phrase-11-word-2",
-          "text": "job,",
-          "start": 45.043,
-          "end": 45.363
+          "text": "L",
+          "start": 34.666,
+          "end": 34.842
         },
         {
           "id": "phrase-11-word-3",
-          "text": "an",
-          "start": 45.363,
-          "end": 45.545
+          "text": "metadata",
+          "start": 34.842,
+          "end": 35.431
         },
         {
           "id": "phrase-11-word-4",
-          "text": "executive",
-          "start": 45.545,
-          "end": 46.234
+          "text": "form",
+          "start": 35.431,
+          "end": 35.726
         },
         {
           "id": "phrase-11-word-5",
-          "text": "dashboard,",
-          "start": 46.234,
-          "end": 47.013
+          "text": "an",
+          "start": 35.726,
+          "end": 35.901
         },
         {
           "id": "phrase-11-word-6",
-          "text": "an",
-          "start": 47.013,
-          "end": 47.195
+          "text": "executable",
+          "start": 35.901,
+          "end": 36.638
         },
         {
           "id": "phrase-11-word-7",
-          "text": "M",
-          "start": 47.195,
-          "end": 47.377
+          "text": "graph",
+          "start": 36.638,
+          "end": 37.007
         },
         {
           "id": "phrase-11-word-8",
-          "text": "L",
-          "start": 47.377,
-          "end": 47.559
+          "text": "controlling",
+          "start": 37.007,
+          "end": 37.817
         },
         {
           "id": "phrase-11-word-9",
-          "text": "feature,",
-          "start": 47.559,
-          "end": 48.186
+          "text": "scope,",
+          "start": 37.817,
+          "end": 38.273
         }
       ]
     },
     {
       "id": "phrase-12",
-      "frame": 4,
-      "start": 48.186,
-      "end": 51.013000000000005,
-      "text": "a model, and its production deployment.",
+      "frame": 3,
+      "start": 38.273,
+      "end": 39.984,
+      "text": "plans, and authority.",
       "words": [
         {
           "id": "phrase-12-word-0",
-          "text": "a",
-          "start": 48.186,
-          "end": 48.368
+          "text": "plans,",
+          "start": 38.273,
+          "end": 38.73
         },
         {
           "id": "phrase-12-word-1",
-          "text": "model,",
-          "start": 48.368,
-          "end": 48.841
+          "text": "and",
+          "start": 38.73,
+          "end": 38.951
         },
         {
           "id": "phrase-12-word-2",
-          "text": "and",
-          "start": 48.841,
-          "end": 49.07
-        },
-        {
-          "id": "phrase-12-word-3",
-          "text": "its",
-          "start": 49.07,
-          "end": 49.3
-        },
-        {
-          "id": "phrase-12-word-4",
-          "text": "production",
-          "start": 49.3,
-          "end": 50.065
-        },
-        {
-          "id": "phrase-12-word-5",
-          "text": "deployment.",
-          "start": 50.065,
-          "end": 51.048
+          "text": "authority.",
+          "start": 38.951,
+          "end": 39.824
         }
       ]
     },
     {
       "id": "phrase-13",
       "frame": 4,
-      "start": 51.048,
-      "end": 53.150000000000006,
-      "text": "Each path is routed to its owner,",
+      "start": 41.132,
+      "end": 45.347,
+      "text": "Against that frozen truth set, DataHub grounds all seven impacts:",
       "words": [
         {
           "id": "phrase-13-word-0",
-          "text": "Each",
-          "start": 51.048,
-          "end": 51.354
+          "text": "Against",
+          "start": 41.132,
+          "end": 41.66
         },
         {
           "id": "phrase-13-word-1",
-          "text": "path",
-          "start": 51.354,
-          "end": 51.66
+          "text": "that",
+          "start": 41.66,
+          "end": 41.961
         },
         {
           "id": "phrase-13-word-2",
-          "text": "is",
-          "start": 51.66,
-          "end": 51.842
+          "text": "frozen",
+          "start": 41.961,
+          "end": 42.414
         },
         {
           "id": "phrase-13-word-3",
-          "text": "routed",
-          "start": 51.842,
-          "end": 52.3
+          "text": "truth",
+          "start": 42.414,
+          "end": 42.79
         },
         {
           "id": "phrase-13-word-4",
-          "text": "to",
-          "start": 52.3,
-          "end": 52.483
+          "text": "set,",
+          "start": 42.79,
+          "end": 43.106
         },
         {
           "id": "phrase-13-word-5",
-          "text": "its",
-          "start": 52.483,
-          "end": 52.712
+          "text": "DataHub",
+          "start": 43.106,
+          "end": 43.634
         },
         {
           "id": "phrase-13-word-6",
-          "text": "owner,",
-          "start": 52.712,
-          "end": 53.185
+          "text": "grounds",
+          "start": 43.634,
+          "end": 44.162
+        },
+        {
+          "id": "phrase-13-word-7",
+          "text": "all",
+          "start": 44.162,
+          "end": 44.388
+        },
+        {
+          "id": "phrase-13-word-8",
+          "text": "seven",
+          "start": 44.388,
+          "end": 44.765
+        },
+        {
+          "id": "phrase-13-word-9",
+          "text": "impacts:",
+          "start": 44.765,
+          "end": 45.382
         }
       ]
     },
     {
       "id": "phrase-14",
       "frame": 4,
-      "start": 53.185,
-      "end": 58.072,
-      "text": "prioritized, and linked to the exact DataHub object that supports it.",
+      "start": 45.382,
+      "end": 49.063,
+      "text": "two dbt models, Airflow, a dashboard, an ML feature,",
       "words": [
         {
           "id": "phrase-14-word-0",
-          "text": "prioritized,",
-          "start": 53.185,
-          "end": 54.118
+          "text": "two",
+          "start": 45.382,
+          "end": 45.608
         },
         {
           "id": "phrase-14-word-1",
-          "text": "and",
-          "start": 54.118,
-          "end": 54.347
+          "text": "dbt",
+          "start": 45.608,
+          "end": 45.835
         },
         {
           "id": "phrase-14-word-2",
-          "text": "linked",
-          "start": 54.347,
-          "end": 54.806
+          "text": "models,",
+          "start": 45.835,
+          "end": 46.377
         },
         {
           "id": "phrase-14-word-3",
-          "text": "to",
-          "start": 54.806,
-          "end": 54.988
+          "text": "Airflow,",
+          "start": 46.377,
+          "end": 46.994
         },
         {
           "id": "phrase-14-word-4",
-          "text": "the",
-          "start": 54.988,
-          "end": 55.217
+          "text": "a",
+          "start": 46.994,
+          "end": 47.174
         },
         {
           "id": "phrase-14-word-5",
-          "text": "exact",
-          "start": 55.217,
-          "end": 55.6
+          "text": "dashboard,",
+          "start": 47.174,
+          "end": 47.942
         },
         {
           "id": "phrase-14-word-6",
-          "text": "DataHub",
-          "start": 55.6,
-          "end": 56.135
+          "text": "an",
+          "start": 47.942,
+          "end": 48.121
         },
         {
           "id": "phrase-14-word-7",
-          "text": "object",
-          "start": 56.135,
-          "end": 56.594
+          "text": "M",
+          "start": 48.121,
+          "end": 48.301
         },
         {
           "id": "phrase-14-word-8",
-          "text": "that",
-          "start": 56.594,
-          "end": 56.9
+          "text": "L",
+          "start": 48.301,
+          "end": 48.48
         },
         {
           "id": "phrase-14-word-9",
-          "text": "supports",
-          "start": 56.9,
-          "end": 57.511
-        },
-        {
-          "id": "phrase-14-word-10",
-          "text": "it.",
-          "start": 57.511,
-          "end": 57.912
+          "text": "feature,",
+          "start": 48.48,
+          "end": 49.098
         }
       ]
     },
     {
       "id": "phrase-15",
-      "frame": 5,
-      "start": 58.721,
-      "end": 62.062000000000005,
-      "text": "EvidenceGraph does not stop at an explanation.",
+      "frame": 4,
+      "start": 49.098,
+      "end": 50.725,
+      "text": "model, and deployment.",
       "words": [
         {
           "id": "phrase-15-word-0",
-          "text": "EvidenceGraph",
-          "start": 58.721,
-          "end": 59.751
+          "text": "model,",
+          "start": 49.098,
+          "end": 49.564
         },
         {
           "id": "phrase-15-word-1",
-          "text": "does",
-          "start": 59.751,
-          "end": 60.068
+          "text": "and",
+          "start": 49.564,
+          "end": 49.791
         },
         {
           "id": "phrase-15-word-2",
-          "text": "not",
-          "start": 60.068,
-          "end": 60.305
-        },
-        {
-          "id": "phrase-15-word-3",
-          "text": "stop",
-          "start": 60.305,
-          "end": 60.622
-        },
-        {
-          "id": "phrase-15-word-4",
-          "text": "at",
-          "start": 60.622,
-          "end": 60.811
-        },
-        {
-          "id": "phrase-15-word-5",
-          "text": "an",
-          "start": 60.811,
-          "end": 61
-        },
-        {
-          "id": "phrase-15-word-6",
-          "text": "explanation.",
-          "start": 61,
-          "end": 62.097
+          "text": "deployment.",
+          "start": 49.791,
+          "end": 50.76
         }
       ]
     },
     {
       "id": "phrase-16",
-      "frame": 5,
-      "start": 62.097,
-      "end": 65.303,
-      "text": "It compiles nine concrete artifacts: SQL,",
+      "frame": 4,
+      "start": 50.76,
+      "end": 55.235,
+      "text": "Every path carries its owner, priority, and exact source object.",
       "words": [
         {
           "id": "phrase-16-word-0",
-          "text": "It",
-          "start": 62.097,
-          "end": 62.286
+          "text": "Every",
+          "start": 50.76,
+          "end": 51.137
         },
         {
           "id": "phrase-16-word-1",
-          "text": "compiles",
-          "start": 62.286,
-          "end": 62.92
+          "text": "path",
+          "start": 51.137,
+          "end": 51.438
         },
         {
           "id": "phrase-16-word-2",
-          "text": "nine",
-          "start": 62.92,
-          "end": 63.237
+          "text": "carries",
+          "start": 51.438,
+          "end": 51.966
         },
         {
           "id": "phrase-16-word-3",
-          "text": "concrete",
-          "start": 63.237,
-          "end": 63.87
+          "text": "its",
+          "start": 51.966,
+          "end": 52.192
         },
         {
           "id": "phrase-16-word-4",
-          "text": "artifacts:",
-          "start": 63.87,
-          "end": 64.678
+          "text": "owner,",
+          "start": 52.192,
+          "end": 52.659
         },
         {
           "id": "phrase-16-word-5",
-          "text": "S",
-          "start": 64.678,
-          "end": 64.866
+          "text": "priority,",
+          "start": 52.659,
+          "end": 53.352
         },
         {
           "id": "phrase-16-word-6",
-          "text": "Q",
-          "start": 64.866,
-          "end": 65.055
+          "text": "and",
+          "start": 53.352,
+          "end": 53.578
         },
         {
           "id": "phrase-16-word-7",
-          "text": "L,",
-          "start": 65.055,
-          "end": 65.338
+          "text": "exact",
+          "start": 53.578,
+          "end": 53.955
+        },
+        {
+          "id": "phrase-16-word-8",
+          "text": "source",
+          "start": 53.955,
+          "end": 54.407
+        },
+        {
+          "id": "phrase-16-word-9",
+          "text": "object.",
+          "start": 54.407,
+          "end": 55.075
         }
       ]
     },
     {
       "id": "phrase-17",
       "frame": 5,
-      "start": 65.338,
-      "end": 69.894,
-      "text": "dbt model and tests, validation queries, an Airflow evidence gate,",
+      "start": 58.721,
+      "end": 62.929,
+      "text": "EvidenceGraph compiles nine pull-request-ready drafts for human",
       "words": [
         {
           "id": "phrase-17-word-0",
-          "text": "dbt",
-          "start": 65.338,
-          "end": 65.576
+          "text": "EvidenceGraph",
+          "start": 58.721,
+          "end": 59.724
         },
         {
           "id": "phrase-17-word-1",
-          "text": "model",
-          "start": 65.576,
-          "end": 65.972
+          "text": "compiles",
+          "start": 59.724,
+          "end": 60.341
         },
         {
           "id": "phrase-17-word-2",
-          "text": "and",
-          "start": 65.972,
-          "end": 66.209
+          "text": "nine",
+          "start": 60.341,
+          "end": 60.65
         },
         {
           "id": "phrase-17-word-3",
-          "text": "tests,",
-          "start": 66.209,
-          "end": 66.7
+          "text": "pull-request-ready",
+          "start": 60.65,
+          "end": 61.884
         },
         {
           "id": "phrase-17-word-4",
-          "text": "validation",
-          "start": 66.7,
-          "end": 67.492
+          "text": "drafts",
+          "start": 61.884,
+          "end": 62.347
         },
         {
           "id": "phrase-17-word-5",
-          "text": "queries,",
-          "start": 67.492,
-          "end": 68.141
+          "text": "for",
+          "start": 62.347,
+          "end": 62.578
         },
         {
           "id": "phrase-17-word-6",
-          "text": "an",
-          "start": 68.141,
-          "end": 68.33
-        },
-        {
-          "id": "phrase-17-word-7",
-          "text": "Airflow",
-          "start": 68.33,
-          "end": 68.884
-        },
-        {
-          "id": "phrase-17-word-8",
-          "text": "evidence",
-          "start": 68.884,
-          "end": 69.518
-        },
-        {
-          "id": "phrase-17-word-9",
-          "text": "gate,",
-          "start": 69.518,
-          "end": 69.929
+          "text": "human",
+          "start": 62.578,
+          "end": 62.964
         }
       ]
     },
     {
       "id": "phrase-18",
       "frame": 5,
-      "start": 69.929,
-      "end": 72.501,
-      "text": "an ML contract, a migration plan,",
+      "start": 62.964,
+      "end": 66.702,
+      "text": "review, never auto-merged: SQL, dbt model and tests,",
       "words": [
         {
           "id": "phrase-18-word-0",
-          "text": "an",
-          "start": 69.929,
-          "end": 70.118
+          "text": "review,",
+          "start": 62.964,
+          "end": 63.519
         },
         {
           "id": "phrase-18-word-1",
-          "text": "M",
-          "start": 70.118,
-          "end": 70.306
+          "text": "never",
+          "start": 63.519,
+          "end": 63.904
         },
         {
           "id": "phrase-18-word-2",
-          "text": "L",
-          "start": 70.306,
-          "end": 70.495
+          "text": "auto-merged:",
+          "start": 63.904,
+          "end": 64.768
         },
         {
           "id": "phrase-18-word-3",
-          "text": "contract,",
-          "start": 70.495,
-          "end": 71.223
+          "text": "S",
+          "start": 64.768,
+          "end": 64.951
         },
         {
           "id": "phrase-18-word-4",
-          "text": "a",
-          "start": 71.223,
-          "end": 71.412
+          "text": "Q",
+          "start": 64.951,
+          "end": 65.135
         },
         {
           "id": "phrase-18-word-5",
-          "text": "migration",
-          "start": 71.412,
-          "end": 72.125
+          "text": "L,",
+          "start": 65.135,
+          "end": 65.411
         },
         {
           "id": "phrase-18-word-6",
-          "text": "plan,",
-          "start": 72.125,
-          "end": 72.536
+          "text": "dbt",
+          "start": 65.411,
+          "end": 65.642
+        },
+        {
+          "id": "phrase-18-word-7",
+          "text": "model",
+          "start": 65.642,
+          "end": 66.028
+        },
+        {
+          "id": "phrase-18-word-8",
+          "text": "and",
+          "start": 66.028,
+          "end": 66.259
+        },
+        {
+          "id": "phrase-18-word-9",
+          "text": "tests,",
+          "start": 66.259,
+          "end": 66.737
         }
       ]
     },
     {
       "id": "phrase-19",
       "frame": 5,
-      "start": 72.536,
-      "end": 76.28,
-      "text": "and a real unified diff that Git can apply cleanly.",
+      "start": 66.737,
+      "end": 71.107,
+      "text": "validation queries, an Airflow evidence gate, an ML contract,",
       "words": [
         {
           "id": "phrase-19-word-0",
-          "text": "and",
-          "start": 72.536,
-          "end": 72.773
+          "text": "validation",
+          "start": 66.737,
+          "end": 67.508
         },
         {
           "id": "phrase-19-word-1",
-          "text": "a",
-          "start": 72.773,
-          "end": 72.962
+          "text": "queries,",
+          "start": 67.508,
+          "end": 68.14
         },
         {
           "id": "phrase-19-word-2",
-          "text": "real",
-          "start": 72.962,
-          "end": 73.279
+          "text": "an",
+          "start": 68.14,
+          "end": 68.324
         },
         {
           "id": "phrase-19-word-3",
-          "text": "unified",
-          "start": 73.279,
-          "end": 73.834
+          "text": "Airflow",
+          "start": 68.324,
+          "end": 68.864
         },
         {
           "id": "phrase-19-word-4",
-          "text": "diff",
-          "start": 73.834,
-          "end": 74.15
+          "text": "evidence",
+          "start": 68.864,
+          "end": 69.481
         },
         {
           "id": "phrase-19-word-5",
-          "text": "that",
-          "start": 74.15,
-          "end": 74.467
+          "text": "gate,",
+          "start": 69.481,
+          "end": 69.881
         },
         {
           "id": "phrase-19-word-6",
-          "text": "Git",
-          "start": 74.467,
-          "end": 74.705
+          "text": "an",
+          "start": 69.881,
+          "end": 70.065
         },
         {
           "id": "phrase-19-word-7",
-          "text": "can",
-          "start": 74.705,
-          "end": 74.943
+          "text": "M",
+          "start": 70.065,
+          "end": 70.249
         },
         {
           "id": "phrase-19-word-8",
-          "text": "apply",
-          "start": 74.943,
-          "end": 75.339
+          "text": "L",
+          "start": 70.249,
+          "end": 70.433
         },
         {
           "id": "phrase-19-word-9",
-          "text": "cleanly.",
-          "start": 75.339,
-          "end": 76.12
+          "text": "contract,",
+          "start": 70.433,
+          "end": 71.142
         }
       ]
     },
     {
       "id": "phrase-20",
-      "frame": 6,
-      "start": 76.812,
-      "end": 80.34100000000001,
-      "text": "Fourteen deterministic gates: DuckDB, dbt Core,",
+      "frame": 5,
+      "start": 71.142,
+      "end": 74.189,
+      "text": "migration plan, and a real unified diff.",
       "words": [
         {
           "id": "phrase-20-word-0",
-          "text": "Fourteen",
-          "start": 76.812,
-          "end": 77.407
+          "text": "migration",
+          "start": 71.142,
+          "end": 71.836
         },
         {
           "id": "phrase-20-word-1",
-          "text": "deterministic",
-          "start": 77.407,
-          "end": 78.374
+          "text": "plan,",
+          "start": 71.836,
+          "end": 72.236
         },
         {
           "id": "phrase-20-word-2",
-          "text": "gates:",
-          "start": 78.374,
-          "end": 78.746
+          "text": "and",
+          "start": 72.236,
+          "end": 72.468
         },
         {
           "id": "phrase-20-word-3",
-          "text": "Duck",
-          "start": 79.026,
-          "end": 79.324
+          "text": "a",
+          "start": 72.468,
+          "end": 72.651
         },
         {
           "id": "phrase-20-word-4",
-          "text": "D",
-          "start": 79.324,
-          "end": 79.501
+          "text": "real",
+          "start": 72.651,
+          "end": 72.96
         },
         {
           "id": "phrase-20-word-5",
-          "text": "B,",
-          "start": 79.501,
-          "end": 79.767
+          "text": "unified",
+          "start": 72.96,
+          "end": 73.5
         },
         {
           "id": "phrase-20-word-6",
-          "text": "dbt",
-          "start": 79.767,
-          "end": 79.99
-        },
-        {
-          "id": "phrase-20-word-7",
-          "text": "Core,",
-          "start": 79.99,
-          "end": 80.376
+          "text": "diff.",
+          "start": 73.5,
+          "end": 74.029
         }
       ]
     },
     {
       "id": "phrase-21",
       "frame": 6,
-      "start": 80.376,
-      "end": 83.93900000000001,
-      "text": "the official Airflow container, feature-parity checks,",
+      "start": 76.812,
+      "end": 79.783,
+      "text": "Fourteen deterministic gates run in DuckDB,",
       "words": [
         {
           "id": "phrase-21-word-0",
-          "text": "the",
-          "start": 80.376,
-          "end": 80.599
+          "text": "Fourteen",
+          "start": 76.812,
+          "end": 77.394
         },
         {
           "id": "phrase-21-word-1",
-          "text": "official",
-          "start": 80.599,
-          "end": 81.194
+          "text": "deterministic",
+          "start": 77.394,
+          "end": 78.339
         },
         {
           "id": "phrase-21-word-2",
-          "text": "Airflow",
-          "start": 81.194,
-          "end": 81.715
+          "text": "gates",
+          "start": 78.339,
+          "end": 78.703
         },
         {
           "id": "phrase-21-word-3",
-          "text": "container,",
-          "start": 81.715,
-          "end": 82.473
+          "text": "run",
+          "start": 78.703,
+          "end": 78.921
         },
         {
           "id": "phrase-21-word-4",
-          "text": "feature-parity",
-          "start": 82.473,
-          "end": 83.439
+          "text": "in",
+          "start": 78.921,
+          "end": 79.095
         },
         {
           "id": "phrase-21-word-5",
-          "text": "checks,",
-          "start": 83.439,
-          "end": 83.974
+          "text": "Duck",
+          "start": 79.095,
+          "end": 79.386
+        },
+        {
+          "id": "phrase-21-word-6",
+          "text": "D",
+          "start": 79.386,
+          "end": 79.559
+        },
+        {
+          "id": "phrase-21-word-7",
+          "text": "B,",
+          "start": 79.559,
+          "end": 79.818
         }
       ]
     },
     {
       "id": "phrase-22",
       "frame": 6,
-      "start": 83.974,
-      "end": 87.116,
-      "text": "and Git patch application. All fourteen pass.",
+      "start": 79.818,
+      "end": 83.89800000000001,
+      "text": "dbt Core, the official Airflow container, feature-parity checks,",
       "words": [
         {
           "id": "phrase-22-word-0",
-          "text": "and",
-          "start": 83.974,
-          "end": 84.197
+          "text": "dbt",
+          "start": 79.818,
+          "end": 80.037
         },
         {
           "id": "phrase-22-word-1",
-          "text": "Git",
-          "start": 84.197,
-          "end": 84.421
+          "text": "Core,",
+          "start": 80.037,
+          "end": 80.414
         },
         {
           "id": "phrase-22-word-2",
-          "text": "patch",
-          "start": 84.421,
-          "end": 84.792
+          "text": "the",
+          "start": 80.414,
+          "end": 80.632
         },
         {
           "id": "phrase-22-word-3",
-          "text": "application.",
-          "start": 84.792,
-          "end": 85.823
+          "text": "official",
+          "start": 80.632,
+          "end": 81.214
         },
         {
           "id": "phrase-22-word-4",
-          "text": "All",
-          "start": 85.823,
-          "end": 86.046
+          "text": "Airflow",
+          "start": 81.214,
+          "end": 81.724
         },
         {
           "id": "phrase-22-word-5",
-          "text": "fourteen",
-          "start": 86.046,
-          "end": 86.641
+          "text": "container,",
+          "start": 81.724,
+          "end": 82.465
         },
         {
           "id": "phrase-22-word-6",
-          "text": "pass.",
-          "start": 86.641,
-          "end": 87.151
+          "text": "feature-parity",
+          "start": 82.465,
+          "end": 83.41
+        },
+        {
+          "id": "phrase-22-word-7",
+          "text": "checks,",
+          "start": 83.41,
+          "end": 83.933
         }
       ]
     },
     {
       "id": "phrase-23",
       "frame": 6,
-      "start": 87.151,
-      "end": 94.009,
-      "text": "Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation.",
+      "start": 83.933,
+      "end": 86.423,
+      "text": "and Git patch application. All pass.",
       "words": [
         {
           "id": "phrase-23-word-0",
-          "text": "Remove",
-          "start": 87.151,
-          "end": 87.598
+          "text": "and",
+          "start": 83.933,
+          "end": 84.152
         },
         {
           "id": "phrase-23-word-1",
-          "text": "one",
-          "start": 87.598,
-          "end": 87.821
+          "text": "Git",
+          "start": 84.152,
+          "end": 84.37
         },
         {
           "id": "phrase-23-word-2",
-          "text": "lineage",
-          "start": 87.821,
-          "end": 88.341
+          "text": "patch",
+          "start": 84.37,
+          "end": 84.733
         },
         {
           "id": "phrase-23-word-3",
-          "text": "page,",
-          "start": 88.341,
-          "end": 88.727
+          "text": "application.",
+          "start": 84.733,
+          "end": 85.741
         },
         {
           "id": "phrase-23-word-4",
-          "text": "and",
-          "start": 88.727,
-          "end": 88.951
+          "text": "All",
+          "start": 85.741,
+          "end": 85.96
         },
         {
           "id": "phrase-23-word-5",
-          "text": "EvidenceGraph",
-          "start": 88.951,
-          "end": 89.918
-        },
-        {
-          "id": "phrase-23-word-6",
-          "text": "refuses",
-          "start": 89.918,
-          "end": 90.438
-        },
-        {
-          "id": "phrase-23-word-7",
-          "text": "the",
-          "start": 90.438,
-          "end": 90.661
-        },
-        {
-          "id": "phrase-23-word-8",
-          "text": "safe-to-merge",
-          "start": 90.661,
-          "end": 91.479
-        },
-        {
-          "id": "phrase-23-word-9",
-          "text": "verdict",
-          "start": 91.479,
-          "end": 92
-        },
-        {
-          "id": "phrase-23-word-10",
-          "text": "and",
-          "start": 92,
-          "end": 92.223
-        },
-        {
-          "id": "phrase-23-word-11",
-          "text": "blocks",
-          "start": 92.223,
-          "end": 92.67
-        },
-        {
-          "id": "phrase-23-word-12",
-          "text": "every",
-          "start": 92.67,
-          "end": 93.041
-        },
-        {
-          "id": "phrase-23-word-13",
-          "text": "mutation.",
-          "start": 93.041,
-          "end": 93.849
+          "text": "pass.",
+          "start": 85.96,
+          "end": 86.458
         }
       ]
     },
     {
       "id": "phrase-24",
-      "frame": 7,
-      "start": 94.864,
-      "end": 100.98700000000001,
-      "text": "With explicit approval, three scoped results write back into DataHub and verify by readback.",
+      "frame": 6,
+      "start": 86.458,
+      "end": 90.87400000000001,
+      "text": "Remove one lineage page, and EvidenceGraph revokes proposal authority",
       "words": [
         {
           "id": "phrase-24-word-0",
-          "text": "With",
-          "start": 94.864,
-          "end": 95.167
+          "text": "Remove",
+          "start": 86.458,
+          "end": 86.895
         },
         {
           "id": "phrase-24-word-1",
-          "text": "explicit",
-          "start": 95.167,
-          "end": 95.772
+          "text": "one",
+          "start": 86.895,
+          "end": 87.113
         },
         {
           "id": "phrase-24-word-2",
-          "text": "approval,",
-          "start": 95.772,
-          "end": 96.467
+          "text": "lineage",
+          "start": 87.113,
+          "end": 87.622
         },
         {
           "id": "phrase-24-word-3",
-          "text": "three",
-          "start": 96.467,
-          "end": 96.845
+          "text": "page,",
+          "start": 87.622,
+          "end": 88
         },
         {
           "id": "phrase-24-word-4",
-          "text": "scoped",
-          "start": 96.845,
-          "end": 97.298
+          "text": "and",
+          "start": 88,
+          "end": 88.218
         },
         {
           "id": "phrase-24-word-5",
-          "text": "results",
-          "start": 97.298,
-          "end": 97.828
+          "text": "EvidenceGraph",
+          "start": 88.218,
+          "end": 89.164
         },
         {
           "id": "phrase-24-word-6",
-          "text": "write",
-          "start": 97.828,
-          "end": 98.206
+          "text": "revokes",
+          "start": 89.164,
+          "end": 89.673
         },
         {
           "id": "phrase-24-word-7",
-          "text": "back",
-          "start": 98.206,
-          "end": 98.509
+          "text": "proposal",
+          "start": 89.673,
+          "end": 90.255
         },
         {
           "id": "phrase-24-word-8",
-          "text": "into",
-          "start": 98.509,
-          "end": 98.811
-        },
-        {
-          "id": "phrase-24-word-9",
-          "text": "DataHub",
-          "start": 98.811,
-          "end": 99.34
-        },
-        {
-          "id": "phrase-24-word-10",
-          "text": "and",
-          "start": 99.34,
-          "end": 99.567
-        },
-        {
-          "id": "phrase-24-word-11",
-          "text": "verify",
-          "start": 99.567,
-          "end": 100.021
-        },
-        {
-          "id": "phrase-24-word-12",
-          "text": "by",
-          "start": 100.021,
-          "end": 100.201
-        },
-        {
-          "id": "phrase-24-word-13",
-          "text": "readback.",
-          "start": 100.201,
-          "end": 101.022
+          "text": "authority",
+          "start": 90.255,
+          "end": 90.909
         }
       ]
     },
     {
       "id": "phrase-25",
-      "frame": 7,
-      "start": 101.022,
-      "end": 103.299,
-      "text": "A new client retries the same plan:",
+      "frame": 6,
+      "start": 90.909,
+      "end": 92.877,
+      "text": "and blocks every mutation.",
       "words": [
         {
           "id": "phrase-25-word-0",
-          "text": "A",
-          "start": 101.022,
-          "end": 101.202
+          "text": "and",
+          "start": 90.909,
+          "end": 91.127
         },
         {
           "id": "phrase-25-word-1",
-          "text": "new",
-          "start": 101.202,
-          "end": 101.429
+          "text": "blocks",
+          "start": 91.127,
+          "end": 91.564
         },
         {
           "id": "phrase-25-word-2",
-          "text": "client",
-          "start": 101.429,
-          "end": 101.883
+          "text": "every",
+          "start": 91.564,
+          "end": 91.928
         },
         {
           "id": "phrase-25-word-3",
-          "text": "retries",
-          "start": 101.883,
-          "end": 102.412
-        },
-        {
-          "id": "phrase-25-word-4",
-          "text": "the",
-          "start": 102.412,
-          "end": 102.639
-        },
-        {
-          "id": "phrase-25-word-5",
-          "text": "same",
-          "start": 102.639,
-          "end": 102.942
-        },
-        {
-          "id": "phrase-25-word-6",
-          "text": "plan:",
-          "start": 102.942,
-          "end": 103.334
+          "text": "mutation.",
+          "start": 91.928,
+          "end": 92.717
         }
       ]
     },
     {
       "id": "phrase-26",
       "frame": 7,
-      "start": 103.334,
-      "end": 105.903,
-      "text": "three verified no-ops, no duplicates.",
+      "start": 94.864,
+      "end": 98.555,
+      "text": "With explicit approval in a controlled local DataHub run,",
       "words": [
         {
           "id": "phrase-26-word-0",
-          "text": "three",
-          "start": 103.334,
-          "end": 103.712
+          "text": "With",
+          "start": 94.864,
+          "end": 95.156
         },
         {
           "id": "phrase-26-word-1",
-          "text": "verified",
-          "start": 103.712,
-          "end": 104.317
+          "text": "explicit",
+          "start": 95.156,
+          "end": 95.741
         },
         {
           "id": "phrase-26-word-2",
-          "text": "no-ops,",
-          "start": 104.317,
-          "end": 104.786
+          "text": "approval",
+          "start": 95.741,
+          "end": 96.326
         },
         {
           "id": "phrase-26-word-3",
-          "text": "no",
-          "start": 104.786,
-          "end": 104.966
+          "text": "in",
+          "start": 96.326,
+          "end": 96.501
         },
         {
           "id": "phrase-26-word-4",
-          "text": "duplicates.",
-          "start": 104.966,
-          "end": 105.938
+          "text": "a",
+          "start": 96.501,
+          "end": 96.675
+        },
+        {
+          "id": "phrase-26-word-5",
+          "text": "controlled",
+          "start": 96.675,
+          "end": 97.406
+        },
+        {
+          "id": "phrase-26-word-6",
+          "text": "local",
+          "start": 97.406,
+          "end": 97.771
+        },
+        {
+          "id": "phrase-26-word-7",
+          "text": "DataHub",
+          "start": 97.771,
+          "end": 98.283
+        },
+        {
+          "id": "phrase-26-word-8",
+          "text": "run,",
+          "start": 98.283,
+          "end": 98.59
         }
       ]
     },
     {
+      "id": "phrase-27",
       "frame": 7,
-      "start": 105.938,
-      "end": 111.02000000000001,
-      "text": "In the deterministic closure replay, EvidenceGraph requires a newer complete graph",
+      "start": 98.59,
+      "end": 103.60000000000001,
+      "text": "a tag, description, and evidence document write back and verify by readback.",
       "words": [
         {
           "id": "phrase-27-word-0",
-          "text": "In",
-          "start": 105.938,
-          "end": 106.21
+          "text": "a",
+          "start": 98.59,
+          "end": 98.764
         },
         {
           "id": "phrase-27-word-1",
-          "text": "the",
-          "start": 106.21,
-          "end": 106.542
+          "text": "tag,",
+          "start": 98.764,
+          "end": 99.07
         },
         {
           "id": "phrase-27-word-2",
-          "text": "deterministic",
-          "start": 106.542,
-          "end": 107.234
+          "text": "description,",
+          "start": 99.07,
+          "end": 99.962
         },
         {
           "id": "phrase-27-word-3",
-          "text": "closure",
-          "start": 107.234,
-          "end": 107.742
+          "text": "and",
+          "start": 99.962,
+          "end": 100.181
         },
         {
           "id": "phrase-27-word-4",
-          "text": "replay,",
-          "start": 107.742,
-          "end": 108.212
+          "text": "evidence",
+          "start": 100.181,
+          "end": 100.766
         },
         {
           "id": "phrase-27-word-5",
-          "text": "EvidenceGraph",
-          "start": 108.212,
-          "end": 108.905
+          "text": "document",
+          "start": 100.766,
+          "end": 101.351
         },
         {
           "id": "phrase-27-word-6",
-          "text": "requires",
-          "start": 108.905,
-          "end": 109.448
+          "text": "write",
+          "start": 101.351,
+          "end": 101.717
         },
         {
           "id": "phrase-27-word-7",
-          "text": "a",
-          "start": 109.448,
-          "end": 109.653
+          "text": "back",
+          "start": 101.717,
+          "end": 102.009
         },
         {
           "id": "phrase-27-word-8",
-          "text": "newer",
-          "start": 109.653,
-          "end": 110.083
+          "text": "and",
+          "start": 102.009,
+          "end": 102.229
         },
         {
           "id": "phrase-27-word-9",
-          "text": "complete",
-          "start": 110.083,
-          "end": 110.626
+          "text": "verify",
+          "start": 102.229,
+          "end": 102.667
         },
         {
           "id": "phrase-27-word-10",
-          "text": "graph",
-          "start": 110.626,
-          "end": 111.055
+          "text": "by",
+          "start": 102.667,
+          "end": 102.841
+        },
+        {
+          "id": "phrase-27-word-11",
+          "text": "readback.",
+          "start": 102.841,
+          "end": 103.635
         }
-      ],
-      "id": "phrase-27"
+      ]
     },
     {
+      "id": "phrase-28",
       "frame": 7,
-      "start": 111.055,
-      "end": 115.924,
-      "text": "and closes only when the retired field has zero remaining consumers.",
+      "start": 103.635,
+      "end": 108.10600000000001,
+      "text": "A fresh client retries them: three verified no-ops, zero duplicates.",
       "words": [
         {
           "id": "phrase-28-word-0",
-          "text": "and",
-          "start": 111.055,
-          "end": 111.388
+          "text": "A",
+          "start": 103.635,
+          "end": 103.809
         },
         {
           "id": "phrase-28-word-1",
-          "text": "closes",
-          "start": 111.388,
-          "end": 111.858
+          "text": "fresh",
+          "start": 103.809,
+          "end": 104.175
         },
         {
           "id": "phrase-28-word-2",
-          "text": "only",
-          "start": 111.858,
-          "end": 112.242
+          "text": "client",
+          "start": 104.175,
+          "end": 104.614
         },
         {
           "id": "phrase-28-word-3",
-          "text": "when",
-          "start": 112.242,
-          "end": 112.626
+          "text": "retries",
+          "start": 104.614,
+          "end": 105.126
         },
         {
           "id": "phrase-28-word-4",
-          "text": "the",
-          "start": 112.626,
-          "end": 112.958
+          "text": "them:",
+          "start": 105.126,
+          "end": 105.505
         },
         {
           "id": "phrase-28-word-5",
-          "text": "retired",
-          "start": 112.958,
-          "end": 113.466
+          "text": "three",
+          "start": 105.505,
+          "end": 105.871
         },
         {
           "id": "phrase-28-word-6",
-          "text": "field",
-          "start": 113.466,
-          "end": 113.896
+          "text": "verified",
+          "start": 105.871,
+          "end": 106.456
         },
         {
           "id": "phrase-28-word-7",
-          "text": "has",
-          "start": 113.896,
-          "end": 114.228
+          "text": "no-ops,",
+          "start": 106.456,
+          "end": 106.908
         },
         {
           "id": "phrase-28-word-8",
           "text": "zero",
-          "start": 114.228,
-          "end": 114.612
+          "start": 106.908,
+          "end": 107.201
         },
         {
           "id": "phrase-28-word-9",
-          "text": "remaining",
-          "start": 114.612,
-          "end": 115.188
-        },
-        {
-          "id": "phrase-28-word-10",
-          "text": "consumers.",
-          "start": 115.188,
-          "end": 115.764
-        }
-      ],
-      "id": "phrase-28"
-    },
-    {
-      "id": "phrase-29",
-      "frame": 8,
-      "start": 116.586,
-      "end": 120.293,
-      "text": "EvidenceGraph makes DataHub's context graph operational.",
-      "words": [
-        {
-          "id": "phrase-29-word-0",
-          "text": "EvidenceGraph",
-          "start": 116.586,
-          "end": 117.524
-        },
-        {
-          "id": "phrase-29-word-1",
-          "text": "makes",
-          "start": 117.524,
-          "end": 117.885
-        },
-        {
-          "id": "phrase-29-word-2",
-          "text": "DataHub's",
-          "start": 117.885,
-          "end": 118.462
-        },
-        {
-          "id": "phrase-29-word-3",
-          "text": "context",
-          "start": 118.462,
-          "end": 118.967
-        },
-        {
-          "id": "phrase-29-word-4",
-          "text": "graph",
-          "start": 118.967,
-          "end": 119.328
-        },
-        {
-          "id": "phrase-29-word-5",
-          "text": "operational.",
-          "start": 119.328,
-          "end": 120.328
+          "text": "duplicates.",
+          "start": 107.201,
+          "end": 108.141
         }
       ]
     },
     {
-      "id": "phrase-30",
-      "frame": 8,
-      "start": 120.328,
-      "end": 124.65,
-      "text": "Inspect the public replay, audit every claim in the evidence ledger.",
+      "frame": 7,
+      "start": 108.141,
+      "end": 112.138,
+      "text": "A labeled closure replay closes only on a newer complete graph",
+      "words": [
+        {
+          "id": "phrase-29-word-0",
+          "text": "A",
+          "start": 108.141,
+          "end": 108.315
+        },
+        {
+          "id": "phrase-29-word-1",
+          "text": "labeled",
+          "start": 108.315,
+          "end": 108.827
+        },
+        {
+          "id": "phrase-29-word-2",
+          "text": "closure",
+          "start": 108.827,
+          "end": 109.339
+        },
+        {
+          "id": "phrase-29-word-3",
+          "text": "replay",
+          "start": 109.339,
+          "end": 109.778
+        },
+        {
+          "id": "phrase-29-word-4",
+          "text": "closes",
+          "start": 109.778,
+          "end": 110.216
+        },
+        {
+          "id": "phrase-29-word-5",
+          "text": "only",
+          "start": 110.216,
+          "end": 110.509
+        },
+        {
+          "id": "phrase-29-word-6",
+          "text": "on",
+          "start": 110.509,
+          "end": 110.683
+        },
+        {
+          "id": "phrase-29-word-7",
+          "text": "a",
+          "start": 110.683,
+          "end": 110.857
+        },
+        {
+          "id": "phrase-29-word-8",
+          "text": "newer",
+          "start": 110.857,
+          "end": 111.223
+        },
+        {
+          "id": "phrase-29-word-9",
+          "text": "complete",
+          "start": 111.223,
+          "end": 111.808
+        },
+        {
+          "id": "phrase-29-word-10",
+          "text": "graph",
+          "start": 111.808,
+          "end": 112.173
+        }
+      ],
+      "id": "phrase-29"
+    },
+    {
+      "frame": 7,
+      "start": 112.173,
+      "end": 114.663,
+      "text": "with zero retired-field consumers.",
       "words": [
         {
           "id": "phrase-30-word-0",
-          "text": "Inspect",
-          "start": 120.328,
-          "end": 120.834
+          "text": "with",
+          "start": 112.173,
+          "end": 112.466
         },
         {
           "id": "phrase-30-word-1",
-          "text": "the",
-          "start": 120.834,
-          "end": 121.05
+          "text": "zero",
+          "start": 112.466,
+          "end": 112.758
         },
         {
           "id": "phrase-30-word-2",
-          "text": "public",
-          "start": 121.05,
-          "end": 121.483
+          "text": "retired-field",
+          "start": 112.758,
+          "end": 113.636
         },
         {
           "id": "phrase-30-word-3",
-          "text": "replay,",
-          "start": 121.483,
-          "end": 122.002
+          "text": "consumers.",
+          "start": 113.636,
+          "end": 114.503
+        }
+      ],
+      "id": "phrase-30"
+    },
+    {
+      "id": "phrase-31",
+      "frame": 8,
+      "start": 116.586,
+      "end": 119.795,
+      "text": "EvidenceGraph turns DataHub into an observe, plan,",
+      "words": [
+        {
+          "id": "phrase-31-word-0",
+          "text": "EvidenceGraph",
+          "start": 116.586,
+          "end": 117.528
         },
         {
-          "id": "phrase-30-word-4",
-          "text": "audit",
-          "start": 122.002,
-          "end": 122.363
+          "id": "phrase-31-word-1",
+          "text": "turns",
+          "start": 117.528,
+          "end": 117.891
         },
         {
-          "id": "phrase-30-word-5",
-          "text": "every",
-          "start": 122.363,
-          "end": 122.724
+          "id": "phrase-31-word-2",
+          "text": "DataHub",
+          "start": 117.891,
+          "end": 118.398
         },
         {
-          "id": "phrase-30-word-6",
-          "text": "claim",
-          "start": 122.724,
-          "end": 123.084
+          "id": "phrase-31-word-3",
+          "text": "into",
+          "start": 118.398,
+          "end": 118.688
         },
         {
-          "id": "phrase-30-word-7",
-          "text": "in",
-          "start": 123.084,
-          "end": 123.256
+          "id": "phrase-31-word-4",
+          "text": "an",
+          "start": 118.688,
+          "end": 118.86
         },
         {
-          "id": "phrase-30-word-8",
+          "id": "phrase-31-word-5",
+          "text": "observe,",
+          "start": 118.86,
+          "end": 119.454
+        },
+        {
+          "id": "phrase-31-word-6",
+          "text": "plan,",
+          "start": 119.454,
+          "end": 119.83
+        }
+      ]
+    },
+    {
+      "id": "phrase-32",
+      "frame": 8,
+      "start": 119.83,
+      "end": 121.756,
+      "text": "validate, refuse-or-act loop.",
+      "words": [
+        {
+          "id": "phrase-32-word-0",
+          "text": "validate,",
+          "start": 119.83,
+          "end": 120.496
+        },
+        {
+          "id": "phrase-32-word-1",
+          "text": "refuse-or-act",
+          "start": 120.496,
+          "end": 121.294
+        },
+        {
+          "id": "phrase-32-word-2",
+          "text": "loop.",
+          "start": 121.294,
+          "end": 121.791
+        }
+      ]
+    },
+    {
+      "id": "phrase-33",
+      "frame": 8,
+      "start": 121.791,
+      "end": 125.14500000000001,
+      "text": "In the public deterministic replay, audit each claim,",
+      "words": [
+        {
+          "id": "phrase-33-word-0",
+          "text": "In",
+          "start": 121.791,
+          "end": 121.963
+        },
+        {
+          "id": "phrase-33-word-1",
           "text": "the",
-          "start": 123.256,
-          "end": 123.473
+          "start": 121.963,
+          "end": 122.181
         },
         {
-          "id": "phrase-30-word-9",
-          "text": "evidence",
-          "start": 123.473,
-          "end": 124.05
+          "id": "phrase-33-word-2",
+          "text": "public",
+          "start": 122.181,
+          "end": 122.616
         },
         {
-          "id": "phrase-30-word-10",
-          "text": "ledger.",
-          "start": 124.05,
-          "end": 124.569
+          "id": "phrase-33-word-3",
+          "text": "deterministic",
+          "start": 122.616,
+          "end": 123.558
+        },
+        {
+          "id": "phrase-33-word-4",
+          "text": "replay,",
+          "start": 123.558,
+          "end": 124.079
+        },
+        {
+          "id": "phrase-33-word-5",
+          "text": "audit",
+          "start": 124.079,
+          "end": 124.441
+        },
+        {
+          "id": "phrase-33-word-6",
+          "text": "each",
+          "start": 124.441,
+          "end": 124.731
+        },
+        {
+          "id": "phrase-33-word-7",
+          "text": "claim,",
+          "start": 124.731,
+          "end": 125.18
+        }
+      ]
+    },
+    {
+      "id": "phrase-34",
+      "frame": 8,
+      "start": 125.18,
+      "end": 129.43,
+      "text": "source object, confidence, test receipt, and unresolved risk.",
+      "words": [
+        {
+          "id": "phrase-34-word-0",
+          "text": "source",
+          "start": 125.18,
+          "end": 125.615
+        },
+        {
+          "id": "phrase-34-word-1",
+          "text": "object,",
+          "start": 125.615,
+          "end": 126.136
+        },
+        {
+          "id": "phrase-34-word-2",
+          "text": "confidence,",
+          "start": 126.136,
+          "end": 126.947
+        },
+        {
+          "id": "phrase-34-word-3",
+          "text": "test",
+          "start": 126.947,
+          "end": 127.237
+        },
+        {
+          "id": "phrase-34-word-4",
+          "text": "receipt,",
+          "start": 127.237,
+          "end": 127.831
+        },
+        {
+          "id": "phrase-34-word-5",
+          "text": "and",
+          "start": 127.831,
+          "end": 128.048
+        },
+        {
+          "id": "phrase-34-word-6",
+          "text": "unresolved",
+          "start": 128.048,
+          "end": 128.773
+        },
+        {
+          "id": "phrase-34-word-7",
+          "text": "risk.",
+          "start": 128.773,
+          "end": 129.27
         }
       ]
     }

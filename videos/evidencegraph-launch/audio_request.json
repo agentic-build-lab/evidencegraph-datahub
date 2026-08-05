@@ -1,38 +1,38 @@
 {
   "provider": "kokoro",
-  "speed": 1.02,
+  "speed": 1.05,
   "lines": [
     {
       "id": "01",
-      "text": "A schema change should not become an incident. Before anyone merges it, EvidenceGraph asks a harder question: what will this change actually break?"
+      "text": "A schema change should not become an incident. EvidenceGraph, an autonomous assurance agent, asks before merge: what will this change actually break?"
     },
     {
       "id": "02",
-      "text": "Repository search finds three of seven downstream consumers. It misses the dashboard, the machine-learning feature, the model, and the production deployment. That is a forty-two point nine percent view — and a false-safe decision waiting to happen."
+      "text": "In our frozen synthetic seven-consumer truth set, repository search finds only three. It misses the dashboard, machine-learning feature, model, and deployment: a forty-two point nine percent view, and a false-safe decision."
     },
     {
       "id": "03",
-      "text": "EvidenceGraph reads DataHub through the official M C P server and the Python S D K. Schemas, ownership, lineage, contracts, tags, documentation, dashboards, and machine-learning metadata become one executable context graph."
+      "text": "EvidenceGraph reads DataHub through the official M C P server and Python S D K. Schemas, ownership, lineage, contracts, dashboards, and M L metadata form an executable graph controlling scope, plans, and authority."
     },
     {
       "id": "04",
-      "text": "Now the blast radius is complete: two dbt models, an Airflow job, an executive dashboard, an M L feature, a model, and its production deployment. Each path is routed to its owner, prioritized, and linked to the exact DataHub object that supports it."
+      "text": "Against that frozen truth set, DataHub grounds all seven impacts: two dbt models, Airflow, a dashboard, an M L feature, model, and deployment. Every path carries its owner, priority, and exact source object."
     },
     {
       "id": "05",
-      "text": "EvidenceGraph does not stop at an explanation. It compiles nine concrete artifacts: S Q L, dbt model and tests, validation queries, an Airflow evidence gate, an M L contract, a migration plan, and a real unified diff that Git can apply cleanly."
+      "text": "EvidenceGraph compiles nine pull-request-ready drafts for human review, never auto-merged: S Q L, dbt model and tests, validation queries, an Airflow evidence gate, an M L contract, migration plan, and a real unified diff."
     },
     {
       "id": "06",
-      "text": "Fourteen deterministic gates: Duck D B, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All fourteen pass. Remove one lineage page, and EvidenceGraph refuses the safe-to-merge verdict and blocks every mutation."
+      "text": "Fourteen deterministic gates run in Duck D B, dbt Core, the official Airflow container, feature-parity checks, and Git patch application. All pass. Remove one lineage page, and EvidenceGraph revokes proposal authority and blocks every mutation."
     },
     {
       "id": "07",
-      "text": "With explicit approval, three scoped results write back into DataHub and verify by readback. A new client retries the same plan: three verified no-ops, no duplicates. In the deterministic closure replay, EvidenceGraph requires a newer complete graph and closes only when the retired field has zero remaining consumers."
+      "text": "With explicit approval in a controlled local DataHub run, a tag, description, and evidence document write back and verify by readback. A fresh client retries them: three verified no-ops, zero duplicates. A labeled closure replay closes only on a newer complete graph with zero retired-field consumers."
     },
     {
       "id": "08",
-      "text": "EvidenceGraph makes DataHub's context graph operational. Inspect the public replay, audit every claim in the evidence ledger."
+      "text": "EvidenceGraph turns DataHub into an observe, plan, validate, refuse-or-act loop. In the public deterministic replay, audit each claim, source object, confidence, test receipt, and unresolved risk."
     }
   ],
   "bgm": {

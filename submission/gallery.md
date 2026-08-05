@@ -45,7 +45,7 @@ verified local-integration evidence.
 ## Gallery 6 — governed write-back and closure
 
 - File: `submission/gallery/06-writeback-closure.jpg`
-- Caption: **A separate approved DataHub run records three readback-verified
+- Caption: **A controlled, explicitly approved local DataHub run records three readback-verified
   writes and three verified retry no-ops; the deterministic fixture replay then
   requires newer complete evidence and zero old-field consumers before closure.**
 

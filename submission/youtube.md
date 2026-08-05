@@ -34,7 +34,7 @@ Chapters:
 00:00 The change is not the incident
 00:09 Why repository context is incomplete
 00:25 DataHub becomes an operational context graph
-00:41 Recover the complete blast radius
+00:41 Ground all seven declared truth-set impacts
 00:58 Compile a nine-file migration pack
 01:17 Validate—and refuse unsafe authority
 01:35 Governed write-back and deterministic closure
@@ -45,7 +45,7 @@ Core, the official DataHub MCP Server, and the official DataHub Python SDK.
 
 The hosted Assurance Studio is a read-only evidence replay and exposes no
 DataHub credential or mutation endpoint. Recorded write-back receipts come
-from a separate approved local DataHub run. The measured 7-of-7 result is
+from a controlled, explicitly approved local DataHub run. The measured 7-of-7 result is
 scoped to the declared synthetic graph.
 
 Music: “A Little Story” by Kei Morimoto, sourced from DOVA-SYNDROME and used

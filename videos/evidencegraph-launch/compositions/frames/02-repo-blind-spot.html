@@ -13,7 +13,7 @@
             <div data-hf-id="hf-cxbv" class="f02-eyebrow">REPOSITORY-ONLY ABLATION</div>
             <div data-hf-id="hf-y67l" class="f02-header-rule"></div>
           </div>
-          <div data-hf-id="hf-ifm9" class="f02-truth-chip"><span data-hf-id="hf-uckh"></span> TRUTH MANIFEST · 7</div>
+          <div data-hf-id="hf-ifm9" class="f02-truth-chip"><span data-hf-id="hf-uckh"></span> FROZEN SYNTHETIC TRUTH SET · 7</div>
         </header>
 
         <section data-hf-id="hf-nlnc" class="f02-overview" aria-label="Repository analysis found three of seven consumers" data-layout-allow-occlusion="">
@@ -115,9 +115,9 @@
         <div data-hf-id="hf-cam2" id="f02-verdict-camera" class="f02-verdict-camera" data-layout-allow-overflow="" data-layout-allow-occlusion="">
         <section data-hf-id="hf-pni9" class="f02-verdict" aria-label="Repository coverage is forty-two point nine percent and creates a false-safe decision" data-layout-allow-overlap="" data-layout-allow-occlusion="">
           <div data-hf-id="hf-7zl4" class="f02-verdict-topline">
-            <span data-hf-id="hf-4mt7">REPO SIGNAL</span>
+            <span data-hf-id="hf-4mt7">REPOSITORY EVIDENCE</span>
             <div data-hf-id="hf-aox6" class="f02-verdict-connector"><i data-hf-id="hf-o6lu"></i><b data-hf-id="hf-qmvp">→</b></div>
-            <span data-hf-id="hf-dagm">OPERATIONAL TRUTH</span>
+            <span data-hf-id="hf-dagm">FROZEN TRUTH SET</span>
           </div>
 
           <div data-hf-id="hf-9ozx" class="f02-verdict-grid">
@@ -140,7 +140,7 @@
             </div>
           </div>
 
-          <div data-hf-id="hf-m4by" class="f02-manifest-note"><span data-hf-id="hf-l73p"></span> INDEPENDENT TRUTH MANIFEST · 7 CONSUMERS</div>
+          <div data-hf-id="hf-m4by" class="f02-manifest-note"><span data-hf-id="hf-l73p"></span> FROZEN SYNTHETIC TRUTH SET · 7 CONSUMERS</div>
         </section>
         </div>
 
@@ -975,6 +975,11 @@
         10.22,
       );
       tl.to(
+        ".f02-verdict-topline",
+        { opacity: 0, duration: 0.28, ease: "power2.out" },
+        10.08,
+      );
+      tl.to(
         ".f02-coverage-block",
         {
           scale: 1.025,
@@ -1035,6 +1040,11 @@
         verdictCamera,
         { scale: 1, x: 0, y: 0, duration: 0.76, ease: "power3.inOut" },
         13.45,
+      );
+      tl.to(
+        ".f02-verdict-topline",
+        { opacity: 1, duration: 0.34, ease: "power2.out" },
+        13.46,
       );
       tl.to(
         ".f02-decision-block",

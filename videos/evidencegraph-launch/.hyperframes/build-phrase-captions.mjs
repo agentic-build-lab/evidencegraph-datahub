@@ -1,55 +1,61 @@
+import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const project = resolve(process.argv[2] || ".");
-const source = JSON.parse(
-  readFileSync(resolve(project, "caption_words.json"), "utf8"),
+const request = JSON.parse(
+  readFileSync(resolve(project, "audio_request.json"), "utf8"),
 );
-
-const removedStart = 96.014;
-const removedEnd = 98.213;
-const insertedPause = 0.28;
-const shiftAfterEdit = removedEnd - removedStart - insertedPause;
-const frameOffsets = new Map([
+const frameStarts = new Map([
   [1, 0],
-  [2, -4.536],
-  [3, -8.881],
-  [4, -11.948],
-  [5, -15.359],
-  [6, -17.268],
-  [7, -21.216],
-  [8, -21.494],
+  [2, 9.464],
+  [3, 25.119],
+  [4, 41.052],
+  [5, 58.641],
+  [6, 76.732],
+  [7, 94.784],
+  [8, 116.506],
 ]);
 
-let words = source.groups
-  .flatMap((group) => group.words.map((word) => ({ ...word, frame: group.frame })))
-  .filter(
-    (word) =>
-      !(
-        word.frame === 6 &&
-        word.start >= removedStart &&
-        word.end <= removedEnd
-      ),
-  )
-  .map((word) => {
-    const corrected =
-      word.frame === 6 && word.text === "gates"
-        ? { ...word, text: "gates:" }
-        : word;
-    if (corrected.frame !== 6 || corrected.start < removedEnd) return corrected;
-    return {
-      ...corrected,
-      start: Number((corrected.start - shiftAfterEdit).toFixed(3)),
-      end: Number((corrected.end - shiftAfterEdit).toFixed(3)),
-    };
-  })
-  .map((word) => {
-    const offset = frameOffsets.get(word.frame) ?? 0;
-    return {
-      ...word,
-      start: Number((word.start + offset).toFixed(3)),
-      end: Number((word.end + offset).toFixed(3)),
-    };
+let words = request.lines
+  .flatMap((line, index) => {
+    const frame = index + 1;
+    const id = String(frame).padStart(2, "0");
+    const duration = Number(
+      execFileSync(
+        "ffprobe",
+        [
+          "-v",
+          "error",
+          "-show_entries",
+          "format=duration",
+          "-of",
+          "default=noprint_wrappers=1:nokey=1",
+          resolve(project, `assets/voice/${id}.wav`),
+        ],
+        { encoding: "utf8" },
+      ).trim(),
+    );
+    const tokens = line.text.split(/\s+/).filter(Boolean);
+    const weights = tokens.map((token) => {
+      const letters = token.replace(/[^A-Za-z0-9]/g, "").length;
+      const punctuation = /[.!?]$/.test(token) ? 1.2 : /[,;:]$/.test(token) ? 0.5 : 0;
+      return Math.max(1, letters * 0.42) + punctuation;
+    });
+    const totalWeight = weights.reduce((sum, value) => sum + value, 0);
+    const usable = Math.max(0.1, duration - 0.18);
+    let cursor = (frameStarts.get(frame) ?? 0) + 0.08;
+    return tokens.map((text, wordIndex) => {
+      const wordDuration = usable * (weights[wordIndex] / totalWeight);
+      const start = Number(cursor.toFixed(3));
+      cursor += wordDuration;
+      return {
+        frame,
+        text,
+        start,
+        end: Number(Math.min((frameStarts.get(frame) ?? 0) + duration - 0.02, cursor).toFixed(3)),
+      };
+    });
   })
   .sort((a, b) => a.start - b.start);
 
@@ -114,7 +120,7 @@ for (let index = groups.length - 1; index > 0; index -= 1) {
 // Keep the closure sentence in two comfortable clauses instead of ending a
 // caption on "newer" or leaving a two-word tail.
 const closureStart = groups.findIndex(
-  (group) => group.frame === 7 && group.text.startsWith("In the deterministic closure replay,"),
+  (group) => group.frame === 7 && group.text.startsWith("A labeled closure replay"),
 );
 if (closureStart >= 0) {
   let closureEnd = closureStart;
@@ -123,7 +129,7 @@ if (closureStart >= 0) {
     .slice(closureStart, closureEnd)
     .flatMap((group) => group.words);
   const splitAt = closureWords.findIndex(
-    (word, index) => word.text === "and" && index > 0 && closureWords[index - 1].text === "graph",
+    (word, index) => word.text === "with" && index > 0 && closureWords[index - 1].text === "graph",
   );
   if (splitAt > 0) {
     const makeClause = (clauseWords) => ({
@@ -176,11 +182,6 @@ groups.forEach((group) => {
   group.text = normalizeCaptionText(group.text);
 });
 
-// The final narration is intentionally trimmed after "evidence ledger."
-// Keep the final phrase aligned with the committed 8.22-second voice edit.
-const finalPhrase = groups.findLast((group) => group.frame === 8);
-if (finalPhrase) finalPhrase.end = Math.min(finalPhrase.end, 124.65);
-
 groups.forEach((group, groupIndex) => {
   group.id = `phrase-${groupIndex}`;
   group.words = group.words.map((word, wordIndex) => ({
@@ -212,10 +213,9 @@ const html = `<template id="captions-template" data-composition-id="captions" da
   @font-face { font-family: "Geist"; src: url("assets/fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
   #captions-root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; pointer-events: none; }
   .caption-layer { position: absolute; inset: 0; }
-  .caption-stage { position: absolute; left: 120px; right: 120px; bottom: 34px; height: 142px; display: grid; place-items: center; }
+  .caption-stage { position: absolute; left: 120px; right: 120px; bottom: 44px; height: 142px; display: grid; place-items: center; }
   .caption-group { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; }
   .caption-phrase { max-width: 1500px; padding: 18px 32px 19px; border: 1px solid rgba(64,224,192,.22); border-radius: 18px; background: linear-gradient(180deg, rgba(12,27,34,.78), rgba(12,27,34,.94)); box-shadow: 0 18px 70px rgba(0,0,0,.34), inset 0 1px 0 rgba(231,238,235,.08); color: #F2F7F5; font-family: "Geist"; font-size: 43px; font-weight: 590; line-height: 1.16; letter-spacing: -0.02em; text-align: center; text-wrap: balance; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
-  .caption-accent { position: absolute; bottom: 4px; left: 50%; width: 72px; height: 3px; margin-left: -36px; border-radius: 4px; background: #40E0C0; box-shadow: 0 0 18px rgba(64,224,192,.45); }
 </style>
 <div id="captions-root" data-composition-id="captions" data-timeline-locked data-start="0" data-duration="130" data-fps="30" data-width="1920" data-height="1080">
   <div class="caption-layer" aria-hidden="true"><div id="caption-stage" class="caption-stage"></div></div>
@@ -232,10 +232,7 @@ const html = `<template id="captions-template" data-composition-id="captions" da
       var line = document.createElement("div");
       line.className = "caption-phrase";
       line.textContent = phrase.text;
-      var accent = document.createElement("div");
-      accent.className = "caption-accent";
       group.appendChild(line);
-      group.appendChild(accent);
       stage.appendChild(group);
     });
     window.__timelines = window.__timelines || {};
