@@ -6,7 +6,7 @@
 - **Captions:** Phrase-level, one or two lines, no word-by-word highlighting
 - **Music:** "A Little Story" by Kei Morimoto, used under the DOVA-SYNDROME license
 
-**Final public URL:** Added after final preview approval, render, and upload
+**Final public URL:** https://youtu.be/qnPR0Y6kENE
 
 ## 0:00-0:10 — The change is not the incident
 

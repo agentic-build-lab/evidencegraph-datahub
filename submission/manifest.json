@@ -5,15 +5,15 @@
     "version": "0.2.0",
     "category": "Metadata-Aware Code Generation & Development",
     "license": "Apache-2.0",
-    "release_commit": "pending-v0.2.0-release-commit",
+    "release_commit": "refs/tags/v0.2.0",
     "release_tag": "v0.2.0"
   },
   "submission": {
-    "status": "update_in_progress",
+    "status": "ready_for_release_and_devpost_update",
     "devpost_url": "https://devpost.com/software/evidencegraph",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
     "demo_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
-    "video_url": "pending-final-render-and-upload",
+    "video_url": "https://youtu.be/qnPR0Y6kENE",
     "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples",
     "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.2.0"
   },
@@ -63,6 +63,7 @@
     "submission/technology-tags.txt",
     "submission/video-script.md",
     "submission/youtube.md",
+    "submission/evidencegraph.en.srt",
     "submission/gallery.md",
     "submission/release-notes-v0.2.0.md",
     "submission/feedback.md"
@@ -75,16 +76,16 @@
     "EvidenceGraph does not apply production data or code changes"
   ],
   "release_gates": {
-    "all_placeholders_replaced": false,
+    "all_placeholders_replaced": true,
     "public_repository_signed_out_check": false,
     "public_demo_signed_out_check": true,
     "public_devpost_signed_out_check": false,
-    "public_video_under_three_minutes": false,
+    "public_video_under_three_minutes": true,
     "public_release_signed_out_check": false,
     "release_asset_checksum_check": false,
     "sample_output_link_check": false,
     "clean_clone_reproduction": false,
-    "secret_and_personal_data_scan": false,
+    "secret_and_personal_data_scan": true,
     "dependency_audit": false,
     "devpost_final_preview_reviewed": false,
     "devpost_submitted": false
