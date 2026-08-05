@@ -9,7 +9,7 @@
     "release_tag": "v0.2.0"
   },
   "submission": {
-    "status": "ready_for_release_and_devpost_update",
+    "status": "submitted_and_publicly_verified",
     "devpost_url": "https://devpost.com/software/evidencegraph",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
     "demo_url": "https://evidencegraph-datahub.liu891855.chatgpt.site",
@@ -77,17 +77,17 @@
   ],
   "release_gates": {
     "all_placeholders_replaced": true,
-    "public_repository_signed_out_check": false,
+    "public_repository_signed_out_check": true,
     "public_demo_signed_out_check": true,
-    "public_devpost_signed_out_check": false,
+    "public_devpost_signed_out_check": true,
     "public_video_under_three_minutes": true,
-    "public_release_signed_out_check": false,
-    "release_asset_checksum_check": false,
-    "sample_output_link_check": false,
-    "clean_clone_reproduction": false,
+    "public_release_signed_out_check": true,
+    "release_asset_checksum_check": true,
+    "sample_output_link_check": true,
+    "clean_clone_reproduction": true,
     "secret_and_personal_data_scan": true,
-    "dependency_audit": false,
-    "devpost_final_preview_reviewed": false,
-    "devpost_submitted": false
+    "dependency_audit": true,
+    "devpost_final_preview_reviewed": true,
+    "devpost_submitted": true
   }
 }
