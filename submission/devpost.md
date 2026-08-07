@@ -149,6 +149,12 @@ Next steps include more schema-change strategies, pull-request integration, firs
 semantic validation, additional ML registries and orchestrators, and transactional recovery for
 interrupted metadata writes.
 
+## Open-source contribution links (Additional Info field)
+
+Use the reviewed contribution text in [`submission/open-source-contributions.txt`](open-source-contributions.txt).
+It links four focused pull requests to the official DataHub Skills repository and states their
+current status without implying acceptance or merge.
+
 ## Data and privacy
 
 All demonstration records, assets, teams, and business names are synthetic.

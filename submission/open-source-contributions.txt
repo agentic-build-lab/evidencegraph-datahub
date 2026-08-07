@@ -1,0 +1,11 @@
+EvidenceGraph produced four focused contributions to the official DataHub Skills repository:
+
+1. MCP mutation-tool documentation fix: https://github.com/datahub-project/datahub-skills/pull/101
+2. Dead /datahub-govern routing fix: https://github.com/datahub-project/datahub-skills/pull/103
+3. Setup credential-handling security fix: https://github.com/datahub-project/datahub-skills/pull/105
+4. Bash test-runner set -e counter fix: https://github.com/datahub-project/datahub-skills/pull/107
+
+All four PRs are open and non-draft as of August 7, 2026. Their conventional-title checks pass;
+the upstream lint workflows await maintainer approval to run for this first-time fork contributor.
+Full issue links, reproductions, and validation evidence:
+https://github.com/agentic-build-lab/evidencegraph-datahub/blob/main/docs/OPEN_SOURCE_CONTRIBUTIONS.md

@@ -55,7 +55,8 @@
     "docs/REPRODUCIBILITY.md",
     "docs/SECURITY.md",
     "docs/LIMITATIONS.md",
-    "docs/CLAIMS.md"
+    "docs/CLAIMS.md",
+    "docs/OPEN_SOURCE_CONTRIBUTIONS.md"
   ],
   "submission_assets": [
     "submission/devpost.md",
@@ -66,8 +67,20 @@
     "submission/evidencegraph.en.srt",
     "submission/gallery.md",
     "submission/release-notes-v0.2.0.md",
-    "submission/feedback.md"
+    "submission/feedback.md",
+    "submission/open-source-contributions.txt"
   ],
+  "open_source_contributions": {
+    "status_as_of": "2026-08-07",
+    "status": "four_open_non_draft_pull_requests",
+    "pull_requests": [
+      "https://github.com/datahub-project/datahub-skills/pull/101",
+      "https://github.com/datahub-project/datahub-skills/pull/103",
+      "https://github.com/datahub-project/datahub-skills/pull/105",
+      "https://github.com/datahub-project/datahub-skills/pull/107"
+    ],
+    "accepted_or_merged_claim": false
+  },
   "explicit_non_claims": [
     "fresh-graph closure is proven only by the labeled deterministic before/after replay",
     "write-back idempotence is proven only for an immediate stateless retry of the identical proposal set",
