@@ -19,12 +19,12 @@ actions. In a controlled, explicitly approved local DataHub run, it writes three
 results to DataHub and verifies each by readback.
 
 | Measured on the frozen synthetic truth set | Repository only | DataHub context |
-| --- | ---: | ---: |
-| Affected assets found | 3 / 7 | **7 / 7** |
-| Overall recall | 42.9% | **100.0%** |
-| BI recall | 0.0% | **100.0%** |
-| ML recall | 0.0% | **100.0%** |
-| False-safe decision | Yes | **No** |
+| ------------------------------------------ | --------------: | --------------: |
+| Affected assets found                      |           3 / 7 |       **7 / 7** |
+| Overall recall                             |           42.9% |      **100.0%** |
+| BI recall                                  |            0.0% |      **100.0%** |
+| ML recall                                  |            0.0% |      **100.0%** |
+| False-safe decision                        |             Yes |          **No** |
 
 **Measured improvement: +57.1 percentage points.** See the independent
 [truth manifest](examples/flagship/truth-manifest.json) and exact
@@ -180,16 +180,24 @@ an automated refusal test.
 
 ## Repository map
 
-| Path | Purpose |
-| --- | --- |
-| `src/evidencegraph/` | Typed collector, impact engine, planner, generator, validators, policy, write-back, closure |
-| `demo_platform/` | Real miniature dbt, Airflow, Looker, and ML source files |
-| `fixtures/` | Synthetic platform, proposal, independent truth set, before/after closure graphs |
-| `examples/` | Frozen judge-readable live evidence, migration pack, receipts, refusals, checksums |
-| `skills/datahub-change-assurance/` | Reusable DataHub change-assurance Skill |
-| `site/` | Source of the no-login public evidence replay |
-| `docs/` | Architecture, security, reproducibility, limitations, claims, and event research |
-| `submission/` | Devpost copy, video script, gallery plan, feedback, and release manifest |
+| Path                               | Purpose                                                                                     |
+| ---------------------------------- | ------------------------------------------------------------------------------------------- |
+| `src/evidencegraph/`               | Typed collector, impact engine, planner, generator, validators, policy, write-back, closure |
+| `demo_platform/`                   | Real miniature dbt, Airflow, Looker, and ML source files                                    |
+| `fixtures/`                        | Synthetic platform, proposal, independent truth set, before/after closure graphs            |
+| `examples/`                        | Frozen judge-readable live evidence, migration pack, receipts, refusals, checksums          |
+| `skills/datahub-change-assurance/` | Reusable DataHub change-assurance Skill                                                     |
+| `site/`                            | Source of the no-login public evidence replay                                               |
+| `docs/`                            | Architecture, security, reproducibility, limitations, claims, and event research            |
+| `submission/`                      | Devpost copy, video script, gallery plan, feedback, and release manifest                    |
+
+## DataHub open-source contributions
+
+The EvidenceGraph integration and security review produced four focused pull requests to the
+official DataHub Skills repository: an MCP mutation-tool documentation correction, a dead-command
+routing fix, credential-handling hardening, and a deterministic Bash test-runner fix. See the
+[contribution ledger](docs/OPEN_SOURCE_CONTRIBUTIONS.md) for upstream links, reproductions,
+validation evidence, and current review status. EvidenceGraph does not depend on their acceptance.
 
 ## Tests and provenance
 
