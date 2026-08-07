@@ -36,6 +36,11 @@ test("server-renders the production EvidenceGraph experience", async () => {
   const html = await response.text();
   assert.match(html, /<title>EvidenceGraph Assurance Studio[^<]*DataHub-native change assurance<\/title>/i);
   assert.match(html, /PUBLIC EVIDENCE REPLAY · LABELED SOURCES/i);
+  assert.match(html, /60-SECOND JUDGE PATH/i);
+  assert.match(html, /Prove the value, then test the safety boundary/i);
+  assert.match(html, /Replay assurance/i);
+  assert.match(html, /Remove lineage/i);
+  assert.match(html, /Inspect evidence/i);
   assert.match(html, /FIELD-AWARE DOWNSTREAM LINEAGE/i);
   assert.match(html, /Repository analysis sees only three consumers/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);
@@ -73,6 +78,8 @@ test("uses repository-owned fonts and ships inspectable public evidence", async 
   assert.match(page, /RECORDED APPROVED WRITE-BACK/);
   assert.match(page, /DETERMINISTIC CLOSURE REPLAY/);
   assert.match(page, /REPLAY ASSURANCE/);
+  assert.match(page, /60-SECOND JUDGE PATH/);
+  assert.match(page, /Watch write-back fall to zero/);
   assert.match(page, /claimId: "CLM-006"/);
   assert.match(page, /ownerFor\(/);
   assert.match(page, /maximumMismatchRate: 0\.0/);

@@ -347,6 +347,30 @@ export default function Home() {
           </div>
         </header>
 
+        <section className="judge-path" aria-label="60-second judge walkthrough">
+          <div className="judge-path-title">
+            <span>60-SECOND JUDGE PATH</span>
+            <strong>Prove the value, then test the safety boundary</strong>
+          </div>
+          <ol>
+            <li className={!completed ? "active" : "done"}>
+              <button onClick={runAssurance} disabled={running}>
+                <b>01</b><span><strong>Replay assurance</strong><small>3 → 7 impacts · 14 gates</small></span>
+              </button>
+            </li>
+            <li className={completed && graphMode === "complete" ? "active" : graphMode === "incomplete" ? "done" : ""}>
+              <button onClick={() => setGraphMode("incomplete")} disabled={!completed || running}>
+                <b>02</b><span><strong>Remove lineage</strong><small>Watch write-back fall to zero</small></span>
+              </button>
+            </li>
+            <li className={completed && workspace !== "evidence" ? "active" : workspace === "evidence" ? "done" : ""}>
+              <button onClick={() => changeWorkspace("evidence")} disabled={!completed || running}>
+                <b>03</b><span><strong>Inspect evidence</strong><small>Open claims, URNs, and receipts</small></span>
+              </button>
+            </li>
+          </ol>
+        </section>
+
         <div className="run-strip">
           <div className="change-summary">
             <div className="change-icon">Δ</div>
