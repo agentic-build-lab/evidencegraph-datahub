@@ -30,6 +30,19 @@ results to DataHub and verifies each by readback.
 [truth manifest](examples/flagship/truth-manifest.json) and exact
 [ablation result](examples/ablation/comparison.json).
 
+## 60-second judge path
+
+1. Open the [public replay](https://github.com/agentic-build-lab/evidencegraph-datahub) and click
+   **Replay assurance**. Watch the repository-only view expand from 3 to 7 affected assets,
+   then verify 9 migration artifacts, 14/14 validation gates, and 3 governed write-back receipts.
+2. Click **Missing lineage**. The same useful drafts remain inspectable, but completeness becomes
+   unproven, confidence is capped, and write-back proposals fall from 3 to 0.
+3. Open **Evidence ledger** and select a claim. Inspect its DataHub URNs, recorded observations,
+   artifact bindings, hashes, and validation receipts instead of trusting a summary sentence.
+
+That one-minute contrast is the core product claim: DataHub context reveals the hidden blast
+radius, while deterministic evidence—not model confidence—controls whether the agent may act.
+
 ## What the agent does
 
 ```mermaid

@@ -10,6 +10,18 @@ The [public judge experience](https://github.com/agentic-build-lab/evidencegraph
 deterministic, no-login replay. It exposes no mutation endpoint; the separate frozen MCP trace
 is the local live DataHub integration proof.
 
+## 60-second public walkthrough
+
+1. Click **Replay assurance** to see repository analysis find 3 of 7 consumers before DataHub
+   context reveals all 7. Let the run finish at 9 artifacts, 14/14 gates, and 3 scoped write-backs.
+2. Click **Missing lineage**. This removes one recorded lineage page and changes the authority
+   state: drafts are quarantined, confidence is capped at 0.65, and write-back proposals become 0.
+3. Open **Evidence ledger** and select a claim to inspect its DataHub URNs, observations, artifact
+   bindings, and receipts. The summary is deliberately not the only proof surface.
+
+The walkthrough demonstrates value and safety in one contrast: DataHub expands the known blast
+radius, and incomplete DataHub context removes the agent's authority to act.
+
 ## Flagship scenario
 
 The proposal removes `customer_tier` from the synthetic Postgres dataset
