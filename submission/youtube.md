@@ -18,8 +18,8 @@ to authorize reviewable proposals. Remove one lineage page and EvidenceGraph
 caps confidence, quarantines every draft, and produces zero write-back
 proposals.
 
-Public Assurance Studio:
-https://github.com/agentic-build-lab/evidencegraph-datahub
+Local Assurance Studio instructions:
+https://github.com/agentic-build-lab/evidencegraph-datahub/blob/main/docs/DEMO.md
 
 Open-source repository:
 https://github.com/agentic-build-lab/evidencegraph-datahub

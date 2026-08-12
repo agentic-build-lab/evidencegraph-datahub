@@ -12,7 +12,7 @@
     "status": "submitted_and_publicly_verified",
     "devpost_url": "https://devpost.com/software/evidencegraph",
     "repository_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
-    "demo_url": "https://github.com/agentic-build-lab/evidencegraph-datahub",
+    "demo_url": "",
     "video_url": "https://youtu.be/qnPR0Y6kENE",
     "sample_output_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples",
     "release_url": "https://github.com/agentic-build-lab/evidencegraph-datahub/releases/tag/v0.2.0"

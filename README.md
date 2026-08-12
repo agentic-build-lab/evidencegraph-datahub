@@ -3,7 +3,7 @@
 > A DataHub-native data-change assurance compiler that turns a breaking change into a
 > completeness-verdict impact map, validated migration code, and an evidence-backed go/no-go decision.
 
-[**Live public replay**](https://github.com/agentic-build-lab/evidencegraph-datahub) ·
+[**Run the replay locally**](docs/DEMO.md) ·
 [**Frozen evidence package**](examples/README.md) ·
 [Architecture](docs/architecture.md) ·
 [Demo guide](docs/DEMO.md) ·
@@ -32,7 +32,7 @@ results to DataHub and verifies each by readback.
 
 ## 60-second judge path
 
-1. Open the [public replay](https://github.com/agentic-build-lab/evidencegraph-datahub) and click
+1. [Run the replay locally](docs/DEMO.md) and click
    **Replay assurance**. Watch the repository-only view expand from 3 to 7 affected assets,
    then verify 9 migration artifacts, 14/14 validation gates, and 3 governed write-back receipts.
 2. Click **Missing lineage**. The same useful drafts remain inspectable, but completeness becomes

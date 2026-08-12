@@ -1,5 +1,5 @@
 {
-  "source": "https://github.com/agentic-build-lab/evidencegraph-datahub",
+  "source": "local EvidenceGraph replay",
   "capturedAt": "2026-08-04",
   "fps": 10,
   "frames": 168,

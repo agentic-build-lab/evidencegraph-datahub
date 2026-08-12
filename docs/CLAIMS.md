@@ -53,4 +53,4 @@ Do not state or imply that EvidenceGraph currently:
 - Frozen flagship package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples`
 - Release commit: resolve `v0.2.0^{commit}` from the release tag
 - Release tag: `v0.2.0`
-- Public demo: `https://github.com/agentic-build-lab/evidencegraph-datahub`
+- Local replay: follow `docs/DEMO.md`

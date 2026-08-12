@@ -6,9 +6,8 @@ EvidenceGraph offers two deliberately distinct demo paths:
 2. a local live-integration run that reads from DataHub Core through the
    official DataHub MCP Server.
 
-The [public judge experience](https://github.com/agentic-build-lab/evidencegraph-datahub) is a
-deterministic, no-login replay. It exposes no mutation endpoint; the separate frozen MCP trace
-is the local live DataHub integration proof.
+The repository includes a deterministic replay that runs locally without DataHub credentials.
+It exposes no mutation endpoint; the separate frozen MCP trace is the local live DataHub integration proof.
 
 ## 60-second public walkthrough
 
@@ -114,7 +113,7 @@ available evidence and names the next safe action.
 
 ## Public links
 
-- Live demo: `https://github.com/agentic-build-lab/evidencegraph-datahub`
+- Local demo: follow the commands in this guide
 - Repository: `https://github.com/agentic-build-lab/evidencegraph-datahub`
 - Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/main/examples`
 - Video: `https://youtu.be/qnPR0Y6kENE`

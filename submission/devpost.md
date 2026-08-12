@@ -163,7 +163,7 @@ information.
 
 ## Try it
 
-- Public demo: `https://github.com/agentic-build-lab/evidencegraph-datahub`
+- Local replay instructions: `docs/DEMO.md`
 - Public repository: `https://github.com/agentic-build-lab/evidencegraph-datahub`
 - Sample evidence package: `https://github.com/agentic-build-lab/evidencegraph-datahub/tree/v0.2.0/examples`
 - Demo video: `https://youtu.be/qnPR0Y6kENE`

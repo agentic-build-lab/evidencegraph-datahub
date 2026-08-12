@@ -62,11 +62,7 @@ The public judge experience must:
 - enforce bounded input size, execution time, and request rate; and
 - reveal no local path, environment value, private URL, or server diagnostic.
 
-The public replay is deployed at
-`https://github.com/agentic-build-lab/evidencegraph-datahub`; an anonymous HTTP request returned 200
-without an application login or private-membership gate.
-
-The deployed judge surface is a read-only server-rendered replay. It has no
+The included judge surface is a read-only server-rendered replay. It has no
 application API, form submission, uploaded content, arbitrary scenario input,
 or mutation route, so there is no public agent execution to rate-limit or time
 out. The worker adds a Content Security Policy, HSTS on HTTPS, clickjacking and
